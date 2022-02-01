@@ -1,60 +1,55 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
-date: "`r Sys.Date()`"
+title: "Métodos Cuantitativos"
+author: "Aleksander Dietrichson, PhD"
+date: "22 de junio del 2019"
 site: bookdown::bookdown_site
-documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::bs4_book,
-  set in the _output.yml file.
 biblio-style: apalike
+link-citations: true
+github-repo: dietrichson/metodos_cuantitativos
+description: "Material de Cátedra para el curso «Metodologías cuantitativas»."
+documentclass: book
 csl: chicago-fullnote-bibliography.csl
 ---
 
-# About
+# Prefacio {-}
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+Este texto ha sido editado en respuesta a la aparente falta de un libro de texto introductorio al análisis cuantitativo y estadísticas acesible y moderno en castellano. Si bien fue concebido como material de cátedra para *Metodologías cuantitativas* materia que dicta el autor en la Escuela de Humanidades de la Universidad Nacional San Martín, se adaptará fácilmente a cursos introductorios de estadísticas en general. 
 
-## Usage 
+## Estructura del libro {-}
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+Cada capítulo desarrolla un tema y/o concepto a ser tratado en clase y la secuencia corresponde a un curso introductorio de estadístocos "clásico", por lo que conviene leerlos en orden. Sigue el orden propuesto por @butler1985statistics.
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+### Glosario {-}
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+Uno de los objetivos de este trabajo es dotar al lector con las herramientas necesarios para convertirse en un consumidor crítico de textos que se valen de métodos cuantitativos y/o estadísticas para su argumento. En vista de la enorme cantidad de material disponible en inglés, sobre todo en el ámbito acadédico, el autor ha optado por incluir terminología bilingüe español-inglés. Esta elección obedece a un criterio práctico. En cada capítulo encontrarán un glosario con los principales términos mencionados. Incluye traducción a inglés y referencias a R cuando sea relevante.
 
-## Render book
+## R y Rstudio {-}
 
-You can render the HTML version of this example book without changing anything:
+*R* es un leguaje de programación especializado para análisis de datos. Es de fuente abierta (Open Source) y uso gratuito. *Rstudio* es un editor de *R* que también de uso sin cargo. Ambas herramientas están disponibles en internet y son de amplio uso tanto en el mundo académico como la industria. 
 
-1. Find the **Build** pane in the RStudio IDE, and
+Se puede descargar e instalar R accediendo a esta URL: https://cran.r-project.org/mirrors.html.
 
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
+Para Rstudio la URL es: https://www.rstudio.com/products/rstudio/download/#download.
 
-Or build the book from the R console:
+Se recomienda siempre instalar R primero y luego Rstudio ya que este depende de aquel.
 
-```{r, eval=FALSE}
-bookdown::render_book()
+### Ejemplos en R {-}
+
+A lo largo de este libro encontrarán ejemplos prácticos que pueden ejecutarse en R. El código se diferenciará del resto del texto por su formato, como se puede apreciar en el ejemplo siguiente:
+ 
+```{r}
+1+1
 ```
 
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+Por convención no se incluye el promt (p.e. ">") de la consola de R, y los valores de retorno son comentados con "##", lo que corresponde al estándar para textos técnicos de esta índole. También se puede hacer referencia a código dentro del texto corrido con el mismo formato. Por ejemplo: ```1+1```.
 
-## Preview book
+## Edición {-}
 
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
+Este texto fue editado con *bookdown* [@R-bookdown], un paquete de R [@R-bookdown] que extiende las capacidades de *knitr*[@xie2015] y R-markdown [@R-rmarkdown] para publicaciones más voluminosas. También hace uso de los paquetes *tidyverse* [@tidyverse] y *bayestestR*[@bayestestR].
 
-```{r eval=FALSE}
-bookdown::serve_book()
-```
+## Agradecimientos {-}
 
+Agradezco a mi colega Diego Forteza por su ayuda y apoyo en durante el proceso de redacción y a Cecilia Magadán por su corrección de estilo.
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+Debo expresar también profunda gratidud a *Bow Street Destillery* en Dublin, Irlanda; sin cuyos productos este proyecto habría sin duda quedado inconcluso.

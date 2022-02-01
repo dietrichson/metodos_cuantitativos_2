@@ -12,3 +12,18 @@ pre {
 pre code {
   white-space: inherit;
 }
+.hanging-indent{
+  margin-bottom:1.5em;
+  padding-left: 22px ;
+  text-indent: -22px ;
+}
+
+.hanging-indent{
+  padding-left: 22px ;
+  text-indent: -22px ;
+}
+
+.csl-entry{
+  margin-bottom:0.5em;
+}
+

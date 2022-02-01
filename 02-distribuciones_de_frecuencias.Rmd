@@ -1,0 +1,232 @@
+# Distribuciones de frecuencias
+
+En este capítulo desarrollaremos el concepto de distribución estadística. Seguiremos desarrollando el ejemplo de notas de los exámenes finales de dos grupos de estudiantes e introduciremos otros ejemplos. Exploraremos el concepto de frecuencia de observaciones, cómo visualizarlos y estimar sus algunas de sus características.
+
+## Explorando los datos
+
+```{r, include=FALSE}
+library(sashaUseful)
+library(tidyverse)
+myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
+```
+
+Recordemos las muestras de exámenes finales que vimos en el capitulo anterior. 
+
+Grupo A (teórico-práctico): 
+
+> `r get_comma_separated_list_with_and(myData$classA,and='y')`
+
+Grupo B (teórico):
+
+> `r get_comma_separated_list_with_and(myData$classB,and='y')`
+
+A simple vista no es tan fácil darse cuenta «qué pasa» con estos datos. Podemos por lo pronto darnos cuenta de que el grupo B tiene más notas de un solo dígito, pero más allá no resulta obvio cómo les fue en los distintos grupos. 
+
+## Tablas de frecuencias
+
+Para darnos cuenta mejor de las estructuras que estamos analizando podemos construir una *tabla de frecuencias*, que en este caso es un resumen de cuántos alumnos sacaron cuál nota de las posibles (sobre veinte).
+
+```{r, echo=FALSE, warning=FALSE}
+options(knitr.kable.NA = '')
+data.frame(table(myData$classA)) %>% 
+  full_join(data.frame(table(myData$classB)), by =
+              c('Var1')) %>% 
+  mutate(Var1 = as.numeric(Var1)) %>%
+  arrange(Var1) %>%
+  knitr::kable(caption = "Frecuencia de notas por grupo",
+               col.names = c('Nota', 'Grupo A', 'Grupo B'))
+
+```
+
+Ahora podemos hacer algunas observaciones adicionales. Se nota que el *rango* (distancia entre el menor y el mayor valor del conjunto) es más amplio en el grupo B que en el grupo A. Posiblemente también nos damos cuenta que el valor más frecuente del grupo A (15) es superior al más frecuente del grupo B (12).
+
+### Ejemplo en R {-}
+
+Si bien es posible hacer una tabla de frecuencias a mano, simplemente contando las observaciones en cada categoría y anotando el resultado en orden, también tenemos funciones en R para el propósito. 
+
+```{r}
+table(
+  c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
+)
+```
+
+En este ejemplo estamos usando dos funciones, una dentro de otra. La función ```c```, le pide a R que arme un **c**conjunto de datos, y los datos que queremos usar van entre paréntesis y separados por coma. Esto, a su vez, lo estamos haciendo dentro de la función ```table``` que genera una tabla de frecuencias. 
+
+También es posible darle un nombre a los datos a usar o «asignarlos a una variable», lo cual puede ser útil cuando se quiere reutilizar. Esto se hace de la siguiente manera:
+
+```{r}
+x <- c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
+```
+
+Con esto podemos usar ```x``` como alias para los datos que le asignamos. Entonces:
+```{r}
+table(x)
+```
+
+nos da el mismo resultado. 
+
+Por lo general se recomienda usar nombres de variables que tengan algún sentido, en lugar de usar genéricos como x, y, z o a, b, c. En R las variables pueden tener múltiples caracteres (pero no espacios), por lo que podríamos ingresar:
+
+```{r}
+grupo.A <- c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
+```
+
+y nos daría el resultado deseado:
+```{r}
+table(grupo.A)
+```
+
+
+
+## Histogramas
+
+Para seguir explorando las tablas que hemos creado en la sección anterior se pueden visualizar con un *histograma*. El histograma resume los datos dentro de algunos rangos, por ejemplo 8-9, 10-11, 12-13 etcétera, y se cuenta el número de observaciones dentro de cada rango.   
+
+Para nuestros datos obtenemos:
+
+```{r, echo = FALSE}
+hist(grupo.A, xlab = "Nota", ylab="Frecuencia", main  ="Distribución de notas del grupo A",xlim=c(0,20),breaks = 7)
+```
+
+y
+
+```{r, echo = FALSE}
+grupo.B <- myData$classB
+hist(grupo.B, xlab = "Nota", ylab="Frecuencia", main  ="Distribución de notas del grupo B", xlim=c(0,20), breaks = 7)
+```
+
+Comparando estos dos diagramas nos damos cuenta de que la estructura de los datos son disimilares. En el grupo A las notas se centran alrededor de quince, en cambio para el grupo B la concentración está en el rango diez-catorce, con un pico menor alrededor de siete.
+
+
+```{example, name="Histograma en R"}
+```
+
+Hacer un histograma con R es bastante sencillo. Usamos la función ```hist```, de histograma y los datos que queremos visualizar. Si lo asignamos a una variable, como lo vimos en la parte de las tablas (con ```table```). 
+```{r}
+grupo.A <- c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
+hist(grupo.A)
+```
+
+La función ```hist``` tiene muchas opciones adicionales. Para conocerlas se puede ingresar ```?hist``` (signo de interrogación y «hist») en la consola de R y aparecerá la descripción completa de ellas. Lo mismo es cierto para cualquier función de R. El mismo resultado se obtiene usando la función ```help(hist)```.
+
+## Polígono de frecuencias
+
+Los datos también de pueden visualizar con un polígono de frecuencias. En este tipo de visualización ponemos un punto en la intersección de la nota (eje horizontal) y la frecuencia (eje vertical) y trazamos una linea entre los puntos. Una de las ventajas de este tipo de visualización es que facilita la comparación entre varias distribuciones ya que los podemos desplegar en un mismo diagrama. 
+
+```{r poligono-de-frecuencias-notas-comparativo, echo=FALSE, fig.cap="Polígono de frecuencias de notas obtenidas por dos grupos de estudiantes"}
+myData %>% 
+  gather() %>% 
+  group_by(key,value) %>%
+  count %>% 
+  ggplot(aes(x=value,y=n,color=key))+
+  geom_line()+
+  geom_point()+
+  xlim(0,20)+
+  ylim(0,8)+
+  ylab("Frecuencia")+
+  xlab("Nota")+
+  scale_color_discrete(labels=c(classA='Grupo A', classB='Grupo B'))+
+  theme_minimal()+
+  theme(legend.title = element_blank(),legend.position="bottom") -> freqPoly1
+freqPoly1
+```
+
+Apreciamos con más precisión los valores más típicos y diferencias entre los dos grupos. También podemos ver que la parte inferior de la escala de notas está sin uso, característica que comparten ambos grupos. 
+
+### Otro ejemplo {-}
+
+En este ejemplo vamos a considerar un libro de la literatura romántica: «Persuasion» escrito por Jane Austen [ @austen1817persuasion]^[El texto está disponible online y en el paquete de R «tidytext» [@silge2016]]. Vamos a visualizar *el número de caracteres por palabra* en el texto. Obtenemos:
+
+```{r persuasion-poligon-i, echo=FALSE, warning=FALSE,message=FALSE, fig.cap="Polígono de frecuencias del largo de palabras en un texto de Austin"}
+persuasionData <- readRDS(here::here("data","austen_persuasion_words.RDS"))
+persuasionData %>% 
+  pull(word) %>% 
+  str_length() -> word_lengths
+  data.frame(x=word_lengths) %>% 
+    group_by(x) %>% 
+    count %>% 
+   ggplot(aes(x,n))+
+  geom_line()+
+  geom_point()+
+ # xlim(0,20)+
+#  ylim(0,8)+
+  ylab("Frecuencia")+
+  xlab("Número de caracteres")+
+  scale_color_discrete(labels=c(classA='Grupo A', classB='Grupo B'))+
+  theme_minimal()+theme(legend.title = element_blank()) -> freqPoly2
+  freqPoly2
+```
+
+A differencia de la distribución de notas, vemos acá que encontramos observaciones a lo largo del rango de uno a deciseis, con la concentración de valores alrededor de tres. Esto tiene su interpretación bastante intuitiva ya que el uso de palabras *cortas*, como son artículos, preposiciones y conjunciones abundan en cuanquier texto y las palabras muy largas son de uso menos frecuente. Resulta lógico suponer que encontraríamos un perfil similar en cualquier texto de cierta longitud.  
+
+## Perfil de la distribución 
+
+Las distribuciones de notas que vimos en las secciones anteriores tienen relativamente pocos datos, por lo que siempre van a parecer algo irregulares. Si tenemos muchos datos, sobre todo si con se escala de medición continua, podemos imaginarnos que en lugar de trazar una linea llegamos a trazar más bien una curva entre los puntos. Esto nos permite hacer una abstracción de las distribuciones y hablar de distribuciones teóricas. La más conocida de ellas sin duda es la *distribución normal*, también llamada de Gauss o gaussiana.
+
+```{r, echo=FALSE, fig.cap="Distribución normal"}
+library(bayestestR) 
+x <- distribution_normal(n = 100, mean = 0, sd = 1)
+x %>% 
+  density() %>%  # Compute density function
+  as.data.frame() %>% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()+
+  #("Distribución Normal")+
+  theme_minimal()+xlab("")+ylab("")
+```
+
+Vamos a desarrollar el tema de la distribución normal con más detalle en el capítulo \@ref(la-distribucion-normal). Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.  
+ 
+### Asimetría o Sesgo
+ 
+Cuando una distribución se inclina en una dirección u otra decimos, es decir que no es simétrica, se dice que tiene un *sesgo* o que es *asimétrica*. Se habla de *sesgo negativo* y *sesgo positivo* (también: *asimetría positiva/negativa* y *a la izquierda/derecha* todos equivalentes). Es positivo o negativo según en qué dirección tiene su *cola larga*.
+
+```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.cap="Distribuciónes normal y sesgadas"}
+set.seed(1)
+library(sn)
+N <- 1000; adjust <- 3
+skOmega <- 10
+myXi <- 25
+myAlpha <- 10
+  data.frame(rsn(n = N,xi =  -myXi, omega = skOmega, alpha = myAlpha) %>% density(adjust = adjust), Tipo='Sesgo Positivo') %>% 
+  bind_rows(
+    data.frame(rsn(n = N, xi = myXi, omega = skOmega, alpha = -myAlpha ) %>% density(adjust = adjust), Tipo='Sesgo Negativo') 
+  ) %>% 
+  bind_rows(
+    data.frame(rsn(n = N, xi = 0, omega = 6, alpha =0) %>% density(adjust = adjust), Tipo='Normal') 
+  )-> tmp
+tmp$x <- tmp$x/15
+#tmp$y <- tmp$y/30
+tmp %>%  ggplot(aes(x,y,color=Tipo))+geom_line()+
+  #ggtitle("Distribuciónes normal y sesgadas")+
+  theme_minimal()+
+  theme(legend.position="bottom", legend.title = element_blank())+xlab("")+ylab("")+
+  scale_color_manual(values=c('Sesgo Negativo' = '#F8766D',
+                              'Sesgo Positivo'='#00BFC4','Normal'='darkgray'))
+```
+
+Vemos que nuestras distribuciones de *notas* corresponden a una distribución de *sesgo negativo*, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de *número de characteres* en el texto de Austen tiene *sesgo positivo*.
+```{r, echo=FALSE, fig.align="Polígonos de frecuencias"}
+
+multiplot(
+  freqPoly2+theme(
+    legend.position = 'none', 
+    plot.title = element_text(hjust = 0.5)
+    )+
+    ggtitle("Largo de palabras"),
+  freqPoly1+theme(
+    legend.position = 'none', 
+    plot.title = element_text(hjust = 0.5)
+    )+
+    ggtitle("Notas")
+  , cols=2)
+```
+
+Nótese también que la si bien la escala vertical de los dos gráficos son de muy diferente magnitud, la máxima frecuencia es veinte mil (20.000) y seis (6) respectivamente, podemos comparar las dos distribuciones. 
+
+
+## Glosario
+
+```{r, echo=FALSE, results='asis'}
+.format_dataframe_as_def_list(chapter=2)
+```
