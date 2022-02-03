@@ -52,4 +52,4 @@ Este texto fue editado con *bookdown* [@R-bookdown], un paquete de R [@R-bookdow
 
 Agradezco a mi colega Diego Forteza por su ayuda y apoyo en durante el proceso de redacción y a Cecilia Magadán por su corrección de estilo.
 
-Debo expresar también profunda gratidud a *Bow Street Destillery* en Dublin, Irlanda; sin cuyos productos este proyecto habría sin duda quedado inconcluso.
+Debo expresar también profunda gratitud a *Bow Street Destillery* en Dublin, Irlanda; sin cuyos productos este proyecto habría sin duda quedado inconcluso.

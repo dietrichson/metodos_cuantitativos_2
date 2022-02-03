@@ -118,7 +118,6 @@ La diferencia entre usar un test direccional o no direccional influye en los val
 ```{r non-directional-and-directional-normal-curves, echo=FALSE, warning=FALSE, message=FALSE,fig.cap="Test no direccionales y test direccionales"}
 library(bayestestR)
 library(tidyverse)
-library(sashaUseful)
 x1 <- distribution_normal(n = 100, mean = 0, sd = 1)
 x1 %>% 
   density() %>%  # Compute density function

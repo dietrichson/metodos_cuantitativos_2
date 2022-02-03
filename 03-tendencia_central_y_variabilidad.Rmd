@@ -2,7 +2,6 @@
 
 ```{r, include = FALSE}
 library(tidyverse)
-library(sashaUseful)
 myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
 ```
 

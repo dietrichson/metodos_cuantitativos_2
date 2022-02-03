@@ -65,9 +65,7 @@ $$
 Si aplicamos la fórmula de la definición \@ref(def:test-t) nos sale un valor que podemos comparar con los valores críticos de la tabla del [apendice A](\@distribucion-t) para determinar si rechazamos $H_0$ o no.
 
 ```{r, include=FALSE}
-library(sashaUseful)
 myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
-
 ```
 
 

@@ -5,7 +5,6 @@ En este capítulo desarrollaremos el concepto de distribución estadística. Seg
 ## Explorando los datos
 
 ```{r, include=FALSE}
-library(sashaUseful)
 library(tidyverse)
 myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
 ```
@@ -14,11 +13,11 @@ Recordemos las muestras de exámenes finales que vimos en el capitulo anterior.
 
 Grupo A (teórico-práctico): 
 
-> `r get_comma_separated_list_with_and(myData$classA,and='y')`
+> `r knitr::combine_words(myData$classA, and=' y ', oxford_comma=FALSE)`
 
 Grupo B (teórico):
 
-> `r get_comma_separated_list_with_and(myData$classB,and='y')`
+> `r knitr::combine_words(myData$classB, and=' y ', oxford_comma=FALSE)`
 
 A simple vista no es tan fácil darse cuenta «qué pasa» con estos datos. Podemos por lo pronto darnos cuenta de que el grupo B tiene más notas de un solo dígito, pero más allá no resulta obvio cómo les fue en los distintos grupos. 
 
