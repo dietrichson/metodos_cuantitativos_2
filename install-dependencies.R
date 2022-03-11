@@ -1,6 +1,9 @@
-# Script to install dependencies for the project].
+#' Script to install dependencies for the project.
+#' 
+#' @author "Aleksander Dietrichson"
 my_dependencies <- 
   c(
+    "rmarkdown",
     "bookdown", 
     "grid", 
     "here", 
@@ -14,7 +17,8 @@ my_dependencies <-
     "xfun",
     "devtools",
     "usethis",
-    "usethat"
+    "usethat",
+    "downlit"
     )
 to_install <-
   my_dependencies[which(!my_dependencies %in% installed.packages())]
