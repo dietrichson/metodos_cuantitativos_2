@@ -11,7 +11,10 @@ my_dependencies <-
     "sn", 
     "ggthemes", 
     "mvtnorm",
-    "xfun"
+    "xfun",
+    "devtools",
+    "usethis",
+    "usethat"
     )
 to_install <-
   my_dependencies[which(!my_dependencies %in% installed.packages())]
