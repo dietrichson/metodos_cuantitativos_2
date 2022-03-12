@@ -27,7 +27,7 @@ Para tener una muestra verdaderamente aleatoria de una población deberíamos as
 
 Ahora, ¿dónde encontramos números aleatorios? Hay secuencias en libros de estadísticas, usados principalmente antes de la existencia de computadoras. También se pueden generar esas secuencias en linea. Finalmente, R tienen un generador de números aleatorios que nos permite generar los de números de nuestra muestra con un solo comando usando la función de R *sample*.
 
-#### Ejemplo en R: Generar muestra
+#### Ejemplo en R: Generar muestra {-}
 
 
 ```r
@@ -40,10 +40,9 @@ Acá le estamos pidiendo a R que nos de una muestra aleatoria (```sample``` ) de
 
 Si corren este comando desde su consola de R los números deben salir diferentes, se hace una muestra aleatoria cada vez.
 
-#### Ejemplo en R: Ordenar los datos
+#### Ejemplo en R: Ordenar los datos {-}
 
 También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función *sort*.
-```
 
 
 ```r

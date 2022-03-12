@@ -83,12 +83,9 @@ def:phi-correlation
 tab:significance-table-t-distribution
 tab:significance-table-sign-test
 tab:significance-table-chi-squared-distribution
-segunda-edición
 conceptos-fundamentales
 poblaciones-y-muestras
 muestra-aleatoria
-ejemplo-en-r-generar-muestra
-ejemplo-en-r-ordenar-los-datos
 muestra-cuasialeatoria
 ejemplo-en-r-generar-una-sequencia
 muestra-estratificada

@@ -16,13 +16,13 @@ csl: chicago-fullnote-bibliography.csl
 
 Este texto ha sido editado en respuesta a la aparente falta de un libro de texto introductorio al análisis cuantitativo y estadísticas acesible y moderno en castellano. Si bien fue concebido como material de cátedra para *Metodologías cuantitativas* materia que dicta el autor en la Escuela de Humanidades de la Universidad Nacional San Martín, se adaptará fácilmente a cursos introductorios de estadísticas en general. 
 
-## Segunda edición
+## Segunda edición {-}
 
 En la segunda edición se corrigió algunos errores ortográficos y de estilo. Optamos por actualizar los ejemplos para incorporar los paquetes del «tidyverse» ya que hemos observado que su uso y adaptación atenúa la curva de aprendizaje para quienes usan R por primera vez o con escasos conocimientos previos. 
 
 ## Estructura del libro {-}
 
-Cada capítulo desarrolla un tema y/o concepto a ser tratado en clase y la secuencia corresponde a un curso introductorio de estadístocos "clásico", por lo que conviene leerlos en orden. Sigue el orden propuesto por @butler1985statistics.
+Cada capítulo desarrolla un tema y/o concepto a ser tratado en clase y la secuencia corresponde a un curso introductorio de estadístocos «clásico», por lo que conviene leerlos en orden. Sigue el orden propuesto por @butler1985statistics.
 
 ### Glosario {-}
 

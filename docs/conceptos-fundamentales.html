@@ -87,9 +87,8 @@ Figure 1.1: Población y muestra.
 </h3>
 <p>Para tener una muestra verdaderamente aleatoria de una población deberíamos asignar un número u otro identificador único a cada una de las unidaded de la población –a cada persona si se trata de una población humana– escribir cada número en un papel y echarlos en una tómbola. Luego de virarla por algún tiempo y mesclar bien los papeles, podríamos de allí sacar la cantidad de papeles que corresponda al tamaño de nuestra muestra. Obviamente esto no resulta muy práctico por lo que se suele empezar con una secuencia de números aleatorios del tamaño de la muestra y extraer unidades de la población basado en ello. Por ejemplo, si quisieramos sacar veinte libros al hazar de un estante de la biblioteca que contiene doscientos libros, necesitamos veinte números aleatorios entre uno y doscientos, y sacamos los libros que desde algún punto de referencia (primer libro del primer nivel) está a esa distancia.</p>
 <p>Ahora, ¿dónde encontramos números aleatorios? Hay secuencias en libros de estadísticas, usados principalmente antes de la existencia de computadoras. También se pueden generar esas secuencias en linea. Finalmente, R tienen un generador de números aleatorios que nos permite generar los de números de nuestra muestra con un solo comando usando la función de R <em>sample</em>.</p>
-<div id="ejemplo-en-r-generar-muestra" class="section level4" number="1.1.1.1">
-<h4>
-<span class="header-section-number">1.1.1.1</span> Ejemplo en R: Generar muestra<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-generar-muestra"><i class="fas fa-link"></i></a>
+<div id="ejemplo-en-r-generar-muestra" class="section level4 unnumbered">
+<h4>Ejemplo en R: Generar muestra<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-generar-muestra"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">200</span>, size <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>
@@ -98,18 +97,15 @@ Figure 1.1: Población y muestra.
 <p>Acá le estamos pidiendo a R que nos de una muestra aleatoria (<code>sample</code> ) de números entre uno y doscientos (<code>x = 1:200</code>), y que la muestra sea de veinte <code>size = 20</code> ). Con estos números podemos ir al estante y sacar los libros que queremos estudiar.</p>
 <p>Si corren este comando desde su consola de R los números deben salir diferentes, se hace una muestra aleatoria cada vez.</p>
 </div>
-<div id="ejemplo-en-r-ordenar-los-datos" class="section level4" number="1.1.1.2">
-<h4>
-<span class="header-section-number">1.1.1.2</span> Ejemplo en R: Ordenar los datos<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-ordenar-los-datos"><i class="fas fa-link"></i></a>
+<div id="ejemplo-en-r-ordenar-los-datos" class="section level4 unnumbered">
+<h4>Ejemplo en R: Ordenar los datos<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-ordenar-los-datos"><i class="fas fa-link"></i></a>
 </h4>
 <p>También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función <em>sort</em>.</p>
-<pre><code>
-
-```r
-sort(
-  sample(x = 1:200, size = 20, replace = TRUE)
-)
-## [1]  29  35  38  41  54  74  75  79  85  92 103 112 114 120 127 153 173 185 187 188</code></pre>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">200</span>, size <span class="op">=</span> <span class="fl">20</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="op">)</span>
+<span class="co">## [1]  29  35  38  41  54  74  75  79  85  92 103 112 114 120 127 153 173 185 187 188</span></code></pre></div>
 </div>
 </div>
 <div id="muestra-cuasialeatoria" class="section level3" number="1.1.2">
