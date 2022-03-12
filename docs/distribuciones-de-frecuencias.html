@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Distribuciones de frecuencias | Métodos Cuantitativos</title>
+<meta name="author" content="Aleksander Dietrichson, PhD">
+<meta name="description" content="En este capítulo desarrollaremos el concepto de distribución estadística. Seguiremos desarrollando el ejemplo de notas de los exámenes finales de dos grupos de estudiantes e introduciremos otros...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Distribuciones de frecuencias | Métodos Cuantitativos">
+<meta property="og:type" content="book">
+<meta property="og:description" content="En este capítulo desarrollaremos el concepto de distribución estadística. Seguiremos desarrollando el ejemplo de notas de los exámenes finales de dos grupos de estudiantes e introduciremos otros...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Distribuciones de frecuencias | Métodos Cuantitativos">
+<meta name="twitter:description" content="En este capítulo desarrollaremos el concepto de distribución estadística. Seguiremos desarrollando el ejemplo de notas de los exámenes finales de dos grupos de estudiantes e introduciremos otros...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Métodos Cuantitativos</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Mostrar tabla de contenido</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+</form>
+
+      <nav aria-label="Tabla de contenidos"><h2>Tabla de contenidos</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Prefacio</a></li>
+<li><a class="" href="conceptos-fundamentales.html"><span class="header-section-number">1</span> Conceptos fundamentales</a></li>
+<li><a class="active" href="distribuciones-de-frecuencias.html"><span class="header-section-number">2</span> Distribuciones de frecuencias</a></li>
+<li><a class="" href="centralizaci%C3%B3n-y-dispersi%C3%B3n.html"><span class="header-section-number">3</span> Centralización y dispersión</a></li>
+<li><a class="" href="la-distribuci%C3%B3n-normal.html"><span class="header-section-number">4</span> La distribución normal</a></li>
+<li><a class="" href="estimaci%C3%B3n-de-par%C3%A1metros.html"><span class="header-section-number">5</span> Estimación de parámetros</a></li>
+<li><a class="" href="dise%C3%B1o-de-proyectos-y-test-de-hipotesis.html"><span class="header-section-number">6</span> Diseño de proyectos y test de hipotesis</a></li>
+<li><a class="" href="pruebas-param%C3%A9tricas.html"><span class="header-section-number">7</span> Pruebas paramétricas</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">8</span> Pruebas no paramétricas</a></li>
+<li><a class="" href="chi-square-test.html"><span class="header-section-number">9</span> Prueba de \(\chi^2\)</a></li>
+<li><a class="" href="correlaci%C3%B3n.html"><span class="header-section-number">10</span> Correlación</a></li>
+<li class="book-part">Apendices</li>
+<li><a class="" href="distribuci%C3%B3n-t.html"><span class="header-section-number">A</span> Distribución t</a></li>
+<li><a class="" href="valores-cr%C3%ADticos-del-test-de-signo.html"><span class="header-section-number">B</span> Valores críticos del test de signo</a></li>
+<li><a class="" href="chi-square-disrtibution.html"><span class="header-section-number">C</span> Distribución \(\chi^2\)</a></li>
+<li><a class="" href="referencias.html">Referencias</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="distribuciones-de-frecuencias" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Distribuciones de frecuencias<a class="anchor" aria-label="anchor" href="#distribuciones-de-frecuencias"><i class="fas fa-link"></i></a>
+</h1>
+<p>En este capítulo desarrollaremos el concepto de distribución estadística. Seguiremos desarrollando el ejemplo de notas de los exámenes finales de dos grupos de estudiantes e introduciremos otros ejemplos. Exploraremos el concepto de frecuencia de observaciones, cómo visualizarlos y estimar sus algunas de sus características.</p>
+<div id="explorando-los-datos" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Explorando los datos<a class="anchor" aria-label="anchor" href="#explorando-los-datos"><i class="fas fa-link"></i></a>
+</h2>
+<p>Recordemos las muestras de exámenes finales que vimos en el capitulo anterior.</p>
+<p>Grupo A (teórico-práctico):</p>
+<blockquote>
+<p>15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16 y 14</p>
+</blockquote>
+<p>Grupo B (teórico):</p>
+<blockquote>
+<p>11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 8, 7, 15, 5, 14, 13, 13, 12, 11, 13, 11 y 7</p>
+</blockquote>
+<p>A simple vista no es tan fácil darse cuenta «qué pasa» con estos datos. Podemos por lo pronto darnos cuenta de que el grupo B tiene más notas de un solo dígito, pero más allá no resulta obvio cómo les fue en los distintos grupos.</p>
+</div>
+<div id="tablas-de-frecuencias" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Tablas de frecuencias<a class="anchor" aria-label="anchor" href="#tablas-de-frecuencias"><i class="fas fa-link"></i></a>
+</h2>
+<p>Para darnos cuenta mejor de las estructuras que estamos analizando podemos construir una <em>tabla de frecuencias</em>, que en este caso es un resumen de cuántos alumnos sacaron cuál nota de las posibles (sobre veinte).</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-2">Table 2.1: </span>Frecuencia de notas por grupo</caption>
+<thead><tr class="header">
+<th align="right">Nota</th>
+<th align="right">Grupo A</th>
+<th align="right">Grupo B</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">4</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">4</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">2</td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right"></td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right"></td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right"></td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right"></td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right"></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ahora podemos hacer algunas observaciones adicionales. Se nota que el <em>rango</em> (distancia entre el menor y el mayor valor del conjunto) es más amplio en el grupo B que en el grupo A. Posiblemente también nos damos cuenta que el valor más frecuente del grupo A (15) es superior al más frecuente del grupo B (12).</p>
+<div id="ejemplo-en-r" class="section level3 unnumbered">
+<h3>Ejemplo en R<a class="anchor" aria-label="anchor" href="#ejemplo-en-r"><i class="fas fa-link"></i></a>
+</h3>
+<p>Si bien es posible hacer una tabla de frecuencias a mano, simplemente contando las observaciones en cada categoría y anotando el resultado en orden, también tenemos funciones en R para el propósito.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  9 11 12 13 14 15 16 17 18 19 
+#&gt;  1  2  2  3  4  6  3  4  3  2</code></pre>
+<p>En este ejemplo estamos usando dos funciones, una dentro de otra. La función <code>c</code>, le pide a R que arme un <strong>c</strong>conjunto de datos, y los datos que queremos usar van entre paréntesis y separados por coma. Esto, a su vez, lo estamos haciendo dentro de la función <code>table</code> que genera una tabla de frecuencias.</p>
+<p>También es posible darle un nombre a los datos a usar o «asignarlos a una variable», lo cual puede ser útil cuando se quiere reutilizar. Esto se hace de la siguiente manera:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span></code></pre></div>
+<p>Con esto podemos usar <code>x</code> como alias para los datos que le asignamos. Entonces:</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; x
+#&gt;  9 11 12 13 14 15 16 17 18 19 
+#&gt;  1  2  2  3  4  6  3  4  3  2</code></pre>
+<p>nos da el mismo resultado.</p>
+<p>Por lo general se recomienda usar nombres de variables que tengan algún sentido, en lugar de usar genéricos como x, y, z o a, b, c. En R las variables pueden tener múltiples caracteres (pero no espacios), por lo que podríamos ingresar:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">grupo.A</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span></code></pre></div>
+<p>y nos daría el resultado deseado:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">grupo.A</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; grupo.A
+#&gt;  9 11 12 13 14 15 16 17 18 19 
+#&gt;  1  2  2  3  4  6  3  4  3  2</code></pre>
+</div>
+</div>
+<div id="histogramas" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Histogramas<a class="anchor" aria-label="anchor" href="#histogramas"><i class="fas fa-link"></i></a>
+</h2>
+<p>Para seguir explorando las tablas que hemos creado en la sección anterior se pueden visualizar con un <em>histograma</em>. El histograma resume los datos dentro de algunos rangos, por ejemplo 8-9, 10-11, 12-13 etcétera, y se cuenta el número de observaciones dentro de cada rango.</p>
+<p>Para nuestros datos obtenemos:</p>
+<div class="inline-figure"><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-8-1.png" width="672"></div>
+<p>y</p>
+<div class="inline-figure"><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-9-1.png" width="672"></div>
+<p>Comparando estos dos diagramas nos damos cuenta de que la estructura de los datos son disimilares. En el grupo A las notas se centran alrededor de quince, en cambio para el grupo B la concentración está en el rango diez-catorce, con un pico menor alrededor de siete.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.1  \iffalse (Histograma en R) </strong></span>
+</div>
+<p>Hacer un histograma con R es bastante sencillo. Usamos la función <code>hist</code>, de histograma y los datos que queremos visualizar. Si lo asignamos a una variable, como lo vimos en la parte de las tablas (con <code>table</code>).</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">grupo.A</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">grupo.A</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-11-1.png" width="672"></div>
+<p>La función <code>hist</code> tiene muchas opciones adicionales. Para conocerlas se puede ingresar <code><a href="https://rdrr.io/r/graphics/hist.html">?hist</a></code> (signo de interrogación y «hist») en la consola de R y aparecerá la descripción completa de ellas. Lo mismo es cierto para cualquier función de R. El mismo resultado se obtiene usando la función <code><a href="https://rdrr.io/r/graphics/hist.html">help(hist)</a></code>.</p>
+</div>
+<div id="polígono-de-frecuencias" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Polígono de frecuencias<a class="anchor" aria-label="anchor" href="#pol%C3%ADgono-de-frecuencias"><i class="fas fa-link"></i></a>
+</h2>
+<p>Los datos también de pueden visualizar con un polígono de frecuencias. En este tipo de visualización ponemos un punto en la intersección de la nota (eje horizontal) y la frecuencia (eje vertical) y trazamos una linea entre los puntos. Una de las ventajas de este tipo de visualización es que facilita la comparación entre varias distribuciones ya que los podemos desplegar en un mismo diagrama.</p>
+<div class="figure">
+<span style="display:block;" id="fig:poligono-de-frecuencias-notas-comparativo"></span>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/poligono-de-frecuencias-notas-comparativo-1.png" alt="Polígono de frecuencias de notas obtenidas por dos grupos de estudiantes" width="672"><p class="caption">
+Figure 2.1: Polígono de frecuencias de notas obtenidas por dos grupos de estudiantes
+</p>
+</div>
+<p>Apreciamos con más precisión los valores más típicos y diferencias entre los dos grupos. También podemos ver que la parte inferior de la escala de notas está sin uso, característica que comparten ambos grupos.</p>
+<div id="otro-ejemplo" class="section level3 unnumbered">
+<h3>Otro ejemplo<a class="anchor" aria-label="anchor" href="#otro-ejemplo"><i class="fas fa-link"></i></a>
+</h3>
+<p>En este ejemplo vamos a considerar un libro de la literatura romántica: «Persuasion» escrito por Jane Austen.<span class="citation"><a href="referencias.html#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></span><a href="referencias.html#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>. Vamos a visualizar <em>el número de caracteres por palabra</em> en el texto. Obtenemos:</p>
+<div class="figure">
+<span style="display:block;" id="fig:persuasion-poligon-i"></span>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/persuasion-poligon-i-1.png" alt="Polígono de frecuencias del largo de palabras en un texto de Austin" width="672"><p class="caption">
+Figure 2.2: Polígono de frecuencias del largo de palabras en un texto de Austin
+</p>
+</div>
+<p>A differencia de la distribución de notas, vemos acá que encontramos observaciones a lo largo del rango de uno a deciseis, con la concentración de valores alrededor de tres. Esto tiene su interpretación bastante intuitiva ya que el uso de palabras <em>cortas</em>, como son artículos, preposiciones y conjunciones abundan en cuanquier texto y las palabras muy largas son de uso menos frecuente. Resulta lógico suponer que encontraríamos un perfil similar en cualquier texto de cierta longitud.</p>
+</div>
+</div>
+<div id="perfil-de-la-distribución" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Perfil de la distribución<a class="anchor" aria-label="anchor" href="#perfil-de-la-distribuci%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<p>Las distribuciones de notas que vimos en las secciones anteriores tienen relativamente pocos datos, por lo que siempre van a parecer algo irregulares. Si tenemos muchos datos, sobre todo si con se escala de medición continua, podemos imaginarnos que en lugar de trazar una linea llegamos a trazar más bien una curva entre los puntos. Esto nos permite hacer una abstracción de las distribuciones y hablar de distribuciones teóricas. La más conocida de ellas sin duda es la <em>distribución normal</em>, también llamada de Gauss o gaussiana.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-12-1.png" alt="Distribución normal" width="672"><p class="caption">
+Figure 2.3: Distribución normal
+</p>
+</div>
+<p>Vamos a desarrollar el tema de la distribución normal con más detalle en el capítulo <a href="#la-distribucion-normal"><strong>??</strong></a>. Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.</p>
+<div id="asimetría-o-sesgo" class="section level3" number="2.5.1">
+<h3>
+<span class="header-section-number">2.5.1</span> Asimetría o Sesgo<a class="anchor" aria-label="anchor" href="#asimetr%C3%ADa-o-sesgo"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cuando una distribución se inclina en una dirección u otra decimos, es decir que no es simétrica, se dice que tiene un <em>sesgo</em> o que es <em>asimétrica</em>. Se habla de <em>sesgo negativo</em> y <em>sesgo positivo</em> (también: <em>asimetría positiva/negativa</em> y <em>a la izquierda/derecha</em> todos equivalentes). Es positivo o negativo según en qué dirección tiene su <em>cola larga</em>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-13"></span>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-13-1.png" alt="Distribuciónes normal y sesgadas" width="672"><p class="caption">
+Figure 2.4: Distribuciónes normal y sesgadas
+</p>
+</div>
+<p>Vemos que nuestras distribuciones de <em>notas</em> corresponden a una distribución de <em>sesgo negativo</em>, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de <em>número de characteres</em> en el texto de Austen tiene <em>sesgo positivo</em>.
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-14-1.png" width="672"></p>
+<p>Nótese también que la si bien la escala vertical de los dos gráficos son de muy diferente magnitud, la máxima frecuencia es veinte mil (20.000) y seis (6) respectivamente, podemos comparar las dos distribuciones.</p>
+</div>
+</div>
+<div id="glosario-2" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Glosario<a class="anchor" aria-label="anchor" href="#glosario-2"><i class="fas fa-link"></i></a>
+</h2>
+<dl>
+<dt>Asimetría</dt>
+<dd>
+El hecho de que una distribución no sea simétrica.
+Equivalente en inglés: «Skew».
+</dd>
+<dt>Distribución normal</dt>
+<dd>
+Distribución teórica de una variable. Es simétrica y con forma de campana.
+Equivalente en inglés: «Normal distribution».
+</dd>
+<dt>Histograma</dt>
+<dd>
+Visualización de frecuencia agrupadas de observaciones de una variable.
+Función relevante en R: <code>hist</code>.
+Equivalente en inglés: «Histogram».
+</dd>
+<dt>Polígono de frecuencias</dt>
+<dd>
+Visualización de frecuencias de observaciones de una variable.
+Equivalente en inglés: «Frequency poligon».
+</dd>
+<dt>Segso</dt>
+<dd>
+El hecho de que una distribución no sea simétrica.
+Equivalente en inglés: «Skew».
+</dd>
+<dt>Table de frecuencias</dt>
+<dd>
+Tabla que resume las frecuencias de las observaciones de una variable.
+Función relevante en R: <code>table</code>.
+Equivalente en inglés: «Frequency table».
+</dd>
+</dl>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="conceptos-fundamentales.html"><span class="header-section-number">1</span> Conceptos fundamentales</a></div>
+<div class="next"><a href="centralizaci%C3%B3n-y-dispersi%C3%B3n.html"><span class="header-section-number">3</span> Centralización y dispersión</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="En esta página"><h2>En esta página</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#distribuciones-de-frecuencias"><span class="header-section-number">2</span> Distribuciones de frecuencias</a></li>
+<li><a class="nav-link" href="#explorando-los-datos"><span class="header-section-number">2.1</span> Explorando los datos</a></li>
+<li>
+<a class="nav-link" href="#tablas-de-frecuencias"><span class="header-section-number">2.2</span> Tablas de frecuencias</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#ejemplo-en-r">Ejemplo en R</a></li></ul>
+</li>
+<li><a class="nav-link" href="#histogramas"><span class="header-section-number">2.3</span> Histogramas</a></li>
+<li>
+<a class="nav-link" href="#pol%C3%ADgono-de-frecuencias"><span class="header-section-number">2.4</span> Polígono de frecuencias</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#otro-ejemplo">Otro ejemplo</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#perfil-de-la-distribuci%C3%B3n"><span class="header-section-number">2.5</span> Perfil de la distribución</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#asimetr%C3%ADa-o-sesgo"><span class="header-section-number">2.5.1</span> Asimetría o Sesgo</a></li></ul>
+</li>
+<li><a class="nav-link" href="#glosario-2"><span class="header-section-number">2.6</span> Glosario</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 22 de junio del 2019.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>Este libro fue creado con el paquete <a class="text-light" href="https://bookdown.org">bookdown</a></p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

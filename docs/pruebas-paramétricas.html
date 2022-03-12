@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 Pruebas paramétricas | Métodos Cuantitativos</title>
+<meta name="author" content="Aleksander Dietrichson, PhD">
+<meta name="description" content="En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 7 Pruebas paramétricas | Métodos Cuantitativos">
+<meta property="og:type" content="book">
+<meta property="og:description" content="En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 Pruebas paramétricas | Métodos Cuantitativos">
+<meta name="twitter:description" content="En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Métodos Cuantitativos</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Mostrar tabla de contenido</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+</form>
+
+      <nav aria-label="Tabla de contenidos"><h2>Tabla de contenidos</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Prefacio</a></li>
+<li><a class="" href="conceptos-fundamentales.html"><span class="header-section-number">1</span> Conceptos fundamentales</a></li>
+<li><a class="" href="distribuciones-de-frecuencias.html"><span class="header-section-number">2</span> Distribuciones de frecuencias</a></li>
+<li><a class="" href="centralizaci%C3%B3n-y-dispersi%C3%B3n.html"><span class="header-section-number">3</span> Centralización y dispersión</a></li>
+<li><a class="" href="la-distribuci%C3%B3n-normal.html"><span class="header-section-number">4</span> La distribución normal</a></li>
+<li><a class="" href="estimaci%C3%B3n-de-par%C3%A1metros.html"><span class="header-section-number">5</span> Estimación de parámetros</a></li>
+<li><a class="" href="dise%C3%B1o-de-proyectos-y-test-de-hipotesis.html"><span class="header-section-number">6</span> Diseño de proyectos y test de hipotesis</a></li>
+<li><a class="active" href="pruebas-param%C3%A9tricas.html"><span class="header-section-number">7</span> Pruebas paramétricas</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">8</span> Pruebas no paramétricas</a></li>
+<li><a class="" href="chi-square-test.html"><span class="header-section-number">9</span> Prueba de \(\chi^2\)</a></li>
+<li><a class="" href="correlaci%C3%B3n.html"><span class="header-section-number">10</span> Correlación</a></li>
+<li class="book-part">Apendices</li>
+<li><a class="" href="distribuci%C3%B3n-t.html"><span class="header-section-number">A</span> Distribución t</a></li>
+<li><a class="" href="valores-cr%C3%ADticos-del-test-de-signo.html"><span class="header-section-number">B</span> Valores críticos del test de signo</a></li>
+<li><a class="" href="chi-square-disrtibution.html"><span class="header-section-number">C</span> Distribución \(\chi^2\)</a></li>
+<li><a class="" href="referencias.html">Referencias</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="pruebas-paramétricas" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> Pruebas paramétricas<a class="anchor" aria-label="anchor" href="#pruebas-param%C3%A9tricas"><i class="fas fa-link"></i></a>
+</h1>
+<p>En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras independientes o correlacionadas. Los tests que vamos a ver se llaman «paramétricos», lo cual quiere decir viene con algunas presunciones acerca de los datos:</p>
+<ol style="list-style-type: decimal">
+<li>Los datos son de escala de intervalo o razón</li>
+<li>La población de la muestra debe aproximarse a una distribución normal</li>
+<li>Las varianzas de las muestras debe aproximadamente similar<a href="referencias.html#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>
+</li>
+</ol>
+<p>Las pruebas estadísticas son las que nos permiten, a algún nivel de significanza, rechazar o aceptar la hipótesis nula (<span class="math inline">\(H_0\)</span>), por lo que son de bastante utilidad en investigaciones cuantitativas.</p>
+<div id="prueba-t-de-student-para-muestras-independientes" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Prueba t de Student para muestras independientes<a class="anchor" aria-label="anchor" href="#prueba-t-de-student-para-muestras-independientes"><i class="fas fa-link"></i></a>
+</h2>
+<p>Supongamos que tenemos dos muestras aleatorias e independientes con medias de <span class="math inline">\(\bar{x_1}\)</span> y <span class="math inline">\(\bar{x_2}\)</span> y que queremos saber si estas dos medias son signifacativamente distintas a un nivel de <span class="math inline">\(p\leqslant0,05\)</span>. Esto es lo mismo que decir que si afirmamos que hay una diferencia entre las muestras tenemos un 95% de probabilidad de tener razón. Lo que tenemos que calcular, entonces, es la probabilidad de que las dos muestras pueder provenir de la misma distribución y que la diferencia que vemos es por varianza en esa población. En otras palabras: queremos saber si dos muestras con la diferencia observada (<span class="math inline">\(\bar{x_1}-\bar{x_2}\)</span>) podrían tener provenir de la misma población.</p>
+<p>Si sacamos un número significativo de muestras de una misma población la media de estas muestra va a tener una diferencia con la media de la población, en algunos casos más altos y en otros más bajos. Usamos este conocimiento para calcular el error estándar:</p>
+<p><span class="math display">\[
+SE = {\sigma\over{\sqrt{N}}}.
+\]</span></p>
+<p>De la misma manera existe un <em>error estándar de diferencias entre medias</em> (SED por sus siglas en ingles).</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 7.1  \iffalse (Error estándar de diferencia entre medias) </strong></span><span class="math display">\[
+SED = \sqrt{\sigma^2_1/N_1 + \sigma^2_1/N_2}
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li>
+<span class="math inline">\(\sigma^2_1\)</span> y <span class="math inline">\(\sigma^2_2\)</span>: las varianzas de las poblaciones 1 y 2</li>
+<li>
+<span class="math inline">\(N_1\)</span> y <span class="math inline">\(N_2\)</span>: es el número de observaciones en cada muestra.</li>
+</ul>
+</div>
+<p>Al igual que con el error estándar, a menudo desconocemos la varianza de la población, por lo cual lo estimamos de la muestra y la formula es la que vemos en la definición <a href="pruebas-param%C3%A9tricas.html#def:SED-samples">7.2</a>.</p>
+
+<div class="definition">
+<p><span id="def:SED-samples" class="definition"><strong>Definition 7.2  \iffalse (Error estándar de diferencia entre medias estimado de muestras) </strong></span><span class="math display">\[
+SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li>
+<span class="math inline">\(s^2_1\)</span> y <span class="math inline">\(s^2_2\)</span>: las varianzas de las muestras 1 y 2</li>
+<li>
+<span class="math inline">\(N_1\)</span> y <span class="math inline">\(N_2\)</span>: es el número de observaciones en cada muestra.</li>
+</ul>
+</div>
+<p>Vimos en la sección <a href="#la-distribucion-t"><strong>??</strong></a> que para muestras relativamente pequeñas (N&lt;30) la distribución de la muestra tiende a la distribución <em>t de Student</em>. Podemos valernos de esto para calcular la probabilidad de que nuestro <em>SED</em> esté en el rango requerido aplicando la formula de la definición</p>
+
+<div class="definition">
+<span id="def:test-t" class="definition"><strong>Definition 7.3  \iffalse (Prueba de t) </strong></span>
+<span class="math display">\[
+t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
+\]</span>
+</div>
+<p>Si aplicamos la fórmula de la definición <a href="pruebas-param%C3%A9tricas.html#def:test-t">7.3</a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="@distribucion-t">apendice A</a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
+
+<div class="example">
+<span id="exm:manual-t-test" class="example"><strong>Example 7.1  \iffalse (Prueba t) </strong></span>
+</div>
+<p>Volvemos ahora a nuestros datos de notas de dos grupos de estudiantes con diferentes metodologías pedagígicos. Queremos saber con un nivel de significanza de 0,05 si existe diferencia entre la media de los dos grupos. Nuestras hipótesis nula y alternativa son entonces:</p>
+<p><span class="math inline">\(H_0:\mu_A=\mu_B\)</span>,</p>
+<p><span class="math inline">\(H_1: \mu_A\neq\mu_B\)</span>.</p>
+<p>Los datos son:</p>
+<p>Grupo A: {15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14} y</p>
+<p>Grupo B: {11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 8, 7, 15, 5, 14, 13, 13, 12, 11, 13, 11, 7}.</p>
+<p>La media y desviación estándar:</p>
+<div class="line-block">   Grupo A:<br>
+       <span class="math inline">\(\bar{x_A} = 14,933\)</span><br>
+       <span class="math inline">\(s = 2,490\)</span><br>
+       <span class="math inline">\(N=30\)</span>
+</div>
+<div class="line-block">   Grupo B:<br>
+      <span class="math inline">\(\bar{x} = 11,77\)</span><br>
+      <span class="math inline">\(s = 3,308\)</span><br>
+      <span class="math inline">\(N=30\)</span>.</div>
+<p>Aplicando la fórmula de la definición <a href="pruebas-param%C3%A9tricas.html#def:SED-samples">7.2</a> obtenemos:</p>
+<p><span class="math display">\[
+SED = \sqrt{s^2_1/N_1 + s^2_1/N_2} = \sqrt{2,490^2/30 + 3,308^2/N_2} = 0,756
+\]</span></p>
+<p>y podemos calcular el valor de t aplicando la fórmula de la definición <a href="pruebas-param%C3%A9tricas.html#def:test-t">7.3</a></p>
+<p><span class="math display">\[
+t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
+\]</span></p>
+<p>Si buscamos este valor en el <a href="#distribucion-t">Apendix A</a> para 29 grados de libertad (N-1), vemos que debemos rechazar <span class="math inline">\(H_0\)</span> y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.</p>
+
+<div class="example">
+<span id="exm:t-test-in-r" class="example"><strong>Example 7.2  \iffalse (Prueba t en R) </strong></span>
+</div>
+<p>Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función `<code>t.test</code>. Toma como parámetros las dos muestras que queremos comparar.</p>
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">Grupo.B</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">18</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">14</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">10</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">12</span>, <span class="fl">8</span>, <span class="fl">7</span>, <span class="fl">15</span>, <span class="fl">5</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">7</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">Grupo.A</span>,<span class="va">Grupo.B</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  Welch Two Sample t-test
+#&gt; 
+#&gt; data:  Grupo.A and Grupo.B
+#&gt; t = 4.1887, df = 53.88, p-value = 0.0001046
+#&gt; alternative hypothesis: true difference in means is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  1.650905 4.682428
+#&gt; sample estimates:
+#&gt; mean of x mean of y 
+#&gt;  14.93333  11.76667</code></pre>
+<p>Vemos que el test nos devuelve además un valor de <em>p</em> más preciso.</p>
+</div>
+<div id="test-de-normalidad" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Prueba de Shapiro-Wilks<a class="anchor" aria-label="anchor" href="#test-de-normalidad"><i class="fas fa-link"></i></a>
+</h2>
+<p>En la sección <a href="la-distribuci%C3%B3n-normal.html#evaluar-la-normalidad">4.3</a> mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (<a href="distribuciones-de-frecuencias.html#fig:poligono-de-frecuencias-notas-comparativo">2.1</a>). Ahora vamos a introducir un test más formal de normalidad.</p>
+<p>El test de <em>Shapiro-Wilks</em> plantea la hipótesis nula que una muestra proviene de una distribución normal. Eligimos un nivel de significanza, por ejemplo 0,05, y tenemos una hipótesis alternativa que sostiene que la distribución no es normal.</p>
+<p>Tenemos:</p>
+<p><span class="math inline">\(H_0\)</span>: La distribución es normal</p>
+<p><span class="math inline">\(H_1\)</span>: La distribución no es normal,</p>
+<p>o más formalmente aún:</p>
+<p><span class="math inline">\(H_0: X \sim \mathcal{N}(\mu,\sigma^2)\)</span></p>
+<p><span class="math inline">\(H_1: X \nsim \mathcal{N}(\mu,\sigma^2)\)</span>.</p>
+<p>Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función <code>shapiro.test</code> en R:</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.2  \iffalse (Test de Shapiro Wilks en R) </strong></span>
+</div>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">Grupo.A</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  Grupo.A
+#&gt; W = 0.97032, p-value = 0.548</code></pre>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Grupo.B</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">18</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">14</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">10</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">12</span>, <span class="fl">8</span>, <span class="fl">7</span>, <span class="fl">15</span>, <span class="fl">5</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">7</span><span class="op">)</span>
+
+
+<span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">Grupo.B</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  Grupo.B
+#&gt; W = 0.97636, p-value = 0.7227</code></pre>
+<p>Vemos que en ambos casos el valor de probabilidad (<em>p</em>) es muy superios a nuestro nivel elegido (0,05), por lo que <em>no rechazamos la hipótesis nula</em>.</p>
+<p>En el caso de los ejemplos <a href="pruebas-param%C3%A9tricas.html#exm:manual-t-test">7.1</a> y <a href="pruebas-param%C3%A9tricas.html#exm:t-test-in-r">7.2</a> ya obramos bajo la premisa de que las variables tenían una distribución normal, pero generalmente conviene realizar el test Shapiro-Willks <em>antes</em> de decidir qué prueba estadística vamos a usar. Si rechazamos <span class="math inline">\(H_0\)</span>, es decir si no concluimos que la distribución sea normal, no deberíamos usar un test paramétrico.</p>
+</div>
+<div id="prueba-de-fisher" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Prueba de Fisher<a class="anchor" aria-label="anchor" href="#prueba-de-fisher"><i class="fas fa-link"></i></a>
+</h2>
+<p>Al inicio del capítulo también vimos que uno de los requisitos para que una prueba estadística paramétrica sea válida es que las varianzas sean de similar magnitud. Para ello también existe un test, el <em>test de Fisher</em><a href="referencias.html#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a> que plantea las hipótesis:</p>
+<p><span class="math inline">\(H_0: \sigma^2_1 = \sigma^2_2\)</span>,</p>
+<p><span class="math inline">\(H_1: \sigma^2_1 \neq \sigma^2_2\)</span></p>
+<p>Sin entrar en mucho detalle teórico, en R hay una función <code>var.test</code> para este propósito. La función toma dos argumentos: los dos conjuntos de datos que queremos comparar.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-7" class="example"><strong>Example 7.3  \iffalse (Realizar la prueba de Fisher en R) </strong></span>
+</div>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">Grupo.A</span>, <span class="va">Grupo.B</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  F test to compare two variances
+#&gt; 
+#&gt; data:  Grupo.A and Grupo.B
+#&gt; F = 0.56675, num df = 29, denom df = 29, p-value =
+#&gt; 0.1321
+#&gt; alternative hypothesis: true ratio of variances is not equal to 1
+#&gt; 95 percent confidence interval:
+#&gt;  0.2697517 1.1907335
+#&gt; sample estimates:
+#&gt; ratio of variances 
+#&gt;          0.5667472</code></pre>
+<p>Vemos que el valor de probabilidad <span class="math inline">\(p\)</span> es mayor a nuestro nivel de significanza (<span class="math inline">\(p\leqslant0,05\)</span>), con lo cual <em>no rechazamos</em> <span class="math inline">\(H_0\)</span> y concluimos que las varianzas son relativamente similares.</p>
+</div>
+<div id="prueba-t-para-muestras-pareadas" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Prueba t para muestras pareadas<a class="anchor" aria-label="anchor" href="#prueba-t-para-muestras-pareadas"><i class="fas fa-link"></i></a>
+</h2>
+<p>En los ejemplos <a href="pruebas-param%C3%A9tricas.html#exm:manual-t-test">7.1</a> y <a href="pruebas-param%C3%A9tricas.html#exm:t-test-in-r">7.2</a> teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones <em>pareadas</em> o datos <em>interdependientes</em>. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después<a href="referencias.html#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.</p>
+<p>En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la definición <a href="pruebas-param%C3%A9tricas.html#def:dependent-t-test">7.4</a>.</p>
+
+<div class="definition">
+<span id="def:dependent-t-test" class="definition"><strong>Definition 7.4  \iffalse (Prueba t para muestras dependientes) </strong></span>
+<span class="math display">\[
+t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
+\]</span>
+</div>
+<p>donde:</p>
+<ul>
+<li>
+<span class="math inline">\({\bar{X}_D}\)</span>: media de las diferencias</li>
+<li>
+<span class="math inline">\(s_D\)</span>: la desviación estándar de las diferencias</li>
+<li>n: número de pares de observaciones.</li>
+</ul>
+<p>Lo que nos va a decir la prueba t en este caso es si la diferencia es significativamente diferente a cero: Si la variable independiente no tiene efecto entonces debería dar lo mismo medir antes o después. Las hipótesis planteadas son, por tanto:</p>
+<p><span class="math inline">\(H_0: \bar{X}_D = 0\)</span>,</p>
+<p><span class="math inline">\(H_1: \bar{X}_D \neq 0\)</span>.</p>
+
+<div class="example">
+<span id="exm:dependent-t-test-example" class="example"><strong>Example 7.4  \iffalse (Prueba t dependiente) </strong></span>
+</div>
+<p>En este ejemplo<span class="citation"><a href="referencias.html#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></span> vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la tabla <a href="pruebas-param%C3%A9tricas.html#tab:diff-table">7.1</a>.</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:diff-table">Table 7.1: </span>Resultados de dos tests de matemáticas</caption>
+<thead><tr class="header">
+<th align="left">Nombre</th>
+<th align="right">Antes</th>
+<th align="right">Después</th>
+<th align="right">Diferencia</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Manuel</td>
+<td align="right">18</td>
+<td align="right">22</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">Miguel</td>
+<td align="right">21</td>
+<td align="right">25</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">José</td>
+<td align="right">16</td>
+<td align="right">17</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Antonio</td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Dolores</td>
+<td align="right">19</td>
+<td align="right">16</td>
+<td align="right">-3</td>
+</tr>
+<tr class="even">
+<td align="left">Manuela</td>
+<td align="right">24</td>
+<td align="right">29</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">Pedro</td>
+<td align="right">17</td>
+<td align="right">20</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">Lucía</td>
+<td align="right">21</td>
+<td align="right">23</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Cecilia</td>
+<td align="right">23</td>
+<td align="right">19</td>
+<td align="right">-4</td>
+</tr>
+<tr class="even">
+<td align="left">Juan</td>
+<td align="right">18</td>
+<td align="right">20</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Paula</td>
+<td align="right">14</td>
+<td align="right">15</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Francisco</td>
+<td align="right">16</td>
+<td align="right">15</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="left">Angel</td>
+<td align="right">16</td>
+<td align="right">18</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Soledad</td>
+<td align="right">19</td>
+<td align="right">26</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="left">Luis</td>
+<td align="right">18</td>
+<td align="right">18</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Cristina</td>
+<td align="right">20</td>
+<td align="right">24</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">Laura</td>
+<td align="right">12</td>
+<td align="right">18</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="left">Carlos</td>
+<td align="right">22</td>
+<td align="right">25</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">Carmen</td>
+<td align="right">15</td>
+<td align="right">19</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">Javier</td>
+<td align="right">17</td>
+<td align="right">16</td>
+<td align="right">-1</td>
+</tr>
+</tbody>
+</table></div>
+<p>La media de las diferencias es 2.05 con una desviación estándar de 2,837. Entonces tenemos:</p>
+<p><span class="math display">\[
+t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}}}=3,231.
+\]</span></p>
+<p>Buscando este valor en la tabla de valores críticos con 19 (N-1) grados de libertad vemos que sí podemos rechazar la hipótesis nula y concluir que hay una diferencia estadísticamente significativa entre los resultados de los dos tests.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.1  \iffalse (Ejemplo en R) </strong></span>
+</div>
+<p>Para reproducir en R lo que hicimos en el ejemplo <a href="pruebas-param%C3%A9tricas.html#exm:dependent-t-test-example">7.4</a> tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Ingresamos los datos</span>
+ <span class="va">datos.pre.post</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+   Nombre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Luis'</span>, <span class="st">'Javier'</span>, <span class="st">'Pedro'</span>, <span class="st">'Soledad'</span>, <span class="st">'Manuel'</span>, <span class="st">'Cecilia'</span>, <span class="st">'Cristina'</span>, <span class="st">'Angel'</span>, <span class="st">'Manuela'</span>, <span class="st">'José'</span>, <span class="st">'Juan'</span>, <span class="st">'Antonio'</span>, <span class="st">'Carmen'</span>, <span class="st">'Carlos '</span>, <span class="st">'Francisco'</span>, <span class="st">'Miguel'</span>, <span class="st">'Laura'</span>, <span class="st">'Lucía'</span>, <span class="st">'Paula'</span>, <span class="st">'Dolores'</span><span class="op">)</span>,
+   Pre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">16</span>, <span class="fl">22</span>, <span class="fl">19</span>, <span class="fl">24</span>, <span class="fl">17</span>, <span class="fl">21</span>, <span class="fl">23</span>, <span class="fl">18</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">16</span>, <span class="fl">19</span>, <span class="fl">18</span>, <span class="fl">20</span>, <span class="fl">12</span>, <span class="fl">22</span>, <span class="fl">15</span>, <span class="fl">17</span><span class="op">)</span>,
+   Post <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">22</span>, <span class="fl">25</span>, <span class="fl">17</span>, <span class="fl">24</span>, <span class="fl">16</span>, <span class="fl">29</span>, <span class="fl">20</span>, <span class="fl">23</span>, <span class="fl">19</span>, <span class="fl">20</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">18</span>, <span class="fl">26</span>, <span class="fl">18</span>, <span class="fl">24</span>, <span class="fl">18</span>, <span class="fl">25</span>, <span class="fl">19</span>, <span class="fl">16</span><span class="op">)</span>
+ <span class="op">)</span>
+
+<span class="co"># Verificamos la homogeneidad de varianzas</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span>,<span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  F test to compare two variances
+#&gt; 
+#&gt; data:  datos.pre.post$Pre and datos.pre.post$Post
+#&gt; F = 0.60329, num df = 19, denom df = 19, p-value =
+#&gt; 0.2795
+#&gt; alternative hypothesis: true ratio of variances is not equal to 1
+#&gt; 95 percent confidence interval:
+#&gt;  0.238790 1.524186
+#&gt; sample estimates:
+#&gt; ratio of variances 
+#&gt;          0.6032913</code></pre>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Verificamos que los datos tienen distribución normal</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  datos.pre.post$Pre
+#&gt; W = 0.98197, p-value = 0.9569</code></pre>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  datos.pre.post$Post
+#&gt; W = 0.94235, p-value = 0.2654</code></pre>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Realizamos prueba t</span>
+
+<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span>,<span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt;  Paired t-test
+#&gt; 
+#&gt; data:  datos.pre.post$Post and datos.pre.post$Pre
+#&gt; t = 3.2313, df = 19, p-value = 0.004395
+#&gt; alternative hypothesis: true difference in means is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  0.7221251 3.3778749
+#&gt; sample estimates:
+#&gt; mean of the differences 
+#&gt;                    2.05</code></pre>
+<p>Vemos que el resultado tiene significanza estadística alta (<span class="math inline">\(p\leqslant0,01\)</span>). El cálculo de R también nos da un intervalo de confianza al 95%.</p>
+</div>
+<div id="prueba-de-z" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Prueba de z<a class="anchor" aria-label="anchor" href="#prueba-de-z"><i class="fas fa-link"></i></a>
+</h2>
+<p>Existe también una prueba, llamada <em>de z</em>, que se puede usar para muestras más grandes. Se basa en el hecho de que cuando las muestras son más grandes tienden a una distribución normal y no una distribución t. Aparte de eso su concepto y mecánica es similar a la de la prueba t. Puede aplicarse cuando las muestras tienen más de 30 (N&gt;30) observaciones y la principal diferencia de que es capaz de detectar diferencias más pequeñas en los datos lo que reduce el riesgo de un error tipo II.</p>
+</div>
+<div id="resumen-de-procedimiento" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> Resumen de procedimiento<a class="anchor" aria-label="anchor" href="#resumen-de-procedimiento"><i class="fas fa-link"></i></a>
+</h2>
+<p>La figura <a href="pruebas-param%C3%A9tricas.html#fig:flow-chart-test-selection">7.1</a> despliega un diagrama de flujo para eligir un test estadístico inferencial.</p>
+<div class="figure">
+<span style="display:block;" id="fig:flow-chart-test-selection"></span>
+<img src="07-tests-parametricos_files/figure-html/flow-chart-test-selection-1.png" alt="Diagrama de flujo para selección de estadística inferencial" width="672"><p class="caption">
+Figure 7.1: Diagrama de flujo para selección de estadística inferencial
+</p>
+</div>
+</div>
+<div id="glosario-7" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> Glosario<a class="anchor" aria-label="anchor" href="#glosario-7"><i class="fas fa-link"></i></a>
+</h2>
+<dl>
+<dt>Error estándar de diferencias entre medias</dt>
+<dd>
+El error estándar calculado sobre la distribución de diferencias entre dos muestras.
+Fórmula: <span class="math inline">\(SED = \sqrt{\sigma^2_1/N_1 + \sigma^2_1/N_2}\)</span>
+Equivalente en inglés: «Standar error of differences (SED)».
+</dd>
+<dt>Prueba de Fisher</dt>
+<dd>
+Prueba estadística que nos permite estimar si la varianza de dos muestras en similar.
+Equivalente en inglés: «Fisher test».
+</dd>
+<dt>Prueba de Shapiro-Wilks</dt>
+<dd>
+Prueba estadística que nos permite estimar en qué medida una muestra proviene de una distribución normal.
+Equivalente en inglés: «Shapiro-Wilks Test».
+</dd>
+<dt>Prueba de z</dt>
+<dd>
+Prueba estadística que nos permite estimar si dos muestras grandes (N&gt;30 para ambas) provienen de poblaciones diferentes.
+Equivalente en inglés: «z-test».
+</dd>
+<dt>Prueba t para muestras independientes</dt>
+<dd>
+Test estadístico que nos indica si la media de dos muestras tienen más diferencias de lo que se esperaría si son aleatorias.
+Fórmula: <span class="math inline">\(t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}\)</span>
+Función relevante en R: <code>t.test</code>.
+Equivalente en inglés: «T-test for independent samples».
+</dd>
+<dt>Prueba t para muestras pareadas</dt>
+<dd>
+Test estadístico que nos indica si la media de dos muestras correlacionadas tienen más diferencias de lo que se esperaría por razones aleatorias.
+Fórmula: <span class="math inline">\(t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}\)</span>
+Función relevante en R: <code>t.test</code>.
+Equivalente en inglés: «T-test for dependent samples».
+</dd>
+</dl>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="dise%C3%B1o-de-proyectos-y-test-de-hipotesis.html"><span class="header-section-number">6</span> Diseño de proyectos y test de hipotesis</a></div>
+<div class="next"><a href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">8</span> Pruebas no paramétricas</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="En esta página"><h2>En esta página</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pruebas-param%C3%A9tricas"><span class="header-section-number">7</span> Pruebas paramétricas</a></li>
+<li><a class="nav-link" href="#prueba-t-de-student-para-muestras-independientes"><span class="header-section-number">7.1</span> Prueba t de Student para muestras independientes</a></li>
+<li><a class="nav-link" href="#test-de-normalidad"><span class="header-section-number">7.2</span> Prueba de Shapiro-Wilks</a></li>
+<li><a class="nav-link" href="#prueba-de-fisher"><span class="header-section-number">7.3</span> Prueba de Fisher</a></li>
+<li><a class="nav-link" href="#prueba-t-para-muestras-pareadas"><span class="header-section-number">7.4</span> Prueba t para muestras pareadas</a></li>
+<li><a class="nav-link" href="#prueba-de-z"><span class="header-section-number">7.5</span> Prueba de z</a></li>
+<li><a class="nav-link" href="#resumen-de-procedimiento"><span class="header-section-number">7.6</span> Resumen de procedimiento</a></li>
+<li><a class="nav-link" href="#glosario-7"><span class="header-section-number">7.7</span> Glosario</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 22 de junio del 2019.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>Este libro fue creado con el paquete <a class="text-light" href="https://bookdown.org">bookdown</a></p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

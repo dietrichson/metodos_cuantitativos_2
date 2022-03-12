@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 Conceptos fundamentales | Métodos Cuantitativos</title>
+<meta name="author" content="Aleksander Dietrichson, PhD">
+<meta name="description" content="En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 1 Conceptos fundamentales | Métodos Cuantitativos">
+<meta property="og:type" content="book">
+<meta property="og:description" content="En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 1 Conceptos fundamentales | Métodos Cuantitativos">
+<meta name="twitter:description" content="En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Métodos Cuantitativos</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Mostrar tabla de contenido</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+</form>
+
+      <nav aria-label="Tabla de contenidos"><h2>Tabla de contenidos</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Prefacio</a></li>
+<li><a class="active" href="conceptos-fundamentales.html"><span class="header-section-number">1</span> Conceptos fundamentales</a></li>
+<li><a class="" href="distribuciones-de-frecuencias.html"><span class="header-section-number">2</span> Distribuciones de frecuencias</a></li>
+<li><a class="" href="centralizaci%C3%B3n-y-dispersi%C3%B3n.html"><span class="header-section-number">3</span> Centralización y dispersión</a></li>
+<li><a class="" href="la-distribuci%C3%B3n-normal.html"><span class="header-section-number">4</span> La distribución normal</a></li>
+<li><a class="" href="estimaci%C3%B3n-de-par%C3%A1metros.html"><span class="header-section-number">5</span> Estimación de parámetros</a></li>
+<li><a class="" href="dise%C3%B1o-de-proyectos-y-test-de-hipotesis.html"><span class="header-section-number">6</span> Diseño de proyectos y test de hipotesis</a></li>
+<li><a class="" href="pruebas-param%C3%A9tricas.html"><span class="header-section-number">7</span> Pruebas paramétricas</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">8</span> Pruebas no paramétricas</a></li>
+<li><a class="" href="chi-square-test.html"><span class="header-section-number">9</span> Prueba de \(\chi^2\)</a></li>
+<li><a class="" href="correlaci%C3%B3n.html"><span class="header-section-number">10</span> Correlación</a></li>
+<li class="book-part">Apendices</li>
+<li><a class="" href="distribuci%C3%B3n-t.html"><span class="header-section-number">A</span> Distribución t</a></li>
+<li><a class="" href="valores-cr%C3%ADticos-del-test-de-signo.html"><span class="header-section-number">B</span> Valores críticos del test de signo</a></li>
+<li><a class="" href="chi-square-disrtibution.html"><span class="header-section-number">C</span> Distribución \(\chi^2\)</a></li>
+<li><a class="" href="referencias.html">Referencias</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="conceptos-fundamentales" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> Conceptos fundamentales<a class="anchor" aria-label="anchor" href="#conceptos-fundamentales"><i class="fas fa-link"></i></a>
+</h1>
+<p>En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción a la teoría de la probabilidad. Diferenciamos entre los algunos usos importantes de la estadística: descriptiva e inferencial. Finalmente consideramos algunas maneras de clasificar variables.</p>
+<div id="poblaciones-y-muestras" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> Poblaciones y muestras<a class="anchor" aria-label="anchor" href="#poblaciones-y-muestras"><i class="fas fa-link"></i></a>
+</h2>
+<p>En su uso diaro usamos <em>población</em> para designar un grupo de personas, por ejemplo la población del Gran Buenos Aires; o por lo menos de seres vivos como por ejemplo <em>la población de ratas</em> de la CABA. En estadísticas, en cambio, se usa el término de manera más general para significar cualquier recolección de un conjunto, elementos, artículos o sujetos que gozan de características comunes con el fin de estudiarlos y de esta forma se sacar conclusiones específicas para determinar sus resultados. Así podemos hablar de la población de sustantivos en las obras de Jorge Luis Borges o de la población de notas asignadas en los cursos a nivel universitario.</p>
+<p>Podemos distinguir entre poblaciones <em>finintas</em> e <em>infinitas</em>. La población de motocicletas vendidas en Buenos Aires en septiembre es finita. En cambio la población de temperaturas medidas en el Campus de San Martín es <em>infinita</em>, ya que, por lo menos teóricamente, podemos seguir midiendo para siempre.</p>
+<p>Cuando una población fininta no es demasiado grande podemos investigar la totalidad de la población. Pero, si la población es muy grande o potencialmente infinita tenemos que estar contentos con <em>muestras</em> extraídas de esta población. Por ejemplo: si queremos saber quién va a ganar las próximas elecciones podríamos preguntar a todo aquel que tiene derecho a votar cómo piensa votar para sacar el resultado. En la práctica esta metodología resultaría demasiado costosa, por lo que hacemos una muestra representativa de votantes, les preguntamos y generalizamos.</p>
+<p>Resulta evidente que hay que tener cuidado al selecionar una muestra para análisis. Los métodos estadísticos, los que nos permiten generalizar e inferir, suponen que las muestras están tomadas de manera <em>aleatoria</em> o al azar. Esto no significa que la muestra sea arbitraria, sino que cualquier unidad de la población que estamos estudiando tiene la misma probabilidad de ser selecionada para hacer parte de la muestra.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="01-conceptos_fundamentales_files/figure-html/unnamed-chunk-2-1.png" alt="Población y muestra." width="672"><p class="caption">
+Figure 1.1: Población y muestra.
+</p>
+</div>
+<div id="muestra-aleatoria" class="section level3" number="1.1.1">
+<h3>
+<span class="header-section-number">1.1.1</span> Muestra aleatoria<a class="anchor" aria-label="anchor" href="#muestra-aleatoria"><i class="fas fa-link"></i></a>
+</h3>
+<p>Para tener una muestra verdaderamente aleatoria de una población deberíamos asignar un número u otro identificador único a cada una de las unidaded de la población –a cada persona si se trata de una población humana– escribir cada número en un papel y echarlos en una tómbola. Luego de virarla por algún tiempo y mesclar bien los papeles, podríamos de allí sacar la cantidad de papeles que corresponda al tamaño de nuestra muestra. Obviamente esto no resulta muy práctico por lo que se suele empezar con una secuencia de números aleatorios del tamaño de la muestra y extraer unidades de la población basado en ello. Por ejemplo, si quisieramos sacar veinte libros al hazar de un estante de la biblioteca que contiene doscientos libros, necesitamos veinte números aleatorios entre uno y doscientos, y sacamos los libros que desde algún punto de referencia (primer libro del primer nivel) está a esa distancia.</p>
+<p>Ahora, ¿dónde encontramos números aleatorios? Hay secuencias en libros de estadísticas, usados principalmente antes de la existencia de computadoras. También se pueden generar esas secuencias en linea. Finalmente, R tienen un generador de números aleatorios que nos permite generar los de números de nuestra muestra con un solo comando usando la función de R <em>sample</em>.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-3" class="example"><strong>Example 1.1  \iffalse (Generar muestra en R) </strong></span>
+</div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">200</span>, size <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>
+
+<span class="co">## [1] 166  46  42 179 188 143 126 135 102  93  72 193  13 107 198 100  88  67  33  99</span></code></pre></div>
+<p>Acá le estamos pidiendo a R que nos de una muestra aleatoria (<code>sample</code> ) de números entre uno y doscientos (<code>x = 1:200</code>), y que la muestra sea de veinte <code>size = 20</code> ). Con estos números podemos ir al estante y sacar los libros que queremos estudiar.</p>
+<p>Si corren este comando desde su consola de R los números deben salir diferentes, se hace una muestra aleatoria cada vez.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.2  \iffalse (Ordenar los datos en R) </strong></span><br>
+También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función <em>sort</em>.
+</div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">200</span>, size <span class="op">=</span> <span class="fl">20</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="op">)</span>
+<span class="co">## [1]  29  35  38  41  54  74  75  79  85  92 103 112 114 120 127 153 173 185 187 188</span></code></pre></div>
+</div>
+<div id="muestra-cuasialeatoria" class="section level3" number="1.1.2">
+<h3>
+<span class="header-section-number">1.1.2</span> Muestra cuasialeatoria<a class="anchor" aria-label="anchor" href="#muestra-cuasialeatoria"><i class="fas fa-link"></i></a>
+</h3>
+<p>Otra estrategia que podría emplearse para sacar veinte libros al azar del estante que describimos en la sección anterior sería decidir que vamos a sacar cada diez libros ya que <span class="math inline">\({200\over20} = 10\)</span>. Este tipo de muestra lleva el epíteto <em>cuasialeatoria</em>, y funciona bien si el orden original de la población es aleatorio. Sin embargo, hay que tener en cuenta que esta estrategia puede generar una muestra no representativa si existe una estructura en ese orden. Típicamente puede resultar problemática si existe <em>periodicidad</em> en la población que estamos analizando. Si, por ejemplo, queremos tener una muestra de cuantos ómnibus pasan delante de mi casa por día sería mala idea decir que vamos a contarlos cada siete días. Si el día que empezamos es un domingo obtendremos seguramente una muestra con cantidades inferiores a la población real (en este caso definida como todos los ómnibus que pasan por mi casa en un día); y si empezamos a contar un lunes las cantidades serían superiores.</p>
+<div id="ejemplo-en-r-generar-una-sequencia" class="section level4 unnumbered">
+<h4>Ejemplo en R: Generar una sequencia<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-generar-una-sequencia"><i class="fas fa-link"></i></a>
+</h4>
+<p>Si bien sacar la secuencia para sacar cada diez libros resulta trivial, existe la manera que hacerlo también con una función de R.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span> from <span class="op">=</span> <span class="fl">10</span>, to <span class="op">=</span> <span class="fl">200</span> , by<span class="op">=</span><span class="fl">10</span> <span class="op">)</span>
+<span class="co">## [1]  10  20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 200</span></code></pre></div>
+<p>La función <code>seq</code> (de secuencia), toma tres parámetros, desde dónde empezamos (<code>from=10</code>), hasta dónde queremos llegar (<code>to=200</code>), y con qué distancia (<code>by=10</code>).</p>
+<p>Por lo pronto se vuelve más útil si estamos trabajando con números menos redondos. Digamos que queremos sacar cada siete libros de un estante que contiene cien empezando por el número seis.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span> from <span class="op">=</span> <span class="fl">6</span>, to <span class="op">=</span> <span class="fl">100</span> , by <span class="op">=</span> <span class="fl">7</span> <span class="op">)</span>
+<span class="co">## [1]  6 13 20 27 34 41 48 55 62 69 76 83 90 97</span></code></pre></div>
+</div>
+</div>
+<div id="muestra-estratificada" class="section level3" number="1.1.3">
+<h3>
+<span class="header-section-number">1.1.3</span> Muestra estratificada<a class="anchor" aria-label="anchor" href="#muestra-estratificada"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cuando conocemos algunos parámetros de la población que queremos estudiar también nos podemos asegurar que nuestra muestra tenga parámetros similares. Esta estrategia puede resultar particularmente útil si suponemos que este parámetro puede tener alguna influencia en otra variable cuya distribución queremos conocer. Si por ejemplo suponemos que el <em>sexo</em> puede influir en la opinión de una persona sobre la ley del aborto podemos asegurarnos de que nuestra muestra tiene una distribución similar a la de la población en general. Se sabe que hay más o menos mitad y mitad<a href="referencias.html#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> en la población general por lo que convendría que nuestra muestra tenga la misma distribución. Así podemos sacar, para una muestra de veinte, diez hombres y diez mujeres al azar<a href="referencias.html#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>. Lo mismo se puede aplicar a otras variables, por ejemplo, clase social, país de origen etcétera.</p>
+</div>
+</div>
+<div id="representatividad" class="section level2" number="1.2">
+<h2>
+<span class="header-section-number">1.2</span> Representatividad<a class="anchor" aria-label="anchor" href="#representatividad"><i class="fas fa-link"></i></a>
+</h2>
+<p>Es importante entender que ninguna de las estrategias descritas en la sección anterior nos garantiza que la muestra que sacamos sea representativa de la población, con lo cual no está garantizado que una generalización basada en esa muestra sea válida. Lo que sí se puede calcular es la <em>probabilidad</em> de que la muestra sea representativa. Es decir, podemos tener una estimación de <em>en qué medida</em> la muestra representa la población.</p>
+<p>Para profundizar un poco este concepto vamos a hacer un breve desvío y desarrollar un poco de teoría de la probabilidad por medio de un ejemplo sumamente sencillo. Digamos que queremos hacer una muestra aleatoria de la población en Argentina. Vamos a seleccionar al azar a tan solo tres personas para nuestra muestra. Ya que sabemos que hay la misma cantidad de hombres y mujeres la probabilidad de que el/la primero/a que elijamos sea hombre es 0,5<a href="referencias.html#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>, lo cual también es la probabilidad de que sea mujer. Ahora, cuando seleccionamos el/la segundo/a y tercero/a las probabilidad son las mismas en todos los casos. Las leyes de probabilidad indican que la probabilidad de que dos o más eventos independientes sucedan es el producto de sus probabilidades individuales. Entonces, cuál es la probabilidad de que los tres miembros de la muestra sean mujeres?</p>
+<p><span class="math display">\[0,5\times0,5\times0,5=0,125\]</span>
+Resulta evidente que lo mismo sucede si queremos calcular la probabilidad de que todos sean hombres.</p>
+<p>Ahora, bien ¿cuál sería la probabilidad de que sean dos mujeres y un hombre?</p>
+<p>Hay tres maneras que esto pueda suceder:</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:compinaciones-posibles">Table 1.1: </span> Combinaciones posibles.</caption>
+<thead><tr class="header">
+<th align="center">Primero/a</th>
+<th align="center">Segundo/a</th>
+<th align="center">Tercero/a</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center">Masculino</td>
+<td align="center">Femenino</td>
+<td align="center">Femenino</td>
+</tr>
+<tr class="even">
+<td align="center">Femenino</td>
+<td align="center">Masculino</td>
+<td align="center">Femenino</td>
+</tr>
+<tr class="odd">
+<td align="center">Femenino</td>
+<td align="center">Femenino</td>
+<td align="center">Masculino</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cada una de estas posibilidades tienen la misma probabilidad y como el orden en el que fueron elegidos no es relevante para la muestra, podemos sumar las probabilidades para obtener la probabilidad total:
+<span class="math display">\[(0,5\times0,5\times0,5)+(0,5\times0,5\times0,5)+(0,5\times0,5\times0,5) = 0,375 \]</span></p>
+<p>Lógicamente lo mismo ocurre con el caso de dos hombres y una mujer. Entonces tenemos cuatro posibilidades con distintas probabilidades:</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:probabilidades-combinaciones-posibles">Table 1.2: </span> Probabilidades de las combinaciones.</caption>
+<thead><tr class="header">
+<th align="left">Muestra</th>
+<th align="center">Probabilidad</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Tres mujeres</td>
+<td align="center">0,125</td>
+</tr>
+<tr class="even">
+<td align="left">Dos mujeres + un hombre</td>
+<td align="center">0,375</td>
+</tr>
+<tr class="odd">
+<td align="left">Dos hombres + una mujer</td>
+<td align="center">0,375</td>
+</tr>
+<tr class="even">
+<td align="left">Tres hombres</td>
+<td align="center">0,125</td>
+</tr>
+</tbody>
+</table></div>
+<p>Observamos que las probabilidades suman 1, lo cual es matemáticamente inevitable.</p>
+<p>Está claro que una muestra de tan solo tres personas nunca puede ser representativa de la población, sin embargo vemos que la medida en que son poco representativas varía. Cualquiera de las muestras de 2+1 sería <em>más representativa</em> que las de un solo sexo, y vemos que también son probables.</p>
+<p>Este ejemplo es extensible a muestras más grandes con cálculos similares. Se desarrollará en más detalle en capítulos posteriores, pero para tener un ejemplo un tanto más real imaginemos que hemos decidido realizar una muestra de diez personas de la misma población (que tiene un 50 y 50 de hombres y mujeres).</p>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:probabilidades-combinaciones-posibles-diez">Table 1.3: </span> Probabilidades de las combinaciones de una muestra de diez.</caption>
+<thead><tr class="header">
+<th align="center">Hombres</th>
+<th align="center">Mujeres</th>
+<th align="right">Probabilidad</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">10</td>
+<td align="right">0,001</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">9</td>
+<td align="right">0,010</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center">8</td>
+<td align="right">0,044</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td align="center">7</td>
+<td align="right">0,117</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td align="center">6</td>
+<td align="right">0,205</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="right">0,246</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="right">0,205</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td align="center">3</td>
+<td align="right">0,117</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td align="center">2</td>
+<td align="right">0,044</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td align="center">1</td>
+<td align="right">0,010</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td align="center">0</td>
+<td align="right">0,001</td>
+</tr>
+</tbody>
+</table></div>
+<p>Obtendríamos los resultados de la tabla <a href="conceptos-fundamentales.html#tab:probabilidades-combinaciones-posibles-diez">1.3</a> y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa<a href="referencias.html#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.</p>
+</div>
+<div id="estadísticas-descriptivas-e-inferenciales" class="section level2" number="1.3">
+<h2>
+<span class="header-section-number">1.3</span> Estadísticas descriptivas e inferenciales<a class="anchor" aria-label="anchor" href="#estad%C3%ADsticas-descriptivas-e-inferenciales"><i class="fas fa-link"></i></a>
+</h2>
+<p>Entre los varios usos de las estadísticas este texto tratará de dos de los más importantes. Uno es el descriptivo que consiste en describir cuantitativamente un conjunto de datos y eventualmente generalizar este análisis a una población. Otro es el de inferir propiedades y diferencias entre variables.</p>
+<p>Vamos a desarrollar estas distinciones por medio de un ejemplo<a href="referencias.html#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>. Supongamos que hemos hecho dos muestras aleatorias de las notas del examen final de dos cursos de la materia <em>Métodos cuantitativos</em>, uno dictado exclusivamente como curso teórico y el otro como curso teórico-práctico.</p>
+<p>Las notas son: Curso A (teórico-práctico):</p>
+<blockquote>
+<p>15, 12, 11, 18, 15, 15,9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16,17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16 y 14.</p>
+</blockquote>
+<p>Y para el Curso B (teórico):</p>
+<blockquote>
+<p>11, 16, 14, 18,6,8,9, 14, 12, 12, 10, 15, 12,9, 13, 16, 17, 12,8,7, 15,5, 14, 13, 13, 12, 11, 13, 11 y 7</p>
+</blockquote>
+<p>El examen fue identico para ambos grupos y se podía obtener un máximo de veinte.</p>
+<p>Antes de sacar conclusiones sobre estos datos deberíamos resumirlos. Podemos construir, por ejemplo, una tabla que muestra la frecuencia de cada nota en cada curso. Esto se llama tabla de frecuencias. También nos gustaría saber cuál es la nota más típica, la nota <em>promedio</em> y cuánto varían las notas respecto a éste. Estas son estadísticas descriptivas, y los desarrollaremos en los capítulos dos y tres de este texto.</p>
+<p>Pero seguramente también quisiéramos saber con qué nivel de confianza podemos generalizar estos datos a similares grupos de datos usando métodos similares a los mencionados. Nos gustaría saber en qué medida las dos muestras que tenemos son representativas de sus respectivas poblaciones de estudiantes tomando cursos similares. Este tipo de estimaciones se verá en detalle en el capítulo cinco.</p>
+<p>Además quisiéramos saber si podemos afirmar que alguno de los dos grupos estuvo mejor que el otro en el examen final. Podríamos postular, por ejemplo, que el grupo que recibió el curso teórico-práctico debería sacar mejores notas en promedio que el otro. Para ello hay que construir un test de la hipótesis y someter nuestros datos a este test.</p>
+<p>Tanto la tarea de estimación como el test de hipótesis comprenden la inferencia de relaciones a partir de medidas descriptivas y juntos constituyen el área de <em>estadísticas inferenciales</em>.</p>
+<p>Finalmente, podríamos juntar más datos para determinar si existe en cualquiera de los dos cursos algún sub-grupo cuyas características se relacionan con un resultado específico. Con esta información estaríamos en condiciones de predecir las notas de los estudiantes en futuras cursadas de los cursos en cuestión.</p>
+</div>
+<div id="variables-y-su-clasificación" class="section level2" number="1.4">
+<h2>
+<span class="header-section-number">1.4</span> Variables y su clasificación<a class="anchor" aria-label="anchor" href="#variables-y-su-clasificaci%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<p>En estadísticas trabajamos esencialmente con cantidades <em>variables</em>. En estadística definimos <em>variable</em> como: Una característica medida u observada al hacer un experimento u observación. Si, por ejemplo, estamos investigando el clima en Buenos Aires, podemos hacer medidas de temperatura, humedad, dirección e intensidad del viento etcétera.</p>
+<p>Las variables pueden ser clasificadas de diferentes maneras:</p>
+<div id="por-su-relación-con-otras-variables" class="section level3 unnumbered">
+<h3>Por su relación con otras variables<a class="anchor" aria-label="anchor" href="#por-su-relaci%C3%B3n-con-otras-variables"><i class="fas fa-link"></i></a>
+</h3>
+<p>En la mayoría de investigaciones cuantitativas <em>variamos</em> una o más conjuntos de condiciones y medimos los efectos sobre una o más propiedades que son de nuestro interés. Las condiciones que cambiamos nosotros se denominan <em>variables independientes</em><a href="referencias.html#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> y los cuya respuesta a las condiciones cambiantes medimos se llaman <em>variables dependientes</em>.</p>
+</div>
+<div id="por-su-nivel-de-medición" class="section level3 unnumbered">
+<h3>Por su nivel de medición<a class="anchor" aria-label="anchor" href="#por-su-nivel-de-medici%C3%B3n"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cuando hacemos una medición o observación o «recogemos un dato» debemos fijarnos en su <em>nivel de medición</em>, también llamado <em>escala</em> de medición. Distinguimos cuatro niveles o escalas:</p>
+<div id="nivel-nominal" class="section level4 unnumbered">
+<h4>Nivel nominal<a class="anchor" aria-label="anchor" href="#nivel-nominal"><i class="fas fa-link"></i></a>
+</h4>
+<p>Cuando un dato identifica una etiqueta (o el nombre de un atributo) de un elemento, se considera que la escala de medición es una escala nominal. En esta carecen de sentido el orden de las etiquetas, así como la comparación y las operaciones aritméticas. La única finalidad de este tipo de datos es clasificar a las observaciones. Ejemplo:</p>
+<blockquote>
+<p>Una variable que indica si el visitante de este post es «hombre» o «mujer».</p>
+</blockquote>
+<p>En esta variable se tienen dos etiquetas para clasificar a los visitantes. El orden carece de sentido, así como la comparación u operaciones aritméticas.</p>
+</div>
+<div id="nivel-ordinal" class="section level4 unnumbered">
+<h4>Nivel ordinal<a class="anchor" aria-label="anchor" href="#nivel-ordinal"><i class="fas fa-link"></i></a>
+</h4>
+<p>Cuando los datos muestran las propiedades de los datos nominales, pero además tiene sentido el orden (o jerarquía) de estos, se dice que se mide en escala ordinal. Ejemplo:</p>
+<blockquote>
+<p>Una variable que mide la calidad del café en la cafetería de la universidad. Le podemos asignar de uno a cinco estrellas.</p>
+</blockquote>
+<p>En esta variable sigue sin tener sentido las operaciones aritméticas, pero ahora sí tiene sentido el orden. Cuatro estrellas es mejor que dos.</p>
+</div>
+<div id="nivel-de-intervalo" class="section level4 unnumbered">
+<h4>Nivel de intervalo<a class="anchor" aria-label="anchor" href="#nivel-de-intervalo"><i class="fas fa-link"></i></a>
+</h4>
+<p>En una escala de intervalo, los datos tienen las propiedades de los datos ordinales, pero a su vez la separación entre las variables tiene sentido. Este tipo de datos siempre es numérico, y el valor cero no indica la ausencia de la propiedad. Por ejemplo: La temperatura (en grados centígrados) medida de una ciudad, puede ser cero sin que tenga sentido decir que «no hay temperatura».</p>
+<p>En este nivel de medición, los número mayores corresponden a temperaturas mayores. Es decir, el orden importa, pero a la vez la diferencias entre las temperaturas importa. La diferencia entre 10 grados y veinte grados es igual que la diferencia entre 20 y 30. El nivel de medida de intervalo también se conoce como el nivel <em>intervalar</em>.</p>
+</div>
+<div id="nivel-de-razón" class="section level4 unnumbered">
+<h4>Nivel de razón<a class="anchor" aria-label="anchor" href="#nivel-de-raz%C3%B3n"><i class="fas fa-link"></i></a>
+</h4>
+<p>En una escala de razón –también llamado <em>de ratio</em> o <em>racional</em>, los datos tienen todas las propiedades de los datos de intervalo, y la proporción entre ellos tiene sentido. Para esto se requiere que el valor cero de la escala indique la ausencia de la propiedad a medir. Ejemplos de este tipo de variables son el peso de una persona a el tiempo utilizado para una tarea y el salario de una persona. Si una persona gana 100, y otra 10, la primera gana más que la segunda (comparación). También tiene sentido decir que la primera gana 90 más que la segunda (diferencia), o que gana 10 veces más (proporción).</p>
+</div>
+</div>
+<div id="por-su-precisión" class="section level3 unnumbered">
+<h3>Por su precisión<a class="anchor" aria-label="anchor" href="#por-su-precisi%C3%B3n"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cuando hablamos de <em>precisión</em> en matemáticas y estadísticas nos referimos al <em>numero de decimales</em> que tiene una variable. Esto es distinto de <em>exactitud</em> que significaría la medida en que la medición, o predicción corresponde a la realidad. 1,000 (uno coma cero cero cero), tiene más precisión que 1 (uno) si bien miden la misma cantidad. Esto lleva a la distinción que hacemos entre variables <em>discretas</em> y <em>continuas</em>. Las discretas por su naturaleza tienen precisión cero (no lleva decimales) y las continuas pueden tener la cantidad de decimales que queramos. Para ilustrar la diferencia consideramos dos variables: <em>edad</em> y <em>numero de hijos</em>. En cuanto a la edad se puede tener diez años, diez años y medio o si queremos agregar más precisión: 20,45 años. En cambio <em>numero de hijos</em> es una variable discreta. Se puede tener cero, uno o más, pero no se puede tener 1,45 hijo.</p>
+<p>Por su naturaleza vemos que las variables de escala nominal y ordinal son siempre discretas. Las de escala de intervalo y de escala de razón, en cambio pueden ser tanto discretas como continuas.</p>
+<p>La mayoría de variables de interés en las ciencias duras se miden por escala de razón o de intervalo, mientras las escalas ordinal y nominal son más importantes en ciencias humanas. El nivel de medición de una variable es de suma importancia cuando decidimos qué medidas de tendencia central, variabilidad y dispersión elegimos para nuestro análisis, y qué test de hipótesis son adecuados. Es un error muy común entre investigadores, particularmente en las ciencias sociales, asumir una escala superior a lo teóricamente sostenible.</p>
+</div>
+</div>
+<div id="glosario-1" class="section level2" number="1.5">
+<h2>
+<span class="header-section-number">1.5</span> Glosario<a class="anchor" aria-label="anchor" href="#glosario-1"><i class="fas fa-link"></i></a>
+</h2>
+<dl>
+<dt>Aleatorio/a</dt>
+<dd>
+Al azar. También son de uso frecuente los anglicismos «random» y «randómica».
+Función relevante en R: <code>rdunif</code>.
+Equivalente en inglés: «Random».
+</dd>
+<dt>Histograma</dt>
+<dd>
+Visualización de frecuencia de observaciones de una variable.
+Función relevante en R: <code>hist</code>.
+Equivalente en inglés: «Histogram».
+</dd>
+<dt>Muestra aleatoria</dt>
+<dd>
+Muestra en la que todos los elementos de la población tienen igual probabilidad de ser eligidos.
+Función relevante en R: <code>sample</code>.
+Equivalente en inglés: « Random sampling».
+</dd>
+<dt>Muestra cuasialeatoria</dt>
+<dd>
+Muestra en la que cada <em>n</em> número de los los elementos de la población van a ser eligidos.
+Equivalente en inglés: «Cuasi-Random sampling».
+</dd>
+<dt>Muestra estadística</dt>
+<dd>
+Subconjunto de una población estadística
+Función relevante en R: <code>sample</code>.
+Equivalente en inglés: «Sample».
+</dd>
+<dt>Muestra estratificada</dt>
+<dd>
+Muestra que conserva las proporciones conocidas de la población estadística
+Equivalente en inglés: «Stratified sample».
+</dd>
+<dt>Muestreo estadístíco</dt>
+<dd>
+El hecho de generar una muestra.
+Función relevante en R: <code>sample</code>.
+Equivalente en inglés: «Sampling».
+</dd>
+<dt>Nivel de Medida</dt>
+<dd>
+Uno de los cuatro niveles jerárquicamente definidos: Nominal, ordinal, intervalar y racional
+Equivalente en inglés: «Level of measurement».
+</dd>
+<dt>Parámetro estadístico</dt>
+<dd>
+Numero que resume una characteristica de la población estadística.
+Equivalente en inglés: «Parameter».
+</dd>
+<dt>Población estadística</dt>
+<dd>
+El conjunto de individuos, objetos o fenómenos de los cuales se desea estudiar una o varias características.
+Equivalente en inglés: «Population».
+</dd>
+<dt>Variable</dt>
+<dd>
+Characteristica que puede tener diferentes valores.
+Equivalente en inglés: «Variable».
+</dd>
+</dl>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html">Prefacio</a></div>
+<div class="next"><a href="distribuciones-de-frecuencias.html"><span class="header-section-number">2</span> Distribuciones de frecuencias</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="En esta página"><h2>En esta página</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#conceptos-fundamentales"><span class="header-section-number">1</span> Conceptos fundamentales</a></li>
+<li>
+<a class="nav-link" href="#poblaciones-y-muestras"><span class="header-section-number">1.1</span> Poblaciones y muestras</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#muestra-aleatoria"><span class="header-section-number">1.1.1</span> Muestra aleatoria</a></li>
+<li><a class="nav-link" href="#muestra-cuasialeatoria"><span class="header-section-number">1.1.2</span> Muestra cuasialeatoria</a></li>
+<li><a class="nav-link" href="#muestra-estratificada"><span class="header-section-number">1.1.3</span> Muestra estratificada</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#representatividad"><span class="header-section-number">1.2</span> Representatividad</a></li>
+<li><a class="nav-link" href="#estad%C3%ADsticas-descriptivas-e-inferenciales"><span class="header-section-number">1.3</span> Estadísticas descriptivas e inferenciales</a></li>
+<li>
+<a class="nav-link" href="#variables-y-su-clasificaci%C3%B3n"><span class="header-section-number">1.4</span> Variables y su clasificación</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#por-su-relaci%C3%B3n-con-otras-variables">Por su relación con otras variables</a></li>
+<li><a class="nav-link" href="#por-su-nivel-de-medici%C3%B3n">Por su nivel de medición</a></li>
+<li><a class="nav-link" href="#por-su-precisi%C3%B3n">Por su precisión</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#glosario-1"><span class="header-section-number">1.5</span> Glosario</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 22 de junio del 2019.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>Este libro fue creado con el paquete <a class="text-light" href="https://bookdown.org">bookdown</a></p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
