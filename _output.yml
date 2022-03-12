@@ -1,7 +1,7 @@
 bookdown::bs4_book:
   css: style.css
   split_bib: true
-  footnotes_inline: TRUE
+  footnotes_inline: true
   theme:
     primary: "#982a31"
     fg: "#2b2121"
@@ -16,9 +16,3 @@ bookdown::bs4_book:
 
     
     
-# bookdown::pdf_book:
-#   includes:
-#     in_header: preamble.tex
-#   latex_engine: xelatex
-#   citation_package: natbib
-# bookdown::epub_book: default
