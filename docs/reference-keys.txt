@@ -1,6 +1,4 @@
 fig:unnamed-chunk-2
-exm:unnamed-chunk-3
-exm:unnamed-chunk-5
 tab:compinaciones-posibles
 tab:probabilidades-combinaciones-posibles
 tab:probabilidades-combinaciones-posibles-diez
@@ -36,6 +34,7 @@ def:definition-z-score
 exm:estatura-mujeres-argentinas
 fig:curva-estatura-argentinas
 fig:curva-con-segmento
+exm:unnamed-chunk-3
 exm:unnamed-chunk-4
 exm:unnamed-chunk-1
 fig:muestras-de-estaturas
@@ -50,6 +49,7 @@ def:SED-samples
 def:test-t
 exm:manual-t-test
 exm:t-test-in-r
+exm:unnamed-chunk-5
 exm:unnamed-chunk-7
 def:dependent-t-test
 exm:dependent-t-test-example
@@ -83,10 +83,14 @@ def:phi-correlation
 tab:significance-table-t-distribution
 tab:significance-table-sign-test
 tab:significance-table-chi-squared-distribution
+segunda-edición
 conceptos-fundamentales
 poblaciones-y-muestras
 muestra-aleatoria
+ejemplo-en-r-generar-muestra
+ejemplo-en-r-ordenar-los-datos
 muestra-cuasialeatoria
+ejemplo-en-r-generar-una-sequencia
 muestra-estratificada
 representatividad
 estadísticas-descriptivas-e-inferenciales

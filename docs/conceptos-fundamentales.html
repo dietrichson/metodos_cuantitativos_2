@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 1 Conceptos fundamentales | Métodos Cuantitativos">
 <meta name="twitter:description" content="En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.13/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
@@ -87,34 +87,39 @@ Figure 1.1: Población y muestra.
 </h3>
 <p>Para tener una muestra verdaderamente aleatoria de una población deberíamos asignar un número u otro identificador único a cada una de las unidaded de la población –a cada persona si se trata de una población humana– escribir cada número en un papel y echarlos en una tómbola. Luego de virarla por algún tiempo y mesclar bien los papeles, podríamos de allí sacar la cantidad de papeles que corresponda al tamaño de nuestra muestra. Obviamente esto no resulta muy práctico por lo que se suele empezar con una secuencia de números aleatorios del tamaño de la muestra y extraer unidades de la población basado en ello. Por ejemplo, si quisieramos sacar veinte libros al hazar de un estante de la biblioteca que contiene doscientos libros, necesitamos veinte números aleatorios entre uno y doscientos, y sacamos los libros que desde algún punto de referencia (primer libro del primer nivel) está a esa distancia.</p>
 <p>Ahora, ¿dónde encontramos números aleatorios? Hay secuencias en libros de estadísticas, usados principalmente antes de la existencia de computadoras. También se pueden generar esas secuencias en linea. Finalmente, R tienen un generador de números aleatorios que nos permite generar los de números de nuestra muestra con un solo comando usando la función de R <em>sample</em>.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-3" class="example"><strong>Example 1.1  \iffalse (Generar muestra en R) </strong></span>
-</div>
+<div id="ejemplo-en-r-generar-muestra" class="section level4" number="1.1.1.1">
+<h4>
+<span class="header-section-number">1.1.1.1</span> Ejemplo en R: Generar muestra<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-generar-muestra"><i class="fas fa-link"></i></a>
+</h4>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">200</span>, size <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>
 
 <span class="co">## [1] 166  46  42 179 188 143 126 135 102  93  72 193  13 107 198 100  88  67  33  99</span></code></pre></div>
 <p>Acá le estamos pidiendo a R que nos de una muestra aleatoria (<code>sample</code> ) de números entre uno y doscientos (<code>x = 1:200</code>), y que la muestra sea de veinte <code>size = 20</code> ). Con estos números podemos ir al estante y sacar los libros que queremos estudiar.</p>
 <p>Si corren este comando desde su consola de R los números deben salir diferentes, se hace una muestra aleatoria cada vez.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.2  \iffalse (Ordenar los datos en R) </strong></span><br>
-También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función <em>sort</em>.
 </div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">200</span>, size <span class="op">=</span> <span class="fl">20</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="op">)</span>
-<span class="co">## [1]  29  35  38  41  54  74  75  79  85  92 103 112 114 120 127 153 173 185 187 188</span></code></pre></div>
+<div id="ejemplo-en-r-ordenar-los-datos" class="section level4" number="1.1.1.2">
+<h4>
+<span class="header-section-number">1.1.1.2</span> Ejemplo en R: Ordenar los datos<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-ordenar-los-datos"><i class="fas fa-link"></i></a>
+</h4>
+<p>También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función <em>sort</em>.</p>
+<pre><code>
+
+```r
+sort(
+  sample(x = 1:200, size = 20, replace = TRUE)
+)
+## [1]  29  35  38  41  54  74  75  79  85  92 103 112 114 120 127 153 173 185 187 188</code></pre>
+</div>
 </div>
 <div id="muestra-cuasialeatoria" class="section level3" number="1.1.2">
 <h3>
 <span class="header-section-number">1.1.2</span> Muestra cuasialeatoria<a class="anchor" aria-label="anchor" href="#muestra-cuasialeatoria"><i class="fas fa-link"></i></a>
 </h3>
 <p>Otra estrategia que podría emplearse para sacar veinte libros al azar del estante que describimos en la sección anterior sería decidir que vamos a sacar cada diez libros ya que <span class="math inline">\({200\over20} = 10\)</span>. Este tipo de muestra lleva el epíteto <em>cuasialeatoria</em>, y funciona bien si el orden original de la población es aleatorio. Sin embargo, hay que tener en cuenta que esta estrategia puede generar una muestra no representativa si existe una estructura en ese orden. Típicamente puede resultar problemática si existe <em>periodicidad</em> en la población que estamos analizando. Si, por ejemplo, queremos tener una muestra de cuantos ómnibus pasan delante de mi casa por día sería mala idea decir que vamos a contarlos cada siete días. Si el día que empezamos es un domingo obtendremos seguramente una muestra con cantidades inferiores a la población real (en este caso definida como todos los ómnibus que pasan por mi casa en un día); y si empezamos a contar un lunes las cantidades serían superiores.</p>
-<div id="ejemplo-en-r-generar-una-sequencia" class="section level4 unnumbered">
-<h4>Ejemplo en R: Generar una sequencia<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-generar-una-sequencia"><i class="fas fa-link"></i></a>
+<div id="ejemplo-en-r-generar-una-sequencia" class="section level4" number="1.1.2.1">
+<h4>
+<span class="header-section-number">1.1.2.1</span> Ejemplo en R: Generar una sequencia<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-generar-una-sequencia"><i class="fas fa-link"></i></a>
 </h4>
 <p>Si bien sacar la secuencia para sacar cada diez libros resulta trivial, existe la manera que hacerlo también con una función de R.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -452,7 +457,7 @@ Equivalente en inglés: «Variable».
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 22 de junio del 2019.</p>
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 12 de narzo de 2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

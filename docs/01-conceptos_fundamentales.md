@@ -27,7 +27,7 @@ Para tener una muestra verdaderamente aleatoria de una población deberíamos as
 
 Ahora, ¿dónde encontramos números aleatorios? Hay secuencias en libros de estadísticas, usados principalmente antes de la existencia de computadoras. También se pueden generar esas secuencias en linea. Finalmente, R tienen un generador de números aleatorios que nos permite generar los de números de nuestra muestra con un solo comando usando la función de R *sample*.
 
-\BeginKnitrBlock{example}\iffalse{-91-71-101-110-101-114-97-114-32-109-117-101-115-116-114-97-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-3"><strong>(\#exm:unnamed-chunk-3)  \iffalse (Generar muestra en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+#### Ejemplo en R: Generar muestra
 
 
 ```r
@@ -40,8 +40,10 @@ Acá le estamos pidiendo a R que nos de una muestra aleatoria (```sample``` ) de
 
 Si corren este comando desde su consola de R los números deben salir diferentes, se hace una muestra aleatoria cada vez.
 
-\BeginKnitrBlock{example}\iffalse{-91-79-114-100-101-110-97-114-32-108-111-115-32-100-97-116-111-115-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-5"><strong>(\#exm:unnamed-chunk-5)  \iffalse (Ordenar los datos en R) \fi{} </strong></span> \
-También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función *sort*.</div>\EndKnitrBlock{example}
+#### Ejemplo en R: Ordenar los datos
+
+También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función *sort*.
+```
 
 
 ```r
@@ -57,7 +59,7 @@ sort(
 
 Otra estrategia que podría emplearse para sacar veinte libros al azar del estante que describimos en la sección anterior sería decidir que vamos a sacar cada diez libros ya que ${200\over20} = 10$. Este tipo de muestra lleva el epíteto *cuasialeatoria*, y funciona bien si el orden original de la población es aleatorio. Sin embargo, hay que tener en cuenta que esta estrategia puede generar una muestra no representativa si existe una estructura en ese orden. Típicamente puede resultar problemática si existe *periodicidad* en la población que estamos analizando. Si, por ejemplo, queremos tener una muestra de cuantos ómnibus pasan delante de mi casa por día sería mala idea decir que vamos a contarlos cada siete días. Si el día que empezamos es un domingo obtendremos seguramente una muestra con cantidades inferiores a la población real (en este caso definida como todos los ómnibus que pasan por mi casa en un día); y si empezamos a contar un lunes las cantidades serían superiores.
 
-#### Ejemplo en R: Generar una sequencia {-}
+#### Ejemplo en R: Generar una sequencia
 
 Si bien sacar la secuencia para sacar cada diez libros resulta trivial, existe la manera que hacerlo también con una función de R. 
 

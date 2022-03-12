@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 7 Pruebas paramétricas | Métodos Cuantitativos">
 <meta name="twitter:description" content="En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.13/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
@@ -186,7 +186,7 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 <p>Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función <code>shapiro.test</code> en R:</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-5" class="example"><strong>Example 1.2  \iffalse (Test de Shapiro Wilks en R) </strong></span>
+<span id="exm:unnamed-chunk-5" class="example"><strong>Example 7.3  \iffalse (Test de Shapiro Wilks en R) </strong></span>
 </div>
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">Grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
@@ -220,7 +220,7 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 <p>Sin entrar en mucho detalle teórico, en R hay una función <code>var.test</code> para este propósito. La función toma dos argumentos: los dos conjuntos de datos que queremos comparar.</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-7" class="example"><strong>Example 7.3  \iffalse (Realizar la prueba de Fisher en R) </strong></span>
+<span id="exm:unnamed-chunk-7" class="example"><strong>Example 7.4  \iffalse (Realizar la prueba de Fisher en R) </strong></span>
 </div>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">Grupo.A</span>, <span class="va">Grupo.B</span><span class="op">)</span></code></pre></div>
@@ -264,7 +264,7 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
 <p><span class="math inline">\(H_1: \bar{X}_D \neq 0\)</span>.</p>
 
 <div class="example">
-<span id="exm:dependent-t-test-example" class="example"><strong>Example 7.4  \iffalse (Prueba t dependiente) </strong></span>
+<span id="exm:dependent-t-test-example" class="example"><strong>Example 7.5  \iffalse (Prueba t dependiente) </strong></span>
 </div>
 <p>En este ejemplo<span class="citation"><a href="referencias.html#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></span> vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la tabla <a href="pruebas-param%C3%A9tricas.html#tab:diff-table">7.1</a>.</p>
 <div class="inline-table"><table class="table table-sm">
@@ -408,7 +408,7 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}
 <div class="example">
 <span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.1  \iffalse (Ejemplo en R) </strong></span>
 </div>
-<p>Para reproducir en R lo que hicimos en el ejemplo <a href="pruebas-param%C3%A9tricas.html#exm:dependent-t-test-example">7.4</a> tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
+<p>Para reproducir en R lo que hicimos en el ejemplo <a href="pruebas-param%C3%A9tricas.html#exm:dependent-t-test-example">7.5</a> tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Ingresamos los datos</span>
  <span class="va">datos.pre.post</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
@@ -554,7 +554,7 @@ Equivalente en inglés: «T-test for dependent samples».
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 22 de junio del 2019.</p>
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 12 de narzo de 2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -1,7 +1,7 @@
 --- 
 title: "Métodos Cuantitativos"
 author: "Aleksander Dietrichson, PhD"
-date: "22 de junio del 2019"
+date: "12 de narzo de 2022"
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
@@ -15,6 +15,10 @@ csl: chicago-fullnote-bibliography.csl
 # Prefacio {-}
 
 Este texto ha sido editado en respuesta a la aparente falta de un libro de texto introductorio al análisis cuantitativo y estadísticas acesible y moderno en castellano. Si bien fue concebido como material de cátedra para *Metodologías cuantitativas* materia que dicta el autor en la Escuela de Humanidades de la Universidad Nacional San Martín, se adaptará fácilmente a cursos introductorios de estadísticas en general. 
+
+## Segunda edición
+
+En la segunda edición se corrigió algunos errores ortográficos y de estilo. Optamos por actualizar los ejemplos para incorporar los paquetes del «tidyverse» ya que hemos observado que su uso y adaptación atenúa la curva de aprendizaje para quienes usan R por primera vez o con escasos conocimientos previos. 
 
 ## Estructura del libro {-}
 
