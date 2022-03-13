@@ -217,16 +217,54 @@
 <p>y</p>
 <div class="inline-figure"><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-9-1.png" width="672"></div>
 <p>Comparando estos dos diagramas nos damos cuenta de que la estructura de los datos son disimilares. En el grupo A las notas se centran alrededor de quince, en cambio para el grupo B la concentración está en el rango diez-catorce, con un pico menor alrededor de siete.</p>
-
-<div class="example">
-<span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.1  \iffalse (Histograma en R) </strong></span>
-</div>
+<div id="ejemplo-en-r-histograma" class="section level4" number="2.3.0.1">
+<h4>
+<span class="header-section-number">2.3.0.1</span> Ejemplo en R: Histograma<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-histograma"><i class="fas fa-link"></i></a>
+</h4>
 <p>Hacer un histograma con R es bastante sencillo. Usamos la función <code>hist</code>, de histograma y los datos que queremos visualizar. Si lo asignamos a una variable, como lo vimos en la parte de las tablas (con <code>table</code>).</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">grupo.A</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">grupo.A</span><span class="op">)</span></code></pre></div>
-<div class="inline-figure"><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-11-1.png" width="672"></div>
+<div class="inline-figure"><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-10-1.png" width="672"></div>
 <p>La función <code>hist</code> tiene muchas opciones adicionales. Para conocerlas se puede ingresar <code><a href="https://rdrr.io/r/graphics/hist.html">?hist</a></code> (signo de interrogación y «hist») en la consola de R y aparecerá la descripción completa de ellas. Lo mismo es cierto para cualquier función de R. El mismo resultado se obtiene usando la función <code><a href="https://rdrr.io/r/graphics/hist.html">help(hist)</a></code>.</p>
+</div>
+<div id="ejemplo-en-r-histograma-en-ggplot" class="section level4" number="2.3.0.2">
+<h4>
+<span class="header-section-number">2.3.0.2</span> Ejemplo en R: Histograma en ggplot<a class="anchor" aria-label="anchor" href="#ejemplo-en-r-histograma-en-ggplot"><i class="fas fa-link"></i></a>
+</h4>
+<p>Usando los paquetes de tidyverse podemos generar un histograma con el packete ggplot2. Se carga por default junto con muchos otros paquetes. A diferencia del ejemplo anterior la función espera un <code>data.frame</code> como argumento. Para generar un histograma con los mismos datos debemos entonces proceder con crear una estructura de <code>data.frame</code> primero y luego proceder.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+  grupo.A <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<p>Nótese que usamos el operador <code>=</code> dentro de la definición del data.frame. Luego cargamos las funciones de tidyverse y procedemos a construir nuestro gráfico.</p>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span> <span class="co"># Carga todos los paquetes, incluso ggplot2</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">my_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">grupo.A</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-12-1.png" width="672">
+vemos que si bien los datos son los mismos las columnas parecen separados. Esto se debe a que por defecto el <code>geom_histogram</code> distribuye los datos en 30 columnas, lo cual es demasiado para el caso que tenemos. Podemos arreglar esto agragando otro parametro a la función asi:</p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">my_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">grupo.A</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure">
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-13-1.png" width="672">
+en este caso hemos especificado que el ancho de cada columna sea de 1, con lo cual se visualizan mejor estos datos.</div>
+<div id="agregando-un-poco-de-color" class="section level5" number="2.3.0.2.1">
+<h5>
+<span class="header-section-number">2.3.0.2.1</span> Agregando un poco de color<a class="anchor" aria-label="anchor" href="#agregando-un-poco-de-color"><i class="fas fa-link"></i></a>
+</h5>
+<p>Podemos también manipular los colores de las columnas con algunos parametros más:</p>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">my_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">grupo.A</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1</span>, fill<span class="op">=</span><span class="st">"white"</span>, color<span class="op">=</span><span class="st">'red'</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-14-1.png" width="672"></div>
+<blockquote>
+<h4 id="el-operador-pipe">El operador «pipe»</h4>
+<p>El uso de <code>%&gt;%</code> es muy frecuente cuando uno trabaja con el tidyverse.</p>
+</blockquote>
+</div>
+</div>
 </div>
 <div id="polígono-de-frecuencias" class="section level2" number="2.4">
 <h2>
@@ -259,8 +297,8 @@ Figure 2.2: Polígono de frecuencias del largo de palabras en un texto de Austin
 </h2>
 <p>Las distribuciones de notas que vimos en las secciones anteriores tienen relativamente pocos datos, por lo que siempre van a parecer algo irregulares. Si tenemos muchos datos, sobre todo si con se escala de medición continua, podemos imaginarnos que en lugar de trazar una linea llegamos a trazar más bien una curva entre los puntos. Esto nos permite hacer una abstracción de las distribuciones y hablar de distribuciones teóricas. La más conocida de ellas sin duda es la <em>distribución normal</em>, también llamada de Gauss o gaussiana.</p>
 <div class="figure">
-<span style="display:block;" id="fig:unnamed-chunk-12"></span>
-<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-12-1.png" alt="Distribución normal" width="672"><p class="caption">
+<span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-15-1.png" alt="Distribución normal" width="672"><p class="caption">
 Figure 2.3: Distribución normal
 </p>
 </div>
@@ -271,13 +309,13 @@ Figure 2.3: Distribución normal
 </h3>
 <p>Cuando una distribución se inclina en una dirección u otra decimos, es decir que no es simétrica, se dice que tiene un <em>sesgo</em> o que es <em>asimétrica</em>. Se habla de <em>sesgo negativo</em> y <em>sesgo positivo</em> (también: <em>asimetría positiva/negativa</em> y <em>a la izquierda/derecha</em> todos equivalentes). Es positivo o negativo según en qué dirección tiene su <em>cola larga</em>.</p>
 <div class="figure">
-<span style="display:block;" id="fig:unnamed-chunk-13"></span>
-<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-13-1.png" alt="Distribuciónes normal y sesgadas" width="672"><p class="caption">
+<span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-16-1.png" alt="Distribuciónes normal y sesgadas" width="672"><p class="caption">
 Figure 2.4: Distribuciónes normal y sesgadas
 </p>
 </div>
 <p>Vemos que nuestras distribuciones de <em>notas</em> corresponden a una distribución de <em>sesgo negativo</em>, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de <em>número de characteres</em> en el texto de Austen tiene <em>sesgo positivo</em>.
-<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-14-1.png" width="672"></p>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-17-1.png" width="672"></p>
 <p>Nótese también que la si bien la escala vertical de los dos gráficos son de muy diferente magnitud, la máxima frecuencia es veinte mil (20.000) y seis (6) respectivamente, podemos comparar las dos distribuciones.</p>
 </div>
 </div>

@@ -126,7 +126,7 @@ También nos podemos darnos cuenta de patrones en los datos que no son lineales,
 <div class="example">
 <span id="exm:example-scatterplot-i" class="example"><strong>Example 10.1  \iffalse (Generar diagrama de dispersión en R) </strong></span>
 </div>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Generamos datos</span>
 <span class="va">datos</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
   x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>,
@@ -137,14 +137,14 @@ También nos podemos darnos cuenta de patrones en los datos que no son lineales,
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">datos</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="10-correlaciones_files/figure-html/unnamed-chunk-3-1.png" width="672"></div>
 <p>En el ejemplo <a href="correlaci%C3%B3n.html#exm:example-scatterplot-i">10.1</a> utilizamos la función <code>rnorm</code> para generar cien observaciones aleatorias con distribución normal y los ponemos dentro de un <code>data.frame</code>. Luego usamos la función <code>plot</code> para graficarlos. Como nuestro <code>data.frame</code> tiene solo dos columnas R entiende que estos son los datos que queremos graficar. Si el <code>data.frame</code> tiene más columnas, podemos especificar los que queremos graficar así:</p>
-<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">x</span>,<span class="va">datos</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></code></pre></div>
 
 <div class="example">
 <span id="exm:example-scatterplot-ii" class="example"><strong>Example 10.2  \iffalse (Generar diagrama de dispersión en R) </strong></span>
 </div>
 <p>Por defecto R viene con algunos data.frames ya cargados, uno de ellos es «trees», podemos usar la función <code>head</code> para ver las primeras seis filas.</p>
-<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">trees</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt;   Girth Height Volume
 #&gt; 1   8.3     70   10.3
@@ -154,11 +154,11 @@ También nos podemos darnos cuenta de patrones en los datos que no son lineales,
 #&gt; 5  10.7     81   18.8
 #&gt; 6  10.8     83   19.7</code></pre>
 <p>Vemos que tiene tres columnas «Girth», «Height» y «Volume» (circumferencia, alto y volumen), los que, por lógica, deben tener alta correlación. Graficamos dos de ellos.</p>
-<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">trees</span><span class="op">$</span><span class="va">Girth</span>, <span class="va">trees</span><span class="op">$</span><span class="va">Volume</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="10-correlaciones_files/figure-html/unnamed-chunk-6-1.png" width="672"></div>
 <p>Si usamos la función <code>plot</code> sin especificar columnas R entiende que queremos ver todas las combinaciones.</p>
-<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">trees</span><span class="op">)</span></code></pre></div>
 <div class="inline-figure"><img src="10-correlaciones_files/figure-html/unnamed-chunk-7-1.png" width="672"></div>
 <p>Este tipo de visualización puede ser útil cuando tenemos algunas variables y queremos darnos cuenta qué correlaciones hay. La visualización funciona bien hasta cierto número de columnas –ocho más o menos–, luego se vuelve difícil de leer y por ende de interpretar.</p>
@@ -436,7 +436,7 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 <span id="exm:pearson-coefficient-calculation" class="example"><strong>Example 10.3  \iffalse (Cálculo del Coeficiente de correlación de Pearson en R) </strong></span>
 </div>
 <p>Si no queremos hacer todos los cálculos del ejemplo <a href="correlaci%C3%B3n.html#exm:pearson-coefficient-calculation">10.3</a> a mano podemos recurrir a R que con la función <code>cor</code> lo calcula.</p>
-<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Cargamos datos</span>
 <span class="va">datos</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
   Estudiante <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">11</span>, <span class="fl">12</span><span class="op">)</span>,
@@ -461,7 +461,7 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 \rho = 1-{6\sum{d^2}\over{N(N^2-1)}}  
 \]</span></p>
 <p>Imaginamos que pedimos a diez personas que ranqueen en una escala de uno a diez cuánto les gustaron dos cafeterías de Buenos Aires. Ya que los datos son de escala ordinal, tenemos que recurrir a <em>Spearman</em>. Usamos la misma función <code>cor</code> con un parámetro extra: <code>method = "spearman"</code> para indicar que queremos usar la correlación de Spearman.</p>
-<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Cargamos datos</span>
 <span class="va">rankings</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
   Cafe.A <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7</span>, <span class="fl">6</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">8</span>, <span class="fl">7</span>, <span class="fl">10</span>, <span class="fl">3</span>, <span class="fl">9</span>, <span class="fl">2</span><span class="op">)</span>,

@@ -3,11 +3,10 @@ tab:compinaciones-posibles
 tab:probabilidades-combinaciones-posibles
 tab:probabilidades-combinaciones-posibles-diez
 tab:unnamed-chunk-2
-exm:unnamed-chunk-10
 fig:poligono-de-frecuencias-notas-comparativo
 fig:persuasion-poligon-i
-fig:unnamed-chunk-12
-fig:unnamed-chunk-13
+fig:unnamed-chunk-15
+fig:unnamed-chunk-16
 eq:media-de-seis-observaciones
 eq:media-de-treinta-observaciones
 exm:unnamed-chunk-2
@@ -54,6 +53,7 @@ exm:unnamed-chunk-7
 def:dependent-t-test
 exm:dependent-t-test-example
 tab:diff-table
+exm:unnamed-chunk-10
 fig:flow-chart-test-selection
 tab:drug-comparative-table
 def:sign-test-large-n
@@ -97,6 +97,9 @@ distribuciones-de-frecuencias
 explorando-los-datos
 tablas-de-frecuencias
 histogramas
+ejemplo-en-r-histograma
+ejemplo-en-r-histograma-en-ggplot
+agregando-un-poco-de-color
 polígono-de-frecuencias
 perfil-de-la-distribución
 asimetría-o-sesgo

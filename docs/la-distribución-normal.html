@@ -169,7 +169,7 @@ Figure 4.7: Proporción de argentinas que miden más de 175 centímetros
 z = {150 - 161,01\over{6.99}} = {11,01\over{6.99}} = -1,575
 \]</span></p>
 <p>Con este número podemos sacar la proporción por ejemplo calculando el área debajo del segmento de la curva con cálculos integrales, lo podemos buscar en una tabla de probabilidades o podemos recurrir a la función <code>pnorm</code> (p: probabilidad, norm: normal)de R así:</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1.575</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; [1] 0.05762822</code></pre>
 <p>entonces el 5,76% de la población de argentinas entre 19 y 49 años miden menos de un metro con cincuenta.</p>
@@ -214,7 +214,7 @@ z = {150 - 161,01\over{6.99}} = {11,01\over{6.99}} = -1,575
 <span id="exm:unnamed-chunk-4" class="example"><strong>Example 4.3  \iffalse (Ejemplo en R) </strong></span>
 </div>
 <p>Si no queremos hacer estos cálculos a mano los podemos hacer también en R, así:</p>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
 
 <span class="va">media</span><span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">grupo.A</span><span class="op">)</span>
@@ -226,7 +226,7 @@ z = {150 - 161,01\over{6.99}} = {11,01\over{6.99}} = -1,575
     <span class="va">grupo.A</span> <span class="op">&gt;</span> <span class="va">media</span> <span class="op">-</span> <span class="va">desviacion</span>  
 <span class="op">)</span><span class="op">/</span><span class="va">N</span></code></pre></div>
 <pre><code>#&gt; [1] 0.6666667</code></pre>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span> 
     <span class="va">grupo.A</span> <span class="op">&lt;</span>  <span class="va">media</span> <span class="op">+</span> <span class="va">desviacion</span> <span class="op">*</span> <span class="fl">2</span>
     <span class="op">&amp;</span>

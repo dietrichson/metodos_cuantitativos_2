@@ -120,8 +120,7 @@ y
 
 Comparando estos dos diagramas nos damos cuenta de que la estructura de los datos son disimilares. En el grupo A las notas se centran alrededor de quince, en cambio para el grupo B la concentración está en el rango diez-catorce, con un pico menor alrededor de siete.
 
-
-\BeginKnitrBlock{example}\iffalse{-91-72-105-115-116-111-103-114-97-109-97-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-10"><strong>(\#exm:unnamed-chunk-10)  \iffalse (Histograma en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+#### Ejemplo en R: Histograma
 
 Hacer un histograma con R es bastante sencillo. Usamos la función ```hist```, de histograma y los datos que queremos visualizar. Si lo asignamos a una variable, como lo vimos en la parte de las tablas (con ```table```). 
 
@@ -130,9 +129,54 @@ grupo.A <- c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 
 hist(grupo.A)
 ```
 
-<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
 La función ```hist``` tiene muchas opciones adicionales. Para conocerlas se puede ingresar ```?hist``` (signo de interrogación y «hist») en la consola de R y aparecerá la descripción completa de ellas. Lo mismo es cierto para cualquier función de R. El mismo resultado se obtiene usando la función ```help(hist)```.
+
+#### Ejemplo en R: Histograma en ggplot
+
+Usando los paquetes de tidyverse podemos generar un histograma con el packete ggplot2. Se carga por default junto con muchos otros paquetes. A diferencia del ejemplo anterior la función espera un `data.frame` como argumento. Para generar un histograma con los mismos datos debemos entonces proceder con crear una estructura de `data.frame` primero y luego proceder. 
+
+
+```r
+my_data <- data.frame(
+  grupo.A = c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
+)
+```
+
+Nótese que usamos el operador `=` dentro de la definición del data.frame. Luego cargamos las funciones de tidyverse y procedemos a construir nuestro gráfico.
+
+```r
+library(tidyverse) # Carga todos los paquetes, incluso ggplot2
+ggplot(my_data, aes(x=grupo.A)) + 
+  geom_histogram()
+```
+
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+vemos que si bien los datos son los mismos las columnas parecen separados. Esto se debe a que por defecto el `geom_histogram` distribuye los datos en 30 columnas, lo cual es demasiado para el caso que tenemos. Podemos arreglar esto agragando otro parametro a la función asi:
+
+```r
+ggplot(my_data, aes(x=grupo.A)) + 
+  geom_histogram(binwidth = 1)
+```
+
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+en este caso hemos especificado que el ancho de cada columna sea de 1, con lo cual se visualizan mejor estos datos. 
+
+##### Agregando un poco de color 
+
+Podemos también manipular los colores de las columnas con algunos parametros más:
+
+```r
+ggplot(my_data, aes(x=grupo.A)) + 
+  geom_histogram(binwidth = 1, fill="white", color='red')
+```
+
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+
+
+> #### El operador «pipe»
+> El uso de `%>%` es muy frecuente cuando uno trabaja con el tidyverse. 
 
 ## Polígono de frecuencias
 
@@ -161,8 +205,8 @@ A differencia de la distribución de notas, vemos acá que encontramos observaci
 Las distribuciones de notas que vimos en las secciones anteriores tienen relativamente pocos datos, por lo que siempre van a parecer algo irregulares. Si tenemos muchos datos, sobre todo si con se escala de medición continua, podemos imaginarnos que en lugar de trazar una linea llegamos a trazar más bien una curva entre los puntos. Esto nos permite hacer una abstracción de las distribuciones y hablar de distribuciones teóricas. La más conocida de ellas sin duda es la *distribución normal*, también llamada de Gauss o gaussiana.
 
 <div class="figure">
-<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-12-1.png" alt="Distribución normal" width="672" />
-<p class="caption">(\#fig:unnamed-chunk-12)Distribución normal</p>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-15-1.png" alt="Distribución normal" width="672" />
+<p class="caption">(\#fig:unnamed-chunk-15)Distribución normal</p>
 </div>
 
 Vamos a desarrollar el tema de la distribución normal con más detalle en el capítulo \@ref(la-distribucion-normal). Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.  
@@ -172,12 +216,12 @@ Vamos a desarrollar el tema de la distribución normal con más detalle en el ca
 Cuando una distribución se inclina en una dirección u otra decimos, es decir que no es simétrica, se dice que tiene un *sesgo* o que es *asimétrica*. Se habla de *sesgo negativo* y *sesgo positivo* (también: *asimetría positiva/negativa* y *a la izquierda/derecha* todos equivalentes). Es positivo o negativo según en qué dirección tiene su *cola larga*.
 
 <div class="figure">
-<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-13-1.png" alt="Distribuciónes normal y sesgadas" width="672" />
-<p class="caption">(\#fig:unnamed-chunk-13)Distribuciónes normal y sesgadas</p>
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-16-1.png" alt="Distribuciónes normal y sesgadas" width="672" />
+<p class="caption">(\#fig:unnamed-chunk-16)Distribuciónes normal y sesgadas</p>
 </div>
 
 Vemos que nuestras distribuciones de *notas* corresponden a una distribución de *sesgo negativo*, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de *número de characteres* en el texto de Austen tiene *sesgo positivo*.
-<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="02-distribuciones_de_frecuencias_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
 Nótese también que la si bien la escala vertical de los dos gráficos son de muy diferente magnitud, la máxima frecuencia es veinte mil (20.000) y seis (6) respectivamente, podemos comparar las dos distribuciones. 
 

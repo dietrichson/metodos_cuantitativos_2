@@ -86,7 +86,7 @@ Los datos son:</p>
 <div class="line-block">Hombres: {19, 22, 16, 29, 24},<br>
 Mujeres: {20, 11, 17, 12}.<br>
 </div>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">Hombres</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">19</span>, <span class="fl">22</span>, <span class="fl">16</span>, <span class="fl">29</span>, <span class="fl">24</span><span class="op">)</span>
 <span class="va">Mujeres</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">11</span>, <span class="fl">17</span>, <span class="fl">12</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">Hombres</span>, <span class="va">Mujeres</span><span class="op">)</span></code></pre></div>
@@ -182,14 +182,14 @@ Mujeres: {20, 11, 17, 12}.<br>
 </tbody>
 </table></div>
 <p>En R ponemos los datos en un <code>data.frame</code>:</p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">datos</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
   Paciente <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">11</span>, <span class="fl">12</span><span class="op">)</span>,
   Droga.A <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">2</span>,  <span class="fl">3.6</span>,  <span class="fl">2.6</span>,  <span class="fl">2.7</span>,  <span class="fl">7.3</span>,  <span class="fl">3.4</span>,  <span class="fl">14.9</span>,  <span class="fl">6.6</span>,  <span class="fl">2.3</span>,  <span class="fl">2.1</span>,  <span class="fl">6.8</span>,  <span class="fl">8.5</span><span class="op">)</span>,
   Droga.B <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">3.5</span>,  <span class="fl">5.7</span>,  <span class="fl">2.9</span>,  <span class="fl">2.4</span>,  <span class="fl">9.9</span>,  <span class="fl">3.3</span>,  <span class="fl">16.7</span>,  <span class="fl">6</span>,  <span class="fl">3.8</span>,  <span class="fl">4</span>,  <span class="fl">9.1</span>,  <span class="fl">20.9</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 <p>E iniciamos nuestros tests:</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>,<span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  F test to compare two variances
@@ -204,14 +204,14 @@ Mujeres: {20, 11, 17, 12}.<br>
 #&gt; ratio of variances 
 #&gt;          0.4186498</code></pre>
 <p>¡Bien! No tenemos problemas de varianza.</p>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
 #&gt; 
 #&gt; data:  datos$Droga.A
 #&gt; W = 0.80692, p-value = 0.01124</code></pre>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
@@ -220,7 +220,7 @@ Mujeres: {20, 11, 17, 12}.<br>
 #&gt; W = 0.7883, p-value = 0.006919</code></pre>
 <p>¡Ups!, las variables no tienen distribución normal. Entonces no podemos usar la prueba t pareada, tenemos que probar con <em>Wilcoxon</em>.</p>
 <p>Usamos la función <code>wilcox.test</code> con el parametro extra de <code>paired = TRUE</code>.</p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>, <span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Wilcoxon signed rank test with continuity correction
@@ -234,7 +234,7 @@ Mujeres: {20, 11, 17, 12}.<br>
 </h3>
 <p>Si nos hubéramos olvidado de verificar la conformidad de los requisitos podríamos haber caído en la prueba t paramétrica, ¿qué hubiera pasado?</p>
 <p>Veamos:</p>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>, <span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Paired t-test
@@ -266,7 +266,7 @@ z={{N-2\times{W}-1}\over\sqrt{N}}
 </div>
 
 <div class="example">
-<span id="exm:unnamed-chunk-10" class="example"><strong>Example 2.1  \iffalse (Realizar prueba de sign para N&gt;25) </strong></span>
+<span id="exm:unnamed-chunk-10" class="example"><strong>Example 7.6  \iffalse (Realizar prueba de sign para N&gt;25) </strong></span>
 </div>
 <p>En este ejemplo vamos a suponer que hemos preguntado a 150 personas su opinión sobre el café de dos cafeterías: A y B, de la Ciudad de Buenos Aires. Les pedimos que indiquen en una escala de 1 a 5 cuánto les gusta cada producto. De ellos cincuenta dan el mismo ranking a ambos productos, con lo sus opiniones se eliminan del cálculo. De los restantes cien tenemos 39 que prefieren B y 61 que prefieren A. Tomamos el menor valor (39) y aplicamos la fórmula:
 <span class="math display">\[

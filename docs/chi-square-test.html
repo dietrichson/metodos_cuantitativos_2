@@ -255,14 +255,14 @@ E = {{1230\times1246}\over2191} = 699,48
 <span id="exm:unnamed-chunk-1" class="example"><strong>Example 5.1  \iffalse (Prueba de <span class="math inline">\(\chi^2\)</span> en R) </strong></span>
 </div>
 <p>En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(\chi^2\)</span> que fuimos desarrollando en las secciones anteriores. Podemos usar la función de R <code>chisq.test</code> para realizarla. Toma como argumento una <em>matriz</em> de datos de las frecuencias.</p>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">as.table</a></span><span class="op">(</span>
   <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">762</span>, <span class="fl">468</span><span class="op">)</span>, 
         <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">484</span>, <span class="fl">477</span><span class="op">)</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="co"># Damos nombre a las columnas y las filas </span>
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A favor"</span>,<span class="st">"En contra"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span><span class="op">)</span>
+<span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span><span class="op">)</span>
 
 <span class="co"># Verificamos el ingreso de datos</span>
 <span class="va">M</span></code></pre></div>
@@ -270,7 +270,7 @@ E = {{1230\times1246}\over2191} = 699,48
 #&gt; Mujeres     762       468
 #&gt; Hombres     484       477</code></pre>
 <p>Como se puede observar, la sintaxis de R no es del todo intuitiva, por lo que siempre conviene verificar que tenemos los números y nombres correctos antes de proceder con el test.</p>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Realizamos test de ji-cuadrado</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; 
@@ -281,7 +281,7 @@ E = {{1230\times1246}\over2191} = 699,48
 #&gt; X-squared = 29.06, df = 1, p-value = 7.019e-08</code></pre>
 <p>El valor de <em>p</em> es tan bajo que R lo devuelve en <em>notación científica</em>. La parte <em>e-08</em> quiere decir que el número es: 0,000000007019, es decir que hay <em>ocho</em> ceros antes de los dígitos significativos.</p>
 <p>También vemos que el valor de <span class="math inline">\(\chi^2\)</span> que calculó R es distinto al que calculamos a mano, aunque sea por unas décimas. Esto se debe a que por defecto R hace una <em>corrección de Yates</em>. Yates descubrió que para una tabla de contingencia <span class="math inline">\(2\times2\)</span> hay un sesgo positivo y propuso una técnica para contrarrestar el sesgo. Si queremos usar la formula original, y la que usamos para nuestro cálculo a mano podemos agregar el parámetro <code>correct = FALSE</code> a la función así:</p>
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">M</span>, correct <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Pearson's Chi-squared test
