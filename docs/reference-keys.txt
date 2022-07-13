@@ -30,7 +30,6 @@ fig:histograma-ejemplo-ii
 fig:histograma-ejemplo-iii
 fig:normal-curve-with-cuts
 def:definition-z-score
-exm:estatura-mujeres-argentinas
 fig:curva-estatura-argentinas
 fig:curva-con-segmento
 exm:unnamed-chunk-3
@@ -77,6 +76,7 @@ def:definition-pearson-correlation-ii
 exm:pearson-coefficient-calculation
 tab:resultados-dos-examenes
 tab:resultados-dos-examenes-ii
+exm:pearson-coefficient-calculation-in-r
 def:definition-spearman-correlation
 fig:two-by-two-general
 def:phi-correlation

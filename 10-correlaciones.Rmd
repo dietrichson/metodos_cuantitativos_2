@@ -111,6 +111,7 @@ set.seed(1)
 
 
 ```{example, label="example-scatterplot-i", name="Generar diagrama de dispersión en R"}
+:
 ```
 
 ```{r}
@@ -131,6 +132,7 @@ plot(datos$x,datos$y)
 ```
 
 ```{example, label="example-scatterplot-ii", name="Generar diagrama de dispersión en R"}
+:
 ```
 
 Por defecto R viene con algunos data.frames ya cargados, uno de ellos es «trees», podemos usar la función ```head``` para ver las primeras seis filas.
@@ -184,6 +186,7 @@ $$
 Y con estos datos podemos calcular el coeficiente según la definición \@ref(def:definition-pearson-correlation).
 
 ```{definition, label="definition-pearson-correlation", name="Coeficiente de correlación de Pearson"}
+:
 ```
 $$
 r={\sum{z_xz_y}\over{N-1}}
@@ -195,6 +198,7 @@ donde:
 Existe otra definición es matemáticamente equivalente y que se usa a veces para hacer el cálculo a mano:
 
 ```{definition, label="definition-pearson-correlation-ii", name="Coeficiente de correlación Pearson"}
+:
 ```
 
 $$
@@ -202,7 +206,7 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 $$
 
 ```{example, label="pearson-coefficient-calculation", name="Cálculo del Coeficiente de correlación de Pearson"}
-
+:
 ```
 
 ```{r, include=FALSE}
@@ -276,7 +280,8 @@ Aplicamos la fórmula:
 
 \end{split} 
 
-```{example, label="pearson-coefficient-calculation", name="Cálculo del Coeficiente de correlación de Pearson en R"}
+```{example, label="pearson-coefficient-calculation-in-r", name="Cálculo del Coeficiente de correlación de Pearson en R"}
+:
 ```
 
 Si no queremos hacer todos los cálculos del ejemplo \@ref(exm:pearson-coefficient-calculation) a mano podemos recurrir a R que con la función ```cor``` lo calcula. 
@@ -299,6 +304,7 @@ cor(datos$x, datos$y)
 Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o $\rho$ de la letra griega *r* se calcula según la definición \@ref(def:definition-spearman-correlation).
 
 ```{definition, label="definition-spearman-correlation", name="Coeficiente de correlación de Spearman"}
+:
 ```
 $$
 \rho = 1-{6\sum{d^2}\over{N(N^2-1)}}  

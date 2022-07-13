@@ -3,6 +3,22 @@ new_session: true
 before_chapter_script: _common.R
 delete_merged_file: true
 language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabla '
+    eq: 'Fórmula '
+    thm: 'Theorema '
+    lem: 'Lema '
+    cor: 'Corollario '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Definición '
+    exm: 'Ejemplo '
+    exr: 'Exercise '
+    hyp: 'Hypothesis '
+    proof: 'Proof. '
+    remark: 'Remark. '
+    solution: 'Solution. '
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Capítulo "
 output_dir: "docs"

@@ -64,7 +64,8 @@ Esta propiedad es de bastante utilidad y se puede aprovechar de varias maneras. 
 
 En textos de estadística frecuentemente se habla de *variable normalizada*, también se conoce como *unidad tipificada*, *variable centrada reducida* o *variable estandarizada*. Normalizar una variable es simplemente expresar su magnitud en unidades de desviación estándar. Para lograr ello tomamos la variable, restamos la media y dividimos por la desviación estándar. En literatura en inglés es de uso frecuente el término «z-score», por lo que su definición formal (véase \@ref(def:definition-z-score)) lleva esta letra. 
 
-\BeginKnitrBlock{definition}\iffalse{-91-86-97-114-105-97-98-108-101-32-110-111-114-109-97-108-105-122-97-100-97-93-}\fi{}<div class="definition"><span class="definition" id="def:definition-z-score"><strong>(\#def:definition-z-score)  \iffalse (Variable normalizada) \fi{} </strong></span>La variable normalizada z de un conjunto de datos X se obtiene por la fórmula siguiente:
+::: {.definition #definition-z-score name="Variable normalizada"}
+La variable normalizada z de un conjunto de datos X se obtiene por la fórmula siguiente:
   
 $$
   z = {x-\bar{x}\over{\sigma}}
@@ -75,12 +76,15 @@ $$
 * x: una observación de X
 * $\bar{x}$: la media de las observaciones
 * $\sigma$ o s: la desviación estándar de la población o muestra respectivamente.
-</div>\EndKnitrBlock{definition}
+
+:::
 
 Es importante entender que normalizar una variable no cambia su valor, solo su unidad de cuenta: El lo mismo comprar medio kilo de queso que comprar quinientos gramos. 
 
 Normalizar las variables nos permite comparar su distribución independientemente de su unidad de cuenta y amplitud, también nos permite sacar conclusiones sobre probabilidades y proporciones. Vamos a desarrollar esta idea por medio de un ejemplo.
-\BeginKnitrBlock{example}\iffalse{-91-65-110-97-108-105-122-97-110-100-111-32-100-97-116-111-115-32-100-101-108-32-109-105-110-105-115-116-101-114-105-111-32-100-101-32-115-97-108-117-100-93-}\fi{}<div class="example"><span class="example" id="exm:estatura-mujeres-argentinas"><strong>(\#exm:estatura-mujeres-argentinas)  \iffalse (Analizando datos del ministerio de salud) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #estatura-mujeres-argentinas name="Analizando datos del ministerio de salud"}
+:
+:::
 
 En el 2007 el Ministerio de Salud de Argentina realizó un estudio [@ministerioDeSalud:2007] que entre otras recopiló datos sobre la estatura de las argentinas entre 19 y 49 años. La media fue de 161,01 centímetros con una desviación estándar de 6,99. Con estos datos podemos construir nuestra curva.
 
@@ -130,7 +134,9 @@ En la sección \@ref(cual-usar) decidimos usar *la media* como medida de central
 
 También podemos valernos del conocimiento de la proporción de observaciones que deben estar dentro de la primera y segunda desviación estándar y verificar si nuestros datos se conforman con estas predicciones. 
 
-\BeginKnitrBlock{example}<div class="example"><span class="example" id="exm:unnamed-chunk-3"><strong>(\#exm:unnamed-chunk-3) </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-3}
+:
+:::
 Si tomamos nuestros datos de las notas de nuestros dos cursos que vimos en la sección \@ref(estadisticas-descriptivas-e-inferenciales) y que fuimos desarrollando a lo largo de los capítulos anteriores podemos realizar este análisis.
 
 Grupo A: {15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14}
@@ -152,7 +158,9 @@ Grupo B: {11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 8,
 
 Observamos que nuestras notas carecen en cierta medida de valores extremos, sin embargo la muestra es relativamente pequeña con lo cual nos conformamos con estos resultados y consideramos normales las distribuciones.
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-4"><strong>(\#exm:unnamed-chunk-4)  \iffalse (Ejemplo en R) \fi{} </strong></span>  </div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-4 name="Ejemplo en R"}
+:  
+:::
 
 Si no queremos hacer estos cálculos a mano los podemos hacer también en R, así:
 

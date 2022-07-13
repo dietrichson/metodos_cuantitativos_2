@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 Centralización y dispersión | Métodos Cuantitativos</title>
+<title>Capítulo 3 Centralización y dispersión | Métodos Cuantitativos</title>
 <meta name="author" content="Aleksander Dietrichson, PhD">
 <meta name="description" content="En el capítulo 2 vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y...">
-<meta name="generator" content="bookdown 0.24.11 with bs4_book()">
-<meta property="og:title" content="Chapter 3 Centralización y dispersión | Métodos Cuantitativos">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="Capítulo 3 Centralización y dispersión | Métodos Cuantitativos">
 <meta property="og:type" content="book">
 <meta property="og:description" content="En el capítulo 2 vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 3 Centralización y dispersión | Métodos Cuantitativos">
+<meta name="twitter:title" content="Capítulo 3 Centralización y dispersión | Métodos Cuantitativos">
 <meta name="twitter:description" content="En el capítulo 2 vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="centralización-y-dispersión" class="section level1" number="3">
 <h1>
-<span class="header-section-number">3</span> Centralización y dispersión<a class="anchor" aria-label="anchor" href="#centralizaci%C3%B3n-y-dispersi%C3%B3n"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Capítulo 3</span> Centralización y dispersión<a class="anchor" aria-label="anchor" href="#centralizaci%C3%B3n-y-dispersi%C3%B3n"><i class="fas fa-link"></i></a>
 </h1>
 <p>En el <a href="distribuciones-de-frecuencias.html#distribuciones-de-frecuencias">capítulo</a> <a href="distribuciones-de-frecuencias.html#distribuciones-de-frecuencias">2</a> vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y rango de observaciones. En este capítulo desarrollaremos algunas medidas cuantitativas más precisas de estas propiedades. Específicamente desarrollaremos medidas de centralización o tendencia central y dispersión.</p>
 <div id="centralización" class="section level2" number="3.1">
@@ -92,21 +92,20 @@
   \tag{3.2}
 \end{equation}\]</span></p>
 <p>Ya con el cómputo en <a href="centralizaci%C3%B3n-y-dispersi%C3%B3n.html#eq:media-de-treinta-observaciones">(3.2)</a> nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-2" class="example"><strong>Example 3.1  \iffalse (Ejemplo en R) </strong></span>
+<p><span id="exm:unnamed-chunk-2" class="example"><strong>Ejemplo 3.1  (Ejemplo en R) </strong></span>:</p>
 </div>
 <p>Por suerte es bastante sencillo sacar la media con R. Para los dos ejemplos anteriores tenemos:</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span> , <span class="fl">15</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span> , <span class="fl">15</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; [1] 14.33333</code></pre>
 <p>y</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">notas</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, 
-           <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, 
-           <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">notas</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">notas</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, </span>
+<span>           <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, </span>
+<span>           <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">notas</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; [1] 14.93333</code></pre>
 <div id="notación-matemática" class="section level4 unnumbered">
 <h4>Notación matemática<a class="anchor" aria-label="anchor" href="#notaci%C3%B3n-matem%C3%A1tica"><i class="fas fa-link"></i></a>
@@ -120,11 +119,10 @@
 \]</span></p>
 <p>También se usa una barra vertical sobre el nombre de la variable para significar la media (o promedio aritmético): por ejemplo: <span class="math display">\[\bar{x} = 14,33\]</span></p>
 <p>Entonces en general tenemos:</p>
-
 <div class="definition">
-<span id="def:unnamed-chunk-5" class="definition"><strong>Definition 3.1  \iffalse (La media) </strong></span><span class="math display">\[
+<p><span id="def:unnamed-chunk-5" class="definition"><strong>Definición 3.1  (La media) </strong></span><span class="math display">\[
 \bar{x} = {\Sigma{x}\over{N}}
-\]</span>
+\]</span></p>
 </div>
 <p>que se podría leer: «la media de equis es igual a la suma de las observaciones de equis sobre el número de observaciones».</p>
 </div>
@@ -139,19 +137,18 @@
 <h4>Notación matemática<a class="anchor" aria-label="anchor" href="#notaci%C3%B3n-matem%C3%A1tica-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>El valor mediano, o la mediana, se denota en notación matemática con una tilde como la que se usa en la letra ñ en español. Al igual que la barra para la media, se coloca por encima de la variable, así: <span class="math display">\[\huge{\tilde{x}}\]</span>.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-6" class="example"><strong>Example 3.2  \iffalse (Ejemplo en R) </strong></span>
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Ejemplo 3.2  (Ejemplo en R) </strong></span>:</p>
 </div>
 <p>Al igual que la media podemos sacar la mediana de forma sencilla con R con la función <code>median</code>.</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; [1] 15</code></pre>
 <p>y</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; [1] 11.5</code></pre>
 </div>
 </div>
@@ -178,14 +175,14 @@
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="03-tendencia_central_y_variabilidad_files/figure-html/unnamed-chunk-10-1.png" alt="Religión en Alemania" width="672"><p class="caption">
-Figure 3.1: Religión en Alemania
+Figura 3.1: Religión en Alemania
 </p>
 </div>
 <p>En cuanto a la forma de la distribución se favorece la mediana por sobre la media si la distribución es muy sesgada. Esto ocurre sobre todo si hay valores extremos o atípicos. Por ejemplo si tenemos los datos: {15, 12, 11, 18, 15, 15, 200} está claro que si calculamos la media el valor extremo (200) va influir mucho más que cualquier otra observación. En este caso la media es 40,85 y el mediano 15. El primer valor (40,85) no es muy representativo de la muestra ya que no corresponde a ninguna observación y está lejos de cualquiera de ellas. El mediano, en cambio, puede resultar una mejor medida en este caso.</p>
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="03-tendencia_central_y_variabilidad_files/figure-html/unnamed-chunk-11-1.png" alt="Medidas de centralización en una distribución con sesgo positivo" width="672"><p class="caption">
-Figure 3.2: Medidas de centralización en una distribución con sesgo positivo
+Figura 3.2: Medidas de centralización en una distribución con sesgo positivo
 </p>
 </div>
 <p>Para darnos cuenta de cuál de las medidas puede ser la más adecuada si tenemos datos por lo menos numéricos podemos sacar las tres medidas y ver qué tanto de asemejan unas a otras. Hay que tener en mente que <em>cualiér distribución de datos reales va a tener un sesgo</em>, la distribución perfectamente normal solo existe en teoría. Entonces debemos fijarnos si el sesgo que tenemos justifica el uso de una medida en espeficia. Por ejemplo, para nuestros datos de notas de dos grupos tenemos:</p>
@@ -222,14 +219,13 @@ Figure 3.2: Medidas de centralización en una distribución con sesgo positivo
 </h3>
 <p>El rango de un conjunto de datos son dos números: el valor mínimo y el valor máximo. Por ejemplo el conjunto de datos {9, 11, 12, 15, 15 ,15, 18} tiene un rango 9 a 18; y el conjunto {2, 4, 5, 7, 7, 7, 9, 11, 12, 15, 15 ,15, 18} tiene un rango de 2 a 18.</p>
 <p>En castellano se usa con alguna frecuencia también el término <em>amplitud</em> como equivalente a <em>rango</em>.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-12" class="example"><strong>Example 3.3  \iffalse (Ejemplo en R) </strong></span>
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Ejemplo 3.3  (Ejemplo en R) </strong></span>:</p>
 </div>
 <p>Para sacar el rango de un conjunto de datos en R podemos usar la función <code>range</code>. Así:</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; [1]  2 18</code></pre>
 </div>
 <div id="el-rango-intercuartílico" class="section level3" number="3.2.2">
@@ -240,18 +236,17 @@ Figure 3.2: Medidas de centralización en una distribución con sesgo positivo
 <div class="figure">
 <span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="03-tendencia_central_y_variabilidad_files/figure-html/unnamed-chunk-14-1.png" alt="Cuartiles y rangos" width="672"><p class="caption">
-Figure 3.3: Cuartiles y rangos
+Figura 3.3: Cuartiles y rangos
 </p>
 </div>
 <p>El rango intercuartílico da una idea de la dispersión de los datos y es por su naturaleza menos sensitivo a valores extremos.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-15" class="example"><strong>Example 3.4  \iffalse (Ejemplo en R) </strong></span>
+<p><span id="exm:unnamed-chunk-15" class="example"><strong>Ejemplo 3.4  (Ejemplo en R) </strong></span>:</p>
 </div>
 <p>Para sacar en rango intercuartílico podemos usar la función <code>quantiles</code>. Por defecto divide la distribución en cuartiles.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt;   0%  25%  50%  75% 100% 
 #&gt;    2    7    9   15   18</code></pre>
 <p>Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitúd de 8 ya que <span class="math inline">\(15 - 7 = 8\)</span>.</p>
@@ -262,43 +257,38 @@ Figure 3.3: Cuartiles y rangos
 </h3>
 <p>La medida de dispersión más usada en estadística es la <em>desviación estándar</em>, también conocida como <em>desviación típica</em>. Esta medida tiene una relación matemática muy estrecha con la <em>varianza</em> que tiene usos menos frecuentes. Ambas medidas tienen propiedades que los hacen útiles para otras técnicas estadísticas.</p>
 <p>Para calcular la desviación estándar debemos primero calcular la varianza. Para ello tomamos la diferencia de cada observación de la media. Recordemos que la media se expresa con <span class="math inline">\(\bar{x}\)</span> (equis con barra). Entonces la diferencia entre una observación de x y la media es <span class="math inline">\(x - \bar{x}\)</span>. Luego los llevamos al cuadrado <span class="math inline">\((x - \bar{x})^2\)</span> los sumamos y dividimos por el número total de observaciones. Para expresarlo usamos la notación que ya vimos. Entonces <span class="math inline">\(\Sigma\)</span> es «la suma de» y N es «el total de las observaciones». Juntando todo tenemos:</p>
-
 <div class="definition">
-<span id="def:unnamed-chunk-17" class="definition"><strong>Definition 3.2  \iffalse (Varianza) </strong></span>
-<span class="math display">\[
+<p><span id="def:unnamed-chunk-17" class="definition"><strong>Definición 3.2  (Varianza) </strong></span><span class="math display">\[
 \text{varianza} = {{\Sigma (x - \bar{x})^2}\over{N}}
-\]</span>
+\]</span></p>
 </div>
 <p>Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega <span class="math inline">\(\sigma\)</span> que es sigma pero en minúscula. Entonces tenemos la definición:</p>
-
 <div class="definition">
-<span id="def:unnamed-chunk-18" class="definition"><strong>Definition 3.3  \iffalse (Desviación estándar de la población) </strong></span><span class="math display">\[
+<p><span id="def:unnamed-chunk-18" class="definition"><strong>Definición 3.3  (Desviación estándar de la población) </strong></span><span class="math display">\[
 \sigma = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N}}}
-\]</span>
+\]</span></p>
 </div>
 <p>Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:</p>
-
 <div class="definition">
-<span id="def:definition-standard-deviation" class="definition"><strong>Definition 3.4  \iffalse (Desviación estándar de la muestra) </strong></span><span class="math display">\[
+<p><span id="def:definition-standard-deviation" class="definition"><strong>Definición 3.4  (Desviación estándar de la muestra) </strong></span><span class="math display">\[
 s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
-\]</span>
+\]</span></p>
 </div>
 <p>Finalmente. Ya que s y <span class="math inline">\(\sigma\)</span> son la raíz cuadrada de la varianza, esta también se denomina por las mismas letras, pero llevado al cuadrado: <span class="math inline">\(s^2\)</span> y <span class="math inline">\(\sigma^2\)</span></p>
 <blockquote>
 <h4 id="por-qué-llevamos-todo-al-cuadrado" class="unnumbered">¿Por qué llevamos todo al cuadrado?</h4>
 <p>Puede parecer enredado llevar todo al cuadrado para luego volver a sacar la raíz cuadrada. La razón es que si se resta todas las obvervaciones de la media, gran parte de estas diferencias van a ser negativas. Sabemos que un número negativo llevado al cuadrado se vuelve positivo igual que un número positivo, entonces esta parte del procedimiento sirve para que todos los valores que sumamos tengan el mismo signo positivo.</p>
 </blockquote>
-
 <div class="example">
-<span id="exm:unnamed-chunk-19" class="example"><strong>Example 3.5  \iffalse (Ejemplo en R) </strong></span>
+<p><span id="exm:unnamed-chunk-19" class="example"><strong>Ejemplo 3.5  (Ejemplo en R) </strong></span>:</p>
 </div>
 <p>Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones <code>var</code> y <code>sd</code><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;«sd» por la abreviación del inglés «&lt;strong&gt;s&lt;/strong&gt;tandard &lt;strong&gt;d&lt;/strong&gt;eviation».&lt;/p&gt;"><sup>20</sup></a>.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">7</span>, <span class="fl">9</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">15</span>, <span class="fl">15</span> ,<span class="fl">15</span>, <span class="fl">18</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; [1] 24.69231</code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; [1] 4.969136</code></pre>
 <blockquote>
 <h4 id="por-qué-se-prefiere-la-desviación-estándar" class="unnumbered">¿Por qué se prefiere la desviación estándar?</h4>
@@ -313,26 +303,25 @@ s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 <div class="figure">
 <span style="display:block;" id="fig:boxplot-example"></span>
 <img src="03-tendencia_central_y_variabilidad_files/figure-html/boxplot-example-1.png" alt="Ejemplo de box-plot" width="672"><p class="caption">
-Figure 3.4: Ejemplo de box-plot
+Figura 3.4: Ejemplo de box-plot
 </p>
 </div>
 En este tipo de visualización la mediana está representada por la linea horizontal más gruesa, la caja corresponde al rango intercuartíl y los extremos de la linea horizontal representan el rango de los datos. Lo podemos apreciar en la figura @(ref:box-plot-with-explanation)
 <div class="figure">
 <span style="display:block;" id="fig:box-plot-with-explanation"></span>
 <img src="03-tendencia_central_y_variabilidad_files/figure-html/box-plot-with-explanation-1.png" alt="Ejemplo de box-plot con explicaciones" width="672"><p class="caption">
-Figure 3.5: Ejemplo de box-plot con explicaciones
+Figura 3.5: Ejemplo de box-plot con explicaciones
 </p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-22" class="example"><strong>Example 3.6  \iffalse (Crear boxplot en R) </strong></span>
+<p><span id="exm:unnamed-chunk-22" class="example"><strong>Ejemplo 3.6  (Crear boxplot en R) </strong></span>:</p>
 </div>
 <p>La función <code>boxplot</code> nos permite generar un boxplot en R.</p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">notas</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, 
-           <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, 
-           <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">notas</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">notas</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, </span>
+<span>           <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, </span>
+<span>           <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">notas</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="03-tendencia_central_y_variabilidad_files/figure-html/unnamed-chunk-23-1.png" width="672"></div>
 </div>
 </div>
@@ -452,7 +441,7 @@ Equivalente en inglés: «Variance».
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 12 de narzo de 2022.</p>
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. La más reciente versión es de 13 de julio de 2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

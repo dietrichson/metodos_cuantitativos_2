@@ -17,7 +17,9 @@ $H_1: P(x_i>y_j)\neq{1\over2}$
 
 La prueba U de Mann-Whitney también se conoce con otros nombres: *Mann–Whitney–Wilcoxon*, *Wilcoxon rank-sum test* y  *Wilcoxon–Mann–Whitney*. Por ello está disponible en R por medio de la función ```wilcox.test```.
 
-\BeginKnitrBlock{example}\iffalse{-91-80-114-117-101-98-97-32-85-32-100-101-32-77-97-110-110-45-87-104-105-116-110-101-121-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-1"><strong>(\#exm:unnamed-chunk-1)  \iffalse (Prueba U de Mann-Whitney en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-1 name="Prueba U de Mann-Whitney en R"}
+:
+:::
 
 En este ejemplo vamos a suponer que tenemos datos diagnósticos de cuatro mujeres y cinco hombres. Todos fueron diagnosticados con diabetes y tenemos la edad a la cual se les descubrió la enfermedad. Queremos saber si hay diferencia en la edad entre hombres y mujeres. 
 Los datos son:
@@ -50,7 +52,9 @@ Vimos en la sección \@ref(prueba-u-de-mann-whitney) que la prueba U de Mann-Whi
 
 La lógica de la prueba de los rangos con signo de Wilcoxon es similar a la de la prueba de t pareada. Si no hay diferencia en el antes y despues, por ejemplo, las diferencias entre las observaciones deberían tender a cero. 
 
-\BeginKnitrBlock{example}\iffalse{-91-80-114-117-101-98-97-32-100-101-32-108-111-115-32-114-97-110-103-111-115-32-99-111-110-32-115-105-103-110-111-32-100-101-32-87-105-108-99-111-120-111-110-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-3"><strong>(\#exm:unnamed-chunk-3)  \iffalse (Prueba de los rangos con signo de Wilcoxon en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-3 name="Prueba de los rangos con signo de Wilcoxon en R"}
+:
+:::
 
 En este ejemplo vamos a suponer que tenemos un grupo de doce pacientes con artritis y les damos dos medicaciones distintas para aliviar los síntomas. Pedimos a todos que nos indiquen cuantas horas de alivio observaron con ambas drogas.
 
@@ -192,11 +196,15 @@ Para realizar un test de signo debemos primero anotar el signo (positivo, negati
 
 Cuando N es superior a 25, es decir cuando tenemos venticinco o más observaciones que no sean cero, se puede transformar W en una variable normalizada. Usando la fórmula en la definición \@ref(def:sign-test-large-n).
 
-\BeginKnitrBlock{definition}\iffalse{-91-78-111-114-109-97-108-105-122-97-114-32-87-32-100-101-108-32-116-101-115-116-32-100-101-32-115-105-103-110-111-115-93-}\fi{}<div class="definition"><span class="definition" id="def:sign-test-large-n"><strong>(\#def:sign-test-large-n)  \iffalse (Normalizar W del test de signos) \fi{} </strong></span>$$
+::: {.definition #sign-test-large-n name="Normalizar W del test de signos"}
+$$
 z={{N-2\times{W}-1}\over\sqrt{N}}
-$$</div>\EndKnitrBlock{definition}
+$$
+:::
 
-\BeginKnitrBlock{example}\iffalse{-91-82-101-97-108-105-122-97-114-32-112-114-117-101-98-97-32-100-101-32-115-105-103-110-32-112-97-114-97-32-78-62-50-53-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-10"><strong>(\#exm:unnamed-chunk-10)  \iffalse (Realizar prueba de sign para N>25) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-10 name="Realizar prueba de sign para N>25"}
+:
+:::
 En este ejemplo vamos a suponer que hemos preguntado a 150 personas su opinión sobre el café de dos cafeterías: A y B, de la Ciudad de Buenos Aires. Les pedimos que indiquen en una escala de 1 a 5 cuánto les gusta cada producto. De ellos cincuenta dan el mismo ranking a ambos productos, con lo sus opiniones se eliminan del cálculo. De los restantes cien tenemos 39 que prefieren B y 61 que prefieren A. Tomamos el menor valor (39) y aplicamos la fórmula:
 $$
 z={{N-2\times{W}-1}\over\sqrt{N}} = {{100-2\times{39}-1}\over\sqrt{100}} = {21\over10} = 2,1

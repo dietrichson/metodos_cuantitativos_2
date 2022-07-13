@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 Pruebas no paramétricas | Métodos Cuantitativos</title>
+<title>Capítulo 8 Pruebas no paramétricas | Métodos Cuantitativos</title>
 <meta name="author" content="Aleksander Dietrichson, PhD">
 <meta name="description" content="En el capítulo ?? vimos que para usar esas pruebas tenemos que cumplir con algunos requisitos sobre la distribución normal de las variables, nivel de medición y homogeneidad de las varianzas. Con...">
-<meta name="generator" content="bookdown 0.24.11 with bs4_book()">
-<meta property="og:title" content="Chapter 8 Pruebas no paramétricas | Métodos Cuantitativos">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="Capítulo 8 Pruebas no paramétricas | Métodos Cuantitativos">
 <meta property="og:type" content="book">
 <meta property="og:description" content="En el capítulo ?? vimos que para usar esas pruebas tenemos que cumplir con algunos requisitos sobre la distribución normal de las variables, nivel de medición y homogeneidad de las varianzas. Con...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 Pruebas no paramétricas | Métodos Cuantitativos">
+<meta name="twitter:title" content="Capítulo 8 Pruebas no paramétricas | Métodos Cuantitativos">
 <meta name="twitter:description" content="En el capítulo ?? vimos que para usar esas pruebas tenemos que cumplir con algunos requisitos sobre la distribución normal de las variables, nivel de medición y homogeneidad de las varianzas. Con...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="pruebas-no-paramétricas" class="section level1" number="8">
 <h1>
-<span class="header-section-number">8</span> Pruebas no paramétricas<a class="anchor" aria-label="anchor" href="#pruebas-no-param%C3%A9tricas"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Capítulo 8</span> Pruebas no paramétricas<a class="anchor" aria-label="anchor" href="#pruebas-no-param%C3%A9tricas"><i class="fas fa-link"></i></a>
 </h1>
 <p>En el <a href="#pruebas-parametricas">capítulo</a> <a href="#pruebas-parametricas"><strong>??</strong></a> vimos que para usar esas pruebas tenemos que cumplir con algunos requisitos sobre la distribución normal de las variables, nivel de medición y homogeneidad de las varianzas. Con alguna frecuencia, sin embargo, resulta que nuestros datos no cumplen con alguno de esos requisitos. Esto se puede dar por la naturaleza de la investigación, por ejemplo si estamos investigando un fenómeno que no se puede medir a escala de intervalo o razón; o tenemos relativamente pocos datos y luego de realizar los test de <em>Fisher</em> y <em>Shapiro</em> nos damos cuenta de que o la varianza es muy heterogénea o que las variables carecen de distribución normal.</p>
 <p>Por suerte todavía hay esperanza. Existen algunas pruebas estadísticas, llamadas <em>no paramétricas</em> que nos pueden salvar en estos casos. En este capítulo desarrollaremos tres de ellos.</p>
@@ -77,9 +77,8 @@
 <p><span class="math inline">\(H_0: P(x_i&gt;y_j)={1\over2}\)</span></p>
 <p><span class="math inline">\(H_1: P(x_i&gt;y_j)\neq{1\over2}\)</span></p>
 <p>La prueba U de Mann-Whitney también se conoce con otros nombres: <em>Mann–Whitney–Wilcoxon</em>, <em>Wilcoxon rank-sum test</em> y <em>Wilcoxon–Mann–Whitney</em>. Por ello está disponible en R por medio de la función <code>wilcox.test</code>.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-1" class="example"><strong>Example 5.1  \iffalse (Prueba U de Mann-Whitney en R) </strong></span>
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Ejemplo 5.1  (Prueba U de Mann-Whitney en R) </strong></span>:</p>
 </div>
 <p>En este ejemplo vamos a suponer que tenemos datos diagnósticos de cuatro mujeres y cinco hombres. Todos fueron diagnosticados con diabetes y tenemos la edad a la cual se les descubrió la enfermedad. Queremos saber si hay diferencia en la edad entre hombres y mujeres.
 Los datos son:</p>
@@ -87,9 +86,9 @@ Los datos son:</p>
 Mujeres: {20, 11, 17, 12}.<br>
 </div>
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">Hombres</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">19</span>, <span class="fl">22</span>, <span class="fl">16</span>, <span class="fl">29</span>, <span class="fl">24</span><span class="op">)</span>
-<span class="va">Mujeres</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">11</span>, <span class="fl">17</span>, <span class="fl">12</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">Hombres</span>, <span class="va">Mujeres</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">Hombres</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">19</span>, <span class="fl">22</span>, <span class="fl">16</span>, <span class="fl">29</span>, <span class="fl">24</span><span class="op">)</span></span>
+<span><span class="va">Mujeres</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">11</span>, <span class="fl">17</span>, <span class="fl">12</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">Hombres</span>, <span class="va">Mujeres</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Wilcoxon rank sum exact test
 #&gt; 
@@ -104,15 +103,14 @@ Mujeres: {20, 11, 17, 12}.<br>
 </h2>
 <p>Vimos en la sección <a href="pruebas-no-param%C3%A9tricas.html#prueba-u-de-mann-whitney">8.1</a> que la prueba U de Mann-Whitney puede ser una alternativa a la prueba de t de Student para muestras intependiente (véase la sección <a href="pruebas-param%C3%A9tricas.html#prueba-t-de-student-para-muestras-independientes">7.1</a>) cuando los requisitos para un test paramétrico no se cumplen. Si los datos son pareados tenemos la <em>prueba de los rangos con signo de Wilcoxon</em> como alternativa a prueba t para muestras pareadas que vimos en la sección <a href="pruebas-param%C3%A9tricas.html#prueba-t-para-muestras-pareadas">7.4</a>.</p>
 <p>La lógica de la prueba de los rangos con signo de Wilcoxon es similar a la de la prueba de t pareada. Si no hay diferencia en el antes y despues, por ejemplo, las diferencias entre las observaciones deberían tender a cero.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-3" class="example"><strong>Example 4.2  \iffalse (Prueba de los rangos con signo de Wilcoxon en R) </strong></span>
+<p><span id="exm:unnamed-chunk-3" class="example"><strong>Ejemplo 4.1  (Prueba de los rangos con signo de Wilcoxon en R) </strong></span>:</p>
 </div>
 <p>En este ejemplo vamos a suponer que tenemos un grupo de doce pacientes con artritis y les damos dos medicaciones distintas para aliviar los síntomas. Pedimos a todos que nos indiquen cuantas horas de alivio observaron con ambas drogas.</p>
 <p>Los datos se observan en la tabla <a href="pruebas-no-param%C3%A9tricas.html#tab:drug-comparative-table">8.1</a>.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:drug-comparative-table">Table 8.1: </span>Eficiencia de dos medicamentos reportada por los pacientes.</caption>
+<span id="tab:drug-comparative-table">Tabla 8.1: </span>Eficiencia de dos medicamentos reportada por los pacientes.</caption>
 <thead><tr class="header">
 <th align="right">Paciente</th>
 <th align="right">Droga.A</th>
@@ -183,14 +181,14 @@ Mujeres: {20, 11, 17, 12}.<br>
 </table></div>
 <p>En R ponemos los datos en un <code>data.frame</code>:</p>
 <div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">datos</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
-  Paciente <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">11</span>, <span class="fl">12</span><span class="op">)</span>,
-  Droga.A <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">2</span>,  <span class="fl">3.6</span>,  <span class="fl">2.6</span>,  <span class="fl">2.7</span>,  <span class="fl">7.3</span>,  <span class="fl">3.4</span>,  <span class="fl">14.9</span>,  <span class="fl">6.6</span>,  <span class="fl">2.3</span>,  <span class="fl">2.1</span>,  <span class="fl">6.8</span>,  <span class="fl">8.5</span><span class="op">)</span>,
-  Droga.B <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">3.5</span>,  <span class="fl">5.7</span>,  <span class="fl">2.9</span>,  <span class="fl">2.4</span>,  <span class="fl">9.9</span>,  <span class="fl">3.3</span>,  <span class="fl">16.7</span>,  <span class="fl">6</span>,  <span class="fl">3.8</span>,  <span class="fl">4</span>,  <span class="fl">9.1</span>,  <span class="fl">20.9</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">datos</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  Paciente <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">11</span>, <span class="fl">12</span><span class="op">)</span>,</span>
+<span>  Droga.A <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">2</span>,  <span class="fl">3.6</span>,  <span class="fl">2.6</span>,  <span class="fl">2.7</span>,  <span class="fl">7.3</span>,  <span class="fl">3.4</span>,  <span class="fl">14.9</span>,  <span class="fl">6.6</span>,  <span class="fl">2.3</span>,  <span class="fl">2.1</span>,  <span class="fl">6.8</span>,  <span class="fl">8.5</span><span class="op">)</span>,</span>
+<span>  Droga.B <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span> <span class="fl">3.5</span>,  <span class="fl">5.7</span>,  <span class="fl">2.9</span>,  <span class="fl">2.4</span>,  <span class="fl">9.9</span>,  <span class="fl">3.3</span>,  <span class="fl">16.7</span>,  <span class="fl">6</span>,  <span class="fl">3.8</span>,  <span class="fl">4</span>,  <span class="fl">9.1</span>,  <span class="fl">20.9</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p>E iniciamos nuestros tests:</p>
 <div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>,<span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>,<span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  F test to compare two variances
 #&gt; 
@@ -205,14 +203,14 @@ Mujeres: {20, 11, 17, 12}.<br>
 #&gt;          0.4186498</code></pre>
 <p>¡Bien! No tenemos problemas de varianza.</p>
 <div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
 #&gt; 
 #&gt; data:  datos$Droga.A
 #&gt; W = 0.80692, p-value = 0.01124</code></pre>
 <div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
 #&gt; 
@@ -221,7 +219,7 @@ Mujeres: {20, 11, 17, 12}.<br>
 <p>¡Ups!, las variables no tienen distribución normal. Entonces no podemos usar la prueba t pareada, tenemos que probar con <em>Wilcoxon</em>.</p>
 <p>Usamos la función <code>wilcox.test</code> con el parametro extra de <code>paired = TRUE</code>.</p>
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>, <span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>, <span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Wilcoxon signed rank test with continuity correction
 #&gt; 
@@ -235,7 +233,7 @@ Mujeres: {20, 11, 17, 12}.<br>
 <p>Si nos hubéramos olvidado de verificar la conformidad de los requisitos podríamos haber caído en la prueba t paramétrica, ¿qué hubiera pasado?</p>
 <p>Veamos:</p>
 <div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>, <span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">datos</span><span class="op">$</span><span class="va">Droga.A</span>, <span class="va">datos</span><span class="op">$</span><span class="va">Droga.B</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Paired t-test
 #&gt; 
@@ -258,15 +256,13 @@ Mujeres: {20, 11, 17, 12}.<br>
 <p>La prueba de signos resuelve este problema convirtiendo la diferencia en una variable trinaria: puede ser cero, positiva o negativa. La lógica del test es similar a la de Wilcoxon, si no hay un patrón en las observaciones estas diferencias deberían tender a cero.
 Para realizar un test de signo debemos primero anotar el signo (positivo, negativo o cero) de todas los pares de observaciones que tenemos. Cuando la diferencia es cero se excluye el par del análisis y reducimos <em>N</em> acorde a eso. Luego sumamos los positivos por un lado y los negativos por otro y tomamos el <em>menor</em> le los dos. Este número, a menudo significado por una <em>W</em>, de puede compara con la tabla de valores críticos para el N que quedó, que se puede consultar en el <a href="#valores-criticos-del-test-de-signo">apendice B</a> para N entre 5 y 25.</p>
 <p>Cuando N es superior a 25, es decir cuando tenemos venticinco o más observaciones que no sean cero, se puede transformar W en una variable normalizada. Usando la fórmula en la definición <a href="pruebas-no-param%C3%A9tricas.html#def:sign-test-large-n">8.1</a>.</p>
-
 <div class="definition">
-<span id="def:sign-test-large-n" class="definition"><strong>Definition 8.1  \iffalse (Normalizar W del test de signos) </strong></span><span class="math display">\[
+<p><span id="def:sign-test-large-n" class="definition"><strong>Definición 8.1  (Normalizar W del test de signos) </strong></span><span class="math display">\[
 z={{N-2\times{W}-1}\over\sqrt{N}}
-\]</span>
+\]</span></p>
 </div>
-
 <div class="example">
-<span id="exm:unnamed-chunk-10" class="example"><strong>Example 7.6  \iffalse (Realizar prueba de sign para N&gt;25) </strong></span>
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Ejemplo 7.6  (Realizar prueba de sign para N&gt;25) </strong></span>:</p>
 </div>
 <p>En este ejemplo vamos a suponer que hemos preguntado a 150 personas su opinión sobre el café de dos cafeterías: A y B, de la Ciudad de Buenos Aires. Les pedimos que indiquen en una escala de 1 a 5 cuánto les gusta cada producto. De ellos cincuenta dan el mismo ranking a ambos productos, con lo sus opiniones se eliminan del cálculo. De los restantes cien tenemos 39 que prefieren B y 61 que prefieren A. Tomamos el menor valor (39) y aplicamos la fórmula:
 <span class="math display">\[
@@ -282,7 +278,7 @@ z={{N-2\times{W}-1}\over\sqrt{N}} = {{100-2\times{39}-1}\over\sqrt{100}} = {21\o
 <div class="figure">
 <span style="display:block;" id="fig:selection-non-parametric"></span>
 <img src="08-tests_no_parametricos_files/figure-html/selection-non-parametric-1.png" alt="Diagrama de flujo para selección de pruebas estadísticas no paramétricas." width="672"><p class="caption">
-Figure 8.1: Diagrama de flujo para selección de pruebas estadísticas no paramétricas.
+Figura 8.1: Diagrama de flujo para selección de pruebas estadísticas no paramétricas.
 </p>
 </div>
 </div>
@@ -341,7 +337,7 @@ Equivalente en inglés: «Mann-Whitney U test».
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 12 de narzo de 2022.</p>
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. La más reciente versión es de 13 de julio de 2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

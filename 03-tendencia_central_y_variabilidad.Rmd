@@ -38,6 +38,7 @@ En el caso de nuestra muestra de notas para de capítulos anteriores tenemos:
 Ya con el cómputo en \@ref(eq:media-de-treinta-observaciones) nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.
 
 ```{example name="Ejemplo en R"}
+:
 ```
 
 Por suerte es bastante sencillo sacar la media con R. Para los dos ejemplos anteriores tenemos:
@@ -93,6 +94,7 @@ Otra medida de centralización es la mediana (también: valor mediano). Para obt
 El valor mediano, o la mediana, se denota en notación matemática con una tilde como la que se usa en la letra ñ en español. Al igual que la barra para la media, se coloca por encima de la variable, así: $$\huge{\tilde{x}}$$.
 
 ```{example name="Ejemplo en R"}
+:
 ```
 
 Al igual que la media podemos sacar la mediana de forma sencilla con R con la función ```median```.
@@ -205,6 +207,7 @@ El rango de un conjunto de datos son dos números: el valor mínimo y el valor m
 En castellano se usa con alguna frecuencia también el término *amplitud* como equivalente a *rango*.
 
 ```{example name="Ejemplo en R"}
+:
 ```
 
 Para sacar el rango de un conjunto de datos en R podemos usar la función ```range```. Así:
@@ -252,6 +255,7 @@ tmpDF %>%
 El rango intercuartílico da una idea de la dispersión de los datos y es por su naturaleza menos sensitivo a valores extremos. 
 
 ```{example name="Ejemplo en R"}
+:
 ```
 
 Para sacar en rango intercuartílico podemos usar la función ```quantiles```. Por defecto divide la distribución en cuartiles.
@@ -298,6 +302,7 @@ Finalmente. Ya que s y $\sigma$ son la raíz cuadrada de la varianza, esta tambi
 
 
 ```{example name="Ejemplo en R"}
+:
 ```
 
 Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones ```var``` y ```sd```^[«sd» por la abreviación del inglés «**s**tandard **d**eviation».].
@@ -363,6 +368,7 @@ p+
 ```
 
 ```{example, name="Crear boxplot en R"}
+:
 ```
 
 La función ```boxplot``` nos permite generar un boxplot en R. 

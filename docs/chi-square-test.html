@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 9 Prueba de \(\chi^2\) | Métodos Cuantitativos</title>
+<title>Capítulo 9 Prueba de \(\chi^2\) | Métodos Cuantitativos</title>
 <meta name="author" content="Aleksander Dietrichson, PhD">
 <meta name="description" content="En los capítulos ?? y ?? vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en...">
-<meta name="generator" content="bookdown 0.24.11 with bs4_book()">
-<meta property="og:title" content="Chapter 9 Prueba de \(\chi^2\) | Métodos Cuantitativos">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="Capítulo 9 Prueba de \(\chi^2\) | Métodos Cuantitativos">
 <meta property="og:type" content="book">
 <meta property="og:description" content="En los capítulos ?? y ?? vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 9 Prueba de \(\chi^2\) | Métodos Cuantitativos">
+<meta name="twitter:title" content="Capítulo 9 Prueba de \(\chi^2\) | Métodos Cuantitativos">
 <meta name="twitter:description" content="En los capítulos ?? y ?? vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -64,14 +64,14 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="chi-square-test" class="section level1" number="9">
 <h1>
-<span class="header-section-number">9</span> Prueba de <span class="math inline">\(\chi^2\)</span><a class="anchor" aria-label="anchor" href="#chi-square-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Capítulo 9</span> Prueba de <span class="math inline">\(\chi^2\)</span><a class="anchor" aria-label="anchor" href="#chi-square-test"><i class="fas fa-link"></i></a>
 </h1>
 <p>En los capítulos <a href="#pruebas-parametricas"><strong>??</strong></a> y <a href="#pruebas-no-parametricas"><strong>??</strong></a> vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en escala de razón, intervalo u ordinal. En este capítulo vamos a explorar algunas técnicas que nos permiten trabajar con variables que no se pueden medir en términos numéricos, sino que son de tipo «sí-o-no»; es decir que son de escala nominal.</p>
 <p>En particular vamos a explorar la distribuciónd de <span class="math inline">\(\chi^2\)</span> de Pearson. <span class="math inline">\(\chi\)</span> es una letra griega que suele pronunciarse «ji» (/xi/) y «chi» (/tʃiː)/<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;del inglés donde se escribe «chi» y se pronuncia /kaɪ/&lt;/p&gt;"><sup>30</sup></a>.</p>
 <div class="figure">
 <span style="display:block;" id="fig:chi-square-plot"></span>
 <img src="09-chi_cuardado_files/figure-html/chi-square-plot-1.png" alt="Distribución «ji cuadrado» con diferentes grados de libertad. " width="672"><p class="caption">
-Figure 9.1: Distribución «ji cuadrado» con diferentes grados de libertad.
+Figura 9.1: Distribución «ji cuadrado» con diferentes grados de libertad.
 </p>
 </div>
 <div id="características" class="section level2" number="9.1">
@@ -79,10 +79,8 @@ Figure 9.1: Distribución «ji cuadrado» con diferentes grados de libertad.
 <span class="header-section-number">9.1</span> Características<a class="anchor" aria-label="anchor" href="#caracter%C3%ADsticas"><i class="fas fa-link"></i></a>
 </h2>
 <p>El test de <span class="math inline">\(\chi^2\)</span> nos permite comparar las frecuencias que observamos con las frecuencias que esperaríamos en base a un modelo teórico o una hipótesis sobre la distribución de la variable en cuestión. Por cada par de valores observados y esperados calculamos la diferencia y aplicamos la fórmula de la definición <a href="chi-square-test.html#def:chi-squared">9.1</a>.</p>
-
 <div class="definition">
-<p><span id="def:chi-squared" class="definition"><strong>Definition 9.1  \iffalse (<span class="math inline">\(\chi^2\)</span>) </strong></span>
-<span class="math display">\[
+<p><span id="def:chi-squared" class="definition"><strong>Definición 9.1  ($\chi^2$) </strong></span><span class="math display">\[
 \chi^2 = \sum{(O-E)^2\over{E}}
 \]</span>
 donde:</p>
@@ -122,7 +120,7 @@ donde:</p>
 <p>La hipótesis nula es que no hay asociación entre las dos variables, es decir que el género de la persona no se asocia con su opinión política sobre este tema. Para calcular los valores esperados tenemos que calcular las sumas de las filas y las columnas y además el total de ellos.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:opiniones-aborto-ii">Table 9.1: </span>Opiniones sobre la ley del aborto.</caption>
+<span id="tab:opiniones-aborto-ii">Tabla 9.1: </span>Opiniones sobre la ley del aborto.</caption>
 <thead><tr class="header">
 <th align="left"></th>
 <th align="right">A favor</th>
@@ -157,7 +155,7 @@ E = {{1230\times1246}\over2191} = 699,48
 <p>Si calculamos esto para todas las celdas obtenemos:</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:opiniones-aborto-iii">Table 9.2: </span>Valores esperados: opiniones sobre la ley del aborto.</caption>
+<span id="tab:opiniones-aborto-iii">Tabla 9.2: </span>Valores esperados: opiniones sobre la ley del aborto.</caption>
 <thead><tr class="header">
 <th align="left"></th>
 <th align="right">A favor</th>
@@ -188,7 +186,7 @@ E = {{1230\times1246}\over2191} = 699,48
 <p>y con esto podemos calcular las diferencias.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:opiniones-aborto-iiii">Table 9.3: </span>Diferencias entre valores observados y esperados.</caption>
+<span id="tab:opiniones-aborto-iiii">Tabla 9.3: </span>Diferencias entre valores observados y esperados.</caption>
 <thead><tr class="header">
 <th align="left"></th>
 <th align="right">A favor</th>
@@ -219,7 +217,7 @@ E = {{1230\times1246}\over2191} = 699,48
 <p>A lo largo de este texto se ha mencionado en algunas ocasiones el término <em>grados de libertad</em> y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la tabla <a href="chi-square-test.html#tab:opiniones-aborto-ii">9.1</a> en la que tenemos una tabla de contingencia <span class="math inline">\(2\times2\)</span>. Calculamos en ese caso las frecuencias marginales que están el la columna <em>suma</em>. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la tabla <a href="chi-square-test.html#tab:degrees-of-freedom">9.4</a></p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:degrees-of-freedom">Table 9.4: </span>Tabla de contingencia con un solo valor.</caption>
+<span id="tab:degrees-of-freedom">Tabla 9.4: </span>Tabla de contingencia con un solo valor.</caption>
 <thead><tr class="header">
 <th align="left"></th>
 <th align="right">A favor</th>
@@ -250,29 +248,28 @@ E = {{1230\times1246}\over2191} = 699,48
 <p>Con este único valor podemos rellenar las demás celdas, ya que su contenido está dato por la diferencia entre ese valor y los totales marginales. Esto quiere decir que en esta tabla hay un solo valor que se pueda asignar arbitrariamente, el resto está dado por este valor. Por ello decimos que tenemos un solo grado de libertad.</p>
 <p>En capítulos anteriores hemos visto que los grados de libertad a menudo son N-1. Podemos usar un ejemplo sencillo para demostrar por qué tiene que ser así. Si hacemos un conjunto de tres números y queremos que la suma sea diez, podemos asignar cualquier número en las primeras dos posiciones, pero cuando vamos a asignar el tercero ya no tenemos libertad de eligir. Entonces tenemos dos grados de libertad.</p>
 <p>Para una tabla de contingencia la fórmula general para calcular los grados de libertad es: <span class="math inline">\((c-1)\times(f-1)\)</span> es decir número de columnas menos uno por número de filas menos uno. Si la tabla es de <span class="math inline">\(3\times3\)</span>, tendríamos 4 grados de libertad.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-1" class="example"><strong>Example 5.1  \iffalse (Prueba de <span class="math inline">\(\chi^2\)</span> en R) </strong></span>
+<p><span id="exm:unnamed-chunk-1" class="example"><strong>Ejemplo 5.1  (Prueba de $\chi^2$ en R) </strong></span>;</p>
 </div>
 <p>En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(\chi^2\)</span> que fuimos desarrollando en las secciones anteriores. Podemos usar la función de R <code>chisq.test</code> para realizarla. Toma como argumento una <em>matriz</em> de datos de las frecuencias.</p>
 <div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">as.table</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">762</span>, <span class="fl">468</span><span class="op">)</span>, 
-        <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">484</span>, <span class="fl">477</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span>
-<span class="co"># Damos nombre a las columnas y las filas </span>
-<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A favor"</span>,<span class="st">"En contra"</span><span class="op">)</span>
-<span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span><span class="op">)</span>
-
-<span class="co"># Verificamos el ingreso de datos</span>
-<span class="va">M</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">M</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">as.table</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">762</span>, <span class="fl">468</span><span class="op">)</span>, </span>
+<span>        <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">484</span>, <span class="fl">477</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="co"># Damos nombre a las columnas y las filas </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A favor"</span>,<span class="st">"En contra"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Verificamos el ingreso de datos</span></span>
+<span><span class="va">M</span></span></code></pre></div>
 <pre><code>#&gt;         A favor En contra
 #&gt; Mujeres     762       468
 #&gt; Hombres     484       477</code></pre>
 <p>Como se puede observar, la sintaxis de R no es del todo intuitiva, por lo que siempre conviene verificar que tenemos los números y nombres correctos antes de proceder con el test.</p>
 <div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Realizamos test de ji-cuadrado</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Realizamos test de ji-cuadrado</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">M</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Pearson's Chi-squared test with Yates' continuity
 #&gt;  correction
@@ -282,7 +279,7 @@ E = {{1230\times1246}\over2191} = 699,48
 <p>El valor de <em>p</em> es tan bajo que R lo devuelve en <em>notación científica</em>. La parte <em>e-08</em> quiere decir que el número es: 0,000000007019, es decir que hay <em>ocho</em> ceros antes de los dígitos significativos.</p>
 <p>También vemos que el valor de <span class="math inline">\(\chi^2\)</span> que calculó R es distinto al que calculamos a mano, aunque sea por unas décimas. Esto se debe a que por defecto R hace una <em>corrección de Yates</em>. Yates descubrió que para una tabla de contingencia <span class="math inline">\(2\times2\)</span> hay un sesgo positivo y propuso una técnica para contrarrestar el sesgo. Si queremos usar la formula original, y la que usamos para nuestro cálculo a mano podemos agregar el parámetro <code>correct = FALSE</code> a la función así:</p>
 <div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">M</span>, correct <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/chisq.test.html">chisq.test</a></span><span class="op">(</span><span class="va">M</span>, correct <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Pearson's Chi-squared test
 #&gt; 
@@ -339,7 +336,7 @@ Equivalente en inglés: «Chi-square test».
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 12 de narzo de 2022.</p>
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. La más reciente versión es de 13 de julio de 2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

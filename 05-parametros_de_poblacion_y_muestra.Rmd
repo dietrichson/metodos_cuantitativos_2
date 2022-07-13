@@ -9,6 +9,7 @@ En este capítulo desarrollaremos las técnicas que se utilizan para arribar a e
 Si suponemos que la estatura promedio de las argentinas entre 19 y 49 años es de 161 centímetros con una desviación estándar de 6,99, estos serían los *parámetros* de la población. Si sacamos cinco muestras aleatorias de veinte observaciones de esta población van a arrojar resultados distintos a estos valores. Algunas muestras van a tener una media por arriba de la media real y otras van a tener una media por debajo.
 
 ```{example, name='Distribucion de muestras'}
+:
 ```
 
 ```{r muestras-de-estaturas, echo=FALSE,message=FALSE,warning=FALSE, fig.cap="Cinco Muestras de 20 obseraciones"}
@@ -180,6 +181,8 @@ VC <- qt(0.025,14)*SE
 
 
 ```{example, name="Muestra pequeña", label='small-sample'}
+
+
 Hacemos una muestra aleatorea de 15 argentinas y medimos su estatura, esta vez con precisión milimetrica y obtenemos:
   
   X = {153,26; 158,81; 165,73; 159,85; 160,56; 166,69; 159,85; 148,07; 160,3; 173,02; 154,55; 145,52; 159,98; 158,22; 166,12 }
@@ -205,6 +208,8 @@ Del ejemplo \@ref(exm:small-sample) vemos que si bien logramos estimar la media 
 Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [Apendix A][Apendix A: distribución t] o en linea. También se puede sacar con una función en R llamada ```qt```. 
 
 ```{example, name='Ejemplo en R: extraer el valor crítico de t'}
+:
+```
 
 ```{r}
 qt(p = 0.025, df = 14)

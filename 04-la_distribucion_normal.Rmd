@@ -159,6 +159,7 @@ Es importante entender que normalizar una variable no cambia su valor, solo su u
 
 Normalizar las variables nos permite comparar su distribución independientemente de su unidad de cuenta y amplitud, también nos permite sacar conclusiones sobre probabilidades y proporciones. Vamos a desarrollar esta idea por medio de un ejemplo.
 ```{example, name = "Analizando datos del ministerio de salud", label='estatura-mujeres-argentinas'}
+:
 ```
 
 En el 2007 el Ministerio de Salud de Argentina realizó un estudio [@ministerioDeSalud:2007] que entre otras recopiló datos sobre la estatura de las argentinas entre 19 y 49 años. La media fue de 161,01 centímetros con una desviación estándar de 6,99. Con estos datos podemos construir nuestra curva.
@@ -212,6 +213,7 @@ En la sección \@ref(cual-usar) decidimos usar *la media* como medida de central
 También podemos valernos del conocimiento de la proporción de observaciones que deben estar dentro de la primera y segunda desviación estándar y verificar si nuestros datos se conforman con estas predicciones. 
 
 ```{example}
+:
 ```
 Si tomamos nuestros datos de las notas de nuestros dos cursos que vimos en la sección \@ref(estadisticas-descriptivas-e-inferenciales) y que fuimos desarrollando a lo largo de los capítulos anteriores podemos realizar este análisis.
 
@@ -235,7 +237,7 @@ Grupo B: {11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 8,
 Observamos que nuestras notas carecen en cierta medida de valores extremos, sin embargo la muestra es relativamente pequeña con lo cual nos conformamos con estos resultados y consideramos normales las distribuciones.
 
 ```{example, name='Ejemplo en R'} 
-  
+:  
 ```
 
 Si no queremos hacer estos cálculos a mano los podemos hacer también en R, así:

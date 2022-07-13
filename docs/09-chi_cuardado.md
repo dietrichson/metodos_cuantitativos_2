@@ -13,7 +13,8 @@ En particular vamos a explorar la distribuciónd de $\chi^2$ de Pearson. $\chi$ 
 
 El test de $\chi^2$ nos permite comparar las frecuencias que observamos con las frecuencias que esperaríamos en base a un modelo teórico o una hipótesis sobre la distribución de la variable en cuestión. Por cada par de valores observados y esperados calculamos la diferencia y aplicamos la fórmula de la definición \@ref(def:chi-squared).
 
-\BeginKnitrBlock{definition}\iffalse{-91-36-92-99-104-105-94-50-36-93-}\fi{}<div class="definition"><span class="definition" id="def:chi-squared"><strong>(\#def:chi-squared)  \iffalse ($\chi^2$) \fi{} </strong></span>
+::: {.definition #chi-squared name="$\chi^2$"}
+
 $$
 \chi^2 = \sum{(O-E)^2\over{E}}
 $$
@@ -21,7 +22,8 @@ donde:
   
 * O: la frecuencia observada
 * E: la frecuencia esperada 
-</div>\EndKnitrBlock{definition}
+
+:::
 
 Es importante tener en cuenta que $\chi^2$ se calcula usando las *frecuencias* y no las proporciones. 
 
@@ -105,7 +107,9 @@ En capítulos anteriores hemos visto que los grados de libertad a menudo son N-1
 
 Para una tabla de contingencia la fórmula general para calcular los grados de libertad es: $(c-1)\times(f-1)$ es decir número de columnas menos uno por número de filas menos uno. Si la tabla es de $3\times3$, tendríamos 4 grados de libertad.
 
-\BeginKnitrBlock{example}\iffalse{-91-80-114-117-101-98-97-32-100-101-32-36-92-99-104-105-94-50-36-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-1"><strong>(\#exm:unnamed-chunk-1)  \iffalse (Prueba de $\chi^2$ en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-1 name="Prueba de $\chi^2$ en R"}
+;
+:::
 En este ejemplo vamos a realizar la misma prueba de $\chi^2$ que fuimos desarrollando en las secciones anteriores. Podemos usar la función de R ```chisq.test``` para realizarla. Toma como argumento una *matriz* de datos de las frecuencias.
 
 

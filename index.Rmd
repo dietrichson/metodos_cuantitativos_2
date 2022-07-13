@@ -1,7 +1,7 @@
 --- 
 title: "Métodos Cuantitativos"
 author: "Aleksander Dietrichson, PhD"
-date: "12 de narzo de 2022"
+date: "13 de julio de 2022"
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike

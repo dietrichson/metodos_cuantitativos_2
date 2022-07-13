@@ -163,6 +163,7 @@ multiplot(p1,p2,cols=1)
 
 
 ```{example, name="¿cara o cruz?"}
+:
 ```
 Para desarrollar un poco más el concepto de test de hipótesis vamos a imaginarnos que estamos jugando a *cara o cruz*. Si tiramos una moneda hay un 50 y 50 de que salga cruz o cara. Tiramos la moneda y sale cara. La tiramos dos veces y sale dos veces cara. Tres veces -- tres caras... y seguimos perdiendo. 
 

@@ -26,7 +26,8 @@ $$
 
 De la misma manera existe un *error estándar de diferencias entre medias* (SED por sus siglas en ingles). 
 
-\BeginKnitrBlock{definition}\iffalse{-91-69-114-114-111-114-32-101-115-116-225-110-100-97-114-32-100-101-32-100-105-102-101-114-101-110-99-105-97-32-101-110-116-114-101-32-109-101-100-105-97-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-1"><strong>(\#def:unnamed-chunk-1)  \iffalse (Error estándar de diferencia entre medias) \fi{} </strong></span>$$
+::: {.definition #unnamed-chunk-1 name="Error estándar de diferencia entre medias"}
+$$
 SED = \sqrt{\sigma^2_1/N_1 + \sigma^2_1/N_2}
 $$
 
@@ -34,11 +35,13 @@ donde:
   
 * $\sigma^2_1$ y $\sigma^2_2$: las varianzas de las poblaciones 1 y 2 
 * $N_1$ y $N_2$: es el número de observaciones en cada muestra.
-</div>\EndKnitrBlock{definition}
+
+:::
 
 Al igual que con el error estándar, a menudo desconocemos la varianza de la población, por lo cual lo estimamos de la muestra y la formula es la que vemos en la definición \@ref(def:SED-samples).
 
-\BeginKnitrBlock{definition}\iffalse{-91-69-114-114-111-114-32-101-115-116-225-110-100-97-114-32-100-101-32-100-105-102-101-114-101-110-99-105-97-32-101-110-116-114-101-32-109-101-100-105-97-115-32-101-115-116-105-109-97-100-111-32-100-101-32-109-117-101-115-116-114-97-115-93-}\fi{}<div class="definition"><span class="definition" id="def:SED-samples"><strong>(\#def:SED-samples)  \iffalse (Error estándar de diferencia entre medias estimado de muestras) \fi{} </strong></span>$$
+::: {.definition #SED-samples name="Error estándar de diferencia entre medias estimado de muestras"}
+$$
 SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
 $$
 
@@ -46,22 +49,27 @@ donde:
   
 * $s^2_1$ y $s^2_2$: las varianzas de las muestras 1 y 2 
 * $N_1$ y $N_2$: es el número de observaciones en cada muestra.
-</div>\EndKnitrBlock{definition}
+
+:::
 
 Vimos en la sección \@ref(la-distribucion-t) que para muestras relativamente pequeñas (N<30) la distribución de la muestra tiende a la distribución *t de Student*. Podemos valernos de esto para calcular la probabilidad de que nuestro *SED* esté en el rango requerido aplicando la formula de la definición 
 
-\BeginKnitrBlock{definition}\iffalse{-91-80-114-117-101-98-97-32-100-101-32-116-93-}\fi{}<div class="definition"><span class="definition" id="def:test-t"><strong>(\#def:test-t)  \iffalse (Prueba de t) \fi{} </strong></span>
+::: {.definition #test-t name="Prueba de t"}
+
 $$
 t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 $$
-  </div>\EndKnitrBlock{definition}
+  
+:::
 
 Si aplicamos la fórmula de la definición \@ref(def:test-t) nos sale un valor que podemos comparar con los valores críticos de la tabla del [apendice A](\@distribucion-t) para determinar si rechazamos $H_0$ o no.
 
 
 
 
-\BeginKnitrBlock{example}\iffalse{-91-80-114-117-101-98-97-32-116-93-}\fi{}<div class="example"><span class="example" id="exm:manual-t-test"><strong>(\#exm:manual-t-test)  \iffalse (Prueba t) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #manual-t-test name="Prueba t"}
+:
+:::
 Volvemos ahora a nuestros datos de notas de dos grupos de estudiantes con diferentes metodologías pedagígicos. Queremos saber con un nivel de significanza de 0,05 si existe diferencia entre la media de los dos grupos. Nuestras hipótesis nula y alternativa son entonces:
 
 $H_0:\mu_A=\mu_B$,
@@ -102,7 +110,9 @@ $$
 
 Si buscamos este valor en el  [Apendix A](#distribucion-t) para 29 grados de libertad (N-1), vemos que debemos rechazar $H_0$ y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.
 
-\BeginKnitrBlock{example}\iffalse{-91-80-114-117-101-98-97-32-116-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:t-test-in-r"><strong>(\#exm:t-test-in-r)  \iffalse (Prueba t en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #t-test-in-r name="Prueba t en R"}
+:
+:::
 
 Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función ```t.test``. Toma como parámetros las dos muestras que queremos comparar.
 
@@ -149,7 +159,10 @@ $H_1: X \nsim \mathcal{N}(\mu,\sigma^2)$.
 
 Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función ```shapiro.test``` en R:
 
-\BeginKnitrBlock{example}\iffalse{-91-84-101-115-116-32-100-101-32-83-104-97-112-105-114-111-32-87-105-108-107-115-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-5"><strong>(\#exm:unnamed-chunk-5)  \iffalse (Test de Shapiro Wilks en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-5 name="Test de Shapiro Wilks en R"}
+:
+:::
+
 
 ```r
 Grupo.A = c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
@@ -194,7 +207,10 @@ $H_1: \sigma^2_1 \neq \sigma^2_2$
 
 Sin entrar en mucho detalle teórico, en R hay una función ```var.test``` para este propósito. La función toma dos argumentos: los dos conjuntos de datos que queremos comparar.
 
-\BeginKnitrBlock{example}\iffalse{-91-82-101-97-108-105-122-97-114-32-108-97-32-112-114-117-101-98-97-32-100-101-32-70-105-115-104-101-114-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-7"><strong>(\#exm:unnamed-chunk-7)  \iffalse (Realizar la prueba de Fisher en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-7 name="Realizar la prueba de Fisher en R"}
+:
+:::
+
 
 ```r
 var.test(Grupo.A, Grupo.B)
@@ -223,10 +239,12 @@ En los ejemplos \@ref(exm:manual-t-test) y \@ref(exm:t-test-in-r) teníamos dos 
 
 En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la definición \@ref(def:dependent-t-test).
 
-\BeginKnitrBlock{definition}\iffalse{-91-80-114-117-101-98-97-32-116-32-112-97-114-97-32-109-117-101-115-116-114-97-115-32-100-101-112-101-110-100-105-101-110-116-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:dependent-t-test"><strong>(\#def:dependent-t-test)  \iffalse (Prueba t para muestras dependientes) \fi{} </strong></span>
+::: {.definition #dependent-t-test name="Prueba t para muestras dependientes"}
+
 $$
 t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
-$$</div>\EndKnitrBlock{definition}
+$$
+:::
   
   donde:
   
@@ -243,7 +261,10 @@ $H_0: \bar{X}_D = 0$,
 $H_1: \bar{X}_D \neq 0$.
 
 
-\BeginKnitrBlock{example}\iffalse{-91-80-114-117-101-98-97-32-116-32-100-101-112-101-110-100-105-101-110-116-101-93-}\fi{}<div class="example"><span class="example" id="exm:dependent-t-test-example"><strong>(\#exm:dependent-t-test-example)  \iffalse (Prueba t dependiente) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #dependent-t-test-example name="Prueba t dependiente"}
+:
+:::
+
 En este ejemplo [@Shier2004] vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la tabla \@ref(tab:diff-table).
 
 
@@ -283,7 +304,9 @@ $$
 
 Buscando este valor en la tabla de valores críticos con 19 (N-1) grados de libertad vemos que sí podemos rechazar la hipótesis nula y concluir que hay una diferencia estadísticamente significativa entre los resultados de los dos tests.
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-10"><strong>(\#exm:unnamed-chunk-10)  \iffalse (Ejemplo en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-10 name="Ejemplo en R"}
+:
+:::
 
 Para reproducir en R lo que hicimos en el ejemplo \@ref(exm:dependent-t-test-example) tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un ```data.frame```. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos *a mano* aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función ```t.test``` con un paramertro adiciónal ```paired=TRUE``` para avisar que son datos pareados.
 

@@ -34,7 +34,9 @@ En el caso de nuestra muestra de notas para de capítulos anteriores tenemos:
 
 Ya con el cómputo en \@ref(eq:media-de-treinta-observaciones) nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-2"><strong>(\#exm:unnamed-chunk-2)  \iffalse (Ejemplo en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-2 name="Ejemplo en R"}
+:
+:::
 
 Por suerte es bastante sencillo sacar la media con R. Para los dos ejemplos anteriores tenemos:
 
@@ -81,9 +83,11 @@ También se usa una barra vertical sobre el nombre de la variable para significa
 
 Entonces en general tenemos:
 
-\BeginKnitrBlock{definition}\iffalse{-91-76-97-32-109-101-100-105-97-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5)  \iffalse (La media) \fi{} </strong></span>$$
+::: {.definition #unnamed-chunk-5 name="La media"}
+$$
 \bar{x} = {\Sigma{x}\over{N}}
-$$</div>\EndKnitrBlock{definition}
+$$
+:::
 
 que se podría leer: «la media de equis es igual a la suma de las observaciones de equis sobre el número de observaciones».
 
@@ -96,7 +100,9 @@ Otra medida de centralización es la mediana (también: valor mediano). Para obt
 
 El valor mediano, o la mediana, se denota en notación matemática con una tilde como la que se usa en la letra ñ en español. Al igual que la barra para la media, se coloca por encima de la variable, así: $$\huge{\tilde{x}}$$.
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-6"><strong>(\#exm:unnamed-chunk-6)  \iffalse (Ejemplo en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-6 name="Ejemplo en R"}
+:
+:::
 
 Al igual que la media podemos sacar la mediana de forma sencilla con R con la función ```median```.
 
@@ -184,7 +190,9 @@ El rango de un conjunto de datos son dos números: el valor mínimo y el valor m
 
 En castellano se usa con alguna frecuencia también el término *amplitud* como equivalente a *rango*.
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-12"><strong>(\#exm:unnamed-chunk-12)  \iffalse (Ejemplo en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-12 name="Ejemplo en R"}
+:
+:::
 
 Para sacar el rango de un conjunto de datos en R podemos usar la función ```range```. Así:
 
@@ -211,7 +219,9 @@ Otra medida de dispersión que tenemos a disposición es el *rango intercuartíl
 
 El rango intercuartílico da una idea de la dispersión de los datos y es por su naturaleza menos sensitivo a valores extremos. 
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-15"><strong>(\#exm:unnamed-chunk-15)  \iffalse (Ejemplo en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-15 name="Ejemplo en R"}
+:
+:::
 
 Para sacar en rango intercuartílico podemos usar la función ```quantiles```. Por defecto divide la distribución en cuartiles.
 
@@ -234,21 +244,27 @@ La medida de dispersión más usada en estadística es la *desviación estándar
 
 Para calcular la desviación estándar debemos primero calcular la varianza. Para ello tomamos la diferencia de cada observación de la media. Recordemos que la media se expresa con $\bar{x}$ (equis con barra). Entonces la diferencia entre una observación de x y la media es $x - \bar{x}$. Luego los llevamos al cuadrado $(x - \bar{x})^2$ los sumamos y dividimos por el número total de observaciones. Para expresarlo usamos la notación que ya vimos. Entonces $\Sigma$ es «la suma de» y N es «el total de las observaciones». Juntando todo tenemos:
 
-\BeginKnitrBlock{definition}\iffalse{-91-86-97-114-105-97-110-122-97-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-17"><strong>(\#def:unnamed-chunk-17)  \iffalse (Varianza) \fi{} </strong></span>
+::: {.definition #unnamed-chunk-17 name="Varianza"}
+
 $$
 \text{varianza} = {{\Sigma (x - \bar{x})^2}\over{N}}
-$$</div>\EndKnitrBlock{definition}
+$$
+:::
 Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega $\sigma$ que es sigma pero en minúscula. Entonces tenemos la definición:
 
-\BeginKnitrBlock{definition}\iffalse{-91-68-101-115-118-105-97-99-105-243-110-32-101-115-116-225-110-100-97-114-32-100-101-32-108-97-32-112-111-98-108-97-99-105-243-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-18"><strong>(\#def:unnamed-chunk-18)  \iffalse (Desviación estándar de la población) \fi{} </strong></span>$$
+::: {.definition #unnamed-chunk-18 name="Desviación estándar de la población"}
+$$
 \sigma = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N}}}
-$$</div>\EndKnitrBlock{definition}
+$$
+:::
 
 Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:
 
-\BeginKnitrBlock{definition}\iffalse{-91-68-101-115-118-105-97-99-105-243-110-32-101-115-116-225-110-100-97-114-32-100-101-32-108-97-32-109-117-101-115-116-114-97-93-}\fi{}<div class="definition"><span class="definition" id="def:definition-standard-deviation"><strong>(\#def:definition-standard-deviation)  \iffalse (Desviación estándar de la muestra) \fi{} </strong></span>$$
+::: {.definition #definition-standard-deviation name="Desviación estándar de la muestra"}
+$$
 s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
-$$</div>\EndKnitrBlock{definition}
+$$
+:::
 
 Finalmente. Ya que s y $\sigma$ son la raíz cuadrada de la varianza, esta también se denomina por las mismas letras, pero llevado al cuadrado: $s^2$ y $\sigma^2$
 
@@ -256,7 +272,9 @@ Finalmente. Ya que s y $\sigma$ son la raíz cuadrada de la varianza, esta tambi
 > Puede parecer enredado llevar todo al cuadrado para luego volver a sacar la raíz cuadrada. La razón es que si se resta todas las obvervaciones de la media, gran parte de estas diferencias van a ser negativas. Sabemos que un número negativo llevado al cuadrado se vuelve positivo igual que un número positivo, entonces esta parte del procedimiento sirve para que todos los valores que sumamos tengan el mismo signo positivo.  
 
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-19"><strong>(\#exm:unnamed-chunk-19)  \iffalse (Ejemplo en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-19 name="Ejemplo en R"}
+:
+:::
 
 Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones ```var``` y ```sd```^[«sd» por la abreviación del inglés «**s**tandard **d**eviation».].
 
@@ -299,7 +317,9 @@ En este tipo de visualización la mediana está representada por la linea horizo
 <p class="caption">(\#fig:box-plot-with-explanation)Ejemplo de box-plot con explicaciones</p>
 </div>
 
-\BeginKnitrBlock{example}\iffalse{-91-67-114-101-97-114-32-98-111-120-112-108-111-116-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-22"><strong>(\#exm:unnamed-chunk-22)  \iffalse (Crear boxplot en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-22 name="Crear boxplot en R"}
+:
+:::
 
 La función ```boxplot``` nos permite generar un boxplot en R. 
 

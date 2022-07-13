@@ -91,23 +91,27 @@ Cuando tomamos la decisión de rechazar o aceptar la hipótesis nula hay dos err
 
 En la sección \@ref(la-hipotesis-nula-y-alternativa) propusimos una hipótesis nula y su alternativa:
 
-\BeginKnitrBlock{example}\iffalse{-91-72-105-112-111-116-101-115-105-115-32-110-117-108-97-32-121-32-117-110-97-32-97-108-116-101-114-110-97-116-105-118-97-93-}\fi{}<div class="example"><span class="example" id="exm:non-directional-hypotheses"><strong>(\#exm:non-directional-hypotheses)  \iffalse (Hipotesis nula y una alternativa) \fi{} </strong></span>
+::: {.example #non-directional-hypotheses name="Hipotesis nula y una alternativa"}
+
 
 $H_0: \mu_A=\mu_B$
   
 $H_1: \mu_A\neq\mu_B$.
-</div>\EndKnitrBlock{example}
+
+:::
 
 $H_1$ se leería: «la media de A es desigual a la media de B». Este ejemplo \@ref(exm:non-directional-hypotheses) es de una predición *no direcional*. Es decir que no hemos tomado una posición a priori sobre si esperamos que las diferencias que observemos sean positivos o negativos.
 
 A veces tenemos razones bien fundadas en creer que las diferencias, si las observamos, van a darse en una direción u otra. Si por ejemplo estamos midiendo la estaturas de muestras aleatorias de argentinas y argentinos podemos suponer de antemano que los hombres van a ser más altos que las mujeres ya que está comprobado que es así en otros países, hay razones biológicas etcétera. En ese caso podríamos formular una predicción direccional, lo cual significa que nuestra hipótesis alternativa es una sola y va en una dirección específica:
 
-\BeginKnitrBlock{example}\iffalse{-91-72-105-112-111-116-101-115-105-115-32-110-117-108-97-32-121-32-117-110-97-32-97-108-116-101-114-110-97-116-105-118-97-32-100-105-114-101-99-99-105-111-110-97-108-93-}\fi{}<div class="example"><span class="example" id="exm:directional-two"><strong>(\#exm:directional-two)  \iffalse (Hipotesis nula y una alternativa direccional) \fi{} </strong></span>
+::: {.example #directional-two name="Hipotesis nula y una alternativa direccional"}
+
 
 $H_0: \mu_M=\mu_F$
   
 $H_1: \mu_M > \mu_F$.
-</div>\EndKnitrBlock{example}
+
+:::
 
 La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional --y está justificado su uso, claro-- disminuye el riesgo de cometer un error de tipo II.  Está ilustrado en la figura \@ref(fig:non-directional-and-directional-normal-curves): para un test no-direcional necesitamos un 2,5% *en cada extremo* de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.  
 
@@ -117,7 +121,9 @@ La diferencia entre usar un test direccional o no direccional influye en los val
 </div>
 
 
-\BeginKnitrBlock{example}\iffalse{-91-191-99-97-114-97-32-111-32-99-114-117-122-63-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-1"><strong>(\#exm:unnamed-chunk-1)  \iffalse (¿cara o cruz?) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-1 name="¿cara o cruz?"}
+:
+:::
 Para desarrollar un poco más el concepto de test de hipótesis vamos a imaginarnos que estamos jugando a *cara o cruz*. Si tiramos una moneda hay un 50 y 50 de que salga cruz o cara. Tiramos la moneda y sale cara. La tiramos dos veces y sale dos veces cara. Tres veces -- tres caras... y seguimos perdiendo. 
 
 ¿En qué momento empezamos a sospechar que la moneda tiene dos caras?

@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 7 Pruebas paramétricas | Métodos Cuantitativos</title>
+<title>Capítulo 7 Pruebas paramétricas | Métodos Cuantitativos</title>
 <meta name="author" content="Aleksander Dietrichson, PhD">
 <meta name="description" content="En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras...">
-<meta name="generator" content="bookdown 0.24.11 with bs4_book()">
-<meta property="og:title" content="Chapter 7 Pruebas paramétricas | Métodos Cuantitativos">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="Capítulo 7 Pruebas paramétricas | Métodos Cuantitativos">
 <meta property="og:type" content="book">
 <meta property="og:description" content="En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 7 Pruebas paramétricas | Métodos Cuantitativos">
+<meta name="twitter:title" content="Capítulo 7 Pruebas paramétricas | Métodos Cuantitativos">
 <meta name="twitter:description" content="En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="pruebas-paramétricas" class="section level1" number="7">
 <h1>
-<span class="header-section-number">7</span> Pruebas paramétricas<a class="anchor" aria-label="anchor" href="#pruebas-param%C3%A9tricas"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Capítulo 7</span> Pruebas paramétricas<a class="anchor" aria-label="anchor" href="#pruebas-param%C3%A9tricas"><i class="fas fa-link"></i></a>
 </h1>
 <p>En este capítulo vamos a desarrollar algunos técnicas estadísticos que nos permiten realizar una prueba o un test de diferencias entre medias de dos conjuntos de datos provenientes de muestras independientes o correlacionadas. Los tests que vamos a ver se llaman «paramétricos», lo cual quiere decir viene con algunas presunciones acerca de los datos:</p>
 <ol style="list-style-type: decimal">
@@ -84,9 +84,8 @@
 SE = {\sigma\over{\sqrt{N}}}.
 \]</span></p>
 <p>De la misma manera existe un <em>error estándar de diferencias entre medias</em> (SED por sus siglas en ingles).</p>
-
 <div class="definition">
-<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 7.1  \iffalse (Error estándar de diferencia entre medias) </strong></span><span class="math display">\[
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definición 7.1  (Error estándar de diferencia entre medias) </strong></span><span class="math display">\[
 SED = \sqrt{\sigma^2_1/N_1 + \sigma^2_1/N_2}
 \]</span></p>
 <p>donde:</p>
@@ -98,9 +97,8 @@ SED = \sqrt{\sigma^2_1/N_1 + \sigma^2_1/N_2}
 </ul>
 </div>
 <p>Al igual que con el error estándar, a menudo desconocemos la varianza de la población, por lo cual lo estimamos de la muestra y la formula es la que vemos en la definición <a href="pruebas-param%C3%A9tricas.html#def:SED-samples">7.2</a>.</p>
-
 <div class="definition">
-<p><span id="def:SED-samples" class="definition"><strong>Definition 7.2  \iffalse (Error estándar de diferencia entre medias estimado de muestras) </strong></span><span class="math display">\[
+<p><span id="def:SED-samples" class="definition"><strong>Definición 7.2  (Error estándar de diferencia entre medias estimado de muestras) </strong></span><span class="math display">\[
 SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
 \]</span></p>
 <p>donde:</p>
@@ -112,17 +110,14 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
 </ul>
 </div>
 <p>Vimos en la sección <a href="#la-distribucion-t"><strong>??</strong></a> que para muestras relativamente pequeñas (N&lt;30) la distribución de la muestra tiende a la distribución <em>t de Student</em>. Podemos valernos de esto para calcular la probabilidad de que nuestro <em>SED</em> esté en el rango requerido aplicando la formula de la definición</p>
-
 <div class="definition">
-<span id="def:test-t" class="definition"><strong>Definition 7.3  \iffalse (Prueba de t) </strong></span>
-<span class="math display">\[
+<p><span id="def:test-t" class="definition"><strong>Definición 7.3  (Prueba de t) </strong></span><span class="math display">\[
 t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
-\]</span>
+\]</span></p>
 </div>
 <p>Si aplicamos la fórmula de la definición <a href="pruebas-param%C3%A9tricas.html#def:test-t">7.3</a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="@distribucion-t">apendice A</a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
-
 <div class="example">
-<span id="exm:manual-t-test" class="example"><strong>Example 7.1  \iffalse (Prueba t) </strong></span>
+<p><span id="exm:manual-t-test" class="example"><strong>Ejemplo 7.1  (Prueba t) </strong></span>:</p>
 </div>
 <p>Volvemos ahora a nuestros datos de notas de dos grupos de estudiantes con diferentes metodologías pedagígicos. Queremos saber con un nivel de significanza de 0,05 si existe diferencia entre la media de los dos grupos. Nuestras hipótesis nula y alternativa son entonces:</p>
 <p><span class="math inline">\(H_0:\mu_A=\mu_B\)</span>,</p>
@@ -149,15 +144,14 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2} = \sqrt{2,490^2/30 + 3,308^2/N_2} = 0,756
 t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 \]</span></p>
 <p>Si buscamos este valor en el <a href="#distribucion-t">Apendix A</a> para 29 grados de libertad (N-1), vemos que debemos rechazar <span class="math inline">\(H_0\)</span> y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.</p>
-
 <div class="example">
-<span id="exm:t-test-in-r" class="example"><strong>Example 7.2  \iffalse (Prueba t en R) </strong></span>
+<p><span id="exm:t-test-in-r" class="example"><strong>Ejemplo 7.2  (Prueba t en R) </strong></span>:</p>
 </div>
 <p>Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función `<code>t.test</code>. Toma como parámetros las dos muestras que queremos comparar.</p>
 <div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">Grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
-<span class="va">Grupo.B</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">18</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">14</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">10</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">12</span>, <span class="fl">8</span>, <span class="fl">7</span>, <span class="fl">15</span>, <span class="fl">5</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">7</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">Grupo.A</span>,<span class="va">Grupo.B</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">Grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span></span>
+<span><span class="va">Grupo.B</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">18</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">14</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">10</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">12</span>, <span class="fl">8</span>, <span class="fl">7</span>, <span class="fl">15</span>, <span class="fl">5</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">7</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">Grupo.A</span>,<span class="va">Grupo.B</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Welch Two Sample t-test
 #&gt; 
@@ -184,24 +178,23 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 <p><span class="math inline">\(H_0: X \sim \mathcal{N}(\mu,\sigma^2)\)</span></p>
 <p><span class="math inline">\(H_1: X \nsim \mathcal{N}(\mu,\sigma^2)\)</span>.</p>
 <p>Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función <code>shapiro.test</code> en R:</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-5" class="example"><strong>Example 7.3  \iffalse (Test de Shapiro Wilks en R) </strong></span>
+<p><span id="exm:unnamed-chunk-5" class="example"><strong>Ejemplo 7.3  (Test de Shapiro Wilks en R) </strong></span>:</p>
 </div>
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">Grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">Grupo.A</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">Grupo.A</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">9</span>, <span class="fl">19</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">12</span>, <span class="fl">18</span>, <span class="fl">15</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">15</span>, <span class="fl">17</span>, <span class="fl">19</span>, <span class="fl">17</span>, <span class="fl">18</span>, <span class="fl">16</span>, <span class="fl">14</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">Grupo.A</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
 #&gt; 
 #&gt; data:  Grupo.A
 #&gt; W = 0.97032, p-value = 0.548</code></pre>
 <div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">Grupo.B</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">18</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">14</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">10</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">12</span>, <span class="fl">8</span>, <span class="fl">7</span>, <span class="fl">15</span>, <span class="fl">5</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">7</span><span class="op">)</span>
-
-
-<span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">Grupo.B</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">Grupo.B</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">16</span>, <span class="fl">14</span>, <span class="fl">18</span>, <span class="fl">6</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">14</span>, <span class="fl">12</span>, <span class="fl">12</span>, <span class="fl">10</span>, <span class="fl">15</span>, <span class="fl">12</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">16</span>, <span class="fl">17</span>, <span class="fl">12</span>, <span class="fl">8</span>, <span class="fl">7</span>, <span class="fl">15</span>, <span class="fl">5</span>, <span class="fl">14</span>, <span class="fl">13</span>, <span class="fl">13</span>, <span class="fl">12</span>, <span class="fl">11</span>, <span class="fl">13</span>, <span class="fl">11</span>, <span class="fl">7</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">Grupo.B</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
 #&gt; 
@@ -218,12 +211,11 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 <p><span class="math inline">\(H_0: \sigma^2_1 = \sigma^2_2\)</span>,</p>
 <p><span class="math inline">\(H_1: \sigma^2_1 \neq \sigma^2_2\)</span></p>
 <p>Sin entrar en mucho detalle teórico, en R hay una función <code>var.test</code> para este propósito. La función toma dos argumentos: los dos conjuntos de datos que queremos comparar.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-7" class="example"><strong>Example 7.4  \iffalse (Realizar la prueba de Fisher en R) </strong></span>
+<p><span id="exm:unnamed-chunk-7" class="example"><strong>Ejemplo 7.4  (Realizar la prueba de Fisher en R) </strong></span>:</p>
 </div>
 <div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">Grupo.A</span>, <span class="va">Grupo.B</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">Grupo.A</span>, <span class="va">Grupo.B</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  F test to compare two variances
 #&gt; 
@@ -244,12 +236,10 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 </h2>
 <p>En los ejemplos <a href="pruebas-param%C3%A9tricas.html#exm:manual-t-test">7.1</a> y <a href="pruebas-param%C3%A9tricas.html#exm:t-test-in-r">7.2</a> teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones <em>pareadas</em> o datos <em>interdependientes</em>. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;también se conoce como «medidas repetidas»&lt;/p&gt;"><sup>28</sup></a> de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.</p>
 <p>En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la definición <a href="pruebas-param%C3%A9tricas.html#def:dependent-t-test">7.4</a>.</p>
-
 <div class="definition">
-<span id="def:dependent-t-test" class="definition"><strong>Definition 7.4  \iffalse (Prueba t para muestras dependientes) </strong></span>
-<span class="math display">\[
+<p><span id="def:dependent-t-test" class="definition"><strong>Definición 7.4  (Prueba t para muestras dependientes) </strong></span><span class="math display">\[
 t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
-\]</span>
+\]</span></p>
 </div>
 <p>donde:</p>
 <ul>
@@ -262,14 +252,13 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
 <p>Lo que nos va a decir la prueba t en este caso es si la diferencia es significativamente diferente a cero: Si la variable independiente no tiene efecto entonces debería dar lo mismo medir antes o después. Las hipótesis planteadas son, por tanto:</p>
 <p><span class="math inline">\(H_0: \bar{X}_D = 0\)</span>,</p>
 <p><span class="math inline">\(H_1: \bar{X}_D \neq 0\)</span>.</p>
-
 <div class="example">
-<span id="exm:dependent-t-test-example" class="example"><strong>Example 7.5  \iffalse (Prueba t dependiente) </strong></span>
+<p><span id="exm:dependent-t-test-example" class="example"><strong>Ejemplo 7.5  (Prueba t dependiente) </strong></span>:</p>
 </div>
 <p>En este ejemplo<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-Shier2004" role="doc-biblioref"&gt;Rosie Shier, &lt;span&gt;“Paired t-Tests,”&lt;/span&gt; 2004, &lt;/a&gt;&lt;a href="http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf" role="doc-biblioref"&gt;http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf&lt;/a&gt;.&lt;/p&gt;'><sup>29</sup></a></span> vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la tabla <a href="pruebas-param%C3%A9tricas.html#tab:diff-table">7.1</a>.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:diff-table">Table 7.1: </span>Resultados de dos tests de matemáticas</caption>
+<span id="tab:diff-table">Tabla 7.1: </span>Resultados de dos tests de matemáticas</caption>
 <thead><tr class="header">
 <th align="left">Nombre</th>
 <th align="right">Antes</th>
@@ -404,21 +393,20 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
 t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}}}=3,231.
 \]</span></p>
 <p>Buscando este valor en la tabla de valores críticos con 19 (N-1) grados de libertad vemos que sí podemos rechazar la hipótesis nula y concluir que hay una diferencia estadísticamente significativa entre los resultados de los dos tests.</p>
-
 <div class="example">
-<span id="exm:unnamed-chunk-10" class="example"><strong>Example 7.6  \iffalse (Ejemplo en R) </strong></span>
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Ejemplo 7.6  (Ejemplo en R) </strong></span>:</p>
 </div>
 <p>Para reproducir en R lo que hicimos en el ejemplo <a href="pruebas-param%C3%A9tricas.html#exm:dependent-t-test-example">7.5</a> tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
 <div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Ingresamos los datos</span>
- <span class="va">datos.pre.post</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
-   Nombre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Luis'</span>, <span class="st">'Javier'</span>, <span class="st">'Pedro'</span>, <span class="st">'Soledad'</span>, <span class="st">'Manuel'</span>, <span class="st">'Cecilia'</span>, <span class="st">'Cristina'</span>, <span class="st">'Angel'</span>, <span class="st">'Manuela'</span>, <span class="st">'José'</span>, <span class="st">'Juan'</span>, <span class="st">'Antonio'</span>, <span class="st">'Carmen'</span>, <span class="st">'Carlos '</span>, <span class="st">'Francisco'</span>, <span class="st">'Miguel'</span>, <span class="st">'Laura'</span>, <span class="st">'Lucía'</span>, <span class="st">'Paula'</span>, <span class="st">'Dolores'</span><span class="op">)</span>,
-   Pre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">16</span>, <span class="fl">22</span>, <span class="fl">19</span>, <span class="fl">24</span>, <span class="fl">17</span>, <span class="fl">21</span>, <span class="fl">23</span>, <span class="fl">18</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">16</span>, <span class="fl">19</span>, <span class="fl">18</span>, <span class="fl">20</span>, <span class="fl">12</span>, <span class="fl">22</span>, <span class="fl">15</span>, <span class="fl">17</span><span class="op">)</span>,
-   Post <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">22</span>, <span class="fl">25</span>, <span class="fl">17</span>, <span class="fl">24</span>, <span class="fl">16</span>, <span class="fl">29</span>, <span class="fl">20</span>, <span class="fl">23</span>, <span class="fl">19</span>, <span class="fl">20</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">18</span>, <span class="fl">26</span>, <span class="fl">18</span>, <span class="fl">24</span>, <span class="fl">18</span>, <span class="fl">25</span>, <span class="fl">19</span>, <span class="fl">16</span><span class="op">)</span>
- <span class="op">)</span>
-
-<span class="co"># Verificamos la homogeneidad de varianzas</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span>,<span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Ingresamos los datos</span></span>
+<span> <span class="va">datos.pre.post</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>   Nombre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Luis'</span>, <span class="st">'Javier'</span>, <span class="st">'Pedro'</span>, <span class="st">'Soledad'</span>, <span class="st">'Manuel'</span>, <span class="st">'Cecilia'</span>, <span class="st">'Cristina'</span>, <span class="st">'Angel'</span>, <span class="st">'Manuela'</span>, <span class="st">'José'</span>, <span class="st">'Juan'</span>, <span class="st">'Antonio'</span>, <span class="st">'Carmen'</span>, <span class="st">'Carlos '</span>, <span class="st">'Francisco'</span>, <span class="st">'Miguel'</span>, <span class="st">'Laura'</span>, <span class="st">'Lucía'</span>, <span class="st">'Paula'</span>, <span class="st">'Dolores'</span><span class="op">)</span>,</span>
+<span>   Pre <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>, <span class="fl">21</span>, <span class="fl">16</span>, <span class="fl">22</span>, <span class="fl">19</span>, <span class="fl">24</span>, <span class="fl">17</span>, <span class="fl">21</span>, <span class="fl">23</span>, <span class="fl">18</span>, <span class="fl">14</span>, <span class="fl">16</span>, <span class="fl">16</span>, <span class="fl">19</span>, <span class="fl">18</span>, <span class="fl">20</span>, <span class="fl">12</span>, <span class="fl">22</span>, <span class="fl">15</span>, <span class="fl">17</span><span class="op">)</span>,</span>
+<span>   Post <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">22</span>, <span class="fl">25</span>, <span class="fl">17</span>, <span class="fl">24</span>, <span class="fl">16</span>, <span class="fl">29</span>, <span class="fl">20</span>, <span class="fl">23</span>, <span class="fl">19</span>, <span class="fl">20</span>, <span class="fl">15</span>, <span class="fl">15</span>, <span class="fl">18</span>, <span class="fl">26</span>, <span class="fl">18</span>, <span class="fl">24</span>, <span class="fl">18</span>, <span class="fl">25</span>, <span class="fl">19</span>, <span class="fl">16</span><span class="op">)</span></span>
+<span> <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Verificamos la homogeneidad de varianzas</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/var.test.html">var.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span>,<span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  F test to compare two variances
 #&gt; 
@@ -432,24 +420,24 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}
 #&gt; ratio of variances 
 #&gt;          0.6032913</code></pre>
 <div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Verificamos que los datos tienen distribución normal</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Verificamos que los datos tienen distribución normal</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
 #&gt; 
 #&gt; data:  datos.pre.post$Pre
 #&gt; W = 0.98197, p-value = 0.9569</code></pre>
 <div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Shapiro-Wilk normality test
 #&gt; 
 #&gt; data:  datos.pre.post$Post
 #&gt; W = 0.94235, p-value = 0.2654</code></pre>
 <div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Realizamos prueba t</span>
-
-<span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span>,<span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Realizamos prueba t</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Post</span>,<span class="va">datos.pre.post</span><span class="op">$</span><span class="va">Pre</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>#&gt; 
 #&gt;  Paired t-test
 #&gt; 
@@ -477,7 +465,7 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}
 <div class="figure">
 <span style="display:block;" id="fig:flow-chart-test-selection"></span>
 <img src="07-tests-parametricos_files/figure-html/flow-chart-test-selection-1.png" alt="Diagrama de flujo para selección de estadística inferencial" width="672"><p class="caption">
-Figure 7.1: Diagrama de flujo para selección de estadística inferencial
+Figura 7.1: Diagrama de flujo para selección de estadística inferencial
 </p>
 </div>
 </div>
@@ -561,7 +549,7 @@ Shier, Rosie. <span>“Paired t-Tests,”</span> 2004. <a href="http://www.stats
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. Su última versión es de 12 de narzo de 2022.</p>
+    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. La más reciente versión es de 13 de julio de 2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

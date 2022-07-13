@@ -61,7 +61,9 @@ También nos podemos darnos cuenta de patrones en los datos que no son lineales,
 
 
 
-\BeginKnitrBlock{example}\iffalse{-91-71-101-110-101-114-97-114-32-100-105-97-103-114-97-109-97-32-100-101-32-100-105-115-112-101-114-115-105-243-110-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:example-scatterplot-i"><strong>(\#exm:example-scatterplot-i)  \iffalse (Generar diagrama de dispersión en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #example-scatterplot-i name="Generar diagrama de dispersión en R"}
+:
+:::
 
 
 ```r
@@ -84,7 +86,9 @@ En el ejemplo \@ref(exm:example-scatterplot-i) utilizamos la función ```rnorm``
 plot(datos$x,datos$y)
 ```
 
-\BeginKnitrBlock{example}\iffalse{-91-71-101-110-101-114-97-114-32-100-105-97-103-114-97-109-97-32-100-101-32-100-105-115-112-101-114-115-105-243-110-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:example-scatterplot-ii"><strong>(\#exm:example-scatterplot-ii)  \iffalse (Generar diagrama de dispersión en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #example-scatterplot-ii name="Generar diagrama de dispersión en R"}
+:
+:::
 
 Por defecto R viene con algunos data.frames ya cargados, uno de ellos es «trees», podemos usar la función ```head``` para ver las primeras seis filas.
 
@@ -153,7 +157,9 @@ $$
 
 Y con estos datos podemos calcular el coeficiente según la definición \@ref(def:definition-pearson-correlation).
 
-\BeginKnitrBlock{definition}\iffalse{-91-67-111-101-102-105-99-105-101-110-116-101-32-100-101-32-99-111-114-114-101-108-97-99-105-243-110-32-100-101-32-80-101-97-114-115-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:definition-pearson-correlation"><strong>(\#def:definition-pearson-correlation)  \iffalse (Coeficiente de correlación de Pearson) \fi{} </strong></span></div>\EndKnitrBlock{definition}
+::: {.definition #definition-pearson-correlation name="Coeficiente de correlación de Pearson"}
+:
+:::
 $$
 r={\sum{z_xz_y}\over{N-1}}
 $$
@@ -163,13 +169,17 @@ donde:
 
 Existe otra definición es matemáticamente equivalente y que se usa a veces para hacer el cálculo a mano:
 
-\BeginKnitrBlock{definition}\iffalse{-91-67-111-101-102-105-99-105-101-110-116-101-32-100-101-32-99-111-114-114-101-108-97-99-105-243-110-32-80-101-97-114-115-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:definition-pearson-correlation-ii"><strong>(\#def:definition-pearson-correlation-ii)  \iffalse (Coeficiente de correlación Pearson) \fi{} </strong></span></div>\EndKnitrBlock{definition}
+::: {.definition #definition-pearson-correlation-ii name="Coeficiente de correlación Pearson"}
+:
+:::
 
 $$
 r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\times\{N\Sigma{y^2}-(\Sigma{y})^2\} }}}
 $$
 
-\BeginKnitrBlock{example}\iffalse{-91-67-225-108-99-117-108-111-32-100-101-108-32-67-111-101-102-105-99-105-101-110-116-101-32-100-101-32-99-111-114-114-101-108-97-99-105-243-110-32-100-101-32-80-101-97-114-115-111-110-93-}\fi{}<div class="example"><span class="example" id="exm:pearson-coefficient-calculation"><strong>(\#exm:pearson-coefficient-calculation)  \iffalse (Cálculo del Coeficiente de correlación de Pearson) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #pearson-coefficient-calculation name="Cálculo del Coeficiente de correlación de Pearson"}
+:
+:::
 
 
 
@@ -248,7 +258,9 @@ Aplicamos la fórmula:
 
 \end{split} 
 
-\BeginKnitrBlock{example}\iffalse{-91-67-225-108-99-117-108-111-32-100-101-108-32-67-111-101-102-105-99-105-101-110-116-101-32-100-101-32-99-111-114-114-101-108-97-99-105-243-110-32-100-101-32-80-101-97-114-115-111-110-32-101-110-32-82-93-}\fi{}<div class="example"><span class="example" id="exm:pearson-coefficient-calculation"><strong>(\#exm:pearson-coefficient-calculation)  \iffalse (Cálculo del Coeficiente de correlación de Pearson en R) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #pearson-coefficient-calculation-in-r name="Cálculo del Coeficiente de correlación de Pearson en R"}
+:
+:::
 
 Si no queremos hacer todos los cálculos del ejemplo \@ref(exm:pearson-coefficient-calculation) a mano podemos recurrir a R que con la función ```cor``` lo calcula. 
 
@@ -274,7 +286,9 @@ cor(datos$x, datos$y)
 
 Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o $\rho$ de la letra griega *r* se calcula según la definición \@ref(def:definition-spearman-correlation).
 
-\BeginKnitrBlock{definition}\iffalse{-91-67-111-101-102-105-99-105-101-110-116-101-32-100-101-32-99-111-114-114-101-108-97-99-105-243-110-32-100-101-32-83-112-101-97-114-109-97-110-93-}\fi{}<div class="definition"><span class="definition" id="def:definition-spearman-correlation"><strong>(\#def:definition-spearman-correlation)  \iffalse (Coeficiente de correlación de Spearman) \fi{} </strong></span></div>\EndKnitrBlock{definition}
+::: {.definition #definition-spearman-correlation name="Coeficiente de correlación de Spearman"}
+:
+:::
 $$
 \rho = 1-{6\sum{d^2}\over{N(N^2-1)}}  
 $$
@@ -313,9 +327,11 @@ Si las dos variables en cuestión son nominales la pregunta se reduce a: ¿Si ob
 
 En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1^o^ pero no el 2^o^. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la definición \@ref(def:phi-correlation).
 
-\BeginKnitrBlock{definition}\iffalse{-91-67-111-101-102-102-105-99-105-101-110-116-101-32-100-101-32-36-92-112-104-105-36-93-}\fi{}<div class="definition"><span class="definition" id="def:phi-correlation"><strong>(\#def:phi-correlation)  \iffalse (Coefficiente de $\phi$) \fi{} </strong></span>$$
+::: {.definition #phi-correlation name="Coefficiente de $\phi$"}
+$$
 \phi = {{BC-AD}\over{\sqrt{(A+B)\times(C+D)\times(A+C)\times(B+D)}}}
-$$</div>\EndKnitrBlock{definition}
+$$
+:::
 
 Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la definición \@ref(def:chi-squared). De hecho se relacionan matemáticamente:
 $$

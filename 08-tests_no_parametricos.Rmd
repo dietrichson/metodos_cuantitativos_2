@@ -18,6 +18,7 @@ $H_1: P(x_i>y_j)\neq{1\over2}$
 La prueba U de Mann-Whitney también se conoce con otros nombres: *Mann–Whitney–Wilcoxon*, *Wilcoxon rank-sum test* y  *Wilcoxon–Mann–Whitney*. Por ello está disponible en R por medio de la función ```wilcox.test```.
 
 ```{example, name="Prueba U de Mann-Whitney en R"}
+:
 ```
 
 En este ejemplo vamos a suponer que tenemos datos diagnósticos de cuatro mujeres y cinco hombres. Todos fueron diagnosticados con diabetes y tenemos la edad a la cual se les descubrió la enfermedad. Queremos saber si hay diferencia en la edad entre hombres y mujeres. 
@@ -42,7 +43,7 @@ Vimos en la sección \@ref(prueba-u-de-mann-whitney) que la prueba U de Mann-Whi
 La lógica de la prueba de los rangos con signo de Wilcoxon es similar a la de la prueba de t pareada. Si no hay diferencia en el antes y despues, por ejemplo, las diferencias entre las observaciones deberían tender a cero. 
 
 ```{example, name="Prueba de los rangos con signo de Wilcoxon en R"}
-
+:
 ```
 
 En este ejemplo vamos a suponer que tenemos un grupo de doce pacientes con artritis y les damos dos medicaciones distintas para aliviar los síntomas. Pedimos a todos que nos indiquen cuantas horas de alivio observaron con ambas drogas.
@@ -129,6 +130,7 @@ $$
 ```
 
 ```{example, name="Realizar prueba de sign para N>25"}
+:
 ```
 En este ejemplo vamos a suponer que hemos preguntado a 150 personas su opinión sobre el café de dos cafeterías: A y B, de la Ciudad de Buenos Aires. Les pedimos que indiquen en una escala de 1 a 5 cuánto les gusta cada producto. De ellos cincuenta dan el mismo ranking a ambos productos, con lo sus opiniones se eliminan del cálculo. De los restantes cien tenemos 39 que prefieren B y 61 que prefieren A. Tomamos el menor valor (39) y aplicamos la fórmula:
 $$

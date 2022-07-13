@@ -189,7 +189,7 @@ Los datos también de pueden visualizar con un polígono de frecuencias. En este
 
 Apreciamos con más precisión los valores más típicos y diferencias entre los dos grupos. También podemos ver que la parte inferior de la escala de notas está sin uso, característica que comparten ambos grupos. 
 
-### Otro ejemplo {-}
+#### Otro ejemplo {-}
 
 En este ejemplo vamos a considerar un libro de la literatura romántica: «Persuasion» escrito por Jane Austen [ @austen1817persuasion]^[El texto está disponible online y en el paquete de R «tidytext» [@silge2016]]. Vamos a visualizar *el número de caracteres por palabra* en el texto. Obtenemos:
 

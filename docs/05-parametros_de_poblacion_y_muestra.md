@@ -8,7 +8,9 @@ En este capítulo desarrollaremos las técnicas que se utilizan para arribar a e
 
 Si suponemos que la estatura promedio de las argentinas entre 19 y 49 años es de 161 centímetros con una desviación estándar de 6,99, estos serían los *parámetros* de la población. Si sacamos cinco muestras aleatorias de veinte observaciones de esta población van a arrojar resultados distintos a estos valores. Algunas muestras van a tener una media por arriba de la media real y otras van a tener una media por debajo.
 
-\BeginKnitrBlock{example}\iffalse{-91-68-105-115-116-114-105-98-117-99-105-111-110-32-100-101-32-109-117-101-115-116-114-97-115-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-1"><strong>(\#exm:unnamed-chunk-1)  \iffalse (Distribucion de muestras) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-1 name="Distribucion de muestras"}
+:
+:::
 
 <div class="figure">
 <img src="05-parametros_de_poblacion_y_muestra_files/figure-html/muestras-de-estaturas-1.png" alt="Cinco Muestras de 20 obseraciones" width="672" />
@@ -33,7 +35,8 @@ El número (3) de la lista tiene su lógica ya que en una muestra aleatoria un v
 
 La variabilidad de las medias muestrales se puede medir por su desviación estándar. Esta medida se conoce como el *error estándar* y tiende a disminuir cuando aumenta el tamaño de la(s) muestra(s).
 
-\BeginKnitrBlock{definition}\iffalse{-91-69-114-114-111-114-32-101-115-116-225-110-100-97-114-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse (Error estándar) \fi{} </strong></span>
+::: {.definition #unnamed-chunk-2 name="Error estándar"}
+
 $$
 SE = {\sigma\over{\sqrt{N}}}
 $$
@@ -52,7 +55,8 @@ donde:
 * $\sigma$: la desviación estándar de la población
 * s: desviación estándar de la muestra
 * N: número de observaciones de la muestra
-</div>\EndKnitrBlock{definition}
+
+:::
 
 Nótese que el error estándar no disminuye en relación directamente proporcional con el tamaño de la muestra. Ya que tomamos la raíz cuadrada de N, es necesario cuadruplicar el tamaño de la muestra para reducir el error estándar a la mitad.  
 
@@ -117,7 +121,10 @@ El valor de *t* se calcula de la misma manera que el error estándar, pero debid
 
 
 
-\BeginKnitrBlock{example}\iffalse{-91-77-117-101-115-116-114-97-32-112-101-113-117-101-241-97-93-}\fi{}<div class="example"><span class="example" id="exm:small-sample"><strong>(\#exm:small-sample)  \iffalse (Muestra pequeña) \fi{} </strong></span>Hacemos una muestra aleatorea de 15 argentinas y medimos su estatura, esta vez con precisión milimetrica y obtenemos:
+::: {.example #small-sample name="Muestra pequeña"}
+
+
+Hacemos una muestra aleatorea de 15 argentinas y medimos su estatura, esta vez con precisión milimetrica y obtenemos:
   
   X = {153,26; 158,81; 165,73; 159,85; 160,56; 166,69; 159,85; 148,07; 160,3; 173,02; 154,55; 145,52; 159,98; 158,22; 166,12 }
 
@@ -132,7 +139,8 @@ $$
 2,145 \times{SE} = 2,145 \times 1,338 = 2,869
 $$
   
-Por tanto, basado en esta muestra más chica podemos estimar que la media de la población es de 159,36 $\pm2,869$ es decir entre 156,49 y 162,23 centímetros.</div>\EndKnitrBlock{example}
+Por tanto, basado en esta muestra más chica podemos estimar que la media de la población es de 159,36 $\pm2,869$ es decir entre 156,49 y 162,23 centímetros.
+:::
 
 Del ejemplo \@ref(exm:small-sample) vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande. 
 
@@ -140,7 +148,10 @@ Del ejemplo \@ref(exm:small-sample) vemos que si bien logramos estimar la media 
 
 Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [Apendix A][Apendix A: distribución t] o en linea. También se puede sacar con una función en R llamada ```qt```. 
 
-\BeginKnitrBlock{example}\iffalse{-91-69-106-101-109-112-108-111-32-101-110-32-82-58-32-101-120-116-114-97-101-114-32-101-108-32-118-97-108-111-114-32-99-114-237-116-105-99-111-32-100-101-32-116-93-}\fi{}<div class="example"><span class="example" id="exm:unnamed-chunk-6"><strong>(\#exm:unnamed-chunk-6)  \iffalse (Ejemplo en R: extraer el valor crítico de t) \fi{} </strong></span></div>\EndKnitrBlock{example}
+::: {.example #unnamed-chunk-6 name="Ejemplo en R: extraer el valor crítico de t"}
+:
+:::
+
 
 ```r
 qt(p = 0.025, df = 14)

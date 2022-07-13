@@ -129,6 +129,7 @@ En capítulos anteriores hemos visto que los grados de libertad a menudo son N-1
 Para una tabla de contingencia la fórmula general para calcular los grados de libertad es: $(c-1)\times(f-1)$ es decir número de columnas menos uno por número de filas menos uno. Si la tabla es de $3\times3$, tendríamos 4 grados de libertad.
 
 ```{example, name="Prueba de $\\chi^2$ en R"}
+;
 ```
 En este ejemplo vamos a realizar la misma prueba de $\chi^2$ que fuimos desarrollando en las secciones anteriores. Podemos usar la función de R ```chisq.test``` para realizarla. Toma como argumento una *matriz* de datos de las frecuencias.
 
