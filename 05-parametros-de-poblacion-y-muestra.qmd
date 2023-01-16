@@ -213,7 +213,7 @@ Por tanto, basado en esta muestra más chica podemos estimar que la media de la 
 
 :::
 
-Del ejemplo \@ref(exm:small-sample) vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.
+Del @exm-small-sample vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.
 
 ### ¿Dónde obtenemos los valores críticos de t? {.unnumbered}
 
