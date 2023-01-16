@@ -14,6 +14,7 @@ book:
     - 02-distribuciones-de-frecuencias.qmd
     - 03-tendencia-central-y-variabilidad.qmd
     - 04-la-distribucion-normal.qmd
+    - 05-parametros-de-poblacion-y-muestra.qmd
 lang: es
 
 bibliography: [book.bib, packages.bib]
