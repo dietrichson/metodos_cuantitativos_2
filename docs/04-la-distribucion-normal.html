@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Métodos Cuantitativos - 4&nbsp; La distribución normal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-tendencia-central-y-variabilidad.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La distribución normal</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Métodos Cuantitativos</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Métodos-Cuantitativos.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-conceptos-fundamentales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-distribuciones-de-frecuencias.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tendencia-central-y-variabilidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-la-distribucion-normal.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La distribución normal</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#importancia-de-la-distribución-normal" id="toc-importancia-de-la-distribución-normal" class="nav-link active" data-scroll-target="#importancia-de-la-distribución-normal"><span class="toc-section-number">4.1</span>  Importancia de la distribución normal</a></li>
+  <li><a href="#propiedades-de-la-curva-normal" id="toc-propiedades-de-la-curva-normal" class="nav-link" data-scroll-target="#propiedades-de-la-curva-normal"><span class="toc-section-number">4.2</span>  Propiedades de la curva normal</a>
+  <ul class="collapse">
+  <li><a href="#variables-normalizadas" id="toc-variables-normalizadas" class="nav-link" data-scroll-target="#variables-normalizadas">Variables normalizadas</a></li>
+  </ul></li>
+  <li><a href="#evaluar-la-normalidad" id="toc-evaluar-la-normalidad" class="nav-link" data-scroll-target="#evaluar-la-normalidad"><span class="toc-section-number">4.3</span>  Evaluar la normalidad</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">4.4</span>  Glosario</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La distribución normal</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>En el <a href="02-distribuciones-de-frecuencias.html"><span>Capítulo&nbsp;2</span></a> tocamos brevemente la llamada <em>distribución normal</em>. En este capítulo vamos a desarrollar con más detalle esta distribución, fundamental para muchas técnicas estadísticas y cuantitativas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="04-la-distribucion-normal_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="importancia-de-la-distribución-normal" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="importancia-de-la-distribución-normal"><span class="header-section-number">4.1</span> Importancia de la distribución normal</h2>
+<p>Como vimos en la sección @ref(perfil-de-la-distribucion), si tenemos muchos datos y construimos un polígono de frecuencias, es posible trazar una curva entre los puntos de la distribución. También mencionamos que la llamada <em>distribución normal</em> es de particular interés para trabajo estadístico y cuantitativo. Hay varios razones de ello:</p>
+<ol type="1">
+<li>Muchos fenómenos que podemos medir tanto en las ciencias exactas como las sociales de asemejan en su frecuencia a esta distribución.</li>
+<li>La distribución normal tiene ciertas propiedades matemáticas que nos permiten predecir qué proporción de la población (estadística) caerá dentro de cierto rango si la variable tiene distribución normal.</li>
+<li>Varios tests de significanza de diferencia entre conjuntos de datos presumen que los datos del conjunto tiene una distribución normal.</li>
+</ol>
+</section>
+<section id="propiedades-de-la-curva-normal" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="propiedades-de-la-curva-normal"><span class="header-section-number">4.2</span> Propiedades de la curva normal</h2>
+<p>Como ya vimos, la curva normal tiene forma de campana y es simétrica. Por ende, las tres medidas de centralización la media, la mediana y la moda coinciden en el punto superior de la curva, como lo podemos apreciar en la <a href="#fig-curva-normal-IV">Figura&nbsp;<span>4.1</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-curva-normal-IV" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-la-distribucion-normal_files/figure-html/fig-curva-normal-IV-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4.1: Curva normal</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Ciertas propiedades importantes de esta curva se relacionan con la manera en que el área debajo de la curva de puede seccionar con lineas verticales con origen en distintos puntos del eje horizontal. Para explorar estas vamos a considerar algunos histogramas, el tipo de visualización que vimos en la sección @ref(histogramas). El alto de cada barra es proporcional a la frecuencia de observaciones y como el ancho de las barras es el mismo en todos los casos el área de cada barra también es proporcional a la frecuencia de observaciones. El ancho puede representar una sola unidad, o varias si agrupamos, por ejemplo por rango etario como lo vemos en la <a href="#fig-histograma-ejemplo-i">Figura&nbsp;<span>4.2</span></a>, en el que hemos sacado una muestra aleatoria de mil observaciones de un test de matemáticas a nivel nacional. Los hemos agrupado por rangos de diez, es decir de 0 a 10, de 10 a 20 y así sucesivamente. Hemos sobrepuesto una curva normal teórica para apreciar hasta qué punto se asemeja la distribución observada a la teórica.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-histograma-ejemplo-i" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-la-distribucion-normal_files/figure-html/fig-histograma-ejemplo-i-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4.2: Muestra de notas de un test de matemática (N=1000)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Ahora, bien, si en lugar de agrupar las notas en grupos de diez<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> los podemos también agregar en grupos de cinco. Entonces obtenemos un histograma como el de la figura <a href="#fig-histograma-ejemplo-ii">Figura&nbsp;<span>4.3</span></a> .</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-histograma-ejemplo-ii" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-la-distribucion-normal_files/figure-html/fig-histograma-ejemplo-ii-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4.3: Muestra de notas de un test de matemática (N=1000)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos seguir achicando el ancho de las barras, y vemos que si bien el histograma es puntudo mientras menos anchas son las barras más se aproxima a la curva. En la <a href="#fig-histograma-ejemplo-iii">Figura&nbsp;<span>4.4</span></a> hemos achicado las barras para que cada una represente tan solo un valor entero, es decir tan solo una de las cien notas posibles. Se entiende que es posible seguir con más precisión si, por ejemplo, el examen fue calificado con la posibilidad de asignar notas con decimales.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-histograma-ejemplo-iii" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-la-distribucion-normal_files/figure-html/fig-histograma-ejemplo-iii-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4.4: Muestra de notas de un test de matemática (N=1000)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>La curva normal de define por dos propiedades: La media y la desviación estándar. Si conocemos estos dos valores es posible construir la curva aplicando una fórmula <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> un tanto compleja y con poca importancia fuera del ámbito plenamente teórico.</p>
+<p>De más importancia son algunas propiedades que tiene la curva. Si graficamos la curva normal y expresamos los valores en el eje horizontal en <em>desviaciones estándares</em> (también se dice «sigmas» por su letra griega <span class="math inline">\(\sigma\)</span>), el área que está de cada lado de la linea es constante y conocido. Si trazamos una linea justo en el medio (<span class="math inline">\(\sigma=0\)</span>), sabemos que un 50% de las observaciones están a la derecha y la izquierda de esa linea. Lo mismo aplica a una distribución expresado en un histograma. En la fig-normal-curve-with-cuts vemos cuales son los cortes para desviaciones estándares de menos 3 a 3.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-normal-curve-with-cuts" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-la-distribucion-normal_files/figure-html/fig-normal-curve-with-cuts-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4.5: Área debajo de la curva normal</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esta propiedad es de bastante utilidad y se puede aprovechar de varias maneras. Si tenemos una muestra de datos cuya distribución presumimos normal (en el <span class="quarto-unresolved-ref">?sec-test-de-normalidad</span> vamos a desarrollar cómo lo podemos determinar) ya sabemos que más o menos el 68% de las observaciones va estar dentro de ± una desviación estándar de la media y más del 95% se encontrará dentro de dos desviaciones. Por último el 99% de las observaciones de encuentran dentro de tres desviaciones estándares de la media. A veces se refiere a esta propiedad como la <em>regla empírica</em> o la regla de de <em>68-95-99,7</em>.</p>
+<section id="variables-normalizadas" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="variables-normalizadas">Variables normalizadas</h3>
+<p>En textos de estadística frecuentemente se habla de <em>variable normalizada</em>, también se conoce como <em>unidad tipificada</em>, <em>variable centrada reducida</em> o <em>variable estandarizada</em>. Normalizar una variable es simplemente expresar su magnitud en unidades de desviación estándar. Para lograr ello tomamos la variable, restamos la media y dividimos por la desviación estándar. En literatura en inglés es de uso frecuente el término «z-score», por lo que su definición formal (véase @def-definition-z-score)) lleva esta letra.</p>
+<div id="def-definition-z-score" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 4.1 (Variable normalizada) </strong></span>La variable normalizada <em>z</em> de un conjunto de datos X se obtiene por la fórmula siguiente:</p>
+<p><span class="math display">\[
+  z = {x-\bar{x}\over{\sigma}}
+\]</span></p>
+<p>donde:</p>
+<ul>
+<li>z: la variable normalizada</li>
+<li>x: una observación de X</li>
+<li><span class="math inline">\(\bar{x}\)</span>: la media de las observaciones</li>
+<li><span class="math inline">\(\sigma\)</span> o s: la desviación estándar de la población o muestra respectivamente.</li>
+</ul>
+</div>
+<p>Es importante entender que normalizar una variable no cambia su valor, solo su unidad de cuenta: El lo mismo comprar medio kilo de queso que comprar quinientos gramos.</p>
+<p>Normalizar las variables nos permite comparar su distribución independientemente de su unidad de cuenta y amplitud, también nos permite sacar conclusiones sobre probabilidades y proporciones. Vamos a desarrollar esta idea por medio de un ejemplo.</p>
+<div id="exm-estatura-mujeres-argentinas" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.1 (Analizando datos del ministerio de salud) </strong></span>En el 2007 el Ministerio de Salud de Argentina realizó un estudio <span class="citation" data-cites="ministerioDeSalud:2007">(<a href="#ref-ministerioDeSalud:2007" role="doc-biblioref">ENNyS 2007</a>)</span> que entre otras recopiló datos sobre la estatura de las argentinas entre 19 y 49 años. La media fue de 161,01 centímetros con una desviación estándar de 6,99. Con estos datos podemos construir nuestra curva.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-curva-estatura-argentinas" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="04-la-distribucion-normal_files/figure-html/fig-curva-estatura-argentinas-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4.6: Estatura de argentinas entre 19 y 49 años</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Ahora, sabiendo que esta variable tiene una distribución normal podemos saber que casi el 70% de las argentinas miden entre 154,04 y 168 centímetros. También podemos encontrar respuesta a una pregunta como: ¿qué proporción de la población femenina mide más que 175 centímetros? Para ello tenemos que normalizar el dato así:</p>
+<p><span class="math display">\[
+z = {175 - 161,01\over{6.99}} = {13,99\over{6.99}} = 2,001
+\]</span></p>
+<p>Con este número podemos volver a la @fig-normal-curve-with-cuts y fijarnos que con por arriba de 2 desviaciones estándar (o 2<span class="math inline">\(\sigma\)</span>) está el 2,2% de la población. Es el área indicado en rojo en la figura @fig-curva-con-segmento.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-curva-con-segmento</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Proporción de argentinas que miden más de 175 centímetros"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plot_estatura<span class="sc">+</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">position =</span> <span class="st">"identity"</span>, <span class="at">data =</span> estatura <span class="sc">%&gt;%</span> <span class="fu">filter</span>(x<span class="sc">&gt;</span><span class="dv">175</span>), <span class="at">fill=</span><span class="st">'red'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="04-la-distribucion-normal_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>En este caso tuvimos un poco se suerte ya que la variable normalizada resultó un número redondo que era fácil encontrar en la figura <a href="#fig-normal-curve-with-cuts">Figura&nbsp;<span>4.5</span></a>. Ahora digamos que queremos conocer la proporción de la población que mide menos de 150 centímetros, ¿cómo hacemos? Primero normalizamos:</p>
+<p><span class="math display">\[
+z = {150 - 161,01\over{6.99}} = {11,01\over{6.99}} = -1,575
+\]</span></p>
+<p>Con este número podemos sacar la proporción por ejemplo calculando el área debajo del segmento de la curva con cálculos integrales, lo podemos buscar en una tabla de probabilidades o podemos recurrir a la función <code>pnorm</code> (p: probabilidad, norm: normal)de R así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.575</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 0.05762822</code></pre>
+</div>
+</div>
+<p>entonces el 5,76% de la población de argentinas entre 19 y 49 años miden menos de un metro con cincuenta.</p>
+<p>También podemos expresar esto en términos de probabilidades: Si medimos una mujer argentina de entre 19 y 49 años seleccionada aleatoriamente de la población, la probabilidad de que mida menos de 150 centímetros es de 5,76% (p=0,0576).</p>
+</section>
+</section>
+<section id="evaluar-la-normalidad" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="evaluar-la-normalidad"><span class="header-section-number">4.3</span> Evaluar la normalidad</h2>
+<p>Hemos visto que el hecho de que una variable tenga una distribución normal nos resulta muy útil para extraer información sobre sus propiedades. También nos permite realizar algunos tests estadísticos que veremos en capítulos posteriores.</p>
+<p>En la sección @ref(cual-usar) decidimos usar <em>la media</em> como medida de centralización porque las tres medidas disponibles –media, mediana y moda– se aproximaban unas a otras. Si queremos saber si una variable se aproxima a la curva normal podemos generar un histograma y sobreponer una curva normal. Así podemos sacar alguna conclusión inspeccionando el gráfico.</p>
+<p>También podemos valernos del conocimiento de la proporción de observaciones que deben estar dentro de la primera y segunda desviación estándar y verificar si nuestros datos se conforman con estas predicciones.</p>
+<div id="exm-notas-i" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.2 </strong></span>Si tomamos nuestros datos de las notas de nuestros dos cursos que vimos en la sección @ref(estadisticas-descriptivas-e-inferenciales) y que fuimos desarrollando a lo largo de los capítulos anteriores podemos realizar este análisis.</p>
+<p>Grupo A: {15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14}</p>
+<p>Grupo B: {11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 8, 7, 15, 5, 14, 13, 13, 12, 11, 13, 11, 7}</p>
+<ul>
+<li>Grupo A:
+<ul>
+<li>Media: 14.93</li>
+<li>Desviación estándar: 2,49</li>
+<li>Entre <span class="math inline">\(\pm{1}\)</span> desviación: 66%</li>
+<li>Entre <span class="math inline">\(\pm{2}\)</span> desviaciones: 96%</li>
+</ul></li>
+<li>Grupo B:
+<ul>
+<li>Media: 11,76</li>
+<li>Desviación estándar: 3,31</li>
+<li>Entre <span class="math inline">\(\pm{1}\)</span> desviación: 66%</li>
+<li>Entre <span class="math inline">\(\pm{2}\)</span> desviaciones: 96%</li>
+</ul></li>
+</ul>
+<p>Observamos que nuestras notas carecen en cierta medida de valores extremos, sin embargo la muestra es relativamente pequeña con lo cual nos conformamos con estos resultados y consideramos normales las distribuciones.</p>
+</div>
+<div id="exm-notas-ii" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 4.3 (Ejemplo en R) </strong></span>Si no queremos hacer estos cálculos a mano los podemos hacer también en R, así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>grupo.A <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>media<span class="ot">=</span> <span class="fu">mean</span>(grupo.A)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>desviacion <span class="ot">=</span> <span class="fu">sd</span>(grupo.A)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">30</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    grupo.A <span class="sc">&lt;</span>  media <span class="sc">+</span> desviacion </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="sc">&amp;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    grupo.A <span class="sc">&gt;</span> media <span class="sc">-</span> desviacion  </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>)<span class="sc">/</span>N</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 0.6666667</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    grupo.A <span class="sc">&lt;</span>  media <span class="sc">+</span> desviacion <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="sc">&amp;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    grupo.A <span class="sc">&gt;</span> media <span class="sc">-</span> desviacion  <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)<span class="sc">/</span>N</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 0.9666667</code></pre>
+</div>
+</div>
+</div>
+<p>Existen también tests más formales de normalidad que desarrollaremos en capítulos posteriores.</p>
+</section>
+<section id="glosario" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="glosario"><span class="header-section-number">4.4</span> Glosario</h2>
+<dl>
+<dt>Regla empírica</dt>
+<dd>
+Cuando la distribución es normal el 68% de las observaciones se encuentran entre <span class="math inline">\(\pm\)</span> una desviación estándar de la media, el 95% entre dos desviaciones estándar y el 99,7% entre tres. Equivalente en inglés: «Empirical rule».
+</dd>
+<dt>Variable normalizada</dt>
+<dd>
+Variable expresada en desviaciones estándar Fórmula: <span class="math inline">\(z = {x-\bar{x}\over{\sigma}}\)</span> o <span class="math inline">\(z = {x-\bar{x}\over{s}}\)</span> Función relevante en R: <code>scale</code>. Equivalente en inglés: «z-score».
+</dd>
+</dl>
+<div class="cell">
+<pre class="importancia cell-code"><code>
+Como vimos en la sección @ref(perfil-de-la-distribucion), si tenemos muchos datos y construimos un polígono de frecuencias, es posible trazar una curva entre los puntos de la distribución. También mencionamos que la llamada distribución normal es de particular interés para trabajo estadístico y cuantitativo. Hay varios razones de ello:
+
+Muchos fenómenos que podemos medir tanto en las ciencias exactas como las sociales de asemejan en su frecuencia a esta distribución.
+
+La distribución normal tiene ciertas propiedades matemáticas que nos permiten predecir qué proporción de la población (estadística) caerá dentro de cierto rango si la variable tiene distribución normal.
+
+Varios tests de significanza de diferencia entre conjuntos de datos presumen que los datos del conjunto tiene una distribución normal.
+
+Propiedades de la curva normal
+
+Como ya vimos, la curva normal tiene forma de campana y es simétrica. Por ende, las tres medidas de centralización la media, la mediana y la moda coinciden en el punto superior de la curva, como lo podemos apreciar en la @fig-curva-normal-IV.
+
+{r}
+#| echo: false
+#| fig.cap: 'Curva normal'
+#| label: fig-curva-normal-IV
+
+
+x &lt;- distribution_normal(n = 100, mean = 0, sd = 1)
+x %&gt;% 
+  density() %&gt;%  # Compute density function
+  as.data.frame() %&gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()+
+  theme_minimal()+
+  annotate("text",x=0,y=.4,label="Media, mediana, moda",hjust=0)+
+  annotate("segment",x=0,xend=0,y=0,yend=.38)
+
+
+Ciertas propiedades importantes de esta curva se relacionan con la manera en que el área debajo de la curva de puede seccionar con lineas verticales con origen en distintos puntos del eje horizontal. Para explorar estas vamos a considerar algunos histogramas, el tipo de visualización que vimos en la sección @ref(histogramas). El alto de cada barra es proporcional a la frecuencia de observaciones y como el ancho de las barras es el mismo en todos los casos el área de cada barra también es proporcional a la frecuencia de observaciones. El ancho puede representar una sola unidad, o varias si agrupamos, por ejemplo por rango etario como lo vemos en la @fig-histograma-ejemplo-i, en el que hemos sacado una muestra aleatoria de mil observaciones de un test de matemáticas a nivel nacional. Los hemos agrupado por rangos de diez, es decir de 0 a 10, de 10 a 20 y así sucesivamente. Hemos sobrepuesto una curva normal teórica para apreciar hasta qué punto se asemeja la distribución observada a la teórica.
+
+{r histograma-ejemplo-i}
+#| echo: false
+#| label: fig-histograma-ejemplo-i
+#| fig-cap: 'Muestra de notas de un test de matemática (N=1000)'
+
+x &lt;- distribution_normal(1000,mean=50,sd=15)
+x &lt;- x[which(x&gt;=0)]
+x &lt;- x[which(x&lt;=100)]
+x %&gt;% hist(main=NULL, ylab = "Frecuencia", xlab = 'Nota', breaks = 10, ylim=c(0,300)) -&gt;h
+
+multiplier &lt;- h$counts/h$density
+d &lt;- density(x)
+d$y &lt;- d$y*multiplier[1]
+lines(d, col = "blue", lwd = 2)
+
+Ahora, bien, si en lugar de agrupar las notas en grupos de diez los podemos también agregar en grupos de cinco. Entonces obtenemos un histograma como el de la figura @fig-histograma-ejemplo-ii .
+
+{r}
+#| label: fig-histograma-ejemplo-ii
+#| echo: false
+#| fig.cap: 'Muestra de notas de un test de matemática (N=1000)'
+
+
+x %&gt;% hist(main=NULL, ylab = "Frecuencia", xlab = 'Nota', breaks = 20, ylim=c(0,150)) -&gt;h
+
+multiplier &lt;- h$counts/h$density
+d &lt;- density(x)
+d$y &lt;- d$y*multiplier[1]
+lines(d, col = "blue", lwd = 2)
+
+
+Podemos seguir achicando el ancho de las barras, y vemos que si bien el histograma es puntudo mientras menos anchas son las barras más se aproxima a la curva. En la @fig-histograma-ejemplo-iii hemos achicado las barras para que cada una represente tan solo un valor entero, es decir tan solo una de las cien notas posibles. Se entiende que es posible seguir con más precisión si, por ejemplo, el examen fue calificado con la posibilidad de asignar notas con decimales.
+
+{r}
+#| label: fig-histograma-ejemplo-iii
+#| echo: false
+#| fig.cap: 'Muestra de notas de un test de matemática (N=1000)'
+
+
+x %&gt;% hist(main=NULL, ylab = "Frecuencia", xlab = 'Nota', breaks = 100, ylim=c(0,30)) -&gt;h
+
+multiplier &lt;- h$counts/h$density
+d &lt;- density(x)
+d$y &lt;- d$y*multiplier[1]
+lines(d, col = "blue", lwd = 2)
+
+
+La curva normal de define por dos propiedades: La media y la desviación estándar. Si conocemos estos dos valores es posible construir la curva aplicando una fórmula  un tanto compleja y con poca importancia fuera del ámbito plenamente teórico.
+
+De más importancia son algunas propiedades que tiene la curva. Si graficamos la curva normal y expresamos los valores en el eje horizontal en desviaciones estándares (también se dice «sigmas» por su letra griega $\sigma$), el área que está de cada lado de la linea es constante y conocido. Si trazamos una linea justo en el medio ($\sigma=0$), sabemos que un 50% de las observaciones están a la derecha y la izquierda de esa linea. Lo mismo aplica a una distribución expresado en un histograma. En la fig-normal-curve-with-cuts vemos cuales son los cortes para desviaciones estándares de menos 3 a 3.
+
+{r}
+#| label: fig-normal-curve-with-cuts
+#| echo: false
+#| warning: false
+#| fig.cap: 'Área debajo de la curva normal'
+
+x &lt;- distribution_normal(n = 100, mean = 0, sd = 1)
+x %&gt;% 
+  density() %&gt;%  # Compute density function
+  as.data.frame() -&gt;tmp
+myCuts &lt;- sd(x)*seq(-3,3,1)
+names(myCuts) &lt;- seq(-3,3,1)
+
+tmp %&gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()+
+  geom_area(position = "identity", data=tmp %&gt;%  filter(between(x,myCuts[3],myCuts[5])),fill='darkred')+
+  geom_area(position = "identity", 
+            data = tmp %&gt;%  
+              filter(between(x,myCuts[2],myCuts[3])),
+            fill='red')+
+  geom_area(position = "identity", data = tmp %&gt;% filter(between(x,myCuts[5],myCuts[6])), fill='red')+
+  geom_area(position = "identity", data = tmp %&gt;% filter(x&lt;myCuts[2]), fill='pink')+
+  geom_area(position = "identity", data = tmp %&gt;% filter(x&gt;myCuts[6]), fill='pink')+
+  geom_area(position = "identity", data = tmp %&gt;% filter(x&gt;myCuts[7]), fill='gray')+
+  geom_area(position = "identity", data = tmp %&gt;% filter(x&lt;myCuts[1]), fill='gray')+
+  ## Add vertical line for mean
+  annotate("segment",x=0,xend=0,y=0,yend=max(tmp$y), color='white')+
+  annotate("text",x=c(myCuts[3],myCuts[4]),y=c(.2,.2),label="34,1%",hjust=-.4, color="white", cex=5)+
+  annotate("text",x=c(myCuts[2],myCuts[5]),y=c(.09,.09),label="13,6%",hjust=c(-.4,-.2), color="white", cex=5)+
+  annotate("text",x=c(myCuts[1],myCuts[6]),y=c(.1,.1),label="2,1%",hjust=c(-.4,-.5), cex=5)+
+  annotate("text",x=c(min(x),max(x)),y=c(.07,.07),label="0,1%",hjust=c(2,-1.5), cex=5)+
+  theme_minimal()+
+  annotate("segment",x=sd(x)*-2.5,xend=sd(x)*-2.5,y=0.03,yend=.09)+
+  annotate("segment",x=sd(x)*2.5,xend=sd(x)*2.5,y=0.03,yend=.09)+
+  annotate("segment",x=sd(x)*-2.5,xend=sd(x)*-2.5,y=0.03,yend=.09)+
+  annotate("segment",x=sd(x)*-3.3,xend=sd(x)* -3.3,y=0,yend=.06)+
+  annotate("segment",x=sd(x)* 3.3,xend=sd(x)*  3.3,y=0,yend=.06)+
+  scale_x_continuous(breaks=myCuts,labels=paste0(names(myCuts),"\u03C3"))
+#annotate("text",x=0,y=.4,label="Media, mediana, moda",hjust=0)+
+#annotate("segment",x=0,xend=0,y=0,yend=.38)
+
+
+Esta propiedad es de bastante utilidad y se puede aprovechar de varias maneras. Si tenemos una muestra de datos cuya distribución presumimos normal (en el @sec-test-de-normalidad vamos a desarrollar cómo lo podemos determinar) ya sabemos que más o menos el 68% de las observaciones va estar dentro de ± una desviación estándar de la media y más del 95% se encontrará dentro de dos desviaciones. Por último el 99% de las observaciones de encuentran dentro de tres desviaciones estándares de la media. A veces se refiere a esta propiedad como la regla empírica o la regla de de 68-95-99,7.
+
+Variables normalizadas
+
+En textos de estadística frecuentemente se habla de variable normalizada, también se conoce como unidad tipificada, variable centrada reducida o variable estandarizada. Normalizar una variable es simplemente expresar su magnitud en unidades de desviación estándar. Para lograr ello tomamos la variable, restamos la media y dividimos por la desviación estándar. En literatura en inglés es de uso frecuente el término «z-score», por lo que su definición formal (véase @def-definition-z-score)) lleva esta letra.
+
+Variable normalizada
+
+La variable normalizada z de un conjunto de datos X se obtiene por la fórmula siguiente:
+
+$$
+  z = {x-\bar{x}\over{\sigma}}
+$$
+
+donde:
+
+z: la variable normalizada
+
+x: una observación de X
+
+$\bar{x}$: la media de las observaciones
+
+$\sigma$ o s: la desviación estándar de la población o muestra respectivamente.
+
+Es importante entender que normalizar una variable no cambia su valor, solo su unidad de cuenta: El lo mismo comprar medio kilo de queso que comprar quinientos gramos.
+
+Normalizar las variables nos permite comparar su distribución independientemente de su unidad de cuenta y amplitud, también nos permite sacar conclusiones sobre probabilidades y proporciones. Vamos a desarrollar esta idea por medio de un ejemplo.
+
+Analizando datos del ministerio de salud
+
+En el 2007 el Ministerio de Salud de Argentina realizó un estudio [@ministerioDeSalud:2007] que entre otras recopiló datos sobre la estatura de las argentinas entre 19 y 49 años. La media fue de 161,01 centímetros con una desviación estándar de 6,99. Con estos datos podemos construir nuestra curva.
+
+{r}
+#| label: fig-curva-estatura-argentinas
+#| echo: false
+#| fig.cap: "Estatura de argentinas entre 19 y 49 años"
+
+
+estatura &lt;- distribution_normal(n = 100, mean = 161.01, sd = 6.99) %&gt;% 
+  density() %&gt;%  # Compute density function
+  as.data.frame()
+estatura %&gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()+
+  theme_minimal() +
+   labs(caption="Fuente: Ministerio de Salud",y=NULL,x="Estatura") -&gt; plot_estatura
+plot_estatura
+
+Ahora, sabiendo que esta variable tiene una distribución normal podemos saber que casi el 70% de las argentinas miden entre 154,04 y 168 centímetros. También podemos encontrar respuesta a una pregunta como: ¿qué proporción de la población femenina mide más que 175 centímetros? Para ello tenemos que normalizar el dato así:
+
+$$
+z = {175 - 161,01\over{6.99}} = {13,99\over{6.99}} = 2,001
+$$
+
+Con este número podemos volver a la @fig-normal-curve-with-cuts y fijarnos que con por arriba de 2 desviaciones estándar (o 2$\sigma$) está el 2,2% de la población. Es el área indicado en rojo en la figura @fig-curva-con-segmento.
+
+{r}
+#| label: fig-curva-con-segmento
+#| echo:false
+#| fig.cap: "Proporción de argentinas que miden más de 175 centímetros"
+
+
+plot_estatura+
+  geom_area(position = "identity", data = estatura %&gt;% filter(x&gt;175), fill='red')
+
+En este caso tuvimos un poco se suerte ya que la variable normalizada resultó un número redondo que era fácil encontrar en la figura @fig-normal-curve-with-cuts. Ahora digamos que queremos conocer la proporción de la población que mide menos de 150 centímetros, ¿cómo hacemos? Primero normalizamos:
+
+$$
+z = {150 - 161,01\over{6.99}} = {11,01\over{6.99}} = -1,575
+$$
+
+Con este número podemos sacar la proporción por ejemplo calculando el área debajo del segmento de la curva con cálculos integrales, lo podemos buscar en una tabla de probabilidades o podemos recurrir a la función pnorm (p: probabilidad, norm: normal)de R así:
+
+{r}
+pnorm(-1.575)
+
+entonces el 5,76% de la población de argentinas entre 19 y 49 años miden menos de un metro con cincuenta.
+
+También podemos expresar esto en términos de probabilidades: Si medimos una mujer argentina de entre 19 y 49 años seleccionada aleatoriamente de la población, la probabilidad de que mida menos de 150 centímetros es de 5,76% (p=0,0576).
+
+Evaluar la normalidad
+
+Hemos visto que el hecho de que una variable tenga una distribución normal nos resulta muy útil para extraer información sobre sus propiedades. También nos permite realizar algunos tests estadísticos que veremos en capítulos posteriores.
+
+En la sección @ref(cual-usar) decidimos usar la media como medida de centralización porque las tres medidas disponibles –media, mediana y moda– se aproximaban unas a otras. Si queremos saber si una variable se aproxima a la curva normal podemos generar un histograma y sobreponer una curva normal. Así podemos sacar alguna conclusión inspeccionando el gráfico.
+
+También podemos valernos del conocimiento de la proporción de observaciones que deben estar dentro de la primera y segunda desviación estándar y verificar si nuestros datos se conforman con estas predicciones.
+
+Si tomamos nuestros datos de las notas de nuestros dos cursos que vimos en la sección @ref(estadisticas-descriptivas-e-inferenciales) y que fuimos desarrollando a lo largo de los capítulos anteriores podemos realizar este análisis.
+
+Grupo A: {15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14}
+
+Grupo B: {11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 8, 7, 15, 5, 14, 13, 13, 12, 11, 13, 11, 7}
+
+Grupo A:
+
+Media: 14.93
+
+Desviación estándar: 2,49
+
+Entre $\pm{1}$ desviación: 66%
+
+Entre $\pm{2}$ desviaciones: 96%
+
+Grupo B:
+
+Media: 11,76
+
+Desviación estándar: 3,31
+
+Entre $\pm{1}$ desviación: 66%
+
+Entre $\pm{2}$ desviaciones: 96%
+
+Observamos que nuestras notas carecen en cierta medida de valores extremos, sin embargo la muestra es relativamente pequeña con lo cual nos conformamos con estos resultados y consideramos normales las distribuciones.
+
+Ejemplo en R
+
+Si no queremos hacer estos cálculos a mano los podemos hacer también en R, así:
+
+{r}
+grupo.A = c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
+
+media= mean(grupo.A)
+desviacion = sd(grupo.A)
+N = 30
+sum( 
+    grupo.A &lt;  media + desviacion 
+    &amp;
+    grupo.A &gt; media - desviacion  
+)/N
+sum( 
+    grupo.A &lt;  media + desviacion * 2
+    &amp;
+    grupo.A &gt; media - desviacion  * 2
+)/N
+
+
+Existen también tests más formales de normalidad que desarrollaremos en capítulos posteriores.
+
+Glosario
+
+{r, echo=FALSE, results='asis'}
+.format_dataframe_as_def_list(chapter = 4)
+</code></pre>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-ministerioDeSalud:2007" class="csl-entry" role="doc-biblioentry">
+ENNyS. 2007. <span>«Encuesta Nacional de Nutrición y Salud.»</span> Ministerio de Salud de Argentina.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>también llamado deciles<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><span class="math inline">\({1\over{\sqrt{2\pi\sigma^2}}}e^{-{(x-\mu)^2}\over{2\sigma^2}}\)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-tendencia-central-y-variabilidad.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -13,7 +13,7 @@ book:
     - 01-conceptos-fundamentales.qmd
     - 02-distribuciones-de-frecuencias.qmd
     - 03-tendencia-central-y-variabilidad.qmd
- #   - 04-la-distribucion-normal.qmd
+    - 04-la-distribucion-normal.qmd
 lang: es
 
 bibliography: [book.bib, packages.bib]
