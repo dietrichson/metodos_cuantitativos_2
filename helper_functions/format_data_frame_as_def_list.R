@@ -1,6 +1,7 @@
 suppressMessages(
   library(tidyverse)
 )
+
 .format_dataframe_as_def_list <- function(
   .data = readRDS(here::here("data","terminology_database.RDS")), 
   chapter=1){

@@ -5,11 +5,11 @@ my_dependencies <-
   c(
     "rmarkdown",
     "bookdown", 
+    "quarto",
     "grid", 
     "here", 
     "knitr", 
     "tidyverse", 
-    "rmarkdown", 
     "bayestestR", 
     "sn", 
     "ggthemes", 

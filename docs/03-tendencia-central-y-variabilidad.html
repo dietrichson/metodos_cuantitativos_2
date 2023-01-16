@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Métodos Cuantitativos - 3&nbsp; Centralización y dispersión</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-distribuciones-de-frecuencias.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Métodos Cuantitativos</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Métodos-Cuantitativos.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-conceptos-fundamentales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-distribuciones-de-frecuencias.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tendencia-central-y-variabilidad.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#centralización" id="toc-centralización" class="nav-link active" data-scroll-target="#centralización"><span class="toc-section-number">3.1</span>  Centralización</a>
+  <ul class="collapse">
+  <li><a href="#la-media" id="toc-la-media" class="nav-link" data-scroll-target="#la-media"><span class="toc-section-number">3.1.1</span>  La media</a></li>
+  <li><a href="#la-mediana" id="toc-la-mediana" class="nav-link" data-scroll-target="#la-mediana"><span class="toc-section-number">3.1.2</span>  La mediana</a></li>
+  <li><a href="#la-moda" id="toc-la-moda" class="nav-link" data-scroll-target="#la-moda"><span class="toc-section-number">3.1.3</span>  La moda</a></li>
+  <li><a href="#cuál-usar" id="toc-cuál-usar" class="nav-link" data-scroll-target="#cuál-usar"><span class="toc-section-number">3.1.4</span>  ¿Cuál usar?</a></li>
+  </ul></li>
+  <li><a href="#medidas-de-dispersión" id="toc-medidas-de-dispersión" class="nav-link" data-scroll-target="#medidas-de-dispersión"><span class="toc-section-number">3.2</span>  Medidas de dispersión</a>
+  <ul class="collapse">
+  <li><a href="#rango-o-amplitud" id="toc-rango-o-amplitud" class="nav-link" data-scroll-target="#rango-o-amplitud"><span class="toc-section-number">3.2.1</span>  Rango o amplitud</a></li>
+  <li><a href="#el-rango-intercuartílico" id="toc-el-rango-intercuartílico" class="nav-link" data-scroll-target="#el-rango-intercuartílico"><span class="toc-section-number">3.2.2</span>  El rango intercuartílico</a></li>
+  <li><a href="#la-varianza-y-desviación-estándar" id="toc-la-varianza-y-desviación-estándar" class="nav-link" data-scroll-target="#la-varianza-y-desviación-estándar"><span class="toc-section-number">3.2.3</span>  La varianza y desviación estándar</a></li>
+  <li><a href="#visualizar-la-dispersión" id="toc-visualizar-la-dispersión" class="nav-link" data-scroll-target="#visualizar-la-dispersión"><span class="toc-section-number">3.2.4</span>  Visualizar la dispersión</a></li>
+  </ul></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">3.3</span>  Glosario</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>En el <a href="02-distribuciones-de-frecuencias.html"><span>Capítulo&nbsp;2</span></a> vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y rango de observaciones. En este capítulo desarrollaremos algunas medidas cuantitativas más precisas de estas propiedades. Específicamente desarrollaremos medidas de centralización o tendencia central y dispersión.</p>
+<section id="centralización" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="centralización"><span class="header-section-number">3.1</span> Centralización</h2>
+<p>La <em>centralización</em> o <em>tendencia central</em> de un conjunto de datos es uno o un número reducido de valores que representan todo el conjunto.</p>
+<p>Existen tres medidas de <em>centralicación</em>: <em>la media</em>, <em>la mediana</em> y <em>la moda</em>. A continuación las vamos a definir y ver cómo se calculan y luego vamos a considerar cuándo se debe usar cada una de ellas.</p>
+<section id="la-media" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="la-media"><span class="header-section-number">3.1.1</span> La media</h3>
+<p>La media es seguramente la medida de centralización de uso más frecuente <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Se conoce también como <em>el promedio</em> y, más técnicamente, <em>la media arithmetica</em>. La media se obtiene por la suma de las observaciones dividido por el número de observaciones. Por ejemplo si queremos sacar el promedio de seis observaciones de una variable: 15, 12, 11, 18, 15 y 15; tenemos:</p>
+<span class="math display">\[\begin{equation}
+{{15 + 12 + 11 + 18 + 15 + 15}\over{6}}={86\over6}=14,33
+(\#eq:media-de-seis-observaciones)
+\end{equation}\]</span>
+<p>En el caso de nuestra muestra de notas para de capítulos anteriores tenemos:</p>
+<span class="math display">\[\begin{equation}
+{{ 15 + 12 + 11 + 18 + 15 + 15+ \\
+  9 + 19 + 14 + 13 + 11 + 12 + \\
+  18 + 15 + 16 + 14 + 16 + 17 + \\
+  15 + 17 + 13 + 14 + 13 + 15 + \\
+  17 + 19 + 17 + 18 + 16 + 14}\over{30}}={448\over30}=14.93
+  (\#eq:media-de-treinta-observaciones)
+\end{equation}\]</span>
+<p>Ya con el cómputo en @ref(eq:media-de-treinta-observaciones) nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.</p>
+<div id="exm-media" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.1 (La media) </strong></span>Por suerte es bastante sencillo sacar la media con R. Para los dos ejemplos anteriores tenemos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span> , <span class="dv">15</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 14.33333</code></pre>
+</div>
+</div>
+<p>y</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>notas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(notas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 14.93333</code></pre>
+</div>
+</div>
+</div>
+<section id="notación-matemática" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="notación-matemática">Notación matemática</h4>
+<p>En textos de matemática y estadística se usa con frecuencia <em>llaves</em> para significar un conjunto, de modo que los datos del primer conjunto se expresaría así: x = {15, 12, 11, 18, 15 , 15}.</p>
+<p>Una notación compacta para significar la suma de las observaciones en una variable es <span class="math inline">\(\Sigma\)</span>: la letra griega sigma, en mayúscula.</p>
+<p>Para significar el número de observaciones de usa N, de <strong>n</strong>úmero.</p>
+<p>Así se puede definir la media de manera compacta así: <span class="math display">\[
+{\Sigma{x}}\over{N}
+\]</span></p>
+<p>También se usa una barra vertical sobre el nombre de la variable para significar la media (o promedio aritmético): por ejemplo: <span class="math display">\[\bar{x} = 14,33\]</span></p>
+<p>Entonces en general tenemos:</p>
+<div id="def-la-media" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 3.1 (La media) </strong></span><span class="math display">\[
+\bar{x} = {\Sigma{x}\over{N}}
+\]</span></p>
+</div>
+<p>que se podría leer: «la media de equis es igual a la suma de las observaciones de equis sobre el número de observaciones».</p>
+</section>
+</section>
+<section id="la-mediana" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="la-mediana"><span class="header-section-number">3.1.2</span> La mediana</h3>
+<p>Otra medida de centralización es la mediana (también: valor mediano). Para obtenerla ponemos nuestros datos en orden ascendiente y sacamos el valor que está justo en la mitad. Por ejemplo: si queremos sacar la mediana de {15, 12, 11, 18, 15, 15, 9}, primero los ordenamos: {9, 11, 12, 15, 15 ,15, 18}. Vemos que hay siete observaciones con lo cual la mediana es la observación que está en cuarta posición, es decir que la mediana de estos datos es 15. Si el conjunto de datos tiene un número par de observaciones, no va a haber una observación justo en el medio. En ese caso se toman los <em>dos</em> valores del medio, se los suma y se divide por dos. Por ejemplo: {8, 8, 9, 11, 12, 15, 15 ,15}. Acá tenemos ocho observaciones (ya ordenados) tomamos los dos valores de la posición cuarta y quinta, los sumamos y dividimos por dos: <span class="math inline">\({11+12\over2}=11,5\)</span>.</p>
+<section id="notación-matemática-1" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="notación-matemática-1">Notación matemática</h4>
+<p>El valor mediano, o la mediana, se denota en notación matemática con una tilde como la que se usa en la letra ñ en español. Al igual que la barra para la media, se coloca por encima de la variable, así: <span class="math display">\[\huge{\tilde{x}}\]</span>.</p>
+<div id="exm-mediana" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.2 (La mediana) </strong></span>Podemos sacar la mediana de forma sencilla con R con la función <code>median</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>, <span class="dv">18</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 15</code></pre>
+</div>
+</div>
+<p>y</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 11.5</code></pre>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="la-moda" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="la-moda"><span class="header-section-number">3.1.3</span> La moda</h3>
+<p><em>La moda</em> es la observación más frecuente del conjunto. Por ejemplo: {9, 11, 12, 15, 15 ,15, 18}. El valor 15 es la moda de estos datos.</p>
+<p>A diferencia de las otras medidas de centralidad la moda no necesariamente es un valor único. Si tuviéramos por ejemplo: {2, 4, 5, 7, 7, 7, 9, 11, 12, 15, 15, 15, 18} hay dos valores con la misma frecuencia máxima. Tanto 7 como 15 aparecen tres veces. En este caso hay dos modas y hablamos de una distribución <em>bimodal</em>.</p>
+<p>Vemos un ejemplo en el gráfico que sigue.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="cuál-usar" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="cuál-usar"><span class="header-section-number">3.1.4</span> ¿Cuál usar?</h3>
+<p>La selección de una medida de centralización depende de varios factores:</p>
+<ol type="1">
+<li>La escala de medición de la variable (nominal, ordinal, de intervalo o de razón)</li>
+<li>La forma de la distribución - si hay sesgo o no</li>
+<li>Para qué vamos a usar la medida.</li>
+</ol>
+<p>La media debería usarse solo para variables de escala de intervalo o de razón. Si los datos son ordenables, pero sin que se pueda hablar de distancias reales entre los datos la mediana es más apropiada. Y en los casos donde ni esto es posible la moda puede ser la única medida disponible. Por ejemplo: si decimos que Italia es un país católico estamos expresando la moda de la variable nominal «religión», y si decimos que Alemania es un país católico y protestante estamos expresando una distribución bimodal de la misma variable. Podemos observar en el gráfico que en realidad se podría hablar incluso de una distribución trimodal.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Religión en Alemania</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En cuanto a la forma de la distribución se favorece la mediana por sobre la media si la distribución es muy sesgada. Esto ocurre sobre todo si hay valores extremos o atípicos. Por ejemplo si tenemos los datos: {15, 12, 11, 18, 15, 15, 200} está claro que si calculamos la media el valor extremo (200) va influir mucho más que cualquier otra observación. En este caso la media es 40,85 y el mediano 15. El primer valor (40,85) no es muy representativo de la muestra ya que no corresponde a ninguna observación y está lejos de cualquiera de ellas. El mediano, en cambio, puede resultar una mejor medida en este caso.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Medidas de centralización en una distribución con sesgo positivo</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Para darnos cuenta de cuál de las medidas puede ser la más adecuada si tenemos datos por lo menos numéricos podemos sacar las tres medidas y ver qué tanto de asemejan unas a otras. Hay que tener en mente que <em>cualiér distribución de datos reales va a tener un sesgo</em>, la distribución perfectamente normal solo existe en teoría. Entonces debemos fijarnos si el sesgo que tenemos justifica el uso de una medida en espeficia. Por ejemplo, para nuestros datos de notas de dos grupos tenemos:</p>
+<ul>
+<li>Grupo A
+<ul>
+<li>Media: 14,93</li>
+<li>Mediana: 15</li>
+<li>Moda: 15</li>
+</ul></li>
+<li>Grupo B:
+<ul>
+<li>Media: 11,76<br>
+</li>
+<li>Mediana: 12<br>
+</li>
+<li>Moda: 12</li>
+</ul></li>
+</ul>
+<p>Vemos que hay muy poca diferencia entre las tres medidas por lo cual vamos a concluir que el sesgo observado no es lo suficientemente fuerte como para justificar el uso de otra medida que <em>la media</em>.</p>
+</section>
+</section>
+<section id="medidas-de-dispersión" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="medidas-de-dispersión"><span class="header-section-number">3.2</span> Medidas de dispersión</h2>
+<p>En la sección anterior desarrollamos varias medidas de centralización y cuál eligir para describir el valor «más típico» de los datos. Cuando calculamos medidas de dispersión estamos contestando la pregunta: ¿cuán típico es este valor?</p>
+<p>Cuando tratamos con variables nominales, como el ejemplo de religión en Alemania de la sección anterior, lo mejor que podemos hacer el indicar la proporción o porcentaje<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, pero si los datos son de alguna escala ya numérica tenemos algunas posibilidades que nos permiten más exactitud.</p>
+<section id="rango-o-amplitud" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="rango-o-amplitud"><span class="header-section-number">3.2.1</span> Rango o amplitud</h3>
+<p>El rango de un conjunto de datos son dos números: el valor mínimo y el valor máximo. Por ejemplo el conjunto de datos {9, 11, 12, 15, 15 ,15, 18} tiene un rango 9 a 18; y el conjunto {2, 4, 5, 7, 7, 7, 9, 11, 12, 15, 15 ,15, 18} tiene un rango de 2 a 18.</p>
+<p>En castellano se usa con alguna frecuencia también el término <em>amplitud</em> como equivalente a <em>rango</em>.</p>
+<div id="exm">
+<p>Para sacar el rango de un conjunto de datos en R podemos usar la función <code>range</code>. Así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>, <span class="dv">18</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1]  2 18</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="el-rango-intercuartílico" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="el-rango-intercuartílico"><span class="header-section-number">3.2.2</span> El rango intercuartílico</h3>
+<p>Otra medida de dispersión que tenemos a disposición es el <em>rango intercuartílico</em> o <em>rango intercuartíl</em>. Para calcularlo dividimos las observaciones en cuatro partes iguales y sacamos los valores de cada corte. Esto nos da <em>cinco valores</em><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, le los cuales el <em>rango intercuartílico</em> es la diferencia entre el segundo y el cuarto. Este sería el rango de las observaciones del 50% de los datos que se encuentran más cerca la mediana del mismo.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Cuartiles y rangos</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>El rango intercuartílico da una idea de la dispersión de los datos y es por su naturaleza menos sensitivo a valores extremos.</p>
+<div class="cell" name="Ejemplo en R">
+<pre class="example cell-code"><code>:</code></pre>
+</div>
+<p>Para sacar en rango intercuartílico podemos usar la función <code>quantiles</code>. Por defecto divide la distribución en cuartiles.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>, <span class="dv">18</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;   0%  25%  50%  75% 100% 
+#&gt;    2    7    9   15   18</code></pre>
+</div>
+</div>
+<p>Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitúd de 8 ya que <span class="math inline">\(15 - 7 = 8\)</span>.</p>
+</section>
+<section id="la-varianza-y-desviación-estándar" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="la-varianza-y-desviación-estándar"><span class="header-section-number">3.2.3</span> La varianza y desviación estándar</h3>
+<p>La medida de dispersión más usada en estadística es la <em>desviación estándar</em>, también conocida como <em>desviación típica</em>. Esta medida tiene una relación matemática muy estrecha con la <em>varianza</em> que tiene usos menos frecuentes. Ambas medidas tienen propiedades que los hacen útiles para otras técnicas estadísticas.</p>
+<p>Para calcular la desviación estándar debemos primero calcular la varianza. Para ello tomamos la diferencia de cada observación de la media. Recordemos que la media se expresa con <span class="math inline">\(\bar{x}\)</span> (equis con barra). Entonces la diferencia entre una observación de x y la media es <span class="math inline">\(x - \bar{x}\)</span>. Luego los llevamos al cuadrado <span class="math inline">\((x - \bar{x})^2\)</span> los sumamos y dividimos por el número total de observaciones. Para expresarlo usamos la notación que ya vimos. Entonces <span class="math inline">\(\Sigma\)</span> es «la suma de» y N es «el total de las observaciones». Juntando todo tenemos:</p>
+<div class="cell" name="Varianza">
+<pre class="definition cell-code"><code>
+$$
+\text{varianza} = {{\Sigma (x - \bar{x})^2}\over{N}}
+$$</code></pre>
+</div>
+<p>Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega <span class="math inline">\(\sigma\)</span> que es sigma pero en minúscula. Entonces tenemos la definición:</p>
+<div class="cell" name="Desviación estándar de la población">
+<pre class="definition cell-code"><code>$$
+\sigma = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N}}}
+$$</code></pre>
+</div>
+<p>Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:</p>
+<div class="cell" name="Desviación estándar de la muestra">
+<pre class="definition cell-code"><code>$$
+s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
+$$</code></pre>
+</div>
+<p>Finalmente. Ya que s y <span class="math inline">\(\sigma\)</span> son la raíz cuadrada de la varianza, esta también se denomina por las mismas letras, pero llevado al cuadrado: <span class="math inline">\(s^2\)</span> y <span class="math inline">\(\sigma^2\)</span></p>
+<blockquote class="blockquote">
+<h4 id="por-qué-llevamos-todo-al-cuadrado" class="unnumbered anchored">¿Por qué llevamos todo al cuadrado?</h4>
+<p>Puede parecer enredado llevar todo al cuadrado para luego volver a sacar la raíz cuadrada. La razón es que si se resta todas las obvervaciones de la media, gran parte de estas diferencias van a ser negativas. Sabemos que un número negativo llevado al cuadrado se vuelve positivo igual que un número positivo, entonces esta parte del procedimiento sirve para que todos los valores que sumamos tengan el mismo signo positivo.</p>
+</blockquote>
+<div>
+<p>Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones <code>var</code> y <code>sd</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>, <span class="dv">18</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 24.69231</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 4.969136</code></pre>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<h4 id="por-qué-se-prefiere-la-desviación-estándar" class="unnumbered anchored">¿Por qué se prefiere la desviación estándar?</h4>
+<p>Hay varios motivos más bien técnicos por los que se prefiere la desviación estándar por sobre la varianza. Sin embargo tiene también algunas ventajas bastante práctica e incluso intuitivas. Una de las más importantes es que la dispersión se expresa en <em>la misma unidad</em> que los datos. Para profundizar esto vemos un ejemplo. Los salarios de una PYME son: $14.000, $14.000, $14.000, $16.000, $17.000, $18.000, $26.000 y $35.000. La media de estos es 19,250, y la desviación estándar es: 7,497. La interpretación de la desviación estándar en este caso es que los salarios en promedio tiene una diferencia de $7,497 (por arriba o abajo) del salario medio de $19,250.</p>
+</blockquote>
+</section>
+<section id="visualizar-la-dispersión" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="visualizar-la-dispersión"><span class="header-section-number">3.2.4</span> Visualizar la dispersión</h3>
+<p>Puede resultar útil visualizar la dispersión de un conjunto de datos. Esto se logra con un diagrama de caja (box-plot). Vemos un ejemplo de ello en la figura @ref(fig:boxplot-example).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/boxplot-example-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Ejemplo de box-plot</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En este tipo de visualización la mediana está representada por la linea horizontal más gruesa, la caja corresponde al rango intercuartíl y los extremos de la linea horizontal representan el rango de los datos. Lo podemos apreciar en la figura @(ref:box-plot-with-explanation)</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/box-plot-with-explanation-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Ejemplo de box-plot con explicaciones</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="exm-boxplot" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 3.3 (Boxplot) </strong></span>La función <code>boxplot</code> nos permite generar un boxplot en R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>notas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>           <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>           <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(notas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="glosario" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="glosario"><span class="header-section-number">3.3</span> Glosario</h2>
+<dl>
+<dt>Amplitud</dt>
+<dd>
+La diferencia entre la mínima y la máxima de una variable. También se llama <em>rango</em> Función relevante en R: <code>range</code>. Equivalente en inglés: «Range».
+</dd>
+<dt>Centralización</dt>
+<dd>
+El hecho de que una variable puede describirse por uno o más valores. También se llama <em>tendiencia central</em>. Equivalente en inglés: «Central tendency».
+</dd>
+<dt>Desviación estándar (de la muestra).</dt>
+<dd>
+Media de la diferencia entre la media y todas las observaciones de la muestra. Fórmula: <span class="math inline">\(s = {{\sqrt{ \Sigma (x - \bar{x})^2}\over{N}} }\)</span> Función relevante en R: <code>sd</code>. Equivalente en inglés: «Standard deviation».
+</dd>
+<dt>Desviación estándar (de la población).</dt>
+<dd>
+Media de la diferencia entre la media y todas las observaciones de la población. Fórmula: <span class="math inline">\(\sigma = {{\sqrt{ \Sigma (x - \bar{x})^2}\over{N}} }\)</span> Función relevante en R: <code>sd</code>. Equivalente en inglés: «Standard deviation (of the population)».
+</dd>
+<dt>Desviación típica</dt>
+<dd>
+Ver <em>desviación estándar</em>. Equivalente en inglés: «Standard deviation».
+</dd>
+<dt>Media</dt>
+<dd>
+La suma de las observaciónes de una variable dividido por el número de las observaciones. También se conoce como <em>la media aritmética</em>. Fórmula: <span class="math inline">\(\bar{x} = {\Sigma{x}\over{N}}\)</span> Función relevante en R: <code>mean</code>. Equivalente en inglés: «Mean».
+</dd>
+<dt>Mediana</dt>
+<dd>
+El la observación de una variable que está justo en el medio cuando los valores están ordenados. Función relevante en R: <code>median</code>. Equivalente en inglés: «Median».
+</dd>
+<dt>Moda</dt>
+<dd>
+El valor más frecuente de la observaciones de una variable. Equivalente en inglés: «Mode».
+</dd>
+<dt>Rango</dt>
+<dd>
+La diferencia entre la mínima y la máxima de una variable. También se llama <em>amplitud</em> Función relevante en R: <code>range</code>. Equivalente en inglés: «Range».
+</dd>
+<dt>Rango intercuartílico</dt>
+<dd>
+Rango dentro del cual se encuentras en 50% más centralizado de las variables. Función relevante en R: <code>quantile</code>. Equivalente en inglés: «Interquartile range (IQR)».
+</dd>
+<dt>Varianza</dt>
+<dd>
+Media de la diferencia cuadrada entre la media y todas las observaciones. Fórmula: <span class="math inline">\(\sigma^2 = {{\Sigma (x - \bar{x})^2}\over{N}}\)</span> Función relevante en R: <code>var</code>. Equivalente en inglés: «Variance».
+</dd>
+</dl>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>y por ende de más uso incorrecto<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Las dos medidas son equivalentes ya que: 0,1 = 10%; 0,5 = 50% etcétera. En estadística y matemática se prefiere generalmente la expresión de proporción porque facilita ciertas operaciones aritméticas.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Tres cortes más los valores extremos mínimo y máximo<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>«sd» por la abreviación del inglés «<strong>s</strong>tandard <strong>d</strong>eviation».<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-distribuciones-de-frecuencias.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

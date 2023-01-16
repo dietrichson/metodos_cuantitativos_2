@@ -1,206 +1,437 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Prefacio | Métodos Cuantitativos</title>
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Aleksander Dietrichson, PhD">
-<meta name="description" content="Material de Cátedra para el curso «Metodologías cuantitativas».">
-<meta name="generator" content="bookdown 0.27 with bs4_book()">
-<meta property="og:title" content="Prefacio | Métodos Cuantitativos">
-<meta property="og:type" content="book">
-<meta property="og:description" content="Material de Cátedra para el curso «Metodologías cuantitativas».">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Prefacio | Métodos Cuantitativos">
-<meta name="twitter:description" content="Material de Cátedra para el curso «Metodologías cuantitativas».">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+
+<title>Métodos Cuantitativos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01-conceptos-fundamentales.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+
 </head>
-<body data-spy="scroll" data-target="#toc">
 
-<div class="container-fluid">
-<div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<body class="nav-sidebar floating">
 
-    <div class="d-flex align-items-start justify-content-between">
-      <h1>
-        <a href="index.html" title="">Métodos Cuantitativos</a>
-      </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Mostrar tabla de contenido</span></button>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Métodos Cuantitativos</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
     </div>
-
-    <div id="main-nav" class="collapse-lg">
-      <form role="search">
-        <input id="search" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
-</form>
-
-      <nav aria-label="Tabla de contenidos"><h2>Tabla de contenidos</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html">Prefacio</a></li>
-<li><a class="" href="conceptos-fundamentales.html"><span class="header-section-number">1</span> Conceptos fundamentales</a></li>
-<li><a class="" href="distribuciones-de-frecuencias.html"><span class="header-section-number">2</span> Distribuciones de frecuencias</a></li>
-<li><a class="" href="centralizaci%C3%B3n-y-dispersi%C3%B3n.html"><span class="header-section-number">3</span> Centralización y dispersión</a></li>
-<li><a class="" href="la-distribuci%C3%B3n-normal.html"><span class="header-section-number">4</span> La distribución normal</a></li>
-<li><a class="" href="estimaci%C3%B3n-de-par%C3%A1metros.html"><span class="header-section-number">5</span> Estimación de parámetros</a></li>
-<li><a class="" href="dise%C3%B1o-de-proyectos-y-test-de-hipotesis.html"><span class="header-section-number">6</span> Diseño de proyectos y test de hipotesis</a></li>
-<li><a class="" href="pruebas-param%C3%A9tricas.html"><span class="header-section-number">7</span> Pruebas paramétricas</a></li>
-<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">8</span> Pruebas no paramétricas</a></li>
-<li><a class="" href="chi-square-test.html"><span class="header-section-number">9</span> Prueba de \(\chi^2\)</a></li>
-<li><a class="" href="correlaci%C3%B3n.html"><span class="header-section-number">10</span> Correlación</a></li>
-<li class="book-part">Apendices</li>
-<li><a class="" href="distribuci%C3%B3n-t.html"><span class="header-section-number">A</span> Distribución t</a></li>
-<li><a class="" href="valores-cr%C3%ADticos-del-test-de-signo.html"><span class="header-section-number">B</span> Valores críticos del test de signo</a></li>
-<li><a class="" href="chi-square-disrtibution.html"><span class="header-section-number">C</span> Distribución \(\chi^2\)</a></li>
-<li><a class="" href="referencias.html">Referencias</a></li>
-</ul>
-
-        <div class="book-extra">
-          
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Métodos Cuantitativos</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Métodos-Cuantitativos.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </nav>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-conceptos-fundamentales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-distribuciones-de-frecuencias.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tendencia-central-y-variabilidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio">Prefacio</a>
+  <ul class="collapse">
+  <li><a href="#segunda-edición" id="toc-segunda-edición" class="nav-link" data-scroll-target="#segunda-edición">Segunda edición</a></li>
+  <li><a href="#estructura-del-libro" id="toc-estructura-del-libro" class="nav-link" data-scroll-target="#estructura-del-libro">Estructura del libro</a>
+  <ul class="collapse">
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario">Glosario</a></li>
+  </ul></li>
+  <li><a href="#r-y-rstudio" id="toc-r-y-rstudio" class="nav-link" data-scroll-target="#r-y-rstudio">R y Rstudio</a>
+  <ul class="collapse">
+  <li><a href="#ejemplos-en-r" id="toc-ejemplos-en-r" class="nav-link" data-scroll-target="#ejemplos-en-r">Ejemplos en R</a></li>
+  </ul></li>
+  <li><a href="#edición" id="toc-edición" class="nav-link" data-scroll-target="#edición">Edición</a></li>
+  <li><a href="#agradecimientos" id="toc-agradecimientos" class="nav-link" data-scroll-target="#agradecimientos">Agradecimientos</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Métodos Cuantitativos</h1>
+<p class="subtitle lead">Materiales de cátedra y de consulta</p>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="prefacio" class="section level1 unnumbered">
-<h1>Prefacio<a class="anchor" aria-label="anchor" href="#prefacio"><i class="fas fa-link"></i></a>
-</h1>
-<p>Este texto ha sido editado en respuesta a la aparente falta de un libro de texto introductorio al análisis cuantitativo y estadísticas acesible y moderno en castellano. Si bien fue concebido como material de cátedra para <em>Metodologías cuantitativas</em> materia que dicta el autor en la Escuela de Humanidades de la Universidad Nacional San Martín, se adaptará fácilmente a cursos introductorios de estadísticas en general.</p>
-<div id="segunda-edición" class="section level2 unnumbered">
-<h2>Segunda edición<a class="anchor" aria-label="anchor" href="#segunda-edici%C3%B3n"><i class="fas fa-link"></i></a>
-</h2>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aleksander Dietrichson, PhD </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de Publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">15 de enero de 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="prefacio" class="level1 unnumbered">
+<h1 class="unnumbered">Prefacio</h1>
+<p>Este texto ha sido editado en respuesta a la aparente falta de un libro de texto introductorio al análisis cuantitativo y estadísticas accesible y moderno en castellano. Si bien fue concebido como material de cátedra para <em>Metodologías cuantitativas</em> materia que dicta el autor en la Escuela de Humanidades de la Universidad Nacional San Martín, se adaptará fácilmente a cursos introductorios de estadísticas en general.</p>
+<section id="segunda-edición" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="segunda-edición">Segunda edición</h2>
 <p>En la segunda edición se corrigió algunos errores ortográficos y de estilo. Optamos por actualizar los ejemplos para incorporar los paquetes del «tidyverse» ya que hemos observado que su uso y adaptación atenúa la curva de aprendizaje para quienes usan R por primera vez o con escasos conocimientos previos.</p>
-</div>
-<div id="estructura-del-libro" class="section level2 unnumbered">
-<h2>Estructura del libro<a class="anchor" aria-label="anchor" href="#estructura-del-libro"><i class="fas fa-link"></i></a>
-</h2>
-<p>Cada capítulo desarrolla un tema y/o concepto a ser tratado en clase y la secuencia corresponde a un curso introductorio de estadístocos «clásico», por lo que conviene leerlos en orden. Sigue el orden propuesto por <span class="citation">Christopher Butler<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-butler1985statistics" role="doc-biblioref"&gt;&lt;em&gt;Statistics in Linguistics&lt;/em&gt; (Basil Blackwell, 1985)&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a></span>.</p>
-<div id="glosario" class="section level3 unnumbered">
-<h3>Glosario<a class="anchor" aria-label="anchor" href="#glosario"><i class="fas fa-link"></i></a>
-</h3>
+</section>
+<section id="estructura-del-libro" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="estructura-del-libro">Estructura del libro</h2>
+<p>Cada capítulo desarrolla un tema y/o concepto a ser tratado en clase y la secuencia corresponde a un curso introductorio de estadístocos «clásico», por lo que conviene leerlos en orden. Sigue el orden propuesto por <span class="citation" data-cites="butler1985statistics">Butler (<a href="#ref-butler1985statistics" role="doc-biblioref">1985</a>)</span>.</p>
+<section id="glosario" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="glosario">Glosario</h3>
 <p>Uno de los objetivos de este trabajo es dotar al lector con las herramientas necesarios para convertirse en un consumidor crítico de textos que se valen de métodos cuantitativos y/o estadísticas para su argumento. En vista de la enorme cantidad de material disponible en inglés, sobre todo en el ámbito acadédico, el autor ha optado por incluir terminología bilingüe español-inglés. Esta elección obedece a un criterio práctico. En cada capítulo encontrarán un glosario con los principales términos mencionados. Incluye traducción a inglés y referencias a R cuando sea relevante.</p>
-</div>
-</div>
-<div id="r-y-rstudio" class="section level2 unnumbered">
-<h2>R y Rstudio<a class="anchor" aria-label="anchor" href="#r-y-rstudio"><i class="fas fa-link"></i></a>
-</h2>
+</section>
+</section>
+<section id="r-y-rstudio" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="r-y-rstudio">R y Rstudio</h2>
 <p><em>R</em> es un leguaje de programación especializado para análisis de datos. Es de fuente abierta (Open Source) y uso gratuito. <em>Rstudio</em> es un editor de <em>R</em> que también de uso sin cargo. Ambas herramientas están disponibles en internet y son de amplio uso tanto en el mundo académico como la industria.</p>
-<p>Se puede descargar e instalar R accediendo a esta URL: <a href="https://cran.r-project.org/mirrors.html" class="uri">https://cran.r-project.org/mirrors.html</a>.</p>
-<p>Para Rstudio la URL es: <a href="https://www.rstudio.com/products/rstudio/download/#download" class="uri">https://www.rstudio.com/products/rstudio/download/#download</a>.</p>
+<p>Se puede descargar e instalar R accediendo a esta URL: https://cran.r-project.org/mirrors.html.</p>
+<p>Para Rstudio la URL es: https://www.rstudio.com/products/rstudio/download/#download.</p>
 <p>Se recomienda siempre instalar R primero y luego Rstudio ya que este depende de aquel.</p>
-<div id="ejemplos-en-r" class="section level3 unnumbered">
-<h3>Ejemplos en R<a class="anchor" aria-label="anchor" href="#ejemplos-en-r"><i class="fas fa-link"></i></a>
-</h3>
+<section id="ejemplos-en-r" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplos-en-r">Ejemplos en R</h3>
 <p>A lo largo de este libro encontrarán ejemplos prácticos que pueden ejecutarse en R. El código se diferenciará del resto del texto por su formato, como se puede apreciar en el ejemplo siguiente:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fl">1</span><span class="op">+</span><span class="fl">1</span></span></code></pre></div>
-<pre><code>#&gt; [1] 2</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
 <p>Por convención no se incluye el promt (p.e. “&gt;”) de la consola de R, y los valores de retorno son comentados con “##”, lo que corresponde al estándar para textos técnicos de esta índole. También se puede hacer referencia a código dentro del texto corrido con el mismo formato. Por ejemplo: <code>1+1</code>.</p>
-</div>
-</div>
-<div id="edición" class="section level2 unnumbered">
-<h2>Edición<a class="anchor" aria-label="anchor" href="#edici%C3%B3n"><i class="fas fa-link"></i></a>
-</h2>
-<p>Este texto fue editado con <em>bookdown</em>,<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-R-bookdown" role="doc-biblioref"&gt;Yihui Xie, &lt;em&gt;Bookdown: Authoring Books and Technical Documents with r Markdown&lt;/em&gt;, 2018, &lt;/a&gt;&lt;a href="https://CRAN.R-project.org/package=bookdown" role="doc-biblioref"&gt;https://CRAN.R-project.org/package=bookdown&lt;/a&gt;.&lt;/p&gt;'><sup>2</sup></a></span> un paquete de R<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-R-bookdown" role="doc-biblioref"&gt;Xie&lt;/a&gt;.&lt;/p&gt;'><sup>3</sup></a></span> que extiende las capacidades de <em>knitr</em><span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-xie2015" role="doc-biblioref"&gt;Yihui Xie, &lt;em&gt;Dynamic Documents with &lt;span&gt;R&lt;/span&gt; and Knitr&lt;/em&gt;, 2nd ed. (Boca Raton, Florida: Chapman; Hall/CRC, 2015), &lt;/a&gt;&lt;a href="http://yihui.name/knitr/" role="doc-biblioref"&gt;http://yihui.name/knitr/&lt;/a&gt;.&lt;/p&gt;'><sup>4</sup></a></span> y R-markdown<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-R-rmarkdown" role="doc-biblioref"&gt;JJ Allaire et al., &lt;em&gt;Rmarkdown: Dynamic Documents for r&lt;/em&gt;, 2019, &lt;/a&gt;&lt;a href="https://CRAN.R-project.org/package=rmarkdown" role="doc-biblioref"&gt;https://CRAN.R-project.org/package=rmarkdown&lt;/a&gt;.&lt;/p&gt;'><sup>5</sup></a></span> para publicaciones más voluminosas. También hace uso de los paquetes <em>tidyverse</em><span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-tidyverse" role="doc-biblioref"&gt;Hadley Wickham et al., &lt;span&gt;“Welcome to the &lt;span class="nocase"&gt;tidyverse&lt;/span&gt;,”&lt;/span&gt; &lt;em&gt;Journal of Open Source Software&lt;/em&gt; 4, no. 43 (2019): 1686, &lt;/a&gt;&lt;a href="https://doi.org/10.21105/joss.01686" role="doc-biblioref"&gt;https://doi.org/10.21105/joss.01686&lt;/a&gt;.&lt;/p&gt;'><sup>6</sup></a></span> y <em>bayestestR</em><span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="#ref-bayestestR" role="doc-biblioref"&gt;Dominique Makowski, Mattan S. Ben-Shachar, and Daniel Lüdecke, &lt;span&gt;“bayestestR: Describing Effects and Their Uncertainty, Existence and Significance Within the Bayesian Framework.”&lt;/span&gt; &lt;em&gt;Journal of Open Source Software&lt;/em&gt; 4, no. 40 (2019): 1541, &lt;/a&gt;&lt;a href="https://doi.org/10.21105/joss.01541" role="doc-biblioref"&gt;https://doi.org/10.21105/joss.01541&lt;/a&gt;.&lt;/p&gt;'><sup>7</sup></a></span>.</p>
-</div>
-<div id="agradecimientos" class="section level2 unnumbered">
-<h2>Agradecimientos<a class="anchor" aria-label="anchor" href="#agradecimientos"><i class="fas fa-link"></i></a>
-</h2>
+</section>
+</section>
+<section id="edición" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="edición">Edición</h2>
+<p>Este texto fue editado con <em>bookdown</em> <span class="citation" data-cites="R-bookdown">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2018</a>)</span>, un paquete de R <span class="citation" data-cites="R-bookdown">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2018</a>)</span> que extiende las capacidades de <em>knitr</em><span class="citation" data-cites="xie2015">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span> y R-markdown <span class="citation" data-cites="R-rmarkdown">(<a href="#ref-R-rmarkdown" role="doc-biblioref">Allaire et&nbsp;al. 2019</a>)</span> para publicaciones más voluminosas. También hace uso de los paquetes <em>tidyverse</em> <span class="citation" data-cites="tidyverse">(<a href="#ref-tidyverse" role="doc-biblioref">Wickham et&nbsp;al. 2019</a>)</span> y <em>bayestestR</em><span class="citation" data-cites="bayestestR">(<a href="#ref-bayestestR" role="doc-biblioref">Makowski, Ben-Shachar, y Lüdecke 2019</a>)</span>.</p>
+</section>
+<section id="agradecimientos" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="agradecimientos">Agradecimientos</h2>
 <p>Agradezco a mi colega Diego Forteza por su ayuda y apoyo en durante el proceso de redacción y a Cecilia Magadán por su corrección de estilo.</p>
 <p>Debo expresar también profunda gratitud a <em>Bow Street Destillery</em> en Dublin, Irlanda; sin cuyos productos este proyecto habría sin duda quedado inconcluso.</p>
 
-</div>
-</div>
-<h3>Referencias</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-R-rmarkdown" class="csl-entry">
-Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. <em>Rmarkdown: Dynamic Documents for r</em>, 2019. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
-</div>
-<div id="ref-butler1985statistics" class="csl-entry">
-Butler, Christopher. <em>Statistics in Linguistics</em>. Basil Blackwell, 1985.
-</div>
-<div id="ref-bayestestR" class="csl-entry">
-Makowski, Dominique, Mattan S. Ben-Shachar, and Daniel Lüdecke. <span>“bayestestR: Describing Effects and Their Uncertainty, Existence and Significance Within the Bayesian Framework.”</span> <em>Journal of Open Source Software</em> 4, no. 40 (2019): 1541. <a href="https://doi.org/10.21105/joss.01541">https://doi.org/10.21105/joss.01541</a>.
-</div>
-<div id="ref-tidyverse" class="csl-entry">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4, no. 43 (2019): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
-</div>
-<div id="ref-R-bookdown" class="csl-entry">
-Xie, Yihui. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>, 2018. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
-</div>
-<div id="ref-xie2015" class="csl-entry">
-———. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC, 2015. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
-</div>
-</div>
 
-  <div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="conceptos-fundamentales.html"><span class="header-section-number">1</span> Conceptos fundamentales</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="En esta página"><h2>En esta página</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#prefacio">Prefacio</a></li>
-<li><a class="nav-link" href="#segunda-edici%C3%B3n">Segunda edición</a></li>
-<li>
-<a class="nav-link" href="#estructura-del-libro">Estructura del libro</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#glosario">Glosario</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#r-y-rstudio">R y Rstudio</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#ejemplos-en-r">Ejemplos en R</a></li></ul>
-</li>
-<li><a class="nav-link" href="#edici%C3%B3n">Edición</a></li>
-<li><a class="nav-link" href="#agradecimientos">Agradecimientos</a></li>
-</ul>
-
-      <div class="book-extra">
-        <ul class="list-unstyled">
-          
-        </ul>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-R-rmarkdown" class="csl-entry" role="doc-biblioentry">
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, y Richard Iannone. 2019. <em>rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
 </div>
-    </nav>
+<div id="ref-butler1985statistics" class="csl-entry" role="doc-biblioentry">
+Butler, Christopher. 1985. <em>Statistics in linguistics</em>. Basil Blackwell.
 </div>
-
+<div id="ref-bayestestR" class="csl-entry" role="doc-biblioentry">
+Makowski, Dominique, Mattan S. Ben-Shachar, y Daniel Lüdecke. 2019. <span>«bayestestR: Describing Effects and their Uncertainty, Existence and Significance within the Bayesian Framework.»</span> <em>Journal of Open Source Software</em> 4 (40): 1541. <a href="https://doi.org/10.21105/joss.01541">https://doi.org/10.21105/joss.01541</a>.
 </div>
-</div> <!-- .container -->
+<div id="ref-tidyverse" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et&nbsp;al. 2019. <span>«Welcome to the <span>tidyverse</span>»</span>. <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+<div id="ref-xie2015" class="csl-entry" role="doc-biblioentry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry" role="doc-biblioentry">
+———. 2018. <em>bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+</div>
+</div>
+</section>
+</section>
 
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Métodos Cuantitativos</strong>" fue escrito por Aleksander Dietrichson, PhD. La más reciente versión es de 13 de julio de 2022.</p>
-  </div>
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>Este libro fue creado con el paquete <a class="text-light" href="https://bookdown.org">bookdown</a></p>
-  </div>
-
-</div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
-for (let popover of popovers) {
-  const div = document.createElement('div');
-  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
-  div.innerHTML = popover.getAttribute('data-content');
-
-  var has_math = div.querySelector("span.math");
-  if (has_math) {
-    document.body.appendChild(div);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
-    MathJax.Hub.Queue(function() {
-      popover.setAttribute('data-content', div.innerHTML);
-      document.body.removeChild(div);
-    })
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
   }
-}
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
 </script>
-</body>
-</html>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01-conceptos-fundamentales.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

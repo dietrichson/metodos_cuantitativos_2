@@ -1,7 +1,7 @@
-# example R options set globally
+# R options set globally
 options(width = 60)
 source(here::here("helper_functions","format_data_frame_as_def_list.R") )
-# example chunk options set globally
+# chunk options set globally
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = FALSE
@@ -30,3 +30,37 @@ multiplot <- function (..., plotlist = NULL, file, cols = 1, layout = NULL)
     }
   }
 }
+
+
+suppressMessages(
+  library(tidyverse)
+)
+.format_dataframe_as_def_list <- function(
+    .data = readRDS(here::here("data","terminology_database.RDS")), 
+    chapter=1){
+  if(is.numeric(chapter)){
+    .data <- .data %>% 
+      filter(Chapter==chapter)
+  }
+  .data <- .data %>% 
+    arrange(Term)
+  for (i in 1:nrow(.data)){
+    cat(.data$Term[i], "\n")
+    cat(":   ", .data$Definition[i], "\n")
+    
+    if(str_length(.data$Formula[i]) > 1){
+      cat("    Fórmula:",.data$Formula[i], "\n")  
+    }
+    if(str_length(.data$R[i]) > 1){
+      cat("    Función relevante en R:", paste0("```",.data$R[i], "```."),"\n")  
+    }
+    cat("    Equivalente en inglés:",paste0("«",.data$English[i], "»."),"\n\n")
+  }
+  
+}
+
+
+source("helper_functions/box_plot_explanation.R")
+source("helper_functions/format_data_frame_as_def_list.R")
+source("helper_functions/format_data_frame_with_formulae.R")
+
