@@ -17,6 +17,9 @@ book:
     - 05-parametros-de-poblacion-y-muestra.qmd
     - 06-diseno-de-proyecto-y-test-de-hipotesis.qmd
     - 07-tests-parametricos.qmd
+    - 08-tests-no-parametricos.qmd
+    - 09-chi-cuadrado.qmd
+    - 10-correlaciones.qmd
     - 11-apendices.qmd
 lang: es
 

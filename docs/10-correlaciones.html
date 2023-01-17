@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Métodos Cuantitativos - 10&nbsp; Correlación</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./11-apendices.html" rel="next">
+<link href="./09-chi-cuadrado.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Métodos Cuantitativos</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Métodos-Cuantitativos.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-conceptos-fundamentales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-distribuciones-de-frecuencias.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tendencia-central-y-variabilidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-la-distribucion-normal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La distribución normal</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-parametros-de-poblacion-y-muestra.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-tests-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pruebas paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-tests-no-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pruebas no paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-chi-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prueba de <span class="math inline">\(\chi^2\)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-correlaciones.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#visualización" id="toc-visualización" class="nav-link active" data-scroll-target="#visualización"><span class="toc-section-number">10.1</span>  Visualización</a></li>
+  <li><a href="#generar-diagrama-de-dispersión-en-r-1" id="toc-generar-diagrama-de-dispersión-en-r-1" class="nav-link" data-scroll-target="#generar-diagrama-de-dispersión-en-r-1"><span class="toc-section-number">10.2</span>  Generar diagrama de dispersión en R</a></li>
+  <li><a href="#coeficientes-de-correlación" id="toc-coeficientes-de-correlación" class="nav-link" data-scroll-target="#coeficientes-de-correlación"><span class="toc-section-number">10.3</span>  Coeficientes de correlación</a>
+  <ul class="collapse">
+  <li><a href="#coeficiente-pearson" id="toc-coeficiente-pearson" class="nav-link" data-scroll-target="#coeficiente-pearson"><span class="toc-section-number">10.3.1</span>  Coeficiente Pearson</a></li>
+  </ul></li>
+  <li><a href="#coeficiente-de-correlación-pearson" id="toc-coeficiente-de-correlación-pearson" class="nav-link" data-scroll-target="#coeficiente-de-correlación-pearson"><span class="toc-section-number">10.4</span>  Coeficiente de correlación Pearson</a></li>
+  <li><a href="#coeficiente-spearman" id="toc-coeficiente-spearman" class="nav-link" data-scroll-target="#coeficiente-spearman"><span class="toc-section-number">10.4.1</span>  Coeficiente Spearman</a></li>
+  <li><a href="#coeficiente-de-correlación-de-spearman" id="toc-coeficiente-de-correlación-de-spearman" class="nav-link" data-scroll-target="#coeficiente-de-correlación-de-spearman"><span class="toc-section-number">10.5</span>  Coeficiente de correlación de Spearman</a></li>
+  <li><a href="#coeficiente-phi" id="toc-coeficiente-phi" class="nav-link" data-scroll-target="#coeficiente-phi"><span class="toc-section-number">10.5.1</span>  Coeficiente <span class="math inline">\(\phi\)</span></a></li>
+  <li><a href="#interpretación-de-correlacciones" id="toc-interpretación-de-correlacciones" class="nav-link" data-scroll-target="#interpretación-de-correlacciones"><span class="toc-section-number">10.6</span>  Interpretación de correlacciones</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">10.7</span>  Glosario</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>La correlación es el área de las estadísticas que estudia la relación sistemática entre dos o más variables e intenta contestar a preguntas como: ¿Si sube A va a subir B también? En este capítulo desarrollaremos algunas técnicas para contestar este tipo de pregunta.</p>
+<section id="visualización" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="visualización"><span class="header-section-number">10.1</span> Visualización</h2>
+<p>El primer paso para estudiar posibles relaciones entre variables es visualizarlos. Si tenemos dos variables medidas por cada miembro de la población o muestra que estamos investigando podemos generar un <em>diagrama de disperción</em> también conocido como <em>scatterplot</em>. En este tipo de visualización cada miembro de la muestra/población está representado por un punto, y las coordinadas del punto corresponde a las dos variables que hemos medido, en el eje horizontal y vertical respectivamente.</p>
+<p>El la <a href="#fig-strong-positive-correlation">figura&nbsp;<span>10.1</span></a>, vemos que la concentración de puntos suben de la izquierda a la derecha. Es decir cuando avanzamos en el eje horizontal avanzamos en el eje vertical también. Es un ejemplo de una <em>correlación positiva</em>, como podría ser edad y estatura.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-strong-positive-correlation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="10-correlaciones_files/figure-html/fig-strong-positive-correlation-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;10.1: Correlación positiva</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En la <a href="#fig-strong-negative-correlation">figura&nbsp;<span>10.2</span></a> vemos lo contrario, mientras avanzamos en el eje vertical retrocedemos (o bajamos) en el eje horizontal. Esto se conoce como <em>correlacion negativa</em>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-strong-negative-correlation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="10-correlaciones_files/figure-html/fig-strong-negative-correlation-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;10.2: Correlación negativa</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En la <a href="#fig-weak-negative-correlation">figura&nbsp;<span>10.3</span></a>, también vemos correlación negativa, pero es menos fuerte que en la <a href="#fig-strong-negative-correlation">figura&nbsp;<span>10.2</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-weak-negative-correlation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="10-correlaciones_files/figure-html/fig-weak-negative-correlation-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;10.3: Correlación negative leve</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En la <a href="#fig-near-perfect-negative-correlation">figura&nbsp;<span>10.4</span></a> vemos una correlación negativa casi perfecta entre las dos variables.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-near-perfect-negative-correlation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="10-correlaciones_files/figure-html/fig-near-perfect-negative-correlation-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;10.4: Correlación casi perfecta</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En la figura @ref(fig:no-correlation) vemos un caso de correlación inexistente entre las variables en cuestión.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-no-correlation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="10-correlaciones_files/figure-html/fig-no-correlation-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;10.5: Correlación nula</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En la <a href="#fig-non-linear-relationship">figura&nbsp;<span>10.6</span></a> vemos que existe una relación entre las dos variables, pero que esta no es lineal.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-non-linear-relationship" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="10-correlaciones_files/figure-html/fig-non-linear-relationship-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;10.6: Relación no lineal</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Las figuras <a href="#fig-strong-positive-correlation"><span>10.1</span></a>, <a href="#fig-strong-negative-correlation"><span>10.2</span></a>, <a href="#fig-weak-negative-correlation"><span>10.3</span></a>, <a href="#fig-near-perfect-negative-correlation"><span>10.4</span></a>, -<a href="#fig-no-correlation">Figura&nbsp;<span>10.5</span></a>] y <a href="#fig-non-linear-relationship"><span>10.6</span></a> demuestran por qué es preciso graficar los datos al inicio del análisis. Nos da una indicación de si existe una correlación o no, si es positiva o negativa y que tan fuerte es. También nos podemos darnos cuenta de patrones en los datos que no son lineales, como es el caso de los datos en la <a href="#fig-non-linear-relationship">figura&nbsp;<span>10.6</span></a>. Asimismo, a veces nos encontramos con una correlación como la que vemos en la <a href="#fig-near-perfect-negative-correlation">figura&nbsp;<span>10.4</span></a>. Las correlaciones que son demasiado perfectas suelen ser un signo de advertencia y podemos preguntarnos si en realidad son dos variables distintas o si las dos están midiendo lo mismo.</p>
+<div id="exm-example-scatterplot-i" class="theorem example">
+<div class="cell">
+<span class="theorem-title"><strong>Ejemplo 10.1 (Generar diagrama de dispersión en R) </strong></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos datos</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span><span class="fu">rnorm</span>(<span class="dv">100</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">y=</span><span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficamos</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="10-correlaciones_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>En el <a href="#exm-example-scatterplot-i">ejemplo&nbsp;<span>10.1</span></a> utilizamos la función <code>rnorm</code> para generar cien observaciones aleatorias con distribución normal y los ponemos dentro de un <code>data.frame</code>. Luego usamos la función <code>plot</code> para graficarlos. Como nuestro <code>data.frame</code> tiene solo dos columnas R entiende que estos son los datos que queremos graficar. Si el <code>data.frame</code> tiene más columnas, podemos especificar los que queremos graficar así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(datos<span class="sc">$</span>x,datos<span class="sc">$</span>y)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="generar-diagrama-de-dispersión-en-r-1" class="level2 {#exm-example-scatterplot-ii" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="generar-diagrama-de-dispersión-en-r-1"><span class="header-section-number">10.2</span> Generar diagrama de dispersión en R</h2>
+<p><br>
+Por defecto R viene con algunos data.frames ya cargados, uno de ellos es «trees», podemos usar la función <code>head</code> para ver las primeras seis filas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(trees)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;   Girth Height Volume
+#&gt; 1   8.3     70   10.3
+#&gt; 2   8.6     65   10.3
+#&gt; 3   8.8     63   10.2
+#&gt; 4  10.5     72   16.4
+#&gt; 5  10.7     81   18.8
+#&gt; 6  10.8     83   19.7</code></pre>
+</div>
+</div>
+<p>Vemos que tiene tres columnas «Girth», «Height» y «Volume» (circumferencia, alto y volumen), los que, por lógica, deben tener alta correlación. Graficamos dos de ellos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(trees<span class="sc">$</span>Girth, trees<span class="sc">$</span>Volume)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="10-correlaciones_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Si usamos la función <code>plot</code> sin especificar columnas R entiende que queremos ver todas las combinaciones.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(trees)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="10-correlaciones_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Este tipo de visualización puede ser útil cuando tenemos algunas variables y queremos darnos cuenta qué correlaciones hay. La visualización funciona bien hasta cierto número de columnas –ocho más o menos–, luego se vuelve difícil de leer y por ende de interpretar.</p>
+</section>
+<section id="coeficientes-de-correlación" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="coeficientes-de-correlación"><span class="header-section-number">10.3</span> Coeficientes de correlación</h2>
+<p>Para tener una medida cuantitativa precisa de la correlación entre las variables calculamos un coeficiente de correlación. A continuación vamos a tres de ellos, el de Pearson, el de Spearman y el coeficiente <span class="math inline">\(\phi\)</span> (de la letra griega que corresponde a <em>f</em> en minúscula – se pronuncia «fi». Los coeficientes de correlación se expresan por un número con varios decimales entre -1 y 1, donde -1 y 1 indican correlaciones perfectas, negativas y positivas respectivamente y 0 indica correlación nula.</p>
+<p>El coeficiente Pearson es adecuado para datos de escala de razón o intervalo, el de Spearman para datos de escala ordinal y el coeficiente <span class="math inline">\(\phi\)</span> se usa para datos nominales.</p>
+<section id="coeficiente-pearson" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="coeficiente-pearson"><span class="header-section-number">10.3.1</span> Coeficiente Pearson</h3>
+<p>Como ya mencionamos, el coeficiente de Pearson es apropiado cuando las variables a comparar con de escala de intervalo o razón ya que toma en cuenta la magnitud relativa de las observaciones.</p>
+<p>Si tenemos un conjunto de pares de observaciones podemos representar el primer elemento del par por <em>x</em> y el segundo por <em>y</em>. Entonces el conjunto de los x van a tener una desviación estándar se calcula según la <span class="quarto-unresolved-ref">?def-definition-standard-deviation</span>, así:</p>
+<p><span class="math display">\[
+s_x = {\sqrt{(\sum(x-\bar{x})^2\over{N-1}}}.
+\]</span></p>
+<p>De la misma manera <em>y</em> tiene su desviación estándar: <span class="math display">\[
+s_y = {\sqrt{(\sum(y-\bar{y})^2\over{N-1}}}.
+\]</span></p>
+<p>Ahora podemos normalizar las variables según @ref(def:definition-z-score) asi:</p>
+<p><span class="math display">\[
+z_x = {x-\bar{x}\over{s_x}},
+\]</span></p>
+<p><span class="math display">\[
+z_y = {y-\bar{y}\over{s_y}}.
+\]</span></p>
+<p>Y con estos datos podemos calcular el coeficiente según la <a href="#def-definition-pearson-correlation">definición&nbsp;<span>10.1</span></a>.</p>
+<div id="def-definition-pearson-correlation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.1 (Coeficiente de correlación de Pearson) </strong></span><span class="math display">\[
+r={\sum{z_xz_y}\over{N-1}}
+\]</span> donde:</p>
+<ul>
+<li><span class="math inline">\(\sum{z_xz_y}\)</span>: La suma de los productos<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> de las dos variables normalizadas.</li>
+</ul>
+</div>
+<p>Existe otra definición es matemáticamente equivalente y que se usa a veces para hacer el cálculo a mano:</p>
+</section>
+</section>
+<section id="coeficiente-de-correlación-pearson" class="level2 {def-definition-pearson-correlation-ii" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="coeficiente-de-correlación-pearson"><span class="header-section-number">10.4</span> Coeficiente de correlación Pearson</h2>
+<p><span class="math display">\[
+r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\times\{N\Sigma{y^2}-(\Sigma{y})^2\} }}}
+\]</span></p>
+</section>
+<div id="exm-pearson-coefficient-calculation" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.2 (Cálculo del Coeficiente de correlación de Pearson) </strong></span><br>
+</p>
+<p>En este ejemplo, adaptado de <span class="citation" data-cites="butler1985statistics">(<a href="#ref-butler1985statistics" role="doc-biblioref">Butler 1985</a>)</span>, vamos a suponer que hemos tomado un examen de traducción y otro de comprensión de inglés a doce estudiantes. Los resultados de estos exámenes están en la <a href="#tbl-resultados-dos-examenes">tabla&nbsp;<span>10.1</span></a>.</p>
+<div id="tbl-resultados-dos-examenes" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabla&nbsp;10.1: <strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-resultados-dos-examenes-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-resultados-dos-examenes" style="flex-basis: 100.0%;justify-content: center;">
+<table class="table table-sm table-striped">
+<caption>(a) Resultados de un examen de tradución (x) y de comprensión (y) de ingles.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Estudiante</th>
+<th style="text-align: right;">x</th>
+<th style="text-align: right;">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">17</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Para poder aplicar la fórmula vamos a precisar los valores llevados al cuadrado, el producto de <span class="math inline">\(x\times y\)</span> y las sumas de las columnas. Calculándolos obtenemos los datos de la <a href="#tbl-resultados-dos-examenes-ii">tabla&nbsp;<span>10.2</span></a>.</p>
+<div id="tbl-resultados-dos-examenes-ii" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabla&nbsp;10.2: <strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-resultados-dos-examenes-ii-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-resultados-dos-examenes-ii" style="flex-basis: 100.0%;justify-content: center;">
+<table class="table table-sm table-striped">
+<caption>(a) Resultados de un examen de tradución (x) y de comprensión (y) de ingles.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Estudiante</th>
+<th style="text-align: right;">x</th>
+<th style="text-align: right;">y</th>
+<th style="text-align: right;">x2</th>
+<th style="text-align: right;">y2</th>
+<th style="text-align: right;">xy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">289</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">255</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">169</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">96</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">196</td>
+<td style="text-align: right;">289</td>
+<td style="text-align: right;">238</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">240</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">196</td>
+<td style="text-align: right;">126</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">130</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">176</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">196</td>
+<td style="text-align: right;">169</td>
+<td style="text-align: right;">182</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">196</td>
+<td style="text-align: right;">168</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">289</td>
+<td style="text-align: right;">272</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Sabemos que N=12, pero vamos a precisar las sumas de algunas columnas:</p>
+<ul>
+<li><span class="math inline">\(\Sigma{x}\)</span> = 154</li>
+<li><span class="math inline">\(\Sigma{y}\)</span> = 162</li>
+<li><span class="math inline">\(\Sigma{x^2}\)</span> = 2054</li>
+<li><span class="math inline">\(\Sigma{y^2}\)</span> = 2290</li>
+<li><span class="math inline">\(\Sigma{xy}\)</span> = 2124.</li>
+</ul>
+<p>Aplicamos la fórmula:</p>
+$$
+<span class="math display">\[\begin{split}
+&amp;r= {N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\times\{N\Sigma{y^2}-(\Sigma{y})^2\} }}} \\
+&amp;~~~~~~~\Updownarrow\\
+&amp;r={12\times2~124-154\times162\over{\sqrt{\{12\times2~054-154^2\}\times\{12\times2~290-162^2\} }}} \\
+&amp;~~~~~~~\Updownarrow\\
+
+&amp;r={25~488-24~948\over{\sqrt{\{24~648-23~716\}\times\{27~480-26~244\} }}} \\
+&amp;~~~~~~~\Updownarrow\\
+
+&amp;r= {540\over{\sqrt{932\times1236}}} \\
+&amp;~~~~~~~\Updownarrow\\
+&amp;r= {540\over{\sqrt{1~151~932}}} \\
+&amp;~~~~~~~\Updownarrow\\
+
+&amp;r= {540\over1~073,28} \\
+&amp;~~~~~~~\Updownarrow\\
+
+&amp;r= 0,5031
+
+\end{split}\]</span>
+<p>$$</p>
+</div>
+<div id="exm-pearson-coefficient-calculation-in-r" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 10.3 (Cálculo del Coeficiente de correlación de Pearson en R) </strong></span>Si no queremos hacer todos los cálculos del <a href="#exm-pearson-coefficient-calculation">ejemplo&nbsp;<span>10.2</span></a> a mano podemos recurrir a R que con la función <code>cor</code> lo calcula.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos datos</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>datos<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Estudiante =</span> <span class="fu">c</span>( <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>( <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">12</span>, <span class="dv">16</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>( <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">8</span>, <span class="dv">17</span>, <span class="dv">16</span>, <span class="dv">9</span>, <span class="dv">14</span>, <span class="dv">10</span>, <span class="dv">16</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">17</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamamos función</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(datos<span class="sc">$</span>x, datos<span class="sc">$</span>y)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 0.5031258</code></pre>
+</div>
+</div>
+</div>
+<section id="coeficiente-spearman" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="coeficiente-spearman"><span class="header-section-number">10.4.1</span> Coeficiente Spearman</h3>
+<p>Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o <span class="math inline">\(\rho\)</span> de la letra griega <em>r</em> se calcula según la definición @ref(def:definition-spearman-correlation).</p>
+</section>
+<section id="coeficiente-de-correlación-de-spearman" class="level2 {def-definition-spearman-correlation" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="coeficiente-de-correlación-de-spearman"><span class="header-section-number">10.5</span> Coeficiente de correlación de Spearman</h2>
+<p><span class="math display">\[
+\rho = 1-{6\sum{d^2}\over{N(N^2-1)}}  
+\]</span></p>
+</section>
+<p>Imaginamos que pedimos a diez personas que ranqueen en una escala de uno a diez cuánto les gustaron dos cafeterías de Buenos Aires. Ya que los datos son de escala ordinal, tenemos que recurrir a <em>Spearman</em>. Usamos la misma función <code>cor</code> con un parámetro extra: <code>method = "spearman"</code> para indicar que queremos usar la correlación de Spearman.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos datos</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>rankings <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cafe.A =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">2</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Cafe.B =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamamos función</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(rankings<span class="sc">$</span>Cafe.A, rankings<span class="sc">$</span>Cafe.B, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 0.875</code></pre>
+</div>
+</div>
+<p>Observamos que hay alto grado de correlación entre los ranking de los dos cafés.</p>
+<section id="coeficiente-phi" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="coeficiente-phi"><span class="header-section-number">10.5.1</span> Coeficiente <span class="math inline">\(\phi\)</span></h3>
+<p>Si las dos variables en cuestión son nominales la pregunta se reduce a: ¿Si observamos la propiedad A es probable que observemos también B? Si estamos trabajando con datos educativos la pregunta podría ser ¿Si el estudiante responde correctamente el 1<sup>r</sup> ítem, es probable que también acierte el 2<sup>o</sup>? Esto se puede representar en una tabla <span class="math inline">\(2\times2\)</span> como la que vemos en la <a href="#fig-two-by-two-general">figura&nbsp;<span>10.7</span></a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-two-by-two-general" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="10-correlaciones_files/figure-html/fig-two-by-two-general-1.png" class="img-fluid figure-img" width="480"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;10.7: Tabla de contingencia dos por dos</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1<sup>o</sup> pero no el 2<sup>o</sup>. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la definición @ref(def:phi-correlation).</p>
+<div id="def-phi-correlation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.2 (Coefficiente de <span class="math inline">\(\phi\)</span>) </strong></span><span class="math display">\[
+\phi = {{BC-AD}\over{\sqrt{(A+B)\times(C+D)\times(A+C)\times(B+D)}}}
+\]</span></p>
+</div>
+<p>Debería quedar claro que el coeficiente <span class="math inline">\(\phi\)</span> está estrechamente relacionado con la prueba de <span class="math inline">\(\chi^2\)</span> que vimos en la definición @ref(def:chi-squared). De hecho se relacionan matemáticamente: <span class="math display">\[
+\phi = \sqrt{\chi^2/N} \Leftrightarrow \chi^2 = N\times\phi^2.
+\]</span> Por tanto la significanza de <span class="math inline">\(\phi\)</span> se puede obtener por medio de la conversión a <span class="math inline">\(\chi^2\)</span>.</p>
+</section>
+<section id="interpretación-de-correlacciones" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="interpretación-de-correlacciones"><span class="header-section-number">10.6</span> Interpretación de correlacciones</h2>
+<p>Es muy importante entender que una correlación, incluso alta, entre dos variables no quiere decir que la relación entre ellas es de causa y efecto. Si hacemos una muestra en la escuela secundaria y medimos estatura, por un lado, y nivel de inglés por otra, es bastante probable que encontremos una correlación muy fuerte entre las dos variables. Pero debería estar claro que ni la estatura causa conocimientos de inglés ni tampoco lo contrario. Lo que claramente pasa es que mas <em>edad</em> los estudiantes tienen más estatura y han cursado más niveles de inglés.</p>
+<p>Saltar a conclusiones sobre causalidad basadas en correlaciones es tal vez el error estadístico más frecuente en la literatura tanto académica como periodística. Nunca hay que olvidar que una correlación significativa solo nos dice que existe una relación <em>matemática</em> entre dos variables. No nos indica cómo interpretarla ni mucho menos sobre sus causas y efectos.</p>
+</section>
+<section id="glosario" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="glosario"><span class="header-section-number">10.7</span> Glosario</h2>
+<dl>
+<dt>Coeficiente <span class="math inline">\(\phi\)</span> «fi».</dt>
+<dd>
+Coeficiente que da cuenta de la correlación entre dos variables nominales. Fórmula: <span class="math inline">\(\phi = {{BC-AD}\over{\sqrt{(A+B)\times(C+D)\times(A+C)\times(B+D)}}}\)</span> Función relevante en R: <code>chi.test</code>. Equivalente en inglés: «Phi correlation».
+</dd>
+<dt>Coeficiente de correlación de Pearson</dt>
+<dd>
+Coeficiente que da cuenta de la correlación entre dos variables. Fórmula: <span class="math inline">\(r={\sum{z_xz_y}\over{N-1}}\)</span> Función relevante en R: <code>cor</code>. Equivalente en inglés: «Pearson coefficient».
+</dd>
+<dt>Coeficiente Spearman</dt>
+<dd>
+Coeficiente que da cuenta de la correlación entre dos variables cuando una o ambas de ellas son de escala ordinal. Fórmula: <span class="math inline">\(\rho = 1-{6\sum{d^2}\over{N(N^2-1)}}\)</span> Función relevante en R: <code>cor</code>. Equivalente en inglés: «Spearman coefficient».
+</dd>
+<dt>Correlación negativa</dt>
+<dd>
+Relación entre dos variables que muestra que si una aumenta la otra disminuye. Equivalente en inglés: «Positive correlation».
+</dd>
+<dt>Correlación positiva</dt>
+<dd>
+Relación entre dos variables que muestra que ambas aumentan o disminuyen simultáneamente. Equivalente en inglés: «Positive correlation».
+</dd>
+</dl>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-butler1985statistics" class="csl-entry" role="doc-biblioentry">
+Butler, Christopher. 1985. <em>Statistics in linguistics</em>. Basil Blackwell.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>De hecho es cuadrática: <span class="math inline">\(y~\sim~x^2\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>«Producto» en matemática es el resultado de una operación de multiplicación. Si multiplicamos <span class="math inline">\(2\times2=4\)</span>, 4 es el producto.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09-chi-cuadrado.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prueba de <span class="math inline">\(\chi^2\)</span></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./11-apendices.html" class="pagination-link">
+        <span class="nav-page-text">Apendices</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

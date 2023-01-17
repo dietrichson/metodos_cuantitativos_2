@@ -190,6 +190,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./05-parametros-de-poblacion-y-muestra.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-tests-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pruebas paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-tests-no-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pruebas no paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-chi-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prueba de <span class="math inline">\(\chi^2\)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-correlaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -211,9 +241,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#rango-o-amplitud" id="toc-rango-o-amplitud" class="nav-link" data-scroll-target="#rango-o-amplitud"><span class="toc-section-number">3.2.1</span>  Rango o amplitud</a></li>
   <li><a href="#el-rango-intercuartílico" id="toc-el-rango-intercuartílico" class="nav-link" data-scroll-target="#el-rango-intercuartílico"><span class="toc-section-number">3.2.2</span>  El rango intercuartílico</a></li>
   <li><a href="#la-varianza-y-desviación-estándar" id="toc-la-varianza-y-desviación-estándar" class="nav-link" data-scroll-target="#la-varianza-y-desviación-estándar"><span class="toc-section-number">3.2.3</span>  La varianza y desviación estándar</a></li>
-  <li><a href="#visualizar-la-dispersión" id="toc-visualizar-la-dispersión" class="nav-link" data-scroll-target="#visualizar-la-dispersión"><span class="toc-section-number">3.2.4</span>  Visualizar la dispersión</a></li>
   </ul></li>
-  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">3.3</span>  Glosario</a></li>
+  <li><a href="#desviación-estándar-de-la-muestra" id="toc-desviación-estándar-de-la-muestra" class="nav-link" data-scroll-target="#desviación-estándar-de-la-muestra"><span class="toc-section-number">3.3</span>  Desviación estándar de la muestra</a></li>
+  <li><a href="#visualizar-la-dispersión" id="toc-visualizar-la-dispersión" class="nav-link" data-scroll-target="#visualizar-la-dispersión"><span class="toc-section-number">3.3.1</span>  Visualizar la dispersión</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">3.4</span>  Glosario</a></li>
   </ul>
 </nav>
     </div>
@@ -236,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>En el <a href="02-distribuciones-de-frecuencias.html"><span>Capítulo&nbsp;2</span></a> vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y rango de observaciones. En este capítulo desarrollaremos algunas medidas cuantitativas más precisas de estas propiedades. Específicamente desarrollaremos medidas de centralización o tendencia central y dispersión.</p>
+<p>En el <a href="02-distribuciones-de-frecuencias.html">capítulo&nbsp;<span>2</span></a> vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y rango de observaciones. En este capítulo desarrollaremos algunas medidas cuantitativas más precisas de estas propiedades. Específicamente desarrollaremos medidas de centralización o tendencia central y dispersión.</p>
 <section id="centralización" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="centralización"><span class="header-section-number">3.1</span> Centralización</h2>
 <p>La <em>centralización</em> o <em>tendencia central</em> de un conjunto de datos es uno o un número reducido de valores que representan todo el conjunto.</p>
@@ -283,7 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>En textos de matemática y estadística se usa con frecuencia <em>llaves</em> para significar un conjunto, de modo que los datos del primer conjunto se expresaría así: x = {15, 12, 11, 18, 15 , 15}.</p>
 <p>Una notación compacta para significar la suma de las observaciones en una variable es <span class="math inline">\(\Sigma\)</span>: la letra griega sigma, en mayúscula.</p>
 <p>Para significar el número de observaciones de usa N, de <strong>n</strong>úmero.</p>
-<p>Así se puede definir la media de manera compacta así: <span class="math display">\[
+<p>Así se puede definir la media de manera compacta así:</p>
+<p><span class="math display">\[
 {\Sigma{x}}\over{N}
 \]</span></p>
 <p>También se usa una barra vertical sobre el nombre de la variable para significar la media (o promedio aritmético): por ejemplo: <span class="math display">\[\bar{x} = 14,33\]</span></p>
@@ -303,7 +335,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4 class="unnumbered anchored" data-anchor-id="notación-matemática-1">Notación matemática</h4>
 <p>El valor mediano, o la mediana, se denota en notación matemática con una tilde como la que se usa en la letra ñ en español. Al igual que la barra para la media, se coloca por encima de la variable, así: <span class="math display">\[\huge{\tilde{x}}\]</span>.</p>
 <div id="exm-mediana" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 3.2 (La mediana) </strong></span>Podemos sacar la mediana de forma sencilla con R con la función <code>median</code>.</p>
+<p><span class="theorem-title"><strong>Ejemplo 3.2 (La mediana) </strong></span><br>
+Podemos sacar la mediana de forma sencilla con R con la función <code>median</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>, <span class="dv">18</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -440,51 +473,47 @@ $$
 \text{varianza} = {{\Sigma (x - \bar{x})^2}\over{N}}
 $$</code></pre>
 </div>
-<p>Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega <span class="math inline">\(\sigma\)</span> que es sigma pero en minúscula. Entonces tenemos la definición:</p>
-<div class="cell" name="Desviación estándar de la población">
-<pre class="definition cell-code"><code>$$
+<p>Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega <span class="math inline">\(\sigma\)</span> que es sigma pero en minúscula. Entonces tenemos:</p>
+<div id="def-standard-deviation-population" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 3.2 (Desviación estándar de la población) </strong></span><span class="math display">\[
 \sigma = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N}}}
-$$</code></pre>
+\]</span></p>
 </div>
 <p>Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:</p>
-<div class="cell" name="Desviación estándar de la muestra">
-<pre class="definition cell-code"><code>$$
+</section>
+</section>
+<section id="desviación-estándar-de-la-muestra" class="level2 {def-definition-standard-deviation" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="desviación-estándar-de-la-muestra"><span class="header-section-number">3.3</span> Desviación estándar de la muestra</h2>
+<p><span class="math display">\[
 s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
-$$</code></pre>
-</div>
+\]</span></p>
+</section>
 <p>Finalmente. Ya que s y <span class="math inline">\(\sigma\)</span> son la raíz cuadrada de la varianza, esta también se denomina por las mismas letras, pero llevado al cuadrado: <span class="math inline">\(s^2\)</span> y <span class="math inline">\(\sigma^2\)</span></p>
-<blockquote class="blockquote">
-<h4 id="por-qué-llevamos-todo-al-cuadrado" class="unnumbered anchored">¿Por qué llevamos todo al cuadrado?</h4>
-<p>Puede parecer enredado llevar todo al cuadrado para luego volver a sacar la raíz cuadrada. La razón es que si se resta todas las obvervaciones de la media, gran parte de estas diferencias van a ser negativas. Sabemos que un número negativo llevado al cuadrado se vuelve positivo igual que un número positivo, entonces esta parte del procedimiento sirve para que todos los valores que sumamos tengan el mismo signo positivo.</p>
-</blockquote>
-<div>
 <p>Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones <code>var</code> y <code>sd</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>, <span class="dv">18</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">15</span> ,<span class="dv">15</span>, <span class="dv">18</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [1] 24.69231</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [1] 4.969136</code></pre>
-</div>
 </div>
 </div>
 <blockquote class="blockquote">
 <h4 id="por-qué-se-prefiere-la-desviación-estándar" class="unnumbered anchored">¿Por qué se prefiere la desviación estándar?</h4>
 <p>Hay varios motivos más bien técnicos por los que se prefiere la desviación estándar por sobre la varianza. Sin embargo tiene también algunas ventajas bastante práctica e incluso intuitivas. Una de las más importantes es que la dispersión se expresa en <em>la misma unidad</em> que los datos. Para profundizar esto vemos un ejemplo. Los salarios de una PYME son: $14.000, $14.000, $14.000, $16.000, $17.000, $18.000, $26.000 y $35.000. La media de estos es 19,250, y la desviación estándar es: 7,497. La interpretación de la desviación estándar en este caso es que los salarios en promedio tiene una diferencia de $7,497 (por arriba o abajo) del salario medio de $19,250.</p>
 </blockquote>
-</section>
-<section id="visualizar-la-dispersión" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="visualizar-la-dispersión"><span class="header-section-number">3.2.4</span> Visualizar la dispersión</h3>
-<p>Puede resultar útil visualizar la dispersión de un conjunto de datos. Esto se logra con un diagrama de caja (box-plot). Vemos un ejemplo de ello en la figura @ref(fig:boxplot-example).</p>
+<section id="visualizar-la-dispersión" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="visualizar-la-dispersión"><span class="header-section-number">3.3.1</span> Visualizar la dispersión</h3>
+<p>Puede resultar útil visualizar la dispersión de un conjunto de datos. Esto se logra con un diagrama de caja (box-plot). Vemos un ejemplo de ello en la <a href="#fig-boxplot-example">figura&nbsp;<span>3.1</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-boxplot-example" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/boxplot-example-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Ejemplo de box-plot</figcaption><p></p>
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/fig-boxplot-example-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;3.1: Ejemplo de box-plot</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -503,19 +532,18 @@ $$</code></pre>
 <div id="exm-boxplot" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 3.3 (Boxplot) </strong></span>La función <code>boxplot</code> nos permite generar un boxplot en R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>notas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>           <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>           <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(notas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>notas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>           <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>           <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(notas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="glosario" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="glosario"><span class="header-section-number">3.3</span> Glosario</h2>
+<section id="glosario" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="glosario"><span class="header-section-number">3.4</span> Glosario</h2>
 <dl>
 <dt>Amplitud</dt>
 <dd>

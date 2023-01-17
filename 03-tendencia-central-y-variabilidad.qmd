@@ -6,7 +6,7 @@ myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
 source("_common.R")
 ```
 
-En el @sec-distribuciones-de-frecuencias vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y rango de observaciones. En este capítulo desarrollaremos algunas medidas cuantitativas más precisas de estas propiedades. Específicamente desarrollaremos medidas de centralización o tendencia central y dispersión.
+En el [capítulo @sec-distribuciones-de-frecuencias] vimos que resumir los datos y generar visualizaciones nos permite entender mejor la estructura y algunas propiedades de un conjunto de datos, como son sus vales más frecuentes y rango de observaciones. En este capítulo desarrollaremos algunas medidas cuantitativas más precisas de estas propiedades. Específicamente desarrollaremos medidas de centralización o tendencia central y dispersión.
 
 ## Centralización
 
@@ -68,7 +68,9 @@ Una notación compacta para significar la suma de las observaciones en una varia
 
 Para significar el número de observaciones de usa N, de **n**úmero.
 
-Así se puede definir la media de manera compacta así: $$
+Así se puede definir la media de manera compacta así: 
+
+$$
 {\Sigma{x}}\over{N}
 $$
 
@@ -76,7 +78,7 @@ También se usa una barra vertical sobre el nombre de la variable para significa
 
 Entonces en general tenemos:
 
-::: {#def-la-media}
+:::{#def-la-media}
 ## La media
 
 $$
@@ -96,7 +98,7 @@ El valor mediano, o la mediana, se denota en notación matemática con una tilde
 
 ::: {#exm-mediana}
 ## La mediana
-
+\
 Podemos sacar la mediana de forma sencilla con R con la función `median`.
 
 ```{r}
@@ -120,7 +122,8 @@ A diferencia de las otras medidas de centralidad la moda no necesariamente es un
 
 Vemos un ejemplo en el gráfico que sigue.
 
-```{r, echo=FALSE}
+```{r}
+#| echo: false
 nn <- 1e4
 set.seed(1)
 betas<-rbeta(nn,2,2)
@@ -276,29 +279,26 @@ $$
 $$
 ```
 
-Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega $\sigma$ que es sigma pero en minúscula. Entonces tenemos la definición:
+Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega $\sigma$ que es sigma pero en minúscula. Entonces tenemos:
 
-```{definition, name='Desviación estándar de la población'}
+:::{#def-standard-deviation-population}
+## Desviación estándar de la población
 $$
 \sigma = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N}}}
 $$
-```
+:::
 
 Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:
 
-```{definition, label="definition-standard-deviation" ,name='Desviación estándar de la muestra'}
+:::{def-definition-standard-deviation
+## Desviación estándar de la muestra
+
 $$
 s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 $$
-```
+:::
 
 Finalmente. Ya que s y $\sigma$ son la raíz cuadrada de la varianza, esta también se denomina por las mismas letras, pero llevado al cuadrado: $s^2$ y $\sigma^2$
-
-> #### ¿Por qué llevamos todo al cuadrado? {.unnumbered}
->
-> Puede parecer enredado llevar todo al cuadrado para luego volver a sacar la raíz cuadrada. La razón es que si se resta todas las obvervaciones de la media, gran parte de estas diferencias van a ser negativas. Sabemos que un número negativo llevado al cuadrado se vuelve positivo igual que un número positivo, entonces esta parte del procedimiento sirve para que todos los valores que sumamos tengan el mismo signo positivo.
-
-<div>
 
 Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones `var` y `sd`[^03-tendencia-central-y-variabilidad-4].
 
@@ -313,8 +313,6 @@ salarios <- c(14000L,14000L,14000L,16000L,17000L,18000L,26000L,35000L)
 # Nota: ajustar por inflación para futuras ediciones.
 ```
 
-</div>
-
 [^03-tendencia-central-y-variabilidad-4]: «sd» por la abreviación del inglés «**s**tandard **d**eviation».
 
 > #### ¿Por qué se prefiere la desviación estándar? {.unnumbered}
@@ -323,9 +321,14 @@ salarios <- c(14000L,14000L,14000L,16000L,17000L,18000L,26000L,35000L)
 
 ### Visualizar la dispersión
 
-Puede resultar útil visualizar la dispersión de un conjunto de datos. Esto se logra con un diagrama de caja (box-plot). Vemos un ejemplo de ello en la figura \@ref(fig:boxplot-example).
+Puede resultar útil visualizar la dispersión de un conjunto de datos. Esto se logra con un diagrama de caja (box-plot). Vemos un ejemplo de ello en la [figura @fig-boxplot-example].
 
-```{r boxplot-example, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Ejemplo de box-plot"}
+```{r}
+#| label: fig-boxplot-example
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "Ejemplo de box-plot"
 library(ggthemes)
   theme_set(theme_minimal())
  

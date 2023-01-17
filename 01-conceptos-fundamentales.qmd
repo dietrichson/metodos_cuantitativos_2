@@ -194,7 +194,7 @@ Tanto la tarea de estimación como el test de hipótesis comprenden la inferenci
 
 Finalmente, podríamos juntar más datos para determinar si existe en cualquiera de los dos cursos algún sub-grupo cuyas características se relacionan con un resultado específico. Con esta información estaríamos en condiciones de predecir las notas de los estudiantes en futuras cursadas de los cursos en cuestión.
 
-## Variables y su clasificación {#sec-variables-y-su-clasificación}
+## Variables y su clasificación {#sec-variables-y-su-clasificacion}
 
 En estadísticas trabajamos esencialmente con cantidades *variables*. En estadística definimos *variable* como: Una característica medida u observada al hacer un experimento u observación. Si, por ejemplo, estamos investigando el clima en Buenos Aires, podemos hacer medidas de temperatura, humedad, dirección e intensidad del viento etcétera.
 

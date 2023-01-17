@@ -1,4 +1,5 @@
-# Pruebas paramétricas
+# Pruebas paramétricas {#sec-pruebas-parametricas}
+
 ```{r}
 #| include: false
 
@@ -42,8 +43,7 @@ donde:
 
 Al igual que con el error estándar, a menudo desconocemos la varianza de la población, por lo cual lo estimamos de la muestra y la formula es la que vemos en la [definición @def-SED-samples.]
 
-:::{#def-SED-samples}
-
+::: {#def-SED-samples}
 ## Error estándar de diferencia entre medias estimado de muestras
 
 $$
@@ -51,22 +51,19 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
 $$
 
 donde:
-  
-* $s^2_1$ y $s^2_2$: las varianzas de las muestras 1 y 2 
-* $N_1$ y $N_2$: es el número de observaciones en cada muestra.
 
+-   $s^2_1$ y $s^2_2$: las varianzas de las muestras 1 y 2
+-   $N_1$ y $N_2$: es el número de observaciones en cada muestra.
 :::
 
 Vimos en la sección @sec-la-distribucion-t que para muestras relativamente pequeñas (N\<30) la distribución de la muestra tiende a la distribución *t de Student*. Podemos valernos de esto para calcular la probabilidad de que nuestro *SED* esté en el rango requerido aplicando la formula de la definición.
 
-:::{#def-t-test}
-
+::: {#def-t-test}
 ## Prueba de t
 
 $$
 t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 $$
-  
 :::
 
 Si aplicamos la fórmula de la [definición @def-t-test] nos sale un valor que podemos comparar con los valores críticos de la tabla del [apendice A](@sec-distribución-t) para determinar si rechazamos $H_0$ o no.
@@ -75,10 +72,9 @@ Si aplicamos la fórmula de la [definición @def-t-test] nos sale un valor que p
 myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
 ```
 
-
-:::{#exm-manual-t-test}
-
+::: {#exm-manual-t-test}
 ## Prueba t
+
 \
 
 Volvemos ahora a nuestros datos de notas de dos grupos de estudiantes con diferentes metodologías pedagígicos. Queremos saber con un nivel de significanza de 0,05 si existe diferencia entre la media de los dos grupos. Nuestras hipótesis nula y alternativa son entonces:
@@ -124,13 +120,11 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 $$
 
 Si buscamos este valor en el [Apendix A](#distribucion-t) para 29 grados de libertad (N-1), vemos que debemos rechazar $H_0$ y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.
-
 :::
 
-
-:::{#exm-t-test-in-r}
-
+::: {#exm-t-test-in-r}
 ## Prueba t en R
+
 \
 
 Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función \``t.test`. Toma como parámetros las dos muestras que queremos comparar.
@@ -142,7 +136,6 @@ t.test(Grupo.A,Grupo.B)
 ```
 
 Vemos que el test nos devuelve además un valor de *p* más preciso.
-
 :::
 
 ## Prueba de Shapiro-Wilks {#test-de-normalidad}
@@ -165,10 +158,10 @@ $H_1: X \nsim \mathcal{N}(\mu,\sigma^2)$.
 
 Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función `shapiro.test` en R:
 
-:::{exm-shapiro-test-in-r}
+::: {exm-shapiro-test-in-r}
 ## Test de Shapiro Wilks en R
-\
 
+\
 
 ```{r}
 Grupo.A = c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
@@ -180,7 +173,6 @@ Grupo.B = c(11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 
 
 shapiro.test(Grupo.B)
 ```
-
 :::
 
 Vemos que en ambos casos el valor de probabilidad (*p*) es muy superios a nuestro nivel elegido (0,05), por lo que *no rechazamos la hipótesis nula*.
@@ -199,16 +191,14 @@ $H_1: \sigma^2_1 \neq \sigma^2_2$
 
 Sin entrar en mucho detalle teórico, en R hay una función `var.test` para este propósito. La función toma dos argumentos: los dos conjuntos de datos que queremos comparar.
 
-:::{exm-fisher-test}
-
+::: {exm-fisher-test}
 ## Realizar la prueba de Fisher en R
-\
 
+\
 
 ```{r}
 var.test(Grupo.A, Grupo.B)
 ```
-
 :::
 
 Vemos que el valor de probabilidad $p$ es mayor a nuestro nivel de significanza ($p\leqslant0,05$), con lo cual *no rechazamos* $H_0$ y concluimos que las varianzas son relativamente similares.
@@ -221,8 +211,7 @@ En los ejemplos \@ref(exm:manual-t-test) y \@ref(exm:t-test-in-r) teníamos dos 
 
 En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la definición \@ref(def:dependent-t-test).
 
-:::{#def-dependent-t-test}
-
+::: {#def-dependent-t-test}
 ## Prueba t para muestras dependientes
 
 $$
@@ -234,17 +223,15 @@ donde:
 -   ${\bar{X}_D}$: media de las diferencias
 -   $s_D$: la desviación estándar de las diferencias
 -   n: número de pares de observaciones.
-
 :::
+
 Lo que nos va a decir la prueba t en este caso es si la diferencia es significativamente diferente a cero: Si la variable independiente no tiene efecto entonces debería dar lo mismo medir antes o después. Las hipótesis planteadas son, por tanto:
 
 $H_0: \bar{X}_D = 0$,
 
 $H_1: \bar{X}_D \neq 0$.
 
-:::{exm-dependent-t-test-example}
-## Prueba t dependiente
-\
+:::{exm-dependent-t-test-example} \## Prueba t dependiente\
 En este ejemplo [@Shier2004] vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la [tabla @tab-diff-table].
 
 ```{r}
@@ -306,9 +293,9 @@ $$
 
 Buscando este valor en la tabla de valores críticos con 19 (N-1) grados de libertad vemos que sí podemos rechazar la hipótesis nula y concluir que hay una diferencia estadísticamente significativa entre los resultados de los dos tests.
 
-:::{#exm-t-test-example-in-r
-
+::: {#exm-t-test-example-in-r
 ## Ejemplo en R
+
 \
 Para reproducir en R lo que hicimos en el ejemplo \@ref(exm:dependent-t-test-example) tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un `data.frame`. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos *a mano* aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función `t.test` con un paramertro adiciónal `paired=TRUE` para avisar que son datos pareados.
 
