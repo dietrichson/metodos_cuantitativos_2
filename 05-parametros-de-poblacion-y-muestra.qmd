@@ -1,6 +1,6 @@
 # Estimación de parámetros
 
-Hemos visto que si trabajamos con poblaciones que son potencialmente infinitas o muy grandes usamos muestras para nuestro trabajo cuantitativo. Las medidas que calculamos en base a estas muestras son *estimativos* de los parámetros de la población. Si tenemos una muestra de estatura de argentinas entre 19 y 49 años de edad, como la que vimos en el ejemplo @exm-estatura-mujeres-argentinas, no sabemos con certeza cuál es la media de la población. La estimamos en base a una muestra. Con ello no podemos afirmar que la media es la misma para la población, de hecho *ignoramos* cuál es la media de la población. Lo que sí podemos calcular un intervalo de valores dentro de los cuales tenemos cierta confianza de que nuestro valor estimativo sea correcto para la población.
+Hemos visto que si trabajamos con poblaciones que son potencialmente infinitas o muy grandes usamos muestras para nuestro trabajo cuantitativo. Las medidas que calculamos en base a estas muestras son *estimativos* de los parámetros de la población. Si tenemos una muestra de estatura de argentinas entre 19 y 49 años de edad, como la que vimos en el [ejemplo @exm-estatura-mujeres-argentinas], no sabemos con certeza cuál es la media de la población. La estimamos en base a una muestra. Con ello no podemos afirmar que la media es la misma para la población, de hecho *ignoramos* cuál es la media de la población. Lo que sí podemos calcular un intervalo de valores dentro de los cuales tenemos cierta confianza de que nuestro valor estimativo sea correcto para la población.
 
 En este capítulo desarrollaremos las técnicas que se utilizan para arribar a estos intervalos de confianza y calcular un *margen de error*.
 
@@ -9,7 +9,6 @@ En este capítulo desarrollaremos las técnicas que se utilizan para arribar a e
 Si suponemos que la estatura promedio de las argentinas entre 19 y 49 años es de 161 centímetros con una desviación estándar de 6,99, estos serían los *parámetros* de la población. Si sacamos cinco muestras aleatorias de veinte observaciones de esta población van a arrojar resultados distintos a estos valores. Algunas muestras van a tener una media por arriba de la media real y otras van a tener una media por debajo.
 
 ::: {#exm-distribucion-de-muestras}
-
 ## Distribucion de muestras
 
 ```{r}
@@ -37,7 +36,6 @@ d <- density(muestras)
 d$y <- d$y*multiplier[1]
 lines(d, col = "blue", lwd = 2)
 ```
-
 :::
 
 Como lo podemos observar en la figura @fig-muestras-de-estaturas la distribución de las muestras es simétrica y normal. La media de nuestras muestras es 161,42; ligeramente por arriba de la media real, y la desviación estándar es de 6,17; más de medio centímetro por debajo de la desviación estándar de la población. La distribución muestral tiene algunas propiedades que son útiles para nuestro trabajo estadístico:
@@ -46,10 +44,10 @@ Como lo podemos observar en la figura @fig-muestras-de-estaturas la distribució
 2.  La media de la distribución es igual (o casi igual) a la media de la población.
 3.  La dispersión es *menor* a la de la población general.
 
-El número (3) de la lista tiene su lógica ya que en una muestra aleatoria un valor frecuente tiene más probabilidad de ser seleccionada que un valor extremo. La diferencia entre curva normal de la población y la curva de la distribución muestral está ilustrada en la figura \@ref(fig:curva-normal-poblacion-muestral).
+El número (3) de la lista tiene su lógica ya que en una muestra aleatoria un valor frecuente tiene más probabilidad de ser seleccionada que un valor extremo. La diferencia entre curva normal de la población y la curva de la distribución muestral está ilustrada en la [figura @fig-curva-normal-poblacion-muestral].
 
 ```{r}
-#| label: curva-normal-poblacion-muestral
+#| label: fig-curva-normal-poblacion-muestral
 #| echo: false
 #| fig-cap: 'Distribución de la población y la muestra'
 
@@ -76,30 +74,27 @@ tmp %>%
 
 La variabilidad de las medias muestrales se puede medir por su desviación estándar. Esta medida se conoce como el *error estándar* y tiende a disminuir cuando aumenta el tamaño de la(s) muestra(s).
 
-:::{#def-error-estandar}
-
+::: {#def-error-estandar}
 ## Error estandar
 
 $$
 SE = {\sigma\over{\sqrt{N}}}
 $$
 
-
-  si conocemos la desviación estándar de la población, y
+si conocemos la desviación estándar de la población, y
 
 $$
 SE = {s\over{\sqrt{N}}}
 $$
-  
-  si usamos la desviación estándar de la muestra.
+
+si usamos la desviación estándar de la muestra.
 
 donde:
-  
-* SE: el error estándar (por sus siglas en inglés «Standard Error»)
-* $\sigma$: la desviación estándar de la población
-* s: desviación estándar de la muestra
-* N: número de observaciones de la muestra
 
+-   SE: el error estándar (por sus siglas en inglés «Standard Error»)
+-   $\sigma$: la desviación estándar de la población
+-   s: desviación estándar de la muestra
+-   N: número de observaciones de la muestra
 :::
 
 Nótese que el error estándar no disminuye en relación directamente proporcional con el tamaño de la muestra. Ya que tomamos la raíz cuadrada de N, es necesario cuadruplicar el tamaño de la muestra para reducir el error estándar a la mitad.
@@ -189,39 +184,33 @@ VC <- qt(0.025,14)*SE
 
 ```
 
-
-:::{#exm-small-sample}
-
+::: {#exm-small-sample}
 ## Muestra pequeña
 
 Hacemos una muestra aleatorea de 15 argentinas y medimos su estatura, esta vez con precisión milimetrica y obtenemos:
-  
-  X = {153,26; 158,81; 165,73; 159,85; 160,56; 166,69; 159,85; 148,07; 160,3; 173,02; 154,55; 145,52; 159,98; 158,22; 166,12 }
 
-La media es de 159,36 y la desviación estándar de 7,125. Por tanto:
- $$
+X = {153,26; 158,81; 165,73; 159,85; 160,56; 166,69; 159,85; 148,07; 160,3; 173,02; 154,55; 145,52; 159,98; 158,22; 166,12 }
+
+La media es de 159,36 y la desviación estándar de 7,125. Por tanto: $$
   SE = {s\over{\sqrt{N}}} = {7,125\over{\sqrt{15}}} = 1,338
   $$
-  
-  El valor crítico de t con 14 grados de libertad (N-1) es $\pm{2,145}$.
+
+El valor crítico de t con 14 grados de libertad (N-1) es $\pm{2,145}$.
 
 $$
 2,145 \times{SE} = 2,145 \times 1,338 = 2,869
 $$
-  
-Por tanto, basado en esta muestra más chica podemos estimar que la media de la población es de 159,36 $\pm2,869$ es decir entre 156,49 y 162,23 centímetros.
 
+Por tanto, basado en esta muestra más chica podemos estimar que la media de la población es de 159,36 $\pm2,869$ es decir entre 156,49 y 162,23 centímetros.
 :::
 
-Del @exm-small-sample vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.
+Del [ejemplo @exm-small-sample] vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.
 
 ### ¿Dónde obtenemos los valores críticos de t? {.unnumbered}
 
-Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del \[Apendix A\]\[Apendix A: distribución t\] o en linea. También se puede sacar con una función en R llamada `qt`.
+Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [apendix @sec-distribución-t] o en linea. También se puede sacar con una función en R llamada `qt`.
 
-
-:::{#exm-extraer-el-valor-critico}
-
+::: {#exm-extraer-el-valor-critico}
 ## Ejemplo en R: Extraer el valor crítico de t
 
 ```{r}
@@ -229,7 +218,6 @@ qt(p = 0.025, df = 14)
 ```
 
 La función toma dos argumentos `p` de qué proporción de la curva en cada lado queremos y `df` que son los grados de libertad, en este caso 15-1=14. Ponemos el valor de `0.025` porque queremos un 2,5% de arriba y un 2,5% de abajo (=5%).
-
 :::
 
 ## Glosario

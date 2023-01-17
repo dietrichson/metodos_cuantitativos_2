@@ -93,6 +93,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" rel="next">
 <link href="./04-la-distribucion-normal.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -189,6 +190,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./05-parametros-de-poblacion-y-muestra.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -230,7 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Hemos visto que si trabajamos con poblaciones que son potencialmente infinitas o muy grandes usamos muestras para nuestro trabajo cuantitativo. Las medidas que calculamos en base a estas muestras son <em>estimativos</em> de los parámetros de la población. Si tenemos una muestra de estatura de argentinas entre 19 y 49 años de edad, como la que vimos en el ejemplo <a href="04-la-distribucion-normal.html#exm-estatura-mujeres-argentinas">Ejemplo&nbsp;<span>4.1</span></a>, no sabemos con certeza cuál es la media de la población. La estimamos en base a una muestra. Con ello no podemos afirmar que la media es la misma para la población, de hecho <em>ignoramos</em> cuál es la media de la población. Lo que sí podemos calcular un intervalo de valores dentro de los cuales tenemos cierta confianza de que nuestro valor estimativo sea correcto para la población.</p>
+<p>Hemos visto que si trabajamos con poblaciones que son potencialmente infinitas o muy grandes usamos muestras para nuestro trabajo cuantitativo. Las medidas que calculamos en base a estas muestras son <em>estimativos</em> de los parámetros de la población. Si tenemos una muestra de estatura de argentinas entre 19 y 49 años de edad, como la que vimos en el <a href="04-la-distribucion-normal.html#exm-estatura-mujeres-argentinas">ejemplo&nbsp;<span>4.1</span></a>, no sabemos con certeza cuál es la media de la población. La estimamos en base a una muestra. Con ello no podemos afirmar que la media es la misma para la población, de hecho <em>ignoramos</em> cuál es la media de la población. Lo que sí podemos calcular un intervalo de valores dentro de los cuales tenemos cierta confianza de que nuestro valor estimativo sea correcto para la población.</p>
 <p>En este capítulo desarrollaremos las técnicas que se utilizan para arribar a estos intervalos de confianza y calcular un <em>margen de error</em>.</p>
 <section id="distribución-muestral" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="distribución-muestral"><span class="header-section-number">5.1</span> Distribución muestral</h2>
@@ -254,13 +265,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>La media de la distribución es igual (o casi igual) a la media de la población.</li>
 <li>La dispersión es <em>menor</em> a la de la población general.</li>
 </ol>
-<p>El número (3) de la lista tiene su lógica ya que en una muestra aleatoria un valor frecuente tiene más probabilidad de ser seleccionada que un valor extremo. La diferencia entre curva normal de la población y la curva de la distribución muestral está ilustrada en la figura @ref(fig:curva-normal-poblacion-muestral).</p>
+<p>El número (3) de la lista tiene su lógica ya que en una muestra aleatoria un valor frecuente tiene más probabilidad de ser seleccionada que un valor extremo. La diferencia entre curva normal de la población y la curva de la distribución muestral está ilustrada en la <a href="#fig-curva-normal-poblacion-muestral">figura&nbsp;<span>5.2</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-curva-normal-poblacion-muestral" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="05-parametros-de-poblacion-y-muestra_files/figure-html/curva-normal-poblacion-muestral-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Distribución de la población y la muestra</figcaption><p></p>
+<p><img src="05-parametros-de-poblacion-y-muestra_files/figure-html/fig-curva-normal-poblacion-muestral-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;5.2: Distribución de la población y la muestra</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -335,10 +346,10 @@ z = {\bar{x}\over{SE}}
 \]</span></p>
 <p>Por tanto, basado en esta muestra más chica podemos estimar que la media de la población es de 159,36 <span class="math inline">\(\pm2,869\)</span> es decir entre 156,49 y 162,23 centímetros.</p>
 </div>
-<p>Del <a href="#exm-small-sample">Ejemplo&nbsp;<span>5.2</span></a> vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.</p>
+<p>Del <a href="#exm-small-sample">ejemplo&nbsp;<span>5.2</span></a> vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.</p>
 <section id="dónde-obtenemos-los-valores-críticos-de-t" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="dónde-obtenemos-los-valores-críticos-de-t">¿Dónde obtenemos los valores críticos de t?</h3>
-<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [Apendix A][Apendix A: distribución t] o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
+<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <a href="11-apendices.html">apendix&nbsp;<span>1</span></a> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
 <div id="exm-extraer-el-valor-critico" class="theorem example">
 <div class="cell">
 <span class="theorem-title"><strong>Ejemplo 5.3 (Ejemplo en R: Extraer el valor crítico de t) </strong></span>
@@ -487,6 +498,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

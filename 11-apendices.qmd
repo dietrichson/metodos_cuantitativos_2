@@ -1,8 +1,9 @@
-# (APPENDIX) Apendices {-} 
+# Apendices {.unnumbered}
 
-# Distribución t
+# Distribución t {#sec-distribución-t}
 
 La tabla que sigue despliega los valores críticos de la distribución t para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional. Para una prueba unidireccional se usará el nivel inmediatamente superior.
+
 ```{r, include=FALSE}
 library(tidyverse)
 ```
@@ -30,7 +31,7 @@ knitr::kable(myData,
              )
 ```
 
-# Valores críticos del test de signo
+# Valores críticos del test de signo {#sec-valores-críticos-del-test-de-signo}
 
 La tabla (\@ref(tab:significance-table-sign-test)) muestra valores críticos de W para diferentes valores de N. Para que sea significativo W tiene que ser menor o igual al valor.
 
@@ -53,7 +54,7 @@ knitr::kable(
              )
 ```
 
-# Distribución $\chi^2${#chi-square-disrtibution}
+# Distribución $\chi^2$ {#chi-square-disrtibution}
 
 La tabla que sigue despliega los valores críticos de la distribución $\chi^2$ para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional.
 

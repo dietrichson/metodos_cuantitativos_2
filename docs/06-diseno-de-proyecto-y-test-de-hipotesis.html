@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Métodos Cuantitativos - 6&nbsp; Diseño de proyectos y test de hipotesis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./11-apendices.html" rel="next">
+<link href="./05-parametros-de-poblacion-y-muestra.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Métodos Cuantitativos</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Métodos-Cuantitativos.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-conceptos-fundamentales.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-distribuciones-de-frecuencias.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tendencia-central-y-variabilidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-la-distribucion-normal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La distribución normal</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-parametros-de-poblacion-y-muestra.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#el-método-científico" id="toc-el-método-científico" class="nav-link active" data-scroll-target="#el-método-científico"><span class="toc-section-number">6.1</span>  El método científico</a></li>
+  <li><a href="#el-diseño-de-una-investigación" id="toc-el-diseño-de-una-investigación" class="nav-link" data-scroll-target="#el-diseño-de-una-investigación"><span class="toc-section-number">6.2</span>  El diseño de una investigación</a>
+  <ul class="collapse">
+  <li><a href="#estudios-experimentales-y-observacionales" id="toc-estudios-experimentales-y-observacionales" class="nav-link" data-scroll-target="#estudios-experimentales-y-observacionales">Estudios experimentales y observacionales</a></li>
+  <li><a href="#fuentes-de-ruido-en-los-datos" id="toc-fuentes-de-ruido-en-los-datos" class="nav-link" data-scroll-target="#fuentes-de-ruido-en-los-datos">Fuentes de ruido en los datos</a></li>
+  </ul></li>
+  <li><a href="#tests-de-hipótesis" id="toc-tests-de-hipótesis" class="nav-link" data-scroll-target="#tests-de-hipótesis"><span class="toc-section-number">6.3</span>  Tests de hipótesis</a>
+  <ul class="collapse">
+  <li><a href="#tests-estadísticos-de-significanza" id="toc-tests-estadísticos-de-significanza" class="nav-link" data-scroll-target="#tests-estadísticos-de-significanza"><span class="toc-section-number">6.3.1</span>  Tests estadísticos de significanza</a></li>
+  <li><a href="#sec-la-hipótesis-nula-y-alternativa" id="toc-sec-la-hipótesis-nula-y-alternativa" class="nav-link" data-scroll-target="#sec-la-hipótesis-nula-y-alternativa"><span class="toc-section-number">6.3.2</span>  La hipótesis nula y alternativa</a></li>
+  <li><a href="#niveles-de-significanza" id="toc-niveles-de-significanza" class="nav-link" data-scroll-target="#niveles-de-significanza"><span class="toc-section-number">6.3.3</span>  Niveles de significanza</a></li>
+  <li><a href="#tipos-de-error" id="toc-tipos-de-error" class="nav-link" data-scroll-target="#tipos-de-error"><span class="toc-section-number">6.3.4</span>  Tipos de error</a></li>
+  <li><a href="#tests-direcionales-y-no-direcionales" id="toc-tests-direcionales-y-no-direcionales" class="nav-link" data-scroll-target="#tests-direcionales-y-no-direcionales"><span class="toc-section-number">6.3.5</span>  Tests direcionales y no direcionales</a></li>
+  <li><a href="#sec-cual-usar" id="toc-sec-cual-usar" class="nav-link" data-scroll-target="#sec-cual-usar"><span class="toc-section-number">6.3.6</span>  ¿Qué test usar?</a></li>
+  <li><a href="#procedimiento" id="toc-procedimiento" class="nav-link" data-scroll-target="#procedimiento"><span class="toc-section-number">6.3.7</span>  Procedimiento</a></li>
+  </ul></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">6.4</span>  Glosario</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p><img src="images/220px-Karl_Popper.jpg" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>Our knowledge can only be finite, while our ignorance must necessarily be infinite.</p>
+<p>—Karl Popper</p>
+</blockquote>
+<section id="el-método-científico" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="el-método-científico"><span class="header-section-number">6.1</span> El método científico</h2>
+<p>El filósofo de ciencias <em>Karl Popper</em> es considerado por muchos como el padre de la teoría científica moderna. Sostiene que la ciencia avanza proponiendo teorías e ideas que sean empíricamente refutables. Cuando una teoría es refutada por investigaciones empíricas surgen otras teorías que toman en cuenta las refutaciones de las anteriores y son sometidos al mismo proceso. Este tipo de pensamiento se conoce también como pensamiento «deductivo» y es fundamental para las ciencias empíricas. Deductivo, en este caso es contrario a «inductivo» toma como <em>confirmatorias</em> toda observación que sostiene una teoría, sea esta falseable o no.</p>
+<p>Por ejemplo, podemos proponer la teoría de que «en la Ciudad de Buenos Aires nunca cae nieve». Durante la segunda mitad del siglo pasado podíamos corroborar nuestra teoría día tras día al medir el nivel de nieve –que era cero–, pero bastó con una sola nevada, que ocurrió el nueve de julio del 2007, para que nuestra teoría quedara refutada.</p>
+<p>Para que una teoría sea científica tiene que ser posible demostrar su falsedad empíricamente, es decir tenemos que poder obtener datos, por experimentos u observaciones, capazes de comprobar que la teoría no es correcta. Esto se llama el principio de falsabilidad,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> falsación o refutabilidad.</p>
+<p>Nuestra teoría de la falta de nieve en la ciudad de Buenos Aires es científica, ya la podemos hacer medidas para refutarla. El hecho de que la teoría resultó incorrecta no implica que no sea científica.</p>
+<p>Cabe mencionar que existen ciencias: las ciencias «formales» como las matemáticas, la lógica formal etcétera; cuyas teorías no dependen de observación empírica ya que se concentran en el estudio abstracto de cantidades, estructuras y cambio.</p>
+</section>
+<section id="el-diseño-de-una-investigación" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="el-diseño-de-una-investigación"><span class="header-section-number">6.2</span> El diseño de una investigación</h2>
+<section id="estudios-experimentales-y-observacionales" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="estudios-experimentales-y-observacionales">Estudios experimentales y observacionales</h3>
+<p>Podemos distinguir entre dos tipos de investigación científica en las ciencias empíricas. Los estudios <em>experimentales</em> son estudios donde nosotros manipulamos alguna variable para darnos cuenta qué efecto tiene. En nuestro ejemplo de dos cursos con metodologías distintas, nosotros hemos manipulado la variable <em>metodología</em>. Como hemos mencionado antes en la <a href="01-conceptos-fundamentales.html#sec-variables-y-su-clasificación">sección&nbsp;<span>1.4</span></a> esta es la variable <em>independiente</em>. Los estudios experimentales son muy frecuentes en las ciencias naturales y también se aplican a las ciencias humanas.</p>
+<p>En las ciencias humanas, sin embargo, a menudo nos encontramos con datos en los que no podemos manipular la variable independiente. En el caso de los datos lingüísticos de la figura <span class="quarto-unresolved-ref">?fig-persuasion-poligon-i</span>, no podemos <em>cambiar</em> el largo de las palabras. Nos tenemos que limitar a recoger los datos e intentar discernir alguna relación entre ellas. Igual tenemos una variable dependiente «largo de palabra» y una independiente «frecuencia», solo que no controlamos la variable independiente. Este tipo de estudios son <em>observacionales</em> y a veces se habla de estudios <em>correlacionales</em>.</p>
+</section>
+<section id="fuentes-de-ruido-en-los-datos" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="fuentes-de-ruido-en-los-datos">Fuentes de ruido en los datos</h3>
+<p>Cuando estamos haciendo un estudio experimental controlamos no solo la variable independiente, sino también podemos diseñar el experimento para minimizar el efecto de otras variables que puedan influir en la variable dependiente. La meta es de minimizar los efectos provinientes de de factores que no son relevantes para nuestro estudio a fin de poder afirmar con más confianza que los efectos observados en realidad tienen que ver con la variable independiente. En el caso de los dos grupos con metodologías distintos podemos, por ejemplo, asegurarnos de que los dos cursos tengan el mismo profesor, se dicte en horarios similares y que los de estudiantes que reciben el curso tengan características similares en cuanto a edad, género, promedio de notas en otras materias etcétera. En el caso de un estudio observacional no tenemos este nivel de control, lo que sí podemos hacer es intentar estimar el efecto de interferencia de otras variables y tomarlo en cuenta en nuestros análisis.</p>
+<p>Incluso en el caso de un estudio experimental, no es realista esperar que podemos remover totalmente el efecto de variables irrelevantes. A lo que podemos aspirar y debemos intentar, sin embargo, es de remover la mayor cantidad posible de <em>variación sistemática</em>. Si en el caso del las notas de los grupos de estudiantes pusimos todos los hombres en un grupo y todas las mujeres en otro, no podemos saber si la diferencia que observamos se debe la diferencia de metodología didáctica o si es una diferencia de género. Por ello es preciso hacer lo posible para que las variables que son irrelevantes para nuestra investigación operen de manera aleatoria en nuestras muestras y, de ser posible, minimizar su efecto. Si no operan de manera aleatoria corremos el riesgo de en realidad medir otra variable –género en lugar de metodología– de la que queremos investigar, y si su efecto genera mucha varianza va a bajar la confianza que podemos tener el las conclusiones obtenidas.</p>
+</section>
+</section>
+<section id="tests-de-hipótesis" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="tests-de-hipótesis"><span class="header-section-number">6.3</span> Tests de hipótesis</h2>
+<p>Vimos en la <span class="quarto-unresolved-ref">?sec-el-error-estandar-y-su-interpretacion</span> que podemos estimar los valores de la población en base a muestras y que podemos calcular un margen de error y niveles de confianza de estas estimaciones. Podemos valernos de los mismos conceptos para concluir algo sobre la relación entre variables: independiente y dependiente por ejemplo.</p>
+<section id="tests-estadísticos-de-significanza" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="tests-estadísticos-de-significanza"><span class="header-section-number">6.3.1</span> Tests estadísticos de significanza</h3>
+<p>En el caso de nuestros dos grupos de estudiantes (véase: <a href="#sec-cual-usar"><span>6.3.6</span></a>) ya vimos que existe una diferencia entre los dos grupos en la media de la nota obtenida. De la figura <span class="quarto-unresolved-ref">?fig-poligono-de-frecuencias-notas-comparativo</span> vimos que igual las dos distribuciones de solapan en gran medida. Por tanto no podemos afirmar con absoluta certeza que las diferencias observadas son el efecto de la metodología pedagógica aplicada o si son producto de la inherente variabilidad de las muestras.</p>
+<p>El objetivo de un test estadístico de significanza es determinar si las diferencias observadas el resultado de variación aleatoria o si pueden razonablemente ser atribuidos a la variable independiente.</p>
+</section>
+<section id="sec-la-hipótesis-nula-y-alternativa" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="sec-la-hipótesis-nula-y-alternativa"><span class="header-section-number">6.3.2</span> La hipótesis nula y alternativa</h3>
+<p>Para testear una hipótesis el primer paso es establecer una <em>hipotesis nula</em>. Esta hipótesis afirma que <em>no existe el efecto</em> que estamos investigando. Siguiendo los lineamientos del método cientifico, ahora nuestra labor es, a través de mediciones u observaciones, <em>refutar</em> esta hipótesis, con lo cual podemos proponer otra, llamada <em>hipótesis alternativa</em>. Una <em>hipótesis nula</em> se formula como una afirmación precisa y empiricamente refutable. En el ejemplo de los dos grupos de estudiantes la hipotesis nula podría expresarse como: «No existe diferencia entre la media de notas entre los dos grupos».</p>
+<p>También debemos formular una o dos hipotesis alternativas. Si formulamos dos, una va a afirmar que la media de notas del grupo A es superior a la del grupo B y la otra que la media de notas del grupo B es mayor a la media de notas del grupo A. Si usamos una sola hipótesis alternativa esta simplemente plantea que la media notas de los dos grupos es desigual.</p>
+<blockquote class="blockquote">
+<h4 id="notación-formal" class="unnumbered anchored">Notación formal</h4>
+<p>En notación formal, muy frecuente en textos académicos, se usa la letra <em>H</em> (mayuscula) para significar una hipótesis y tiene subindice «0» o «null». Las hipótesis alternativas reciben subindice numérica (1 y 2 etcétera). En el caso descrito en la sección anterior se podría expresar así:</p>
+<p><span class="math inline">\(H_0: \text{No hay diferencia entre los grupos}\)</span></p>
+<p><span class="math inline">\(H_1: \text{Hay diferencia}\)</span></p>
+<p>o, includo más formal:</p>
+<p><span class="math inline">\(H_0: \mu_A=\mu_B\)</span></p>
+<p><span class="math inline">\(H_1: \mu_A\neq\mu_B\)</span>.</p>
+</blockquote>
+<p>La estrategia del test de hipótesis acumular evidencia empírica que nos permita <em>refutar</em> la hipótesis nula y no intentar fomentar cualquiera de las alternativas directamente. Lo que temenos que hacer es aplicar un test estadístico y calcular la probabilidad de obtener las observaciones que hemos obtenido y si esa probabilidad es muy baja, refutamos <span class="math inline">\(H_0\)</span> a favor de una de las alternativas.</p>
+<p>Es preciso aclarar que nunca podemos estar absolutamente seguros de estar justificados en refutar <span class="math inline">\(H_0\)</span>. Siempre existe la posibilidad de que las diferencias observadas de deban a la aleatoriedad de las muestras. Lo que sí podemos mostrar es que la probabilidad de que así sea es muy baja.</p>
+</section>
+<section id="niveles-de-significanza" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="niveles-de-significanza"><span class="header-section-number">6.3.3</span> Niveles de significanza</h3>
+<p>Dado que siempre existe la posibilidad de refutar injustificadamente nuestra <span class="math inline">\(H_0\)</span>, tenemos que determinar un nivel debajo del cual estamos dispuestos a equivocarnos en nuestra afirmación. Este se llama el <em>nivel de significanza</em>, también se describe con la letra griega <span class="math inline">\(\alpha\)</span> y se llama nivel-<span class="math inline">\(\alpha\)</span> (nivel alfa). El nivel de significanza está coneptual y matemáticamente ligado con los [intervalos de confianza] que vimos en el capítulo @sec-estimacion-de-parametros.</p>
+<p>Si estamos dispuestos a rechazar <span class="math inline">\(H_0\)</span> si la probabilidad (p) de hacerlo injustificadamente es igual o menor a 0,05, eligimos un nivel de significanza de 0,05, también llamado «nivel de 5%». Su notación a menudo se encuentra como: <span class="math inline">\(p\leqslant0,05\)</span>. Este nivel es bastante común en las ciencias humanas, en cambio en otras disciplinas de las ciencias exactas y médicas por ejemplo, a veces se opera con <span class="math inline">\(p\leqslant0,01\)</span> o <span class="math inline">\(p\leqslant0,001\)</span>, lo que significa que se acepta rechazar injustificadamente <span class="math inline">\(H_0\)</span> una vez en cien o una vez en mil respectivamente.</p>
+<p>Para cada test estadístico y cada nivel de significanza eligido existirá un valor crítico o un <em>rango crítico</em> dentro del cual el valor del cálculo estadístico tiene que encontrarse para que las diferencias observadas en las muestras se consideren estadísticamente significativos. Si el valor del test estadístico no cae en ese rango no podemos rechazar <span class="math inline">\(H_0\)</span> sobre la base este conjunto específico de observaciones, pero es posible que debamos repetir el estudio con muestras más grandes.</p>
+</section>
+<section id="tipos-de-error" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="tipos-de-error"><span class="header-section-number">6.3.4</span> Tipos de error</h3>
+<p>Cuando tomamos la decisión de rechazar o aceptar la hipótesis nula hay dos errores que podemos cometer. Podemos rechazar <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> es correcta, o podemos aceptar <span class="math inline">\(H_0\)</span>, cuando es falsa. En el primer caso estamos hablando de un <em>error de tipo I</em>, también denominado <em>error de tipo</em> <span class="math inline">\(\alpha\)</span> o <em>falso positivo</em>. En el segundo caso hablamos de un <em>error de tipo II</em>, <em>error de tipo</em> <span class="math inline">\(\beta\)</span> (beta) o falso negativo.</p>
+</section>
+<section id="tests-direcionales-y-no-direcionales" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="tests-direcionales-y-no-direcionales"><span class="header-section-number">6.3.5</span> Tests direcionales y no direcionales</h3>
+<p>En la <a href="#sec-la-hipótesis-nula-y-alternativa">sección&nbsp;<span>6.3.2</span></a> propusimos una hipótesis nula y su alternativa:</p>
+<div id="exm-non-directional-hypothesis" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.1 (Hipotesis nula y una alternativa) </strong></span><br>
+<br>
+<span class="math inline">\(H_0: \mu_A=\mu_B\)</span></p>
+<p><span class="math inline">\(H_1: \mu_A\neq\mu_B\)</span>.</p>
+</div>
+<p><span class="math inline">\(H_1\)</span> se leería: «la media de A es desigual a la media de B». Este ejemplo <a href="#exm-non-directional-hypothesis"><span>6.1</span></a> es de una predición <em>no direcional</em>. Es decir que no hemos tomado una posición a priori sobre si esperamos que las diferencias que observemos sean positivos o negativos.</p>
+<p>A veces tenemos razones bien fundadas en creer que las diferencias, si las observamos, van a darse en una direción u otra. Si por ejemplo estamos midiendo la estaturas de muestras aleatorias de argentinas y argentinos podemos suponer de antemano que los hombres van a ser más altos que las mujeres ya que está comprobado que es así en otros países, hay razones biológicas etcétera. En ese caso podríamos formular una predicción direccional, lo cual significa que nuestra hipótesis alternativa es una sola y va en una dirección específica:</p>
+<div id="exm-directional-two" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.2 (Hipotesis nula y una alternativa direccional) </strong></span><br>
+<br>
+<span class="math inline">\(H_0: \mu_M=\mu_F\)</span></p>
+<p><span class="math inline">\(H_1: \mu_M &gt; \mu_F\)</span>.</p>
+</div>
+<p>La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional –y está justificado su uso, claro– disminuye el riesgo de cometer un error de tipo II. Está ilustrado en la <span class="quarto-unresolved-ref">?fig-non-directional-and-directional-normal-curves</span>: para un test no-direcional necesitamos un 2,5% <em>en cada extremo</em> de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.</p>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-non-directional-and-directional-normal-curves-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-diseno-de-proyecto-y-test-de-hipotesis_files/figure-html/fig-non-directional-and-directional-normal-curves-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.1: Test no direccionales y test direccionales</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div id="fig-non-directional-and-directional-normal-curves-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-diseno-de-proyecto-y-test-de-hipotesis_files/figure-html/fig-non-directional-and-directional-normal-curves-2.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;6.2: Test no direccionales y test direccionales</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="exm-cara-o-cruz" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 6.3 (¿cara o cruz?) </strong></span><br>
+Para desarrollar un poco más el concepto de test de hipótesis vamos a imaginarnos que estamos jugando a <em>cara o cruz</em>. Si tiramos una moneda hay un 50 y 50 de que salga cruz o cara. Tiramos la moneda y sale cara. La tiramos dos veces y sale dos veces cara. Tres veces – tres caras… y seguimos perdiendo.</p>
+<p>¿En qué momento empezamos a sospechar que la moneda tiene dos caras?</p>
+<p>Aún sin conocimientos matemáticos o de la teoría de la probabilidad empieza a obrar nuestra intuición –basada en nuestra experiencia que por su naturaleza es empírica.</p>
+<p>Podemos formalizar el problema de la siguiente manera:</p>
+<p><span class="math inline">\(H_0\)</span>: La moneda es honesta</p>
+<p><span class="math inline">\(H_1\)</span>: La moneda tiene dos caras.</p>
+<p>Podemos también calcular las probabilidades de lo que está pasando. La probabilidad de que salga cara es 0,5 (50%) y de que salga cara dos veces es, por tanto, <span class="math inline">\(0,5\times0,5=0,25\)</span>. Podemos calcular las probabilidades de varios casos más:</p>
+<p>3 caras: <span class="math inline">\(0,5\times0,5\times0,5=0,125\)</span></p>
+<p>4 caras: <span class="math inline">\(0,5\times0,5\times0,\times0,55=0,0625\)</span></p>
+<p>5 caras: <span class="math inline">\(0,5\times0,5\times0,\times0,55=0,03125\)</span>,</p>
+<p>y vemos que si sale cara cinco veces de cinco ya podemos rechazar nuestra <span class="math inline">\(H_0\)</span> con un nivel de significanza de 0,05 (<span class="math inline">\(p\leqslant0,05\)</span>).</p>
+</div>
+</section>
+<section id="sec-cual-usar" class="level3" data-number="6.3.6">
+<h3 data-number="6.3.6" class="anchored" data-anchor-id="sec-cual-usar"><span class="header-section-number">6.3.6</span> ¿Qué test usar?</h3>
+<p>En los capítulos que siguen vamos a desarrollar algunos tests de significanza estadística: el test de z, el test de t de Student, Mann-Whitney U, <span class="math inline">\(\chi^2\)</span>, Wilcoxon y sign-test. La elección de cuál de ellos usar en un caso específico dependerá de:</p>
+<ol type="1">
+<li>Escala de medición de las variables</li>
+<li>Las características de su distribución</li>
+<li>Si las muestras son correlacionadas o no,</li>
+</ol>
+<p>y los iremos detallando en cada caso.</p>
+</section>
+<section id="procedimiento" class="level3" data-number="6.3.7">
+<h3 data-number="6.3.7" class="anchored" data-anchor-id="procedimiento"><span class="header-section-number">6.3.7</span> Procedimiento</h3>
+<p>El diseño de una investigación cuantitativa se puede resumir en estos cuatro pasos:</p>
+<ol type="1">
+<li>Formular hipotesis nula y alternativa(s)</li>
+<li>Decidir el nivel de significanza estadística</li>
+<li>Eligir un test estadístico a utilizarse</li>
+<li>Aplicar la estadística y decidir si rechazamos <span class="math inline">\(H_0\)</span> o no.</li>
+</ol>
+</section>
+</section>
+<section id="glosario" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="glosario"><span class="header-section-number">6.4</span> Glosario</h2>
+<dl>
+<dt>Error tipo I</dt>
+<dd>
+El error de rechazar <span class="math inline">\(H_0\)</span> cuando esta es correcta. Equivalente en inglés: «Type I error».
+</dd>
+<dt>Error tipo II</dt>
+<dd>
+El error de no rechazar <span class="math inline">\(H_0\)</span> cuando esta es incorrecta. Equivalente en inglés: «Type II error».
+</dd>
+<dt>Falsabilidad</dt>
+<dd>
+El hecho de que sea posible refutar una hipótesis, por medio de métodos empíricos. Equivalente en inglés: «Falsifiability».
+</dd>
+<dt>Hipotesis alternativa</dt>
+<dd>
+Hipótesis a la que recurrimos si logramos refutar <span class="math inline">\(H_0\)</span>. Fórmula: <span class="math inline">\(H_1\)</span> Equivalente en inglés: «Alternative hypothesis.».
+</dd>
+<dt>Hipotesis núla</dt>
+<dd>
+La hipótesis que plantea que el patrón que estamos buscando <em>no existe</em>. A través de un estudio empírico intentaremos refutar esta hipótesis. Fórmula: <span class="math inline">\(H_0\)</span> Equivalente en inglés: «Null hypothesis (<span class="math inline">\(H_0\)</span>)».
+</dd>
+<dt>Método científico</dt>
+<dd>
+Metodología basada en la observación, medición y experimentación; y la formulación, análisis y modificación de hipótesis. Equivalente en inglés: «Scientific method».
+</dd>
+<dt>Nivel de significanza</dt>
+<dd>
+La probabilidad de rechazar <span class="math inline">\(H_0\)</span> cuando esta es correcta. Fórmula: <span class="math inline">\(\alpha\)</span> Equivalente en inglés: «Alpha-level».
+</dd>
+<dt>Test direccional</dt>
+<dd>
+Test estadístico en la que hypótesis alternativa de expresa en una dirección u otra. Equivalente en inglés: «Directional test».
+</dd>
+<dt>Test no direccional</dt>
+<dd>
+Test estadístico en la que hypótesis alternativa de expresa sin dirección especificar dirección. Equivalente en inglés: «Non-directional test».
+</dd>
+</dl>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>posiblemente por su cognado en ingles:«falsifiabilidy»<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05-parametros-de-poblacion-y-muestra.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./11-apendices.html" class="pagination-link">
+        <span class="nav-page-text">Apendices</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
