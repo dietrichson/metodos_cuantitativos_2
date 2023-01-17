@@ -178,7 +178,13 @@ En este ejemplo vamos a considerar un libro de la literatura romántica: «Persu
 
 [^02-distribuciones-de-frecuencias-1]: El texto está disponible online y en el paquete de R «tidytext» [@silge2016]
 
-```{r persuasion-poligon-i, echo=FALSE, warning=FALSE,message=FALSE, fig.cap="Polígono de frecuencias del largo de palabras en un texto de Austin"}
+```{r}
+
+#| label: fig-persuasion-poligon-i
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap="Polígono de frecuencias del largo de palabras en un texto de Austin"
 persuasionData <- readRDS(here::here("data","austen_persuasion_words.RDS"))
 persuasionData %>% 
   pull(word) %>% 
@@ -204,7 +210,9 @@ A differencia de la distribución de notas, vemos acá que encontramos observaci
 
 Las distribuciones de notas que vimos en las secciones anteriores tienen relativamente pocos datos, por lo que siempre van a parecer algo irregulares. Si tenemos muchos datos, sobre todo si con se escala de medición continua, podemos imaginarnos que en lugar de trazar una linea llegamos a trazar más bien una curva entre los puntos. Esto nos permite hacer una abstracción de las distribuciones y hablar de distribuciones teóricas. La más conocida de ellas sin duda es la *distribución normal*, también llamada de Gauss o gaussiana.
 
-```{r, echo=FALSE, fig.cap="Distribución normal"}
+```{r}
+#| echo: false
+#| fig-cap: "Distribución normal"
 library(bayestestR) 
 x <- distribution_normal(n = 100, mean = 0, sd = 1)
 x %>% 
@@ -216,7 +224,8 @@ x %>%
   theme_minimal()+xlab("")+ylab("")
 ```
 
-Vamos a desarrollar el tema de la distribución normal con más detalle en el capítulo \@ref(la-distribucion-normal). Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.
+Vamos a desarrollar el tema de la distribución normal con más detalle en el [capítulo
+@sec-la-distribucion-normal]. Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.
 
 ### Asimetría o Sesgo
 
