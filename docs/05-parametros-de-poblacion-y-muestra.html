@@ -197,6 +197,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./07-tests-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pruebas paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-tests-no-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pruebas no paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-chi-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prueba de <span class="math inline">\(\chi^2\)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-correlaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
   </div>
 </li>
@@ -210,7 +230,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#distribución-muestral" id="toc-distribución-muestral" class="nav-link active" data-scroll-target="#distribución-muestral"><span class="toc-section-number">5.1</span>  Distribución muestral</a></li>
-  <li><a href="#el-error-estándar-y-su-interpretación" id="toc-el-error-estándar-y-su-interpretación" class="nav-link" data-scroll-target="#el-error-estándar-y-su-interpretación"><span class="toc-section-number">5.2</span>  El error estándar y su interpretación</a>
+  <li><a href="#sec-el-error-estandar-y-su-interpretacion" id="toc-sec-el-error-estandar-y-su-interpretacion" class="nav-link" data-scroll-target="#sec-el-error-estandar-y-su-interpretacion"><span class="toc-section-number">5.2</span>  El error estándar y su interpretación</a>
   <ul class="collapse">
   <li><a href="#intervalos-de-confianza" id="toc-intervalos-de-confianza" class="nav-link" data-scroll-target="#intervalos-de-confianza"><span class="toc-section-number">5.2.1</span>  Intervalos de confianza</a></li>
   </ul></li>
@@ -277,8 +297,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="el-error-estándar-y-su-interpretación" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="el-error-estándar-y-su-interpretación"><span class="header-section-number">5.2</span> El error estándar y su interpretación</h2>
+<section id="sec-el-error-estandar-y-su-interpretacion" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-el-error-estandar-y-su-interpretacion"><span class="header-section-number">5.2</span> El error estándar y su interpretación</h2>
 <p>La variabilidad de las medias muestrales se puede medir por su desviación estándar. Esta medida se conoce como el <em>error estándar</em> y tiende a disminuir cuando aumenta el tamaño de la(s) muestra(s).</p>
 <div id="def-error-estandar" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 5.1 (Error estandar) </strong></span><span class="math display">\[
@@ -349,7 +369,7 @@ z = {\bar{x}\over{SE}}
 <p>Del <a href="#exm-small-sample">ejemplo&nbsp;<span>5.2</span></a> vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.</p>
 <section id="dónde-obtenemos-los-valores-críticos-de-t" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="dónde-obtenemos-los-valores-críticos-de-t">¿Dónde obtenemos los valores críticos de t?</h3>
-<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <a href="11-apendices.html">apendix&nbsp;<span>1</span></a> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
+<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <span class="quarto-unresolved-ref">?sec-distribuciion-t</span> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
 <div id="exm-extraer-el-valor-critico" class="theorem example">
 <div class="cell">
 <span class="theorem-title"><strong>Ejemplo 5.3 (Ejemplo en R: Extraer el valor crítico de t) </strong></span>

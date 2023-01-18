@@ -66,7 +66,7 @@ t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 $$
 :::
 
-Si aplicamos la fórmula de la [definición @def-t-test] nos sale un valor que podemos comparar con los valores críticos de la tabla del [apendice A](@sec-distribución-t) para determinar si rechazamos $H_0$ o no.
+Si aplicamos la fórmula de la [definición @def-t-test] nos sale un valor que podemos comparar con los valores críticos de la tabla del [apendice A](@sec-distribucion-t) para determinar si rechazamos $H_0$ o no.
 
 ```{r, include=FALSE}
 myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
@@ -138,9 +138,9 @@ t.test(Grupo.A,Grupo.B)
 Vemos que el test nos devuelve además un valor de *p* más preciso.
 :::
 
-## Prueba de Shapiro-Wilks {#test-de-normalidad}
+## Prueba de Shapiro-Wilks {#sec-test-de-normalidad}
 
-En la sección \@ref(evaluar-la-normalidad) mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (\@ref(fig:poligono-de-frecuencias-notas-comparativo)). Ahora vamos a introducir un test más formal de normalidad.
+En la [sección @sec-evaluar-la-normalidad] mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (@fig-poligono-de-frecuencias-notas-comparativo). Ahora vamos a introducir un test más formal de normalidad.
 
 El test de *Shapiro-Wilks* plantea la hipótesis nula que una muestra proviene de una distribución normal. Eligimos un nivel de significanza, por ejemplo 0,05, y tenemos una hipótesis alternativa que sostiene que la distribución no es normal.
 

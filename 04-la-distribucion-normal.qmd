@@ -1,4 +1,4 @@
-# La distribución normal {#sec-la-distribución-normal}
+# La distribución normal {#sec-la-distribucion-normal}
 
 En el @sec-distribuciones-de-frecuencias tocamos brevemente la llamada *distribución normal*. En este capítulo vamos a desarrollar con más detalle esta distribución, fundamental para muchas técnicas estadísticas y cuantitativas.
 
@@ -246,13 +246,13 @@ También podemos expresar esto en términos de probabilidades: Si medimos una mu
 
 Hemos visto que el hecho de que una variable tenga una distribución normal nos resulta muy útil para extraer información sobre sus propiedades. También nos permite realizar algunos tests estadísticos que veremos en capítulos posteriores.
 
-En la [sección \@sec-cual-usar] decidimos usar *la media* como medida de centralización porque las tres medidas disponibles --media, mediana y moda-- se aproximaban unas a otras. Si queremos saber si una variable se aproxima a la curva normal podemos generar un histograma y sobreponer una curva normal. Así podemos sacar alguna conclusión inspeccionando el gráfico.
+En la \[sección \@sec-cual-usar\] decidimos usar *la media* como medida de centralización porque las tres medidas disponibles --media, mediana y moda-- se aproximaban unas a otras. Si queremos saber si una variable se aproxima a la curva normal podemos generar un histograma y sobreponer una curva normal. Así podemos sacar alguna conclusión inspeccionando el gráfico.
 
 También podemos valernos del conocimiento de la proporción de observaciones que deben estar dentro de la primera y segunda desviación estándar y verificar si nuestros datos se conforman con estas predicciones.
 
 ::: {#exm-notas-i}
-
 ## Notas de dos cursos
+
 \
 Si tomamos nuestros datos de las notas de nuestros dos cursos que vimos en la [sección @sec-estadisticas-descriptivas-e-inferenciales] y que fuimos desarrollando a lo largo de los capítulos anteriores podemos realizar este análisis.
 
@@ -272,12 +272,11 @@ Grupo B: {11, 16, 14, 18, 6, 8, 9, 14, 12, 12, 10, 15, 12, 9, 13, 16, 17, 12, 8,
     -   Entre $\pm{2}$ desviaciones: 96%
 
 Observamos que nuestras notas carecen en cierta medida de valores extremos, sin embargo la muestra es relativamente pequeña con lo cual nos conformamos con estos resultados y consideramos normales las distribuciones.
-
 :::
 
 ::: {#exm-notas-ii}
-
 ## Ejemplo en R
+
 \
 Si no queremos hacer estos cálculos a mano los podemos hacer también en R, así:
 

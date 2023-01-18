@@ -151,13 +151,13 @@ Este ejemplo es extensible a muestras más grandes con cálculos similares. Se d
 |    9    |    1    |        0,010 |
 |   10    |    0    |        0,001 |
 
-: (#tab:probabilidades-combinaciones-posibles-diez) Probabilidades de las combinaciones de una muestra de diez.
+: (#tab-probabilidades-combinaciones-posibles-diez) Probabilidades de las combinaciones de una muestra de diez.
 
-Obtendríamos los resultados de la tabla \@ref(tab:probabilidades-combinaciones-posibles-diez) y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa[^01-conceptos-fundamentales-4].
+Obtendríamos los resultados de la tabla @tab-probabilidades-combinaciones-posibles-diez) y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa[^01-conceptos-fundamentales-4].
 
 [^01-conceptos-fundamentales-4]: Si se lleva este argumento al extremo: si el tamaño de la muestra fuera igual al tamaño de la población, la muestra sería perfectamente representativa.
 
-## Estadísticas descriptivas e inferenciales
+## Estadísticas descriptivas e inferenciales {#sec-estadisticas-descriptivas-e-inferenciales}
 
 Entre los varios usos de las estadísticas este texto tratará de dos de los más importantes. Uno es el descriptivo que consiste en describir cuantitativamente un conjunto de datos y eventualmente generalizar este análisis a una población. Otro es el de inferir propiedades y diferencias entre variables.
 

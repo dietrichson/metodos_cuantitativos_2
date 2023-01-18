@@ -231,6 +231,11 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./10-correlaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
   </div>
 </li>
@@ -244,7 +249,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#prueba-t-de-student-para-muestras-independientes" id="toc-prueba-t-de-student-para-muestras-independientes" class="nav-link active" data-scroll-target="#prueba-t-de-student-para-muestras-independientes"><span class="toc-section-number">7.1</span>  Prueba t de Student para muestras independientes</a></li>
-  <li><a href="#test-de-normalidad" id="toc-test-de-normalidad" class="nav-link" data-scroll-target="#test-de-normalidad"><span class="toc-section-number">7.2</span>  Prueba de Shapiro-Wilks</a></li>
+  <li><a href="#sec-test-de-normalidad" id="toc-sec-test-de-normalidad" class="nav-link" data-scroll-target="#sec-test-de-normalidad"><span class="toc-section-number">7.2</span>  Prueba de Shapiro-Wilks</a></li>
   <li><a href="#test-de-shapiro-wilks-en-r" id="toc-test-de-shapiro-wilks-en-r" class="nav-link" data-scroll-target="#test-de-shapiro-wilks-en-r"><span class="toc-section-number">7.3</span>  Test de Shapiro Wilks en R</a></li>
   <li><a href="#prueba-de-fisher" id="toc-prueba-de-fisher" class="nav-link" data-scroll-target="#prueba-de-fisher"><span class="toc-section-number">7.4</span>  Prueba de Fisher</a></li>
   <li><a href="#realizar-la-prueba-de-fisher-en-r" id="toc-realizar-la-prueba-de-fisher-en-r" class="nav-link" data-scroll-target="#realizar-la-prueba-de-fisher-en-r"><span class="toc-section-number">7.5</span>  Realizar la prueba de Fisher en R</a></li>
@@ -317,7 +322,7 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
 t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 \]</span></p>
 </div>
-<p>Si aplicamos la fórmula de la <a href="#def-t-test">definición&nbsp;<span>7.3</span></a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="@sec-distribución-t">apendice A</a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
+<p>Si aplicamos la fórmula de la <a href="#def-t-test">definición&nbsp;<span>7.3</span></a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="@sec-distribucion-t">apendice A</a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
 <div id="exm-manual-t-test" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.1 (Prueba t) </strong></span><br>
 </p>
@@ -371,9 +376,9 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 <p>Vemos que el test nos devuelve además un valor de <em>p</em> más preciso.</p>
 </div>
 </section>
-<section id="test-de-normalidad" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="test-de-normalidad"><span class="header-section-number">7.2</span> Prueba de Shapiro-Wilks</h2>
-<p>En la sección @ref(evaluar-la-normalidad) mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (@ref(fig:poligono-de-frecuencias-notas-comparativo)). Ahora vamos a introducir un test más formal de normalidad.</p>
+<section id="sec-test-de-normalidad" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-test-de-normalidad"><span class="header-section-number">7.2</span> Prueba de Shapiro-Wilks</h2>
+<p>En la <span class="quarto-unresolved-ref">?sec-evaluar-la-normalidad</span> mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (<span class="quarto-unresolved-ref">?fig-poligono-de-frecuencias-notas-comparativo</span>). Ahora vamos a introducir un test más formal de normalidad.</p>
 <p>El test de <em>Shapiro-Wilks</em> plantea la hipótesis nula que una muestra proviene de una distribución normal. Eligimos un nivel de significanza, por ejemplo 0,05, y tenemos una hipótesis alternativa que sostiene que la distribución no es normal.</p>
 <p>Tenemos:</p>
 <p><span class="math inline">\(H_0\)</span>: La distribución es normal</p>

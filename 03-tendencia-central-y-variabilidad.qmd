@@ -68,7 +68,7 @@ Una notación compacta para significar la suma de las observaciones en una varia
 
 Para significar el número de observaciones de usa N, de **n**úmero.
 
-Así se puede definir la media de manera compacta así: 
+Así se puede definir la media de manera compacta así:
 
 $$
 {\Sigma{x}}\over{N}
@@ -78,7 +78,7 @@ También se usa una barra vertical sobre el nombre de la variable para significa
 
 Entonces en general tenemos:
 
-:::{#def-la-media}
+::: {#def-la-media}
 ## La media
 
 $$
@@ -98,6 +98,7 @@ El valor mediano, o la mediana, se denota en notación matemática con una tilde
 
 ::: {#exm-mediana}
 ## La mediana
+
 \
 Podemos sacar la mediana de forma sencilla con R con la función `median`.
 
@@ -253,9 +254,9 @@ tmpDF %>%
 
 El rango intercuartílico da una idea de la dispersión de los datos y es por su naturaleza menos sensitivo a valores extremos.
 
-```{example name="Ejemplo en R"}
-:
-```
+:::{#exm-intercuartilico-en-r}
+ 
+## Sacar el rango intercuartílico en R
 
 Para sacar en rango intercuartílico podemos usar la función `quantiles`. Por defecto divide la distribución en cuartiles.
 
@@ -263,6 +264,8 @@ Para sacar en rango intercuartílico podemos usar la función `quantiles`. Por d
 x = c(2, 4, 5, 7, 7, 7, 9, 11, 12, 15, 15 ,15, 18)
 quantile(x)
 ```
+
+:::
 
 Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitúd de 8 ya que $15 - 7 = 8$.
 
@@ -272,17 +275,20 @@ La medida de dispersión más usada en estadística es la *desviación estándar
 
 Para calcular la desviación estándar debemos primero calcular la varianza. Para ello tomamos la diferencia de cada observación de la media. Recordemos que la media se expresa con $\bar{x}$ (equis con barra). Entonces la diferencia entre una observación de x y la media es $x - \bar{x}$. Luego los llevamos al cuadrado $(x - \bar{x})^2$ los sumamos y dividimos por el número total de observaciones. Para expresarlo usamos la notación que ya vimos. Entonces $\Sigma$ es «la suma de» y N es «el total de las observaciones». Juntando todo tenemos:
 
-```{definition, name="Varianza"}
-
+:::{def-definicion-varianza}
+## Varianza
+\
 $$
 \text{varianza} = {{\Sigma (x - \bar{x})^2}\over{N}}
 $$
-```
+:::
+
 
 Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega $\sigma$ que es sigma pero en minúscula. Entonces tenemos:
 
-:::{#def-standard-deviation-population}
+::: {#def-standard-deviation-population}
 ## Desviación estándar de la población
+
 $$
 \sigma = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N}}}
 $$
@@ -290,7 +296,7 @@ $$
 
 Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:
 
-:::{def-definition-standard-deviation
+::: {def-definition-standard-deviation
 ## Desviación estándar de la muestra
 
 $$
@@ -302,6 +308,8 @@ Finalmente. Ya que s y $\sigma$ son la raíz cuadrada de la varianza, esta tambi
 
 Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones `var` y `sd`[^03-tendencia-central-y-variabilidad-4].
 
+[^03-tendencia-central-y-variabilidad-4]: «sd» por la abreviación del inglés «**s**tandard **d**eviation».
+
 ```{r}
 x = c(2, 4, 5, 7, 7, 7, 9, 11, 12, 15, 15 ,15, 18)
 var(x)
@@ -312,8 +320,6 @@ sd(x)
 salarios <- c(14000L,14000L,14000L,16000L,17000L,18000L,26000L,35000L)
 # Nota: ajustar por inflación para futuras ediciones.
 ```
-
-[^03-tendencia-central-y-variabilidad-4]: «sd» por la abreviación del inglés «**s**tandard **d**eviation».
 
 > #### ¿Por qué se prefiere la desviación estándar? {.unnumbered}
 >
