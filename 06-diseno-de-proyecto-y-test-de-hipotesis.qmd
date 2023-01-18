@@ -45,7 +45,7 @@ Vimos en la [sección @sec-el-error-estandar-y-su-interpretacion] que podemos es
 
 ### Tests estadísticos de significanza
 
-En el caso de nuestros dos grupos de estudiantes (véase: [-@sec-cual-usar]) ya vimos que existe una diferencia entre los dos grupos en la media de la nota obtenida. De la figura @fig-poligono-de-frecuencias-notas-comparativo vimos que igual las dos distribuciones de solapan en gran medida. Por tanto no podemos afirmar con absoluta certeza que las diferencias observadas son el efecto de la metodología pedagógica aplicada o si son producto de la inherente variabilidad de las muestras.
+En el caso de nuestros dos grupos de estudiantes (véase: [-@sec-cual-usar]) ya vimos que existe una diferencia entre los dos grupos en la media de la nota obtenida. De la [figura @fig-poligono-de-frecuencias-notas-comparativo] vimos que igual las dos distribuciones de solapan en gran medida. Por tanto no podemos afirmar con absoluta certeza que las diferencias observadas son el efecto de la metodología pedagógica aplicada o si son producto de la inherente variabilidad de las muestras.
 
 El objetivo de un test estadístico de significanza es determinar si las diferencias observadas el resultado de variación aleatoria o si pueden razonablemente ser atribuidos a la variable independiente.
 
@@ -91,6 +91,7 @@ En la [sección @sec-la-hipótesis-nula-y-alternativa] propusimos una hipótesis
 
 ::: {#exm-non-directional-hypothesis}
 ## Hipotesis nula y una alternativa
+
 \
 \
 $H_0: \mu_A=\mu_B$
@@ -103,8 +104,8 @@ $H_1$ se leería: «la media de A es desigual a la media de B». Este ejemplo [-
 A veces tenemos razones bien fundadas en creer que las diferencias, si las observamos, van a darse en una direción u otra. Si por ejemplo estamos midiendo la estaturas de muestras aleatorias de argentinas y argentinos podemos suponer de antemano que los hombres van a ser más altos que las mujeres ya que está comprobado que es así en otros países, hay razones biológicas etcétera. En ese caso podríamos formular una predicción direccional, lo cual significa que nuestra hipótesis alternativa es una sola y va en una dirección específica:
 
 ::: {#exm-directional-two}
-
 ## Hipotesis nula y una alternativa direccional
+
 \
 \
 $H_0: \mu_M=\mu_F$
@@ -112,14 +113,13 @@ $H_0: \mu_M=\mu_F$
 $H_1: \mu_M > \mu_F$.
 :::
 
-La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional --y está justificado su uso, claro-- disminuye el riesgo de cometer un error de tipo II. Está ilustrado en la [figura @fig-non-directional-and-directional-normal-curves]: para un test no-direcional necesitamos un 2,5% *en cada extremo* de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.
+La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional --y está justificado su uso, claro-- disminuye el riesgo de cometer un error de tipo II. Está ilustrado en las figuras [-@fig-non-directional-and-directional-normal-curves-i] y [-@fig-non-directional-and-directional-normal-curves-ii]: para un test no-direcional necesitamos un 2,5% *en cada extremo* de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.
 
 ```{r}
-#| label: fig-non-directional-and-directional-normal-curves
+#| label: fig-non-directional-and-directional-normal-curves-i
 #| echo: false 
 #| warning: false 
 #| message: false
-#| layout-ncol: 1
 #| fig-cap: "Test no direccionales y test direccionales" 
 
 
@@ -166,12 +166,21 @@ p2 <- tmp %>%
   # scale_y_continuous(labels = NULL)+
   # scale_x_continuous(labels = NULL)
 
-plot(p1)
-plot(p2)
+p1
+```
+
+```{r}
+#| label: fig-non-directional-and-directional-normal-curves-ii
+#| echo: false 
+#| warning: false 
+#| message: false
+#| fig-cap: "Test no direccionales y test direccionales" 
+p2
 ```
 
 ::: {#exm-cara-o-cruz}
 ## ¿cara o cruz?
+
 \
 Para desarrollar un poco más el concepto de test de hipótesis vamos a imaginarnos que estamos jugando a *cara o cruz*. Si tiramos una moneda hay un 50 y 50 de que salga cruz o cara. Tiramos la moneda y sale cara. La tiramos dos veces y sale dos veces cara. Tres veces -- tres caras... y seguimos perdiendo.
 

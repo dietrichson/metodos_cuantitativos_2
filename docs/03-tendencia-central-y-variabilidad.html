@@ -241,11 +241,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#rango-o-amplitud" id="toc-rango-o-amplitud" class="nav-link" data-scroll-target="#rango-o-amplitud"><span class="toc-section-number">3.2.1</span>  Rango o amplitud</a></li>
   <li><a href="#el-rango-intercuartílico" id="toc-el-rango-intercuartílico" class="nav-link" data-scroll-target="#el-rango-intercuartílico"><span class="toc-section-number">3.2.2</span>  El rango intercuartílico</a></li>
   <li><a href="#la-varianza-y-desviación-estándar" id="toc-la-varianza-y-desviación-estándar" class="nav-link" data-scroll-target="#la-varianza-y-desviación-estándar"><span class="toc-section-number">3.2.3</span>  La varianza y desviación estándar</a></li>
+  <li><a href="#visualizar-la-dispersión" id="toc-visualizar-la-dispersión" class="nav-link" data-scroll-target="#visualizar-la-dispersión"><span class="toc-section-number">3.2.4</span>  Visualizar la dispersión</a></li>
   </ul></li>
-  <li><a href="#varianza" id="toc-varianza" class="nav-link" data-scroll-target="#varianza"><span class="toc-section-number">3.3</span>  Varianza</a></li>
-  <li><a href="#desviación-estándar-de-la-muestra" id="toc-desviación-estándar-de-la-muestra" class="nav-link" data-scroll-target="#desviación-estándar-de-la-muestra"><span class="toc-section-number">3.4</span>  Desviación estándar de la muestra</a></li>
-  <li><a href="#visualizar-la-dispersión" id="toc-visualizar-la-dispersión" class="nav-link" data-scroll-target="#visualizar-la-dispersión"><span class="toc-section-number">3.4.1</span>  Visualizar la dispersión</a></li>
-  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">3.5</span>  Glosario</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">3.3</span>  Glosario</a></li>
   </ul>
 </nav>
     </div>
@@ -467,28 +465,24 @@ Podemos sacar la mediana de forma sencilla con R con la función <code>median</c
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="la-varianza-y-desviación-estándar"><span class="header-section-number">3.2.3</span> La varianza y desviación estándar</h3>
 <p>La medida de dispersión más usada en estadística es la <em>desviación estándar</em>, también conocida como <em>desviación típica</em>. Esta medida tiene una relación matemática muy estrecha con la <em>varianza</em> que tiene usos menos frecuentes. Ambas medidas tienen propiedades que los hacen útiles para otras técnicas estadísticas.</p>
 <p>Para calcular la desviación estándar debemos primero calcular la varianza. Para ello tomamos la diferencia de cada observación de la media. Recordemos que la media se expresa con <span class="math inline">\(\bar{x}\)</span> (equis con barra). Entonces la diferencia entre una observación de x y la media es <span class="math inline">\(x - \bar{x}\)</span>. Luego los llevamos al cuadrado <span class="math inline">\((x - \bar{x})^2\)</span> los sumamos y dividimos por el número total de observaciones. Para expresarlo usamos la notación que ya vimos. Entonces <span class="math inline">\(\Sigma\)</span> es «la suma de» y N es «el total de las observaciones». Juntando todo tenemos:</p>
-</section>
-</section>
-<section id="varianza" class="level2 {def-definicion-varianza}" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="varianza"><span class="header-section-number">3.3</span> Varianza</h2>
-<p><br>
+<div id="def-definicion-varianza" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 3.2 (Varianza) </strong></span><br>
 <span class="math display">\[
 \text{varianza} = {{\Sigma (x - \bar{x})^2}\over{N}}
 \]</span></p>
-</section>
+</div>
 <p>Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega <span class="math inline">\(\sigma\)</span> que es sigma pero en minúscula. Entonces tenemos:</p>
 <div id="def-standard-deviation-population" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 3.2 (Desviación estándar de la población) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 3.3 (Desviación estándar de la población) </strong></span><span class="math display">\[
 \sigma = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N}}}
 \]</span></p>
 </div>
 <p>Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:</p>
-<section id="desviación-estándar-de-la-muestra" class="level2 {def-definition-standard-deviation" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="desviación-estándar-de-la-muestra"><span class="header-section-number">3.4</span> Desviación estándar de la muestra</h2>
-<p><span class="math display">\[
+<div id="def-definition-standard-deviation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 3.4 (Desviación estándar de la muestra) </strong></span><span class="math display">\[
 s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 \]</span></p>
-</section>
+</div>
 <p>Finalmente. Ya que s y <span class="math inline">\(\sigma\)</span> son la raíz cuadrada de la varianza, esta también se denomina por las mismas letras, pero llevado al cuadrado: <span class="math inline">\(s^2\)</span> y <span class="math inline">\(\sigma^2\)</span></p>
 <p>Por suerte es sencillo sacar tanto la varianza como la desviación estándar en R. Usamos las funciones <code>var</code> y <code>sd</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 <div class="cell">
@@ -506,8 +500,9 @@ s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 <h4 id="por-qué-se-prefiere-la-desviación-estándar" class="unnumbered anchored">¿Por qué se prefiere la desviación estándar?</h4>
 <p>Hay varios motivos más bien técnicos por los que se prefiere la desviación estándar por sobre la varianza. Sin embargo tiene también algunas ventajas bastante práctica e incluso intuitivas. Una de las más importantes es que la dispersión se expresa en <em>la misma unidad</em> que los datos. Para profundizar esto vemos un ejemplo. Los salarios de una PYME son: $14.000, $14.000, $14.000, $16.000, $17.000, $18.000, $26.000 y $35.000. La media de estos es 19,250, y la desviación estándar es: 7,497. La interpretación de la desviación estándar en este caso es que los salarios en promedio tiene una diferencia de $7,497 (por arriba o abajo) del salario medio de $19,250.</p>
 </blockquote>
-<section id="visualizar-la-dispersión" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="visualizar-la-dispersión"><span class="header-section-number">3.4.1</span> Visualizar la dispersión</h3>
+</section>
+<section id="visualizar-la-dispersión" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="visualizar-la-dispersión"><span class="header-section-number">3.2.4</span> Visualizar la dispersión</h3>
 <p>Puede resultar útil visualizar la dispersión de un conjunto de datos. Esto se logra con un diagrama de caja (box-plot). Vemos un ejemplo de ello en la <a href="#fig-boxplot-example">figura&nbsp;<span>3.1</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -543,8 +538,9 @@ s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 </div>
 </div>
 </section>
-<section id="glosario" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="glosario"><span class="header-section-number">3.5</span> Glosario</h2>
+</section>
+<section id="glosario" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="glosario"><span class="header-section-number">3.3</span> Glosario</h2>
 <dl>
 <dt>Amplitud</dt>
 <dd>

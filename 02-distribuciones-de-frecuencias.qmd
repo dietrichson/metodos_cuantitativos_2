@@ -153,10 +153,9 @@ ggplot(my_data, aes(x=grupo.A)) +
 Los datos también de pueden visualizar con un polígono de frecuencias. En este tipo de visualización ponemos un punto en la intersección de la nota (eje horizontal) y la frecuencia (eje vertical) y trazamos una linea entre los puntos. Una de las ventajas de este tipo de visualización es que facilita la comparación entre varias distribuciones ya que los podemos desplegar en un mismo diagrama.
 
 ```{r}
-
 #| label: fig-poligono-de-frecuencias-notas-comparativo
 #| echo: false
-#| fig-cap:  "Polígono de frecuencias de notas obtenidas por dos grupos de estudiantes"
+#| fig-cap: "Polígono de frecuencias de notas obtenidas por dos grupos de estudiantes"
 
 myData %>% 
   gather() %>% 

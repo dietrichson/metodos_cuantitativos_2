@@ -242,7 +242,7 @@ entonces el 5,76% de la población de argentinas entre 19 y 49 años miden menos
 
 También podemos expresar esto en términos de probabilidades: Si medimos una mujer argentina de entre 19 y 49 años seleccionada aleatoriamente de la población, la probabilidad de que mida menos de 150 centímetros es de 5,76% (p=0,0576).
 
-## Evaluar la normalidad
+## Evaluar la normalidad {#sec-evaluar-la-normalidad}
 
 Hemos visto que el hecho de que una variable tenga una distribución normal nos resulta muy útil para extraer información sobre sus propiedades. También nos permite realizar algunos tests estadísticos que veremos en capítulos posteriores.
 

@@ -509,27 +509,13 @@ div.csl-indent {
 <h2 data-number="2.4" class="anchored" data-anchor-id="polígono-de-frecuencias"><span class="header-section-number">2.4</span> Polígono de frecuencias</h2>
 <p>Los datos también de pueden visualizar con un polígono de frecuencias. En este tipo de visualización ponemos un punto en la intersección de la nota (eje horizontal) y la frecuencia (eje vertical) y trazamos una linea entre los puntos. Una de las ventajas de este tipo de visualización es que facilita la comparación entre varias distribuciones ya que los podemos desplegar en un mismo diagrama.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-poligono-de-frecuencias-notas-comparativo</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap:  "Polígono de frecuencias de notas obtenidas por dos grupos de estudiantes"</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>myData <span class="sc">%&gt;%</span> </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(key,value) <span class="sc">%&gt;%</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  count <span class="sc">%&gt;%</span> </span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>value,<span class="at">y=</span>n,<span class="at">color=</span>key))<span class="sc">+</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>,<span class="dv">20</span>)<span class="sc">+</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">8</span>)<span class="sc">+</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Frecuencia"</span>)<span class="sc">+</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Nota"</span>)<span class="sc">+</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="at">classA=</span><span class="st">'Grupo A'</span>, <span class="at">classB=</span><span class="st">'Grupo B'</span>))<span class="sc">+</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>(),<span class="at">legend.position=</span><span class="st">"bottom"</span>) <span class="ot">-&gt;</span> freqPoly1</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>freqPoly1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-distribuciones-de-frecuencias_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<div id="fig-poligono-de-frecuencias-notas-comparativo" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="02-distribuciones-de-frecuencias_files/figure-html/fig-poligono-de-frecuencias-notas-comparativo-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;2.1: Polígono de frecuencias de notas obtenidas por dos grupos de estudiantes</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Apreciamos con más precisión los valores más típicos y diferencias entre los dos grupos. También podemos ver que la parte inferior de la escala de notas está sin uso, característica que comparten ambos grupos.</p>
@@ -541,7 +527,7 @@ div.csl-indent {
 <div id="fig-persuasion-poligon-i" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-distribuciones-de-frecuencias_files/figure-html/fig-persuasion-poligon-i-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;2.1: Polígono de frecuencias del largo de palabras en un texto de Austin</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;2.2: Polígono de frecuencias del largo de palabras en un texto de Austin</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -582,7 +568,7 @@ div.csl-indent {
 <div id="fig-poligonos-de-frecuencias" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02-distribuciones-de-frecuencias_files/figure-html/fig-poligonos-de-frecuencias-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figura&nbsp;2.2: Polígonos de frecuencias</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;2.3: Polígonos de frecuencias</figcaption><p></p>
 </figure>
 </div>
 </div>

@@ -56,7 +56,7 @@ donde:
 -   $N_1$ y $N_2$: es el número de observaciones en cada muestra.
 :::
 
-Vimos en la sección @sec-la-distribucion-t que para muestras relativamente pequeñas (N\<30) la distribución de la muestra tiende a la distribución *t de Student*. Podemos valernos de esto para calcular la probabilidad de que nuestro *SED* esté en el rango requerido aplicando la formula de la definición.
+Vimos en la [sección @sec-la-distribucion-t ]que para muestras relativamente pequeñas (N\<30) la distribución de la muestra tiende a la distribución *t de Student*. Podemos valernos de esto para calcular la probabilidad de que nuestro *SED* esté en el rango requerido aplicando la formula de la definición.
 
 ::: {#def-t-test}
 ## Prueba de t
@@ -66,7 +66,7 @@ t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 $$
 :::
 
-Si aplicamos la fórmula de la [definición @def-t-test] nos sale un valor que podemos comparar con los valores críticos de la tabla del [apendice A](@sec-distribucion-t) para determinar si rechazamos $H_0$ o no.
+Si aplicamos la fórmula de la [definición @def-t-test] nos sale un valor que podemos comparar con los valores críticos de la tabla del [apendice A](@sec-distribucion-t-table) para determinar si rechazamos $H_0$ o no.
 
 ```{r, include=FALSE}
 myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
@@ -140,7 +140,7 @@ Vemos que el test nos devuelve además un valor de *p* más preciso.
 
 ## Prueba de Shapiro-Wilks {#sec-test-de-normalidad}
 
-En la [sección @sec-evaluar-la-normalidad] mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (@fig-poligono-de-frecuencias-notas-comparativo). Ahora vamos a introducir un test más formal de normalidad.
+En la [sección @sec-evaluar-la-normalidad] mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias ([figura @fig-poligono-de-frecuencias-notas-comparativo]). Ahora vamos a introducir un test más formal de normalidad.
 
 El test de *Shapiro-Wilks* plantea la hipótesis nula que una muestra proviene de una distribución normal. Eligimos un nivel de significanza, por ejemplo 0,05, y tenemos una hipótesis alternativa que sostiene que la distribución no es normal.
 
@@ -177,7 +177,7 @@ shapiro.test(Grupo.B)
 
 Vemos que en ambos casos el valor de probabilidad (*p*) es muy superios a nuestro nivel elegido (0,05), por lo que *no rechazamos la hipótesis nula*.
 
-En el caso de los ejemplos \@ref(exm:manual-t-test) y \@ref(exm:t-test-in-r) ya obramos bajo la premisa de que las variables tenían una distribución normal, pero generalmente conviene realizar el test Shapiro-Willks *antes* de decidir qué prueba estadística vamos a usar. Si rechazamos $H_0$, es decir si no concluimos que la distribución sea normal, no deberíamos usar un test paramétrico.
+En el caso de los ejemplos [-@exm-manual-t-test] y [-@exm-t-test-in-r] ya obramos bajo la premisa de que las variables tenían una distribución normal, pero generalmente conviene realizar el test Shapiro-Willks *antes* de decidir qué prueba estadística vamos a usar. Si rechazamos $H_0$, es decir si no concluimos que la distribución sea normal, no deberíamos usar un test paramétrico.
 
 ## Prueba de Fisher
 

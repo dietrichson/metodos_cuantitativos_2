@@ -155,7 +155,7 @@ Entonces, para nuestra muestra de argentinas podemos decir que estimamos que la 
 -   entre 159,73 y 164,66 con un 95% de confianza
 -   entre 158,94 y 165,44 con un 99% de confianza
 
-## La distribución t
+## La distribución t {#sec-la-distribucion-t}
 
 En la sección anterior vimos que la razón:
 
@@ -208,7 +208,7 @@ Del [ejemplo @exm-small-sample] vemos que si bien logramos estimar la media de l
 
 ### ¿Dónde obtenemos los valores críticos de t? {.unnumbered}
 
-Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [apendix @sec-distribuciion-t] o en linea. También se puede sacar con una función en R llamada `qt`.
+Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [apendix @sec-distribucion-t-table] o en linea. También se puede sacar con una función en R llamada `qt`.
 
 ::: {#exm-extraer-el-valor-critico}
 ## Ejemplo en R: Extraer el valor crítico de t

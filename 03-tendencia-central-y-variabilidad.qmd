@@ -275,7 +275,7 @@ La medida de dispersión más usada en estadística es la *desviación estándar
 
 Para calcular la desviación estándar debemos primero calcular la varianza. Para ello tomamos la diferencia de cada observación de la media. Recordemos que la media se expresa con $\bar{x}$ (equis con barra). Entonces la diferencia entre una observación de x y la media es $x - \bar{x}$. Luego los llevamos al cuadrado $(x - \bar{x})^2$ los sumamos y dividimos por el número total de observaciones. Para expresarlo usamos la notación que ya vimos. Entonces $\Sigma$ es «la suma de» y N es «el total de las observaciones». Juntando todo tenemos:
 
-:::{def-definicion-varianza}
+:::{#def-definicion-varianza}
 ## Varianza
 \
 $$
@@ -296,7 +296,7 @@ $$
 
 Si estamos trabajando con una muestra en lugar de la población completa, que es el caso más común cuando trabajamos con estadísticas se usa la letra «s». También se hace un ajuste en el denominador de la fórmula ya que se ha comprobado que sin el ajuste la medida puede resultar sesgada si la muestra tiene pocas observaciones. La formula para una muestra es:
 
-::: {def-definition-standard-deviation
+::: {#def-definition-standard-deviation}
 ## Desviación estándar de la muestra
 
 $$

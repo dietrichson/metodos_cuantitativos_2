@@ -129,7 +129,7 @@ Lógicamente lo mismo ocurre con el caso de dos hombres y una mujer. Entonces te
 | Dos hombres + una mujer |    0,375     |
 | Tres hombres            |    0,125     |
 
-: (#tab:probabilidades-combinaciones-posibles) Probabilidades de las combinaciones.
+: Probabilidades de las combinaciones. {#tab:probabilidades-combinaciones-posibles}
 
 Observamos que las probabilidades suman 1, lo cual es matemáticamente inevitable.
 

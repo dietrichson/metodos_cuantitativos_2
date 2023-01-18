@@ -316,13 +316,13 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
 <li><span class="math inline">\(N_1\)</span> y <span class="math inline">\(N_2\)</span>: es el número de observaciones en cada muestra.</li>
 </ul>
 </div>
-<p>Vimos en la sección <span class="quarto-unresolved-ref">?sec-la-distribucion-t</span> que para muestras relativamente pequeñas (N&lt;30) la distribución de la muestra tiende a la distribución <em>t de Student</em>. Podemos valernos de esto para calcular la probabilidad de que nuestro <em>SED</em> esté en el rango requerido aplicando la formula de la definición.</p>
+<p>Vimos en la <a href="05-parametros-de-poblacion-y-muestra.html#sec-la-distribucion-t">sección&nbsp;<span>5.3</span></a>que para muestras relativamente pequeñas (N&lt;30) la distribución de la muestra tiende a la distribución <em>t de Student</em>. Podemos valernos de esto para calcular la probabilidad de que nuestro <em>SED</em> esté en el rango requerido aplicando la formula de la definición.</p>
 <div id="def-t-test" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 7.3 (Prueba de t) </strong></span><span class="math display">\[
 t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 \]</span></p>
 </div>
-<p>Si aplicamos la fórmula de la <a href="#def-t-test">definición&nbsp;<span>7.3</span></a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="@sec-distribucion-t">apendice A</a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
+<p>Si aplicamos la fórmula de la <a href="#def-t-test">definición&nbsp;<span>7.3</span></a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="@sec-distribucion-t-table">apendice A</a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
 <div id="exm-manual-t-test" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.1 (Prueba t) </strong></span><br>
 </p>
@@ -378,7 +378,7 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 </section>
 <section id="sec-test-de-normalidad" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="sec-test-de-normalidad"><span class="header-section-number">7.2</span> Prueba de Shapiro-Wilks</h2>
-<p>En la <span class="quarto-unresolved-ref">?sec-evaluar-la-normalidad</span> mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (<span class="quarto-unresolved-ref">?fig-poligono-de-frecuencias-notas-comparativo</span>). Ahora vamos a introducir un test más formal de normalidad.</p>
+<p>En la <a href="04-la-distribucion-normal.html#sec-evaluar-la-normalidad">sección&nbsp;<span>4.3</span></a> mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (<a href="02-distribuciones-de-frecuencias.html#fig-poligono-de-frecuencias-notas-comparativo">figura&nbsp;<span>2.1</span></a>). Ahora vamos a introducir un test más formal de normalidad.</p>
 <p>El test de <em>Shapiro-Wilks</em> plantea la hipótesis nula que una muestra proviene de una distribución normal. Eligimos un nivel de significanza, por ejemplo 0,05, y tenemos una hipótesis alternativa que sostiene que la distribución no es normal.</p>
 <p>Tenemos:</p>
 <p><span class="math inline">\(H_0\)</span>: La distribución es normal</p>
@@ -417,7 +417,7 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 </div>
 </section>
 <p>Vemos que en ambos casos el valor de probabilidad (<em>p</em>) es muy superios a nuestro nivel elegido (0,05), por lo que <em>no rechazamos la hipótesis nula</em>.</p>
-<p>En el caso de los ejemplos @ref(exm:manual-t-test) y @ref(exm:t-test-in-r) ya obramos bajo la premisa de que las variables tenían una distribución normal, pero generalmente conviene realizar el test Shapiro-Willks <em>antes</em> de decidir qué prueba estadística vamos a usar. Si rechazamos <span class="math inline">\(H_0\)</span>, es decir si no concluimos que la distribución sea normal, no deberíamos usar un test paramétrico.</p>
+<p>En el caso de los ejemplos <a href="#exm-manual-t-test"><span>7.1</span></a> y <a href="#exm-t-test-in-r"><span>7.2</span></a> ya obramos bajo la premisa de que las variables tenían una distribución normal, pero generalmente conviene realizar el test Shapiro-Willks <em>antes</em> de decidir qué prueba estadística vamos a usar. Si rechazamos <span class="math inline">\(H_0\)</span>, es decir si no concluimos que la distribución sea normal, no deberíamos usar un test paramétrico.</p>
 <section id="prueba-de-fisher" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="prueba-de-fisher"><span class="header-section-number">7.4</span> Prueba de Fisher</h2>
 <p>Al inicio del capítulo también vimos que uno de los requisitos para que una prueba estadística paramétrica sea válida es que las varianzas sean de similar magnitud. Para ello también existe un test, el <em>test de Fisher</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> que plantea las hipótesis:</p>

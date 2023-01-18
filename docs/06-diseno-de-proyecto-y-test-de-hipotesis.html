@@ -223,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="estudios-experimentales-y-observacionales" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="estudios-experimentales-y-observacionales">Estudios experimentales y observacionales</h3>
 <p>Podemos distinguir entre dos tipos de investigación científica en las ciencias empíricas. Los estudios <em>experimentales</em> son estudios donde nosotros manipulamos alguna variable para darnos cuenta qué efecto tiene. En nuestro ejemplo de dos cursos con metodologías distintas, nosotros hemos manipulado la variable <em>metodología</em>. Como hemos mencionado antes en la <a href="01-conceptos-fundamentales.html#sec-variables-y-su-clasificacion">sección&nbsp;<span>1.4</span></a> esta es la variable <em>independiente</em>. Los estudios experimentales son muy frecuentes en las ciencias naturales y también se aplican a las ciencias humanas.</p>
-<p>En las ciencias humanas, sin embargo, a menudo nos encontramos con datos en los que no podemos manipular la variable independiente. En el caso de los datos lingüísticos de la figura <a href="02-distribuciones-de-frecuencias.html#fig-persuasion-poligon-i">Figura&nbsp;<span>2.1</span></a>, no podemos <em>cambiar</em> el largo de las palabras. Nos tenemos que limitar a recoger los datos e intentar discernir alguna relación entre ellas. Igual tenemos una variable dependiente «largo de palabra» y una independiente «frecuencia», solo que no controlamos la variable independiente. Este tipo de estudios son <em>observacionales</em> y a veces se habla de estudios <em>correlacionales</em>.</p>
+<p>En las ciencias humanas, sin embargo, a menudo nos encontramos con datos en los que no podemos manipular la variable independiente. En el caso de los datos lingüísticos de la figura <a href="02-distribuciones-de-frecuencias.html#fig-persuasion-poligon-i">Figura&nbsp;<span>2.2</span></a>, no podemos <em>cambiar</em> el largo de las palabras. Nos tenemos que limitar a recoger los datos e intentar discernir alguna relación entre ellas. Igual tenemos una variable dependiente «largo de palabra» y una independiente «frecuencia», solo que no controlamos la variable independiente. Este tipo de estudios son <em>observacionales</em> y a veces se habla de estudios <em>correlacionales</em>.</p>
 </section>
 <section id="fuentes-de-ruido-en-los-datos" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="fuentes-de-ruido-en-los-datos">Fuentes de ruido en los datos</h3>
@@ -236,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Vimos en la <a href="05-parametros-de-poblacion-y-muestra.html#sec-el-error-estandar-y-su-interpretacion">sección&nbsp;<span>5.2</span></a> que podemos estimar los valores de la población en base a muestras y que podemos calcular un margen de error y niveles de confianza de estas estimaciones. Podemos valernos de los mismos conceptos para concluir algo sobre la relación entre variables: independiente y dependiente por ejemplo.</p>
 <section id="tests-estadísticos-de-significanza" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="tests-estadísticos-de-significanza"><span class="header-section-number">6.3.1</span> Tests estadísticos de significanza</h3>
-<p>En el caso de nuestros dos grupos de estudiantes (véase: <a href="#sec-cual-usar"><span>6.3.6</span></a>) ya vimos que existe una diferencia entre los dos grupos en la media de la nota obtenida. De la figura <span class="quarto-unresolved-ref">?fig-poligono-de-frecuencias-notas-comparativo</span> vimos que igual las dos distribuciones de solapan en gran medida. Por tanto no podemos afirmar con absoluta certeza que las diferencias observadas son el efecto de la metodología pedagógica aplicada o si son producto de la inherente variabilidad de las muestras.</p>
+<p>En el caso de nuestros dos grupos de estudiantes (véase: <a href="#sec-cual-usar"><span>6.3.6</span></a>) ya vimos que existe una diferencia entre los dos grupos en la media de la nota obtenida. De la <a href="02-distribuciones-de-frecuencias.html#fig-poligono-de-frecuencias-notas-comparativo">figura&nbsp;<span>2.1</span></a> vimos que igual las dos distribuciones de solapan en gran medida. Por tanto no podemos afirmar con absoluta certeza que las diferencias observadas son el efecto de la metodología pedagógica aplicada o si son producto de la inherente variabilidad de las muestras.</p>
 <p>El objetivo de un test estadístico de significanza es determinar si las diferencias observadas el resultado de variación aleatoria o si pueden razonablemente ser atribuidos a la variable independiente.</p>
 </section>
 <section id="sec-la-hipótesis-nula-y-alternativa" class="level3" data-number="6.3.2">
@@ -282,26 +282,24 @@ ul.task-list li input[type="checkbox"] {
 <span class="math inline">\(H_0: \mu_M=\mu_F\)</span></p>
 <p><span class="math inline">\(H_1: \mu_M &gt; \mu_F\)</span>.</p>
 </div>
-<p>La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional –y está justificado su uso, claro– disminuye el riesgo de cometer un error de tipo II. Está ilustrado en la <span class="quarto-unresolved-ref">?fig-non-directional-and-directional-normal-curves</span>: para un test no-direcional necesitamos un 2,5% <em>en cada extremo</em> de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.</p>
-<div class="cell quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div id="fig-non-directional-and-directional-normal-curves-1" class="quarto-figure quarto-figure-center anchored">
+<p>La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional –y está justificado su uso, claro– disminuye el riesgo de cometer un error de tipo II. Está ilustrado en las figuras <a href="#fig-non-directional-and-directional-normal-curves-i"><span>6.1</span></a> y <a href="#fig-non-directional-and-directional-normal-curves-ii"><span>6.2</span></a>: para un test no-direcional necesitamos un 2,5% <em>en cada extremo</em> de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-non-directional-and-directional-normal-curves-i" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="06-diseno-de-proyecto-y-test-de-hipotesis_files/figure-html/fig-non-directional-and-directional-normal-curves-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06-diseno-de-proyecto-y-test-de-hipotesis_files/figure-html/fig-non-directional-and-directional-normal-curves-i-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Figura&nbsp;6.1: Test no direccionales y test direccionales</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div id="fig-non-directional-and-directional-normal-curves-2" class="quarto-figure quarto-figure-center anchored">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-non-directional-and-directional-normal-curves-ii" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="06-diseno-de-proyecto-y-test-de-hipotesis_files/figure-html/fig-non-directional-and-directional-normal-curves-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="06-diseno-de-proyecto-y-test-de-hipotesis_files/figure-html/fig-non-directional-and-directional-normal-curves-ii-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Figura&nbsp;6.2: Test no direccionales y test direccionales</figcaption><p></p>
 </figure>
-</div>
 </div>
 </div>
 </div>
