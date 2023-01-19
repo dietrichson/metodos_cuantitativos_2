@@ -78,7 +78,7 @@ y nos daría el resultado deseado:
 table(grupo.A)
 ```
 
-## Histogramas
+## Histogramas {#sec-histogramas}
 
 Para seguir explorando las tablas que hemos creado en la sección anterior se pueden visualizar con un *histograma*. El histograma resume los datos dentro de algunos rangos, por ejemplo 8-9, 10-11, 12-13 etcétera, y se cuenta el número de observaciones dentro de cada rango.
 
@@ -209,7 +209,7 @@ persuasionData %>%
 
 A differencia de la distribución de notas, vemos acá que encontramos observaciones a lo largo del rango de uno a deciseis, con la concentración de valores alrededor de tres. Esto tiene su interpretación bastante intuitiva ya que el uso de palabras *cortas*, como son artículos, preposiciones y conjunciones abundan en cuanquier texto y las palabras muy largas son de uso menos frecuente. Resulta lógico suponer que encontraríamos un perfil similar en cualquier texto de cierta longitud.
 
-## Perfil de la distribución
+## Perfil de la distribución {#sec-perfil-de-la-distribucion}
 
 Las distribuciones de notas que vimos en las secciones anteriores tienen relativamente pocos datos, por lo que siempre van a parecer algo irregulares. Si tenemos muchos datos, sobre todo si con se escala de medición continua, podemos imaginarnos que en lugar de trazar una linea llegamos a trazar más bien una curva entre los puntos. Esto nos permite hacer una abstracción de las distribuciones y hablar de distribuciones teóricas. La más conocida de ellas sin duda es la *distribución normal*, también llamada de Gauss o gaussiana.
 
@@ -227,8 +227,7 @@ x %>%
   theme_minimal()+xlab("")+ylab("")
 ```
 
-Vamos a desarrollar el tema de la distribución normal con más detalle en el [capítulo
-@sec-la-distribucion-normal]. Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.
+Vamos a desarrollar el tema de la distribución normal con más detalle en el [capítulo @sec-la-distribucion-normal]. Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.
 
 ### Asimetría o Sesgo
 

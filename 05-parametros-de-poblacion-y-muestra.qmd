@@ -125,15 +125,20 @@ $$
 SE = {s\over{\sqrt{N}}} = {6,89\over{\sqrt{30}}} = {s\over{5,477}} = 1,257
 $$ Ahora podemos estimar que la media de la población es de 160,94 $\pm$ 1,257. Hemos reportado muestra estimación con un margen de error. Pero ¿cómo se interpreta este número?
 
-Sea $\mu$ la media real --por convención se usa la letra griega $\mu$ que corresponde a *m* para la *m*edia de la población. La desviación de la media de la muestra entonces es de $161,94 - \mu$. Podemos normalizar esta variable por división con la desviación estándar de la muestra: $$
+Sea $\mu$ la media real --por convención se usa la letra griega $\mu$ que corresponde a *m* para la *m*edia de la población. La desviación de la media de la muestra entonces es de $161,94 - \mu$. Podemos normalizar esta variable por división con la desviación estándar de la muestra: 
+
+$$
 z = {161,94 - \mu\over1,257}
 $$
 
-Recordemos que se usa *z* para la variable normalizada. Para muestras desde más o menos 30 observaciones, z tiene una distribución normal, con lo cual nos podemos valer de la *regla empírica* y mirar la figura \@ref(fig:normal-curve-with-cuts) para darnos cuenta qué tan probable es que nuestro valor caiga dentro o fuera de los rangos esperados. El error estándar es, entonces, el rango de valores que caen dentro de una desviación estándar en la curva normal del error, es decir que hay un 68% de probabilidad de que el valor real esté dentro del rango reportado.
+Recordemos que se usa *z* para la variable normalizada. Para muestras desde más o menos 30 observaciones, z tiene una distribución normal, con lo cual nos podemos valer de la *regla empírica* y mirar la [figura @fig-normal-curve-with-cuts] para darnos cuenta qué tan probable es que nuestro valor caiga dentro o fuera de los rangos esperados. El error estándar es, entonces, el rango de valores que caen dentro de una desviación estándar en la curva normal del error, es decir que hay un 68% de probabilidad de que el valor real esté dentro del rango reportado.
 
-Podemos valernos de esta información para calcular rangos que nos den más confianza en nuestra estimación. La regla empírica dice que el 95% de las observaciones se encuentran entre dos desviaciones estándar de la media. Si se expresa con un poco más de precisión es de 1,96. Este *número mágico* o *valor crítico* de usa mucho en los textos con análisis cuantitativo ya que se puede demostrar matemáticamente que: $$
+Podemos valernos de esta información para calcular rangos que nos den más confianza en nuestra estimación. La regla empírica dice que el 95% de las observaciones se encuentran entre dos desviaciones estándar de la media. Si se expresa con un poco más de precisión es de 1,96. Este *número mágico* o *valor crítico* de usa mucho en los textos con análisis cuantitativo ya que se puede demostrar matemáticamente que: 
+
+$$
 \text{media de la muestra} \pm(1,96\times{SE})
-$$ es un estimado de la media de la población con un 95% de confianza.
+$$ 
+es un estimado de la media de la población con un 95% de confianza.
 
 De la misma manera tenemos:
 

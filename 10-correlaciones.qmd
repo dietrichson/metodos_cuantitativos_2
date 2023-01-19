@@ -87,7 +87,7 @@ ggplot(data = values %>% filter(correlation < -.99), mapping = aes(x,y)) +
   geom_point()
 ```
 
-En la figura \@ref(fig:no-correlation) vemos un caso de correlación inexistente entre las variables en cuestión.
+En la [figura @fig-no-correlation] vemos un caso de correlación inexistente entre las variables en cuestión.
 
 ```{r}
 #| label: fig-no-correlation
@@ -194,7 +194,7 @@ De la misma manera *y* tiene su desviación estándar: $$
 s_y = {\sqrt{(\sum(y-\bar{y})^2\over{N-1}}}.
 $$
 
-Ahora podemos normalizar las variables según \@ref(def:definition-z-score) asi:
+Ahora podemos normalizar las variables según la [definición @def-definition-z-score] asi:
 
 $$
 z_x = {x-\bar{x}\over{s_x}},
@@ -327,9 +327,10 @@ cor(datos$x, datos$y)
 
 ### Coeficiente Spearman
 
-Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o $\rho$ de la letra griega *r* se calcula según la definición \@ref(def:definition-spearman-correlation).
+Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o $\rho$ de la letra griega *r* se calcula según la [definición @def-definition-spearman-correlation].
 
-::: {def-definition-spearman-correlation
+::: {#def-definition-spearman-correlation}
+
 ## Coeficiente de correlación de Spearman
 
 $$
@@ -384,7 +385,7 @@ g <- g+
 g
 ```
 
-En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1^o^ pero no el 2^o^. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la definición \@ref(def:phi-correlation).
+En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1^o^ pero no el 2^o^. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la [definición @def-phi-correlation].
 
 ::: {#def-phi-correlation}
 ## Coefficiente de $\phi$
@@ -394,9 +395,11 @@ $$
 $$
 :::
 
-Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la definición \@ref(def:chi-squared). De hecho se relacionan matemáticamente: $$
+Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la [definición @def-chi-squared]. De hecho se relacionan matemáticamente: 
+$$
 \phi = \sqrt{\chi^2/N} \Leftrightarrow \chi^2 = N\times\phi^2.
-$$ Por tanto la significanza de $\phi$ se puede obtener por medio de la conversión a $\chi^2$.
+$$ 
+Por tanto la significanza de $\phi$ se puede obtener por medio de la conversión a $\chi^2$.
 
 ```{r, include=FALSE}
 # Agregar ejemplo en R?

@@ -281,10 +281,9 @@ div.csl-indent {
   </ul></li>
   <li><a href="#coeficiente-de-correlación-pearson" id="toc-coeficiente-de-correlación-pearson" class="nav-link" data-scroll-target="#coeficiente-de-correlación-pearson"><span class="toc-section-number">10.4</span>  Coeficiente de correlación Pearson</a></li>
   <li><a href="#coeficiente-spearman" id="toc-coeficiente-spearman" class="nav-link" data-scroll-target="#coeficiente-spearman"><span class="toc-section-number">10.4.1</span>  Coeficiente Spearman</a></li>
-  <li><a href="#coeficiente-de-correlación-de-spearman" id="toc-coeficiente-de-correlación-de-spearman" class="nav-link" data-scroll-target="#coeficiente-de-correlación-de-spearman"><span class="toc-section-number">10.5</span>  Coeficiente de correlación de Spearman</a></li>
-  <li><a href="#coeficiente-phi" id="toc-coeficiente-phi" class="nav-link" data-scroll-target="#coeficiente-phi"><span class="toc-section-number">10.5.1</span>  Coeficiente <span class="math inline">\(\phi\)</span></a></li>
-  <li><a href="#interpretación-de-correlacciones" id="toc-interpretación-de-correlacciones" class="nav-link" data-scroll-target="#interpretación-de-correlacciones"><span class="toc-section-number">10.6</span>  Interpretación de correlacciones</a></li>
-  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">10.7</span>  Glosario</a></li>
+  <li><a href="#coeficiente-phi" id="toc-coeficiente-phi" class="nav-link" data-scroll-target="#coeficiente-phi"><span class="toc-section-number">10.4.2</span>  Coeficiente <span class="math inline">\(\phi\)</span></a></li>
+  <li><a href="#interpretación-de-correlacciones" id="toc-interpretación-de-correlacciones" class="nav-link" data-scroll-target="#interpretación-de-correlacciones"><span class="toc-section-number">10.5</span>  Interpretación de correlacciones</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">10.6</span>  Glosario</a></li>
   </ul>
 </nav>
     </div>
@@ -355,7 +354,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>En la figura @ref(fig:no-correlation) vemos un caso de correlación inexistente entre las variables en cuestión.</p>
+<p>En la <a href="#fig-no-correlation">figura&nbsp;<span>10.5</span></a> vemos un caso de correlación inexistente entre las variables en cuestión.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-no-correlation" class="quarto-figure quarto-figure-center anchored">
@@ -445,7 +444,7 @@ s_x = {\sqrt{(\sum(x-\bar{x})^2\over{N-1}}}.
 <p>De la misma manera <em>y</em> tiene su desviación estándar: <span class="math display">\[
 s_y = {\sqrt{(\sum(y-\bar{y})^2\over{N-1}}}.
 \]</span></p>
-<p>Ahora podemos normalizar las variables según @ref(def:definition-z-score) asi:</p>
+<p>Ahora podemos normalizar las variables según la <a href="04-la-distribucion-normal.html#def-definition-z-score">definición&nbsp;<span>4.1</span></a> asi:</p>
 <p><span class="math display">\[
 z_x = {x-\bar{x}\over{s_x}},
 \]</span></p>
@@ -722,14 +721,12 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 </div>
 <section id="coeficiente-spearman" class="level3" data-number="10.4.1">
 <h3 data-number="10.4.1" class="anchored" data-anchor-id="coeficiente-spearman"><span class="header-section-number">10.4.1</span> Coeficiente Spearman</h3>
-<p>Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o <span class="math inline">\(\rho\)</span> de la letra griega <em>r</em> se calcula según la definición @ref(def:definition-spearman-correlation).</p>
-</section>
-<section id="coeficiente-de-correlación-de-spearman" class="level2 {def-definition-spearman-correlation" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="coeficiente-de-correlación-de-spearman"><span class="header-section-number">10.5</span> Coeficiente de correlación de Spearman</h2>
-<p><span class="math display">\[
+<p>Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o <span class="math inline">\(\rho\)</span> de la letra griega <em>r</em> se calcula según la <a href="#def-definition-spearman-correlation">definición&nbsp;<span>10.2</span></a>.</p>
+<div id="def-definition-spearman-correlation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 10.2 (Coeficiente de correlación de Spearman) </strong></span><span class="math display">\[
 \rho = 1-{6\sum{d^2}\over{N(N^2-1)}}  
 \]</span></p>
-</section>
+</div>
 <p>Imaginamos que pedimos a diez personas que ranqueen en una escala de uno a diez cuánto les gustaron dos cafeterías de Buenos Aires. Ya que los datos son de escala ordinal, tenemos que recurrir a <em>Spearman</em>. Usamos la misma función <code>cor</code> con un parámetro extra: <code>method = "spearman"</code> para indicar que queremos usar la correlación de Spearman.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargamos datos</span></span>
@@ -745,8 +742,9 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 </div>
 </div>
 <p>Observamos que hay alto grado de correlación entre los ranking de los dos cafés.</p>
-<section id="coeficiente-phi" class="level3" data-number="10.5.1">
-<h3 data-number="10.5.1" class="anchored" data-anchor-id="coeficiente-phi"><span class="header-section-number">10.5.1</span> Coeficiente <span class="math inline">\(\phi\)</span></h3>
+</section>
+<section id="coeficiente-phi" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="coeficiente-phi"><span class="header-section-number">10.4.2</span> Coeficiente <span class="math inline">\(\phi\)</span></h3>
 <p>Si las dos variables en cuestión son nominales la pregunta se reduce a: ¿Si observamos la propiedad A es probable que observemos también B? Si estamos trabajando con datos educativos la pregunta podría ser ¿Si el estudiante responde correctamente el 1<sup>r</sup> ítem, es probable que también acierte el 2<sup>o</sup>? Esto se puede representar en una tabla <span class="math inline">\(2\times2\)</span> como la que vemos en la <a href="#fig-two-by-two-general">figura&nbsp;<span>10.7</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -758,23 +756,23 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 </div>
 </div>
 </div>
-<p>En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1<sup>o</sup> pero no el 2<sup>o</sup>. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la definición @ref(def:phi-correlation).</p>
+<p>En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1<sup>o</sup> pero no el 2<sup>o</sup>. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la <a href="#def-phi-correlation">definición&nbsp;<span>10.3</span></a>.</p>
 <div id="def-phi-correlation" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 10.2 (Coefficiente de <span class="math inline">\(\phi\)</span>) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 10.3 (Coefficiente de <span class="math inline">\(\phi\)</span>) </strong></span><span class="math display">\[
 \phi = {{BC-AD}\over{\sqrt{(A+B)\times(C+D)\times(A+C)\times(B+D)}}}
 \]</span></p>
 </div>
-<p>Debería quedar claro que el coeficiente <span class="math inline">\(\phi\)</span> está estrechamente relacionado con la prueba de <span class="math inline">\(\chi^2\)</span> que vimos en la definición @ref(def:chi-squared). De hecho se relacionan matemáticamente: <span class="math display">\[
+<p>Debería quedar claro que el coeficiente <span class="math inline">\(\phi\)</span> está estrechamente relacionado con la prueba de <span class="math inline">\(\chi^2\)</span> que vimos en la <a href="09-chi-cuadrado.html#def-chi-squared">definición&nbsp;<span>9.1</span></a>. De hecho se relacionan matemáticamente: <span class="math display">\[
 \phi = \sqrt{\chi^2/N} \Leftrightarrow \chi^2 = N\times\phi^2.
 \]</span> Por tanto la significanza de <span class="math inline">\(\phi\)</span> se puede obtener por medio de la conversión a <span class="math inline">\(\chi^2\)</span>.</p>
 </section>
-<section id="interpretación-de-correlacciones" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="interpretación-de-correlacciones"><span class="header-section-number">10.6</span> Interpretación de correlacciones</h2>
+<section id="interpretación-de-correlacciones" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="interpretación-de-correlacciones"><span class="header-section-number">10.5</span> Interpretación de correlacciones</h2>
 <p>Es muy importante entender que una correlación, incluso alta, entre dos variables no quiere decir que la relación entre ellas es de causa y efecto. Si hacemos una muestra en la escuela secundaria y medimos estatura, por un lado, y nivel de inglés por otra, es bastante probable que encontremos una correlación muy fuerte entre las dos variables. Pero debería estar claro que ni la estatura causa conocimientos de inglés ni tampoco lo contrario. Lo que claramente pasa es que mas <em>edad</em> los estudiantes tienen más estatura y han cursado más niveles de inglés.</p>
 <p>Saltar a conclusiones sobre causalidad basadas en correlaciones es tal vez el error estadístico más frecuente en la literatura tanto académica como periodística. Nunca hay que olvidar que una correlación significativa solo nos dice que existe una relación <em>matemática</em> entre dos variables. No nos indica cómo interpretarla ni mucho menos sobre sus causas y efectos.</p>
 </section>
-<section id="glosario" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="glosario"><span class="header-section-number">10.7</span> Glosario</h2>
+<section id="glosario" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="glosario"><span class="header-section-number">10.6</span> Glosario</h2>
 <dl>
 <dt>Coeficiente <span class="math inline">\(\phi\)</span> «fi».</dt>
 <dd>

@@ -333,8 +333,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="9.2" class="anchored" data-anchor-id="prueba-de-independencia-o-asociación"><span class="header-section-number">9.2</span> Prueba de independencia o asociación</h2>
 <p>Un uso muy frecuente de la prueba de <span class="math inline">\(\chi^2\)</span> es la de probar si dos características son independientes o tienen una asociación de manera que las frecuencias elevadas en una de ellas suele ser acompañado con frecuencias altas en la otra.</p>
 <p>Digamos que estamos haciendo una encuesta de opinión y preguntamos a 1230 argentinas y a 961 argentinos si están a favor o en contra de la ley del aborto o no. Queremos saber si en género de la persona está asociado con esa opinión. Entonces nuestros datos se pueden desplegar en una tabla 2 por 2.</p>
-<div class="cell">
-<div class="cell-output-display">
+<div id="tbl-opiniones-aborto-i" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p><strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <table class="table table-sm table-striped">
 <thead>
 <tr class="header">
@@ -358,20 +362,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
+</div>
 <p>La hipótesis nula es que no hay asociación entre las dos variables, es decir que el género de la persona no se asocia con su opinión política sobre este tema. Para calcular los valores esperados tenemos que calcular las sumas de las filas y las columnas y además el total de ellos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab-opiniones-aborto-ii</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>M2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(M,<span class="fu">rowSums</span>(M))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>M2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(M2,<span class="fu">colSums</span>(M2))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>M2 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(M2) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">total=</span>V3)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(M2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span>,<span class="st">"total"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>M2 <span class="sc">%&gt;%</span> knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption=</span><span class="st">"Opiniones sobre la ley del aborto."</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div id="tbl-opiniones-aborto-ii" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabla&nbsp;9.1: <strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-opiniones-aborto-ii-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-opiniones-aborto-ii" style="flex-basis: 100.0%;justify-content: center;">
 <table class="table table-sm table-striped">
-<caption>Opiniones sobre la ley del aborto.</caption>
+<caption>(a) Opiniones sobre la ley del aborto.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -403,24 +403,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 </div>
+</div>
 <p>El valor esperado es la cantidad de las observaciones que caen en cada celda si las distribuimos proporcionalmente. Esto se calcula multiplicando las sumas de la fila y columna de la celda respectiva y dividir por el total de las observaciones. Por ejemplo, el valor esperado de mujeres a favor sería:</p>
 <p><span class="math display">\[
 E = {{1230\times1246}\over2191} = 699,48
 \]</span></p>
 <p>Si calculamos esto para todas las celdas obtenemos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab-opiniones-aborto-iii</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>myTest <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(M)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> myTest<span class="sc">$</span>expected </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(M3,<span class="fu">rowSums</span>(M3))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(M3,<span class="fu">colSums</span>(M3))</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(M3) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">total=</span>V3)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(M3) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span>,<span class="st">"total"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>M3<span class="sc">%&gt;%</span> </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>( <span class="at">format.args =</span> <span class="fu">list</span>(<span class="at">decimal.mark=</span><span class="st">','</span>), <span class="at">digits=</span><span class="dv">2</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">caption=</span><span class="st">"Valores esperados: opiniones sobre la ley del aborto."</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-opiniones-aborto-iii</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>myTest <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(M)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> myTest<span class="sc">$</span>expected </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(M3,<span class="fu">rowSums</span>(M3))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(M3,<span class="fu">colSums</span>(M3))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>M3 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(M3) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">total=</span>V3)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(M3) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span>,<span class="st">"total"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>M3<span class="sc">%&gt;%</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>( <span class="at">format.args =</span> <span class="fu">list</span>(<span class="at">decimal.mark=</span><span class="st">','</span>), <span class="at">digits=</span><span class="dv">2</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">caption=</span><span class="st">"Valores esperados: opiniones sobre la ley del aborto."</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>Valores esperados: opiniones sobre la ley del aborto.</caption>
@@ -456,10 +457,14 @@ E = {{1230\times1246}\over2191} = 699,48
 </div>
 </div>
 <p>y con esto podemos calcular las diferencias.</p>
-<div class="cell">
-<div class="cell-output-display">
+<div id="tbl-opiniones-aborto-iiii" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabla&nbsp;9.2: <strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-opiniones-aborto-iiii-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-opiniones-aborto-iiii" style="flex-basis: 100.0%;justify-content: center;">
 <table class="table table-sm table-striped">
-<caption>Diferencias entre valores observados y esperados.</caption>
+<caption>(a) Diferencias entre valores observados y esperados.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -482,6 +487,7 @@ E = {{1230\times1246}\over2191} = 699,48
 </table>
 </div>
 </div>
+</div>
 <p>y podemos aplicar la fórmula en la <a href="#def-chi-squared">definición&nbsp;<span>9.1</span></a>:</p>
 <p><span class="math display">\[
 \chi^2 = \sum{(O-E)^2\over{E}} = {62,52^2\over699,49} +{-62,52^2\over530,51} +{62,52^2\over546,51}+{-62,52^2\over414,49} = 29,53.
@@ -489,11 +495,15 @@ E = {{1230\times1246}\over2191} = 699,48
 <p>Podemos comparar este valor con los de la tabla en el <a href="#chi-square-disrtibution">apendice C</a> para un grado de libertad. Vemos que rechazamos <span class="math inline">\(H_0\)</span> y concluimos que el género sí influye en la opinión sobre este tema.</p>
 <section id="degrees-of-freedom" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="degrees-of-freedom"><span class="header-section-number">9.2.1</span> Grados de libertad</h3>
-<p>A lo largo de este texto se ha mencionado en algunas ocasiones el término <em>grados de libertad</em> y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la tabla @ref(tab:opiniones-aborto-ii) en la que tenemos una tabla de contingencia <span class="math inline">\(2\times2\)</span>. Calculamos en ese caso las frecuencias marginales que están el la columna <em>suma</em>. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la tabla @ref(tab:degrees-of-freedom)</p>
-<div class="cell">
-<div class="cell-output-display">
+<p>A lo largo de este texto se ha mencionado en algunas ocasiones el término <em>grados de libertad</em> y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la <a href="#tbl-opiniones-aborto-ii">tabla&nbsp;<span>9.1</span></a> en la que tenemos una tabla de contingencia <span class="math inline">\(2\times2\)</span>. Calculamos en ese caso las frecuencias marginales que están el la columna <em>suma</em>. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la <a href="#tbl-degrees-of-freedom">tabla&nbsp;<span>9.3</span></a>.</p>
+<div id="tbl-degrees-of-freedom" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabla&nbsp;9.3: <strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-degrees-of-freedom-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-degrees-of-freedom" style="flex-basis: 100.0%;justify-content: center;">
 <table class="table table-sm table-striped">
-<caption>Tabla de contingencia con un solo valor.</caption>
+<caption>(a) Tabla de contingencia con un solo valor.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -525,6 +535,7 @@ E = {{1230\times1246}\over2191} = 699,48
 </table>
 </div>
 </div>
+</div>
 <p>Con este único valor podemos rellenar las demás celdas, ya que su contenido está dato por la diferencia entre ese valor y los totales marginales. Esto quiere decir que en esta tabla hay un solo valor que se pueda asignar arbitrariamente, el resto está dado por este valor. Por ello decimos que tenemos un solo grado de libertad.</p>
 <p>En capítulos anteriores hemos visto que los grados de libertad a menudo son N-1. Podemos usar un ejemplo sencillo para demostrar por qué tiene que ser así. Si hacemos un conjunto de tres números y queremos que la suma sea diez, podemos asignar cualquier número en las primeras dos posiciones, pero cuando vamos a asignar el tercero ya no tenemos libertad de eligir. Entonces tenemos dos grados de libertad.</p>
 <p>Para una tabla de contingencia la fórmula general para calcular los grados de libertad es: <span class="math inline">\((c-1)\times(f-1)\)</span> es decir número de columnas menos uno por número de filas menos uno. Si la tabla es de <span class="math inline">\(3\times3\)</span>, tendríamos 4 grados de libertad.</p>
@@ -535,16 +546,16 @@ E = {{1230\times1246}\over2191} = 699,48
 <p><br>
 En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(\chi^2\)</span> que fuimos desarrollando en las secciones anteriores. Podemos usar la función de R <code>chisq.test</code> para realizarla. Toma como argumento una <em>matriz</em> de datos de las frecuencias.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">as.table</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">762</span>, <span class="dv">468</span>), </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="dv">484</span>, <span class="dv">477</span>))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Damos nombre a las columnas y las filas </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A favor"</span>,<span class="st">"En contra"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificamos el ingreso de datos</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>M</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">as.table</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">762</span>, <span class="dv">468</span>), </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="dv">484</span>, <span class="dv">477</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Damos nombre a las columnas y las filas </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A favor"</span>,<span class="st">"En contra"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificamos el ingreso de datos</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>M</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;         A favor En contra
 #&gt; Mujeres     762       468
@@ -553,8 +564,8 @@ En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(
 </div>
 <p>Como se puede observar, la sintaxis de R no es del todo intuitiva, por lo que siempre conviene verificar que tenemos los números y nombres correctos antes de proceder con el test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizamos test de ji-cuadrado</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizamos test de ji-cuadrado</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt;  Pearson's Chi-squared test with Yates' continuity
@@ -567,7 +578,7 @@ En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(
 <p>El valor de <em>p</em> es tan bajo que R lo devuelve en <em>notación científica</em>. La parte <em>e-08</em> quiere decir que el número es: 0,000000007019, es decir que hay <em>ocho</em> ceros antes de los dígitos significativos.</p>
 <p>También vemos que el valor de <span class="math inline">\(\chi^2\)</span> que calculó R es distinto al que calculamos a mano, aunque sea por unas décimas. Esto se debe a que por defecto R hace una <em>corrección de Yates</em>. Yates descubrió que para una tabla de contingencia <span class="math inline">\(2\times2\)</span> hay un sesgo positivo y propuso una técnica para contrarrestar el sesgo. Si queremos usar la formula original, y la que usamos para nuestro cálculo a mano podemos agregar el parámetro <code>correct = FALSE</code> a la función así:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt;  Pearson's Chi-squared test

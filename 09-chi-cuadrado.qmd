@@ -65,7 +65,7 @@ Un uso muy frecuente de la prueba de $\chi^2$ es la de probar si dos caracterís
 Digamos que estamos haciendo una encuesta de opinión y preguntamos a 1230 argentinas y a 961 argentinos si están a favor o en contra de la ley del aborto o no. Queremos saber si en género de la persona está asociado con esa opinión. Entonces nuestros datos se pueden desplegar en una tabla 2 por 2.
 
 ```{r}
-#| label: tab-opiniones-aborto-i
+#| label: tbl-opiniones-aborto-i
 #| echo: false
 
 M <- as.table(rbind(c(762, 468), c(484, 477)))
@@ -77,8 +77,7 @@ knitr::kable(M)
 La hipótesis nula es que no hay asociación entre las dos variables, es decir que el género de la persona no se asocia con su opinión política sobre este tema. Para calcular los valores esperados tenemos que calcular las sumas de las filas y las columnas y además el total de ellos.
 
 ```{r}
-
-#| label: tab-opiniones-aborto-ii
+#| label: tbl-opiniones-aborto-ii
 #| echo: false
 
 M2 <- cbind(M,rowSums(M))
@@ -99,7 +98,7 @@ Si calculamos esto para todas las celdas obtenemos:
 
 ```{r}
 
-#| label: tab-opiniones-aborto-iii
+#| label: tbl-opiniones-aborto-iii
 #| echo: false
 myTest <- chisq.test(M)
 M3 <- myTest$expected 
@@ -116,7 +115,7 @@ M3%>%
 y con esto podemos calcular las diferencias.
 
 ```{r}
-#| label: tab-opiniones-aborto-iiii
+#| label: tbl-opiniones-aborto-iiii
 #| echo: false
 M4 <- myTest$observed - myTest$expected
 
@@ -134,10 +133,10 @@ Podemos comparar este valor con los de la tabla en el [apendice C](#chi-square-d
 
 ### Grados de libertad {#degrees-of-freedom}
 
-A lo largo de este texto se ha mencionado en algunas ocasiones el término *grados de libertad* y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la tabla \@ref(tab:opiniones-aborto-ii) en la que tenemos una tabla de contingencia $2\times2$. Calculamos en ese caso las frecuencias marginales que están el la columna *suma*. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la tabla \@ref(tab:degrees-of-freedom)
+A lo largo de este texto se ha mencionado en algunas ocasiones el término *grados de libertad* y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la [tabla @tbl-opiniones-aborto-ii] en la que tenemos una tabla de contingencia $2\times2$. Calculamos en ese caso las frecuencias marginales que están el la columna *suma*. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la [tabla @tbl-degrees-of-freedom].
 
 ```{r}
-#| label: tab-degrees-of-freedom
+#| label: tbl-degrees-of-freedom
 #| echo: false
 options(knitr.kable.NA='-')
 M5 <- M2

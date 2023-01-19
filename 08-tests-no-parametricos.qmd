@@ -9,7 +9,7 @@ En el [capítulo @sec-pruebas-parametricas] vimos que para usar esas pruebas ten
 
 Por suerte todavía hay esperanza. Existen algunas pruebas estadísticas, llamadas *no paramétricas* que nos pueden salvar en estos casos. En este capítulo desarrollaremos tres de ellos.
 
-## Prueba U de Mann-Whitney
+## Prueba U de Mann-Whitney {#sec-prueba-u-de-mann-whitney}
 
 La prueba U de Mann-Whitney resulta útil si tenemos dos muestras independientes y queremos si hay una diferencia en la magnitud de la variable que estamos estudiando, pero no podemos usar la prueba de t independiente o la prueba de z porque los datos no cumplen con alguno de los requisitos. Para realizar la prueba U de Mann-Whitney ponemos las observaciones de las dos muestras en orden ascendiente y asignamos un rango ordinal de manera que 1 corresponde a la observación de menor magnitud, 2 a la segunda etcétera. Luego nos fijamos en las diferencias entre las observaciones.
 
@@ -41,13 +41,14 @@ wilcox.test(Hombres, Mujeres)
 Vemos que no podemos rechazar $H_0$ en este caso.
 :::
 
-## Prueba de los rangos con signo de Wilcoxon {#wilcoxon-signed-rank-test}
+## Prueba de los rangos con signo de Wilcoxon {#sec-prueba-de-los-rangos-con-signo-de-wilcoxon}
 
-Vimos en la sección \@ref(prueba-u-de-mann-whitney) que la prueba U de Mann-Whitney puede ser una alternativa a la prueba de t de Student para muestras intependiente (véase la sección \@ref(prueba-t-de-student-para-muestras-independientes)) cuando los requisitos para un test paramétrico no se cumplen. Si los datos son pareados tenemos la *prueba de los rangos con signo de Wilcoxon* como alternativa a prueba t para muestras pareadas que vimos en la sección \@ref(prueba-t-para-muestras-pareadas).
+Vimos en la [sección @sec-prueba-u-de-mann-whitney] que la prueba U de Mann-Whitney puede ser una alternativa a la prueba de t de Student para muestras intependiente (véase la [sección @sec-prueba-t-de-student-para-muestras-independientes]) cuando los requisitos para un test paramétrico no se cumplen. Si los datos son pareados tenemos la *prueba de los rangos con signo de Wilcoxon* como alternativa a prueba t para muestras pareadas que vimos en la [sección @sec-prueba-t-para-muestras-pareadas].
 
 La lógica de la prueba de los rangos con signo de Wilcoxon es similar a la de la prueba de t pareada. Si no hay diferencia en el antes y despues, por ejemplo, las diferencias entre las observaciones deberían tender a cero.
 
 ::: {#exm-wilcoxon-sign-test-in-r}
+
 ## Prueba de los rangos con signo de Wilcoxon en R
 
 \
@@ -124,9 +125,9 @@ t.test(datos$Droga.A, datos$Droga.B, paired = TRUE)
 
 Podemos observar que la prueba de t es sensible a la falta de normalidad en nuestras variables y no logra rechazar $H_0$.
 
-## Prueba de signos
+## Prueba de signos {#sec-prueba-de-signos}
 
-La prueba de Wilcoxon que vimos en la sección \@ref(wilcoxon-signed-rank-test) requiere que los datos tengan una escala de medición (véase la [sección @sec-variables-y-su-clasificacion]) de intervalo. Pero a veces tenemos datos que solo se pueden medir a escala ordinal como por ejemplo la preferencia por alguna bebida de 1 a 5. En este caso no es razonable afirmar que la diferencia entre uno y dos es la misma que entre dos y tres, entonces no podemos tomar en cuenta la magnitud de esas diferencias.
+La prueba de Wilcoxon que vimos en la [sección @sec-prueba-de-los-rangos-con-signo-de-wilcoxon] requiere que los datos tengan una escala de medición (véase la [sección @sec-variables-y-su-clasificacion]) de intervalo. Pero a veces tenemos datos que solo se pueden medir a escala ordinal como por ejemplo la preferencia por alguna bebida de 1 a 5. En este caso no es razonable afirmar que la diferencia entre uno y dos es la misma que entre dos y tres, entonces no podemos tomar en cuenta la magnitud de esas diferencias.
 
 La prueba de signos resuelve este problema convirtiendo la diferencia en una variable trinaria: puede ser cero, positiva o negativa. La lógica del test es similar a la de Wilcoxon, si no hay un patrón en las observaciones estas diferencias deberían tender a cero. Para realizar un test de signo debemos primero anotar el signo (positivo, negativo o cero) de todas los pares de observaciones que tenemos. Cuando la diferencia es cero se excluye el par del análisis y reducimos *N* acorde a eso. Luego sumamos los positivos por un lado y los negativos por otro y tomamos el *menor* le los dos. Este número, a menudo significado por una *W*, de puede compara con la tabla de valores críticos para el N que quedó, que se puede consultar en el [apendice B](#valores-criticos-del-test-de-signo) para N entre 5 y 25.
 

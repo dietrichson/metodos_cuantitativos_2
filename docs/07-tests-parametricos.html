@@ -273,10 +273,10 @@ div.csl-indent {
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#prueba-t-de-student-para-muestras-independientes" id="toc-prueba-t-de-student-para-muestras-independientes" class="nav-link active" data-scroll-target="#prueba-t-de-student-para-muestras-independientes"><span class="toc-section-number">7.1</span>  Prueba t de Student para muestras independientes</a></li>
+  <li><a href="#sec-prueba-t-de-student-para-muestras-independientes" id="toc-sec-prueba-t-de-student-para-muestras-independientes" class="nav-link active" data-scroll-target="#sec-prueba-t-de-student-para-muestras-independientes"><span class="toc-section-number">7.1</span>  Prueba t de Student para muestras independientes</a></li>
   <li><a href="#sec-test-de-normalidad" id="toc-sec-test-de-normalidad" class="nav-link" data-scroll-target="#sec-test-de-normalidad"><span class="toc-section-number">7.2</span>  Prueba de Shapiro-Wilks</a></li>
   <li><a href="#prueba-de-fisher" id="toc-prueba-de-fisher" class="nav-link" data-scroll-target="#prueba-de-fisher"><span class="toc-section-number">7.3</span>  Prueba de Fisher</a></li>
-  <li><a href="#prueba-t-para-muestras-pareadas" id="toc-prueba-t-para-muestras-pareadas" class="nav-link" data-scroll-target="#prueba-t-para-muestras-pareadas"><span class="toc-section-number">7.4</span>  Prueba t para muestras pareadas</a></li>
+  <li><a href="#sec-prueba-t-para-muestras-pareadas" id="toc-sec-prueba-t-para-muestras-pareadas" class="nav-link" data-scroll-target="#sec-prueba-t-para-muestras-pareadas"><span class="toc-section-number">7.4</span>  Prueba t para muestras pareadas</a></li>
   <li><a href="#prueba-de-z" id="toc-prueba-de-z" class="nav-link" data-scroll-target="#prueba-de-z"><span class="toc-section-number">7.5</span>  Prueba de z</a></li>
   <li><a href="#resumen-de-procedimiento" id="toc-resumen-de-procedimiento" class="nav-link" data-scroll-target="#resumen-de-procedimiento"><span class="toc-section-number">7.6</span>  Resumen de procedimiento</a></li>
   <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">7.7</span>  Glosario</a></li>
@@ -309,8 +309,8 @@ div.csl-indent {
 <li>Las varianzas de las muestras debe aproximadamente similar<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
 </ol>
 <p>Las pruebas estadísticas son las que nos permiten, a algún nivel de significanza, rechazar o aceptar la hipótesis nula (<span class="math inline">\(H_0\)</span>), por lo que son de bastante utilidad en investigaciones cuantitativas.</p>
-<section id="prueba-t-de-student-para-muestras-independientes" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="prueba-t-de-student-para-muestras-independientes"><span class="header-section-number">7.1</span> Prueba t de Student para muestras independientes</h2>
+<section id="sec-prueba-t-de-student-para-muestras-independientes" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-prueba-t-de-student-para-muestras-independientes"><span class="header-section-number">7.1</span> Prueba t de Student para muestras independientes</h2>
 <p>Supongamos que tenemos dos muestras aleatorias e independientes con medias de <span class="math inline">\(\bar{x_1}\)</span> y <span class="math inline">\(\bar{x_2}\)</span> y que queremos saber si estas dos medias son signifacativamente distintas a un nivel de <span class="math inline">\(p\leqslant0,05\)</span>. Esto es lo mismo que decir que si afirmamos que hay una diferencia entre las muestras tenemos un 95% de probabilidad de tener razón. Lo que tenemos que calcular, entonces, es la probabilidad de que las dos muestras pueder provenir de la misma distribución y que la diferencia que vemos es por varianza en esa población. En otras palabras: queremos saber si dos muestras con la diferencia observada (<span class="math inline">\(\bar{x_1}-\bar{x_2}\)</span>) podrían tener provenir de la misma población.</p>
 <p>Si sacamos un número significativo de muestras de una misma población la media de estas muestra va a tener una diferencia con la media de la población, en algunos casos más altos y en otros más bajos. Usamos este conocimiento para calcular el error estándar:</p>
 <p><span id="eq-error-estandard"><span class="math display">\[
@@ -367,7 +367,7 @@ t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 <p><span class="math display">\[
 SED = \sqrt{s^2_1/N_1 + s^2_1/N_2} = \sqrt{2,490^2/30 + 3,308^2/N_2} = 0,756
 \]</span></p>
-<p>y podemos calcular el valor de t aplicando la fórmula de la definición @ref(def:test-t)</p>
+<p>y podemos calcular el valor de t aplicando la fórmula de la <a href="#def-t-test">definición&nbsp;<span>7.3</span></a></p>
 <p><span class="math display">\[
 t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 \]</span></p>
@@ -468,8 +468,8 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 </div>
 <p>Vemos que el valor de probabilidad <span class="math inline">\(p\)</span> es mayor a nuestro nivel de significanza (<span class="math inline">\(p\leqslant0,05\)</span>), con lo cual <em>no rechazamos</em> <span class="math inline">\(H_0\)</span> y concluimos que las varianzas son relativamente similares.</p>
 </section>
-<section id="prueba-t-para-muestras-pareadas" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="prueba-t-para-muestras-pareadas"><span class="header-section-number">7.4</span> Prueba t para muestras pareadas</h2>
+<section id="sec-prueba-t-para-muestras-pareadas" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-prueba-t-para-muestras-pareadas"><span class="header-section-number">7.4</span> Prueba t para muestras pareadas</h2>
 <p>En los ejemplos <a href="#exm-manual-t-test"><span>7.1</span></a> y <a href="#exm-t-test-in-r"><span>7.2</span></a> teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones <em>pareadas</em> o datos <em>interdependientes</em>. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.</p>
 <p>En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la <a href="#def-dependent-t-test">definición&nbsp;<span>7.4</span></a>.</p>
 <div id="def-dependent-t-test" class="theorem definition">
@@ -486,8 +486,8 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
 <p>Lo que nos va a decir la prueba t en este caso es si la diferencia es significativamente diferente a cero: Si la variable independiente no tiene efecto entonces debería dar lo mismo medir antes o después. Las hipótesis planteadas son, por tanto:</p>
 <p><span class="math inline">\(H_0: \bar{X}_D = 0\)</span>,</p>
 <p><span class="math inline">\(H_1: \bar{X}_D \neq 0\)</span>.</p>
-<p>:::{#exm-dependent-t-test-example} ## Prueba t dependiente<br>
-En este ejemplo <span class="citation" data-cites="Shier2004">(<a href="11-referencias.html#ref-Shier2004" role="doc-biblioref">Shier 2004</a>)</span> vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la <a href="#tbl-diff-table">tabla&nbsp;<span>7.1</span></a>.</p>
+<div id="exm-dependent-t-test-example" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 7.5 (Prueba t dependiente) </strong></span>En este ejemplo <span class="citation" data-cites="Shier2004">(<a href="11-referencias.html#ref-Shier2004" role="doc-biblioref">Shier 2004</a>)</span> vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la <a href="#tbl-diff-table">tabla&nbsp;<span>7.1</span></a>.</p>
 <div id="tbl-diff-table" class="cell tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Tabla&nbsp;7.1: <strong>?(caption)</strong></p>
@@ -635,9 +635,10 @@ En este ejemplo <span class="citation" data-cites="Shier2004">(<a href="11-refer
 t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}}}=3,231.
 \]</span></p>
 <p>Buscando este valor en la tabla de valores críticos con 19 (N-1) grados de libertad vemos que sí podemos rechazar la hipótesis nula y concluir que hay una diferencia estadísticamente significativa entre los resultados de los dos tests.</p>
+</div>
 <div id="exm-t-test-example-in-r" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 7.5 (Ejemplo en R) </strong></span><br>
-Para reproducir en R lo que hicimos en el ejemplo @ref(exm:dependent-t-test-example) tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
+<p><span class="theorem-title"><strong>Ejemplo 7.6 (Ejemplo en R) </strong></span><br>
+Para reproducir en R lo que hicimos en el <a href="#exm-dependent-t-test-example">ejemplo&nbsp;<span>7.5</span></a> tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ingresamos los datos</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> datos.pre.post <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
