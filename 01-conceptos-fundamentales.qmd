@@ -151,9 +151,9 @@ Este ejemplo es extensible a muestras más grandes con cálculos similares. Se d
 |    9    |    1    |        0,010 |
 |   10    |    0    |        0,001 |
 
-: (#tab-probabilidades-combinaciones-posibles-diez) Probabilidades de las combinaciones de una muestra de diez.
+: Probabilidades de las combinaciones de una muestra de diez. {#tbl-probabilidades-combinaciones-posibles-diez}
 
-Obtendríamos los resultados de la tabla @tab-probabilidades-combinaciones-posibles-diez) y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa[^01-conceptos-fundamentales-4].
+Obtendríamos los resultados de la tabla @tbl-probabilidades-combinaciones-posibles-diez) y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa[^01-conceptos-fundamentales-4].
 
 [^01-conceptos-fundamentales-4]: Si se lleva este argumento al extremo: si el tamaño de la muestra fuera igual al tamaño de la población, la muestra sería perfectamente representativa.
 

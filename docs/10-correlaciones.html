@@ -112,7 +112,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./11-apendices.html" rel="next">
+<link href="./11-referencias.html" rel="next">
 <link href="./09-chi-cuadrado.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -236,9 +236,34 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución ji-cuadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -448,7 +473,7 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 <div id="exm-pearson-coefficient-calculation" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10.2 (Cálculo del Coeficiente de correlación de Pearson) </strong></span><br>
 </p>
-<p>En este ejemplo, adaptado de <span class="citation" data-cites="butler1985statistics">(<a href="#ref-butler1985statistics" role="doc-biblioref">Butler 1985</a>)</span>, vamos a suponer que hemos tomado un examen de traducción y otro de comprensión de inglés a doce estudiantes. Los resultados de estos exámenes están en la <a href="#tbl-resultados-dos-examenes">tabla&nbsp;<span>10.1</span></a>.</p>
+<p>En este ejemplo, adaptado de <span class="citation" data-cites="butler1985statistics">(<a href="11-referencias.html#ref-butler1985statistics" role="doc-biblioref">Butler 1985</a>)</span>, vamos a suponer que hemos tomado un examen de traducción y otro de comprensión de inglés a doce estudiantes. Los resultados de estos exámenes están en la <a href="#tbl-resultados-dos-examenes">tabla&nbsp;<span>10.1</span></a>.</p>
 <div id="tbl-resultados-dos-examenes" class="cell tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
 <p>Tabla&nbsp;10.1: <strong>?(caption)</strong></p>
@@ -660,28 +685,23 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 <li><span class="math inline">\(\Sigma{xy}\)</span> = 2124.</li>
 </ul>
 <p>Aplicamos la fórmula:</p>
-$$
-<span class="math display">\[\begin{split}
+<p><span class="math display">\[
+\begin{split}
 &amp;r= {N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\times\{N\Sigma{y^2}-(\Sigma{y})^2\} }}} \\
 &amp;~~~~~~~\Updownarrow\\
 &amp;r={12\times2~124-154\times162\over{\sqrt{\{12\times2~054-154^2\}\times\{12\times2~290-162^2\} }}} \\
 &amp;~~~~~~~\Updownarrow\\
-
 &amp;r={25~488-24~948\over{\sqrt{\{24~648-23~716\}\times\{27~480-26~244\} }}} \\
 &amp;~~~~~~~\Updownarrow\\
-
 &amp;r= {540\over{\sqrt{932\times1236}}} \\
 &amp;~~~~~~~\Updownarrow\\
 &amp;r= {540\over{\sqrt{1~151~932}}} \\
 &amp;~~~~~~~\Updownarrow\\
-
 &amp;r= {540\over1~073,28} \\
 &amp;~~~~~~~\Updownarrow\\
-
 &amp;r= 0,5031
-
-\end{split}\]</span>
-<p>$$</p>
+\end{split}
+\]</span></p>
 </div>
 <div id="exm-pearson-coefficient-calculation-in-r" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 10.3 (Cálculo del Coeficiente de correlación de Pearson en R) </strong></span>Si no queremos hacer todos los cálculos del <a href="#exm-pearson-coefficient-calculation">ejemplo&nbsp;<span>10.2</span></a> a mano podemos recurrir a R que con la función <code>cor</code> lo calcula.</p>
@@ -779,7 +799,7 @@ Relación entre dos variables que muestra que ambas aumentan o disminuyen simult
 </dl>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-butler1985statistics" class="csl-entry" role="doc-biblioentry">
 Butler, Christopher. 1985. <em>Statistics in linguistics</em>. Basil Blackwell.
 </div>
@@ -899,8 +919,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11-apendices.html" class="pagination-link">
-        <span class="nav-page-text">Apendices</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11-referencias.html" class="pagination-link">
+        <span class="nav-page-text">Referencias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

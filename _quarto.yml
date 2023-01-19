@@ -20,7 +20,12 @@ book:
     - 08-tests-no-parametricos.qmd
     - 09-chi-cuadrado.qmd
     - 10-correlaciones.qmd
-    - 11-apendices.qmd
+    - 11-referencias.qmd
+  appendices: 
+    - A-valores-criticos-t.qmd
+    - B-valores-criticos-test-de-signo.qmd
+    - C-valores-criticos-ji-cuadrado.qmd
+    
 lang: es
 
 bibliography: [book.bib, packages.bib]

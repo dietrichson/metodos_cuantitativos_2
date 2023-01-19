@@ -156,9 +156,13 @@ Recordamos que el *valor mágico* de la distribución normal --la regla empíric
 
 ## ¿Cuál usar?
 
-En la figura \@ref(fig:selection-non-parametric) podemos ver un diagrama de flujo para eligir un test no paramétrico.
+En la [figura @fig-selection-non-parametric] podemos ver un diagrama de flujo para eligir un test no paramétrico.
 
-```{r selection-non-parametric, echo=FALSE, fig.cap="Diagrama de flujo para selección de pruebas estadísticas no paramétricas."}
+```{r}
+#| label: fig-selection-non-parametric
+#| echo: false
+#| fig-cap: "Diagrama de flujo para selección de pruebas estadísticas no paramétricas."
+
 # Build with ggplot
 myData <- tribble(
   ~x,~y,~Type,~text,

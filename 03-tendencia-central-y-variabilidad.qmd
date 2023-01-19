@@ -20,25 +20,21 @@ La media es seguramente la medida de centralización de uso más frecuente [^03-
 
 [^03-tendencia-central-y-variabilidad-1]: y por ende de más uso incorrecto
 
-```{=tex}
-\begin{equation}
+$$
 {{15 + 12 + 11 + 18 + 15 + 15}\over{6}}={86\over6}=14,33
-(\#eq:media-de-seis-observaciones)
-\end{equation}
-```
+$$ {#eq-media-de-seis-observaciones}
+
 En el caso de nuestra muestra de notas para de capítulos anteriores tenemos:
 
-```{=tex}
-\begin{equation}
+$$
 {{ 15 + 12 + 11 + 18 + 15 + 15+ \\
   9 + 19 + 14 + 13 + 11 + 12 + \\
   18 + 15 + 16 + 14 + 16 + 17 + \\
   15 + 17 + 13 + 14 + 13 + 15 + \\
   17 + 19 + 17 + 18 + 16 + 14}\over{30}}={448\over30}=14.93
-  (\#eq:media-de-treinta-observaciones)
-\end{equation}
-```
-Ya con el cómputo en \@ref(eq:media-de-treinta-observaciones) nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.
+$$ {#eq-media-de-treinta-observaciones}
+
+Ya con el cómputo en @eq-media-de-treinta-observaciones nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.
 
 ::: {#exm-media}
 ## La media
@@ -254,8 +250,7 @@ tmpDF %>%
 
 El rango intercuartílico da una idea de la dispersión de los datos y es por su naturaleza menos sensitivo a valores extremos.
 
-:::{#exm-intercuartilico-en-r}
- 
+::: {#exm-intercuartilico-en-r}
 ## Sacar el rango intercuartílico en R
 
 Para sacar en rango intercuartílico podemos usar la función `quantiles`. Por defecto divide la distribución en cuartiles.
@@ -264,7 +259,6 @@ Para sacar en rango intercuartílico podemos usar la función `quantiles`. Por d
 x = c(2, 4, 5, 7, 7, 7, 9, 11, 12, 15, 15 ,15, 18)
 quantile(x)
 ```
-
 :::
 
 Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitúd de 8 ya que $15 - 7 = 8$.
@@ -275,14 +269,14 @@ La medida de dispersión más usada en estadística es la *desviación estándar
 
 Para calcular la desviación estándar debemos primero calcular la varianza. Para ello tomamos la diferencia de cada observación de la media. Recordemos que la media se expresa con $\bar{x}$ (equis con barra). Entonces la diferencia entre una observación de x y la media es $x - \bar{x}$. Luego los llevamos al cuadrado $(x - \bar{x})^2$ los sumamos y dividimos por el número total de observaciones. Para expresarlo usamos la notación que ya vimos. Entonces $\Sigma$ es «la suma de» y N es «el total de las observaciones». Juntando todo tenemos:
 
-:::{#def-definicion-varianza}
+::: {#def-definicion-varianza}
 ## Varianza
+
 \
 $$
 \text{varianza} = {{\Sigma (x - \bar{x})^2}\over{N}}
 $$
 :::
-
 
 Ahora para sacar la desviación estándar tomamos la raíz cuadrada de la varianza. La desviación estándar de la población se representa por la letra griega $\sigma$ que es sigma pero en minúscula. Entonces tenemos:
 

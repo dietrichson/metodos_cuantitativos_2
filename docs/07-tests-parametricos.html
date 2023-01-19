@@ -236,9 +236,34 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución ji-cuadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -250,14 +275,11 @@ div.csl-indent {
   <ul>
   <li><a href="#prueba-t-de-student-para-muestras-independientes" id="toc-prueba-t-de-student-para-muestras-independientes" class="nav-link active" data-scroll-target="#prueba-t-de-student-para-muestras-independientes"><span class="toc-section-number">7.1</span>  Prueba t de Student para muestras independientes</a></li>
   <li><a href="#sec-test-de-normalidad" id="toc-sec-test-de-normalidad" class="nav-link" data-scroll-target="#sec-test-de-normalidad"><span class="toc-section-number">7.2</span>  Prueba de Shapiro-Wilks</a></li>
-  <li><a href="#test-de-shapiro-wilks-en-r" id="toc-test-de-shapiro-wilks-en-r" class="nav-link" data-scroll-target="#test-de-shapiro-wilks-en-r"><span class="toc-section-number">7.3</span>  Test de Shapiro Wilks en R</a></li>
-  <li><a href="#prueba-de-fisher" id="toc-prueba-de-fisher" class="nav-link" data-scroll-target="#prueba-de-fisher"><span class="toc-section-number">7.4</span>  Prueba de Fisher</a></li>
-  <li><a href="#realizar-la-prueba-de-fisher-en-r" id="toc-realizar-la-prueba-de-fisher-en-r" class="nav-link" data-scroll-target="#realizar-la-prueba-de-fisher-en-r"><span class="toc-section-number">7.5</span>  Realizar la prueba de Fisher en R</a></li>
-  <li><a href="#prueba-t-para-muestras-pareadas" id="toc-prueba-t-para-muestras-pareadas" class="nav-link" data-scroll-target="#prueba-t-para-muestras-pareadas"><span class="toc-section-number">7.6</span>  Prueba t para muestras pareadas</a></li>
-  <li><a href="#ejemplo-en-r" id="toc-ejemplo-en-r" class="nav-link" data-scroll-target="#ejemplo-en-r"><span class="toc-section-number">7.7</span>  Ejemplo en R</a></li>
-  <li><a href="#prueba-de-z" id="toc-prueba-de-z" class="nav-link" data-scroll-target="#prueba-de-z"><span class="toc-section-number">7.8</span>  Prueba de z</a></li>
-  <li><a href="#resumen-de-procedimiento" id="toc-resumen-de-procedimiento" class="nav-link" data-scroll-target="#resumen-de-procedimiento"><span class="toc-section-number">7.9</span>  Resumen de procedimiento</a></li>
-  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">7.10</span>  Glosario</a></li>
+  <li><a href="#prueba-de-fisher" id="toc-prueba-de-fisher" class="nav-link" data-scroll-target="#prueba-de-fisher"><span class="toc-section-number">7.3</span>  Prueba de Fisher</a></li>
+  <li><a href="#prueba-t-para-muestras-pareadas" id="toc-prueba-t-para-muestras-pareadas" class="nav-link" data-scroll-target="#prueba-t-para-muestras-pareadas"><span class="toc-section-number">7.4</span>  Prueba t para muestras pareadas</a></li>
+  <li><a href="#prueba-de-z" id="toc-prueba-de-z" class="nav-link" data-scroll-target="#prueba-de-z"><span class="toc-section-number">7.5</span>  Prueba de z</a></li>
+  <li><a href="#resumen-de-procedimiento" id="toc-resumen-de-procedimiento" class="nav-link" data-scroll-target="#resumen-de-procedimiento"><span class="toc-section-number">7.6</span>  Resumen de procedimiento</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">7.7</span>  Glosario</a></li>
   </ul>
 </nav>
     </div>
@@ -349,12 +371,12 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2} = \sqrt{2,490^2/30 + 3,308^2/N_2} = 0,756
 <p><span class="math display">\[
 t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 \]</span></p>
-<p>Si buscamos este valor en el <a href="#distribucion-t">Apendix A</a> para 29 grados de libertad (N-1), vemos que debemos rechazar <span class="math inline">\(H_0\)</span> y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.</p>
+<p>Si buscamos este valor en el <a href="@distribucion-t-table">Apendix A</a> para 29 grados de libertad (N-1), vemos que debemos rechazar <span class="math inline">\(H_0\)</span> y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.</p>
 </div>
 <div id="exm-t-test-in-r" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.2 (Prueba t en R) </strong></span><br>
 </p>
-<p>Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función `<code>t.test</code>. Toma como parámetros las dos muestras que queremos comparar.</p>
+<p>Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función <code>t.test</code>. Toma como parámetros las dos muestras que queremos comparar.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Grupo.A <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Grupo.B <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">18</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">14</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">7</span>)</span>
@@ -387,10 +409,8 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 <p><span class="math inline">\(H_0: X \sim \mathcal{N}(\mu,\sigma^2)\)</span></p>
 <p><span class="math inline">\(H_1: X \nsim \mathcal{N}(\mu,\sigma^2)\)</span>.</p>
 <p>Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función <code>shapiro.test</code> en R:</p>
-</section>
-<section id="test-de-shapiro-wilks-en-r" class="level2 {exm-shapiro-test-in-r}" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="test-de-shapiro-wilks-en-r"><span class="header-section-number">7.3</span> Test de Shapiro Wilks en R</h2>
-<p><br>
+<div id="exm-shapiro-test-in-r" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 7.3 (Test de Shapiro Wilks en R) </strong></span><br>
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Grupo.A <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
@@ -415,19 +435,18 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 #&gt; W = 0.97636, p-value = 0.7227</code></pre>
 </div>
 </div>
-</section>
+</div>
 <p>Vemos que en ambos casos el valor de probabilidad (<em>p</em>) es muy superios a nuestro nivel elegido (0,05), por lo que <em>no rechazamos la hipótesis nula</em>.</p>
 <p>En el caso de los ejemplos <a href="#exm-manual-t-test"><span>7.1</span></a> y <a href="#exm-t-test-in-r"><span>7.2</span></a> ya obramos bajo la premisa de que las variables tenían una distribución normal, pero generalmente conviene realizar el test Shapiro-Willks <em>antes</em> de decidir qué prueba estadística vamos a usar. Si rechazamos <span class="math inline">\(H_0\)</span>, es decir si no concluimos que la distribución sea normal, no deberíamos usar un test paramétrico.</p>
-<section id="prueba-de-fisher" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="prueba-de-fisher"><span class="header-section-number">7.4</span> Prueba de Fisher</h2>
+</section>
+<section id="prueba-de-fisher" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="prueba-de-fisher"><span class="header-section-number">7.3</span> Prueba de Fisher</h2>
 <p>Al inicio del capítulo también vimos que uno de los requisitos para que una prueba estadística paramétrica sea válida es que las varianzas sean de similar magnitud. Para ello también existe un test, el <em>test de Fisher</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> que plantea las hipótesis:</p>
 <p><span class="math inline">\(H_0: \sigma^2_1 = \sigma^2_2\)</span>,</p>
 <p><span class="math inline">\(H_1: \sigma^2_1 \neq \sigma^2_2\)</span></p>
 <p>Sin entrar en mucho detalle teórico, en R hay una función <code>var.test</code> para este propósito. La función toma dos argumentos: los dos conjuntos de datos que queremos comparar.</p>
-</section>
-<section id="realizar-la-prueba-de-fisher-en-r" class="level2 {exm-fisher-test}" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="realizar-la-prueba-de-fisher-en-r"><span class="header-section-number">7.5</span> Realizar la prueba de Fisher en R</h2>
-<p><br>
+<div id="exm-fisher-test" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 7.4 (Realizar la prueba de Fisher en R) </strong></span><br>
 </p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(Grupo.A, Grupo.B)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -446,12 +465,13 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 #&gt;          0.5667472</code></pre>
 </div>
 </div>
-</section>
+</div>
 <p>Vemos que el valor de probabilidad <span class="math inline">\(p\)</span> es mayor a nuestro nivel de significanza (<span class="math inline">\(p\leqslant0,05\)</span>), con lo cual <em>no rechazamos</em> <span class="math inline">\(H_0\)</span> y concluimos que las varianzas son relativamente similares.</p>
-<section id="prueba-t-para-muestras-pareadas" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="prueba-t-para-muestras-pareadas"><span class="header-section-number">7.6</span> Prueba t para muestras pareadas</h2>
-<p>En los ejemplos @ref(exm:manual-t-test) y @ref(exm:t-test-in-r) teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones <em>pareadas</em> o datos <em>interdependientes</em>. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.</p>
-<p>En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la definición @ref(def:dependent-t-test).</p>
+</section>
+<section id="prueba-t-para-muestras-pareadas" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="prueba-t-para-muestras-pareadas"><span class="header-section-number">7.4</span> Prueba t para muestras pareadas</h2>
+<p>En los ejemplos <a href="#exm-manual-t-test"><span>7.1</span></a> y <a href="#exm-t-test-in-r"><span>7.2</span></a> teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones <em>pareadas</em> o datos <em>interdependientes</em>. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.</p>
+<p>En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la <a href="#def-dependent-t-test">definición&nbsp;<span>7.4</span></a>.</p>
 <div id="def-dependent-t-test" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 7.4 (Prueba t para muestras dependientes) </strong></span><span class="math display">\[
 t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
@@ -466,12 +486,16 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}}
 <p>Lo que nos va a decir la prueba t en este caso es si la diferencia es significativamente diferente a cero: Si la variable independiente no tiene efecto entonces debería dar lo mismo medir antes o después. Las hipótesis planteadas son, por tanto:</p>
 <p><span class="math inline">\(H_0: \bar{X}_D = 0\)</span>,</p>
 <p><span class="math inline">\(H_1: \bar{X}_D \neq 0\)</span>.</p>
-<p>:::{exm-dependent-t-test-example} ## Prueba t dependiente<br>
-En este ejemplo <span class="citation" data-cites="Shier2004">(<a href="#ref-Shier2004" role="doc-biblioref">Shier 2004</a>)</span> vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la <span class="citation" data-cites="tab-diff-table">(tabla <a href="#ref-tab-diff-table" role="doc-biblioref"><strong>tab-diff-table?</strong></a>)</span>.</p>
-<div class="cell">
-<div class="cell-output-display">
+<p>:::{#exm-dependent-t-test-example} ## Prueba t dependiente<br>
+En este ejemplo <span class="citation" data-cites="Shier2004">(<a href="11-referencias.html#ref-Shier2004" role="doc-biblioref">Shier 2004</a>)</span> vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la <a href="#tbl-diff-table">tabla&nbsp;<span>7.1</span></a>.</p>
+<div id="tbl-diff-table" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabla&nbsp;7.1: <strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-diff-table-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-diff-table" style="flex-basis: 100.0%;justify-content: center;">
 <table class="table table-sm table-striped">
-<caption>Resultados de dos tests de matemáticas</caption>
+<caption>(a) Resultados de dos tests de matemáticas</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Nombre</th>
@@ -605,15 +629,14 @@ En este ejemplo <span class="citation" data-cites="Shier2004">(<a href="#ref-Shi
 </table>
 </div>
 </div>
+</div>
 <p>La media de las diferencias es 2.05 con una desviación estándar de 2,837. Entonces tenemos:</p>
 <p><span class="math display">\[
 t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}}}=3,231.
 \]</span></p>
 <p>Buscando este valor en la tabla de valores críticos con 19 (N-1) grados de libertad vemos que sí podemos rechazar la hipótesis nula y concluir que hay una diferencia estadísticamente significativa entre los resultados de los dos tests.</p>
-</section>
-<section id="ejemplo-en-r" class="level2 {#exm-t-test-example-in-r" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="ejemplo-en-r"><span class="header-section-number">7.7</span> Ejemplo en R</h2>
-<p><br>
+<div id="exm-t-test-example-in-r" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 7.5 (Ejemplo en R) </strong></span><br>
 Para reproducir en R lo que hicimos en el ejemplo @ref(exm:dependent-t-test-example) tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ingresamos los datos</span></span>
@@ -674,27 +697,28 @@ Para reproducir en R lo que hicimos en el ejemplo @ref(exm:dependent-t-test-exam
 </div>
 </div>
 <p>Vemos que el resultado tiene significanza estadística alta (<span class="math inline">\(p\leqslant0,01\)</span>). El cálculo de R también nos da un intervalo de confianza al 95%.</p>
+</div>
 </section>
-<section id="prueba-de-z" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="prueba-de-z"><span class="header-section-number">7.8</span> Prueba de z</h2>
+<section id="prueba-de-z" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="prueba-de-z"><span class="header-section-number">7.5</span> Prueba de z</h2>
 <p>Existe también una prueba, llamada <em>de z</em>, que se puede usar para muestras más grandes. Se basa en el hecho de que cuando las muestras son más grandes tienden a una distribución normal y no una distribución t. Aparte de eso su concepto y mecánica es similar a la de la prueba t. Puede aplicarse cuando las muestras tienen más de 30 (N&gt;30) observaciones y la principal diferencia de que es capaz de detectar diferencias más pequeñas en los datos lo que reduce el riesgo de un error tipo II.</p>
 </section>
-<section id="resumen-de-procedimiento" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="resumen-de-procedimiento"><span class="header-section-number">7.9</span> Resumen de procedimiento</h2>
-<p>La figura @ref(fig:flow-chart-test-selection) despliega un diagrama de flujo para eligir un test estadístico inferencial.</p>
+<section id="resumen-de-procedimiento" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="resumen-de-procedimiento"><span class="header-section-number">7.6</span> Resumen de procedimiento</h2>
+<p>La <a href="#fig-flow-chart-test-selection">figura&nbsp;<span>7.1</span></a> despliega un diagrama de flujo para eligir un test estadístico inferencial.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-flow-chart-test-selection" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="07-tests-parametricos_files/figure-html/flow-chart-test-selection-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Diagrama de flujo para selección de estadística inferencial</figcaption><p></p>
+<p><img src="07-tests-parametricos_files/figure-html/fig-flow-chart-test-selection-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;7.1: Diagrama de flujo para selección de estadística inferencial</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="glosario" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="glosario"><span class="header-section-number">7.10</span> Glosario</h2>
+<section id="glosario" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="glosario"><span class="header-section-number">7.7</span> Glosario</h2>
 <dl>
 <dt>Error estándar de diferencias entre medias</dt>
 <dd>
@@ -723,7 +747,7 @@ Test estadístico que nos indica si la media de dos muestras correlacionadas tie
 </dl>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-Shier2004" class="csl-entry" role="doc-biblioentry">
 Shier, Rosie. 2004. <span>«Paired t-tests»</span>. <a href="http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf">http://www.statstutor.ac.uk/resources/uploaded/paired-t-test.pdf</a>.
 </div>

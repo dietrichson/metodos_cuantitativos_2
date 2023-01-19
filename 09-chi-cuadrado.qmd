@@ -1,8 +1,10 @@
 # Prueba de $\chi^2$ {#chi-square-test}
+
 ```{r}
 #| include: false
 source("_common.R")
 ```
+
 En los capítulos @sec-pruebas-parametricas y @sec-pruebas-no-parametricas vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en escala de razón, intervalo u ordinal. En este capítulo vamos a explorar algunas técnicas que nos permiten trabajar con variables que no se pueden medir en términos numéricos, sino que son de tipo «sí-o-no»; es decir que son de escala nominal.
 
 En particular vamos a explorar la distribuciónd de $\chi^2$ de Pearson. $\chi$ es una letra griega que suele pronunciarse «ji» (/xi/) y «chi» (/tʃiː)/[^09-chi-cuadrado-1].
@@ -41,18 +43,15 @@ tmp %>%
 
 El test de $\chi^2$ nos permite comparar las frecuencias que observamos con las frecuencias que esperaríamos en base a un modelo teórico o una hipótesis sobre la distribución de la variable en cuestión. Por cada par de valores observados y esperados calculamos la diferencia y aplicamos la fórmula de la [definición @def-chi-squared].
 
-:::{#def-chi-squared}
-
+::: {#def-chi-squared}
 ## $\chi^2$
 
 $$
 \chi^2 = \sum{(O-E)^2\over{E}}
-$$
-donde: 
-  
-* O: la frecuencia observada
-* E: la frecuencia esperada 
+$$ donde:
 
+-   O: la frecuencia observada
+-   E: la frecuencia esperada
 :::
 
 Es importante tener en cuenta que $\chi^2$ se calcula usando las *frecuencias* y no las proporciones.
@@ -90,7 +89,7 @@ row.names(M2) <- c("Mujeres","Hombres","total")
 M2 %>% knitr::kable(caption="Opiniones sobre la ley del aborto.")
 ```
 
-El valor esperado es la cantidad de las observaciones que caen en cada celda si las distribuimos proporcionalmente. Esto se calcula multiplicando las sumas de la fila y columna de la celda respectiva y dividir por el total de las observaciones. Por ejemplo, el valor esperado de mujeres a favor sería: 
+El valor esperado es la cantidad de las observaciones que caen en cada celda si las distribuimos proporcionalmente. Esto se calcula multiplicando las sumas de la fila y columna de la celda respectiva y dividir por el total de las observaciones. Por ejemplo, el valor esperado de mujeres a favor sería:
 
 $$
 E = {{1230\times1246}\over2191} = 699,48
@@ -156,9 +155,9 @@ En capítulos anteriores hemos visto que los grados de libertad a menudo son N-1
 
 Para una tabla de contingencia la fórmula general para calcular los grados de libertad es: $(c-1)\times(f-1)$ es decir número de columnas menos uno por número de filas menos uno. Si la tabla es de $3\times3$, tendríamos 4 grados de libertad.
 
-:::{exm-chi-test-in-r}
-
+::: {exm-chi-test-in-r}
 ## Prueba de $\chi^2$ en R
+
 \
 En este ejemplo vamos a realizar la misma prueba de $\chi^2$ que fuimos desarrollando en las secciones anteriores. Podemos usar la función de R `chisq.test` para realizarla. Toma como argumento una *matriz* de datos de las frecuencias.
 
@@ -191,7 +190,6 @@ chisq.test(M, correct = FALSE)
 ```
 
 y vemos que R coincide con nuestros cálculos.
-
 :::
 
 ```{r, include = FALSE}

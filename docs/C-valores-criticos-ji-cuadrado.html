@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Métodos Cuantitativos - Apendices</title>
+<title>Métodos Cuantitativos - Appendix C — Distribución ji-cuadrado</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10-correlaciones.html" rel="prev">
+<link href="./B-valores-criticos-test-de-signo.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Apendices</h1>
+      <h1 class="quarto-secondary-nav-title">Appendix C — Distribución ji-cuadrado</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -153,30 +153,47 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link active">Apendices</a>
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución ji-cuadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Indice de contenidos</h2>
-   
-  <ul>
-  <li><a href="#sec-distribucion-t-table" id="toc-sec-distribucion-t-table" class="nav-link active" data-scroll-target="#sec-distribucion-t-table">Distribución t</a></li>
-  <li><a href="#sec-valores-críticos-del-test-de-signo" id="toc-sec-valores-críticos-del-test-de-signo" class="nav-link" data-scroll-target="#sec-valores-críticos-del-test-de-signo">Valores críticos del test de signo</a></li>
-  <li><a href="#chi-square-disrtibution" id="toc-chi-square-disrtibution" class="nav-link" data-scroll-target="#chi-square-disrtibution">Distribución <span class="math inline">\(\chi^2\)</span></a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Apendices</h1>
+<h1 class="title"><span id="chi-square-distribution" class="quarto-section-identifier d-none d-lg-block">Appendix C — Distribución ji-cuadrado</span></h1>
 </div>
 
 
@@ -190,423 +207,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-distribucion-t-table" class="level1">
-<h1>Distribución t</h1>
-<p>La tabla que sigue despliega los valores críticos de la distribución t para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional. Para una prueba unidireccional se usará el nivel inmediatamente superior.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped">
-<caption>Valores críticos de t por nivel de significanza y grados de libertad.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Grados</th>
-<th style="text-align: right;">p &lt; 0,20</th>
-<th style="text-align: right;">p &lt; 0,10</th>
-<th style="text-align: right;">p &lt; 0,05</th>
-<th style="text-align: right;">p &lt; 0,02</th>
-<th style="text-align: right;">p &lt; 0,01</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">3,078</td>
-<td style="text-align: right;">6,314</td>
-<td style="text-align: right;">12,706</td>
-<td style="text-align: right;">31,821</td>
-<td style="text-align: right;">63,657</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1,886</td>
-<td style="text-align: right;">2,920</td>
-<td style="text-align: right;">4,303</td>
-<td style="text-align: right;">6,965</td>
-<td style="text-align: right;">9,925</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: right;">1,638</td>
-<td style="text-align: right;">2,353</td>
-<td style="text-align: right;">3,182</td>
-<td style="text-align: right;">4,541</td>
-<td style="text-align: right;">5,841</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: right;">1,533</td>
-<td style="text-align: right;">2,132</td>
-<td style="text-align: right;">2,776</td>
-<td style="text-align: right;">3,747</td>
-<td style="text-align: right;">4,604</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: right;">1,476</td>
-<td style="text-align: right;">2,015</td>
-<td style="text-align: right;">2,571</td>
-<td style="text-align: right;">3,365</td>
-<td style="text-align: right;">4,032</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: right;">1,440</td>
-<td style="text-align: right;">1,943</td>
-<td style="text-align: right;">2,447</td>
-<td style="text-align: right;">3,143</td>
-<td style="text-align: right;">3,707</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: right;">1,415</td>
-<td style="text-align: right;">1,895</td>
-<td style="text-align: right;">2,365</td>
-<td style="text-align: right;">2,998</td>
-<td style="text-align: right;">3,499</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: right;">1,397</td>
-<td style="text-align: right;">1,860</td>
-<td style="text-align: right;">2,306</td>
-<td style="text-align: right;">2,896</td>
-<td style="text-align: right;">3,355</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">9</td>
-<td style="text-align: right;">1,383</td>
-<td style="text-align: right;">1,833</td>
-<td style="text-align: right;">2,262</td>
-<td style="text-align: right;">2,821</td>
-<td style="text-align: right;">3,250</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10</td>
-<td style="text-align: right;">1,372</td>
-<td style="text-align: right;">1,812</td>
-<td style="text-align: right;">2,228</td>
-<td style="text-align: right;">2,764</td>
-<td style="text-align: right;">3,169</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11</td>
-<td style="text-align: right;">1,363</td>
-<td style="text-align: right;">1,796</td>
-<td style="text-align: right;">2,201</td>
-<td style="text-align: right;">2,718</td>
-<td style="text-align: right;">3,106</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">12</td>
-<td style="text-align: right;">1,356</td>
-<td style="text-align: right;">1,782</td>
-<td style="text-align: right;">2,179</td>
-<td style="text-align: right;">2,681</td>
-<td style="text-align: right;">3,055</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">13</td>
-<td style="text-align: right;">1,350</td>
-<td style="text-align: right;">1,771</td>
-<td style="text-align: right;">2,160</td>
-<td style="text-align: right;">2,650</td>
-<td style="text-align: right;">3,012</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">14</td>
-<td style="text-align: right;">1,345</td>
-<td style="text-align: right;">1,761</td>
-<td style="text-align: right;">2,145</td>
-<td style="text-align: right;">2,624</td>
-<td style="text-align: right;">2,977</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">15</td>
-<td style="text-align: right;">1,341</td>
-<td style="text-align: right;">1,753</td>
-<td style="text-align: right;">2,131</td>
-<td style="text-align: right;">2,602</td>
-<td style="text-align: right;">2,947</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">16</td>
-<td style="text-align: right;">1,337</td>
-<td style="text-align: right;">1,746</td>
-<td style="text-align: right;">2,120</td>
-<td style="text-align: right;">2,583</td>
-<td style="text-align: right;">2,921</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">17</td>
-<td style="text-align: right;">1,333</td>
-<td style="text-align: right;">1,740</td>
-<td style="text-align: right;">2,110</td>
-<td style="text-align: right;">2,567</td>
-<td style="text-align: right;">2,898</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">18</td>
-<td style="text-align: right;">1,330</td>
-<td style="text-align: right;">1,734</td>
-<td style="text-align: right;">2,101</td>
-<td style="text-align: right;">2,552</td>
-<td style="text-align: right;">2,878</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">19</td>
-<td style="text-align: right;">1,328</td>
-<td style="text-align: right;">1,729</td>
-<td style="text-align: right;">2,093</td>
-<td style="text-align: right;">2,539</td>
-<td style="text-align: right;">2,861</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">20</td>
-<td style="text-align: right;">1,325</td>
-<td style="text-align: right;">1,725</td>
-<td style="text-align: right;">2,086</td>
-<td style="text-align: right;">2,528</td>
-<td style="text-align: right;">2,845</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">21</td>
-<td style="text-align: right;">1,323</td>
-<td style="text-align: right;">1,721</td>
-<td style="text-align: right;">2,080</td>
-<td style="text-align: right;">2,518</td>
-<td style="text-align: right;">2,831</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">22</td>
-<td style="text-align: right;">1,321</td>
-<td style="text-align: right;">1,717</td>
-<td style="text-align: right;">2,074</td>
-<td style="text-align: right;">2,508</td>
-<td style="text-align: right;">2,819</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">23</td>
-<td style="text-align: right;">1,319</td>
-<td style="text-align: right;">1,714</td>
-<td style="text-align: right;">2,069</td>
-<td style="text-align: right;">2,500</td>
-<td style="text-align: right;">2,807</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">24</td>
-<td style="text-align: right;">1,318</td>
-<td style="text-align: right;">1,711</td>
-<td style="text-align: right;">2,064</td>
-<td style="text-align: right;">2,492</td>
-<td style="text-align: right;">2,797</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">25</td>
-<td style="text-align: right;">1,316</td>
-<td style="text-align: right;">1,708</td>
-<td style="text-align: right;">2,060</td>
-<td style="text-align: right;">2,485</td>
-<td style="text-align: right;">2,787</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">26</td>
-<td style="text-align: right;">1,315</td>
-<td style="text-align: right;">1,706</td>
-<td style="text-align: right;">2,056</td>
-<td style="text-align: right;">2,479</td>
-<td style="text-align: right;">2,779</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">27</td>
-<td style="text-align: right;">1,314</td>
-<td style="text-align: right;">1,703</td>
-<td style="text-align: right;">2,052</td>
-<td style="text-align: right;">2,473</td>
-<td style="text-align: right;">2,771</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">28</td>
-<td style="text-align: right;">1,313</td>
-<td style="text-align: right;">1,701</td>
-<td style="text-align: right;">2,048</td>
-<td style="text-align: right;">2,467</td>
-<td style="text-align: right;">2,763</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">29</td>
-<td style="text-align: right;">1,311</td>
-<td style="text-align: right;">1,699</td>
-<td style="text-align: right;">2,045</td>
-<td style="text-align: right;">2,462</td>
-<td style="text-align: right;">2,756</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">30</td>
-<td style="text-align: right;">1,310</td>
-<td style="text-align: right;">1,697</td>
-<td style="text-align: right;">2,042</td>
-<td style="text-align: right;">2,457</td>
-<td style="text-align: right;">2,750</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="sec-valores-críticos-del-test-de-signo" class="level1">
-<h1>Valores críticos del test de signo</h1>
-<p>La tabla (@ref(tab:significance-table-sign-test)) muestra valores críticos de W para diferentes valores de N. Para que sea significativo W tiene que ser menor o igual al valor.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped">
-<caption>Valores críticos de W en el test de signo por N.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: right;">N</th>
-<th style="text-align: right;">0,05</th>
-<th style="text-align: right;">0,025</th>
-<th style="text-align: right;">0,01</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">-</td>
-<td style="text-align: right;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">22</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">23</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">6</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="chi-square-disrtibution" class="level1">
-<h1>Distribución <span class="math inline">\(\chi^2\)</span></h1>
 <p>La tabla que sigue despliega los valores críticos de la distribución <span class="math inline">\(\chi^2\)</span> para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional.</p>
-<div class="cell">
-<div class="cell-output-display">
+<div id="tbl-significance-table-chi-squared-distribution" class="cell tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabla&nbsp;C.1: <strong>?(caption)</strong></p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-significance-table-chi-squared-distribution-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-significance-table-chi-squared-distribution" style="flex-basis: 100.0%;justify-content: center;">
 <table class="table table-sm table-striped">
-<caption>Valores críticos de χ2 por nivel de significanza y grados de libertad.</caption>
+<caption>(a) Valores críticos de χ2 por nivel de significanza y grados de libertad.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">GL</th>
@@ -893,9 +502,9 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -998,8 +607,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./10-correlaciones.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></span>
+      <a href="./B-valores-criticos-test-de-signo.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -217,9 +217,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución ji-cuadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -274,20 +299,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="la-media" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="la-media"><span class="header-section-number">3.1.1</span> La media</h3>
 <p>La media es seguramente la medida de centralización de uso más frecuente <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Se conoce también como <em>el promedio</em> y, más técnicamente, <em>la media arithmetica</em>. La media se obtiene por la suma de las observaciones dividido por el número de observaciones. Por ejemplo si queremos sacar el promedio de seis observaciones de una variable: 15, 12, 11, 18, 15 y 15; tenemos:</p>
-<span class="math display">\[\begin{equation}
+<p><span id="eq-media-de-seis-observaciones"><span class="math display">\[
 {{15 + 12 + 11 + 18 + 15 + 15}\over{6}}={86\over6}=14,33
-(\#eq:media-de-seis-observaciones)
-\end{equation}\]</span>
+\tag{3.1}\]</span></span></p>
 <p>En el caso de nuestra muestra de notas para de capítulos anteriores tenemos:</p>
-<span class="math display">\[\begin{equation}
+<p><span id="eq-media-de-treinta-observaciones"><span class="math display">\[
 {{ 15 + 12 + 11 + 18 + 15 + 15+ \\
   9 + 19 + 14 + 13 + 11 + 12 + \\
   18 + 15 + 16 + 14 + 16 + 17 + \\
   15 + 17 + 13 + 14 + 13 + 15 + \\
   17 + 19 + 17 + 18 + 16 + 14}\over{30}}={448\over30}=14.93
-  (\#eq:media-de-treinta-observaciones)
-\end{equation}\]</span>
-<p>Ya con el cómputo en @ref(eq:media-de-treinta-observaciones) nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.</p>
+\tag{3.2}\]</span></span></p>
+<p>Ya con el cómputo en <a href="#eq-media-de-treinta-observaciones">Ecuación&nbsp;<span>3.2</span></a> nos damos cuenta de que si bien es posible hacer estos cálculos a mano puede resultar bastante engorroso. Además con tantos números dando vuelta sube la probabilidad de un error de tipeo y con lo cual sacaríamos un resultado incorrecto.</p>
 <div id="exm-media" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 3.1 (La media) </strong></span>Por suerte es bastante sencillo sacar la media con R. Para los dos ejemplos anteriores tenemos:</p>
 <div class="cell">

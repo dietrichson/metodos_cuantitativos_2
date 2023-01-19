@@ -217,9 +217,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución ji-cuadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -461,7 +486,7 @@ E = {{1230\times1246}\over2191} = 699,48
 <p><span class="math display">\[
 \chi^2 = \sum{(O-E)^2\over{E}} = {62,52^2\over699,49} +{-62,52^2\over530,51} +{62,52^2\over546,51}+{-62,52^2\over414,49} = 29,53.
 \]</span></p>
-<p>Podemos comparar este valor con los de la tabla en el <a href="11-apendices.html#chi-square-disrtibution">apendice C</a> para un grado de libertad. Vemos que rechazamos <span class="math inline">\(H_0\)</span> y concluimos que el género sí influye en la opinión sobre este tema.</p>
+<p>Podemos comparar este valor con los de la tabla en el <a href="#chi-square-disrtibution">apendice C</a> para un grado de libertad. Vemos que rechazamos <span class="math inline">\(H_0\)</span> y concluimos que el género sí influye en la opinión sobre este tema.</p>
 <section id="degrees-of-freedom" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="degrees-of-freedom"><span class="header-section-number">9.2.1</span> Grados de libertad</h3>
 <p>A lo largo de este texto se ha mencionado en algunas ocasiones el término <em>grados de libertad</em> y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la tabla @ref(tab:opiniones-aborto-ii) en la que tenemos una tabla de contingencia <span class="math inline">\(2\times2\)</span>. Calculamos en ese caso las frecuencias marginales que están el la columna <em>suma</em>. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la tabla @ref(tab:degrees-of-freedom)</p>

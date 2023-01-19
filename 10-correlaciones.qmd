@@ -127,7 +127,7 @@ Las figuras [-@fig-strong-positive-correlation], [-@fig-strong-negative-correlat
 set.seed(1)
 ```
 
-:::{#exm-example-scatterplot-i}
+::: {#exm-example-scatterplot-i}
 ## Generar diagrama de dispersión en R
 
 ```{r}
@@ -184,7 +184,7 @@ El coeficiente Pearson es adecuado para datos de escala de razón o intervalo, e
 
 Como ya mencionamos, el coeficiente de Pearson es apropiado cuando las variables a comparar con de escala de intervalo o razón ya que toma en cuenta la magnitud relativa de las observaciones.
 
-Si tenemos un conjunto de pares de observaciones podemos representar el primer elemento del par por *x* y el segundo por *y*. Entonces el conjunto de los x van a tener una desviación estándar se calcula según la [definición @def-definition-standard-deviation], así: 
+Si tenemos un conjunto de pares de observaciones podemos representar el primer elemento del par por *x* y el segundo por *y*. Entonces el conjunto de los x van a tener una desviación estándar se calcula según la [definición @def-definition-standard-deviation], así:
 
 $$
 s_x = {\sqrt{(\sum(x-\bar{x})^2\over{N-1}}}.
@@ -228,7 +228,7 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 $$
 :::
 
-:::{#exm-pearson-coefficient-calculation}
+::: {#exm-pearson-coefficient-calculation}
 ## Cálculo del Coeficiente de correlación de Pearson
 
 \
@@ -286,28 +286,25 @@ Sabemos que N=12, pero vamos a precisar las sumas de algunas columnas:
 
 Aplicamos la fórmula:
 
+
 $$
 \begin{split}
 &r= {N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\times\{N\Sigma{y^2}-(\Sigma{y})^2\} }}} \\
 &~~~~~~~\Updownarrow\\
 &r={12\times2~124-154\times162\over{\sqrt{\{12\times2~054-154^2\}\times\{12\times2~290-162^2\} }}} \\
 &~~~~~~~\Updownarrow\\
-
 &r={25~488-24~948\over{\sqrt{\{24~648-23~716\}\times\{27~480-26~244\} }}} \\
 &~~~~~~~\Updownarrow\\
-
 &r= {540\over{\sqrt{932\times1236}}} \\
 &~~~~~~~\Updownarrow\\
 &r= {540\over{\sqrt{1~151~932}}} \\
 &~~~~~~~\Updownarrow\\
-
 &r= {540\over1~073,28} \\
 &~~~~~~~\Updownarrow\\
-
 &r= 0,5031
-
 \end{split}
 $$
+
 :::
 
 ::: {#exm-pearson-coefficient-calculation-in-r}

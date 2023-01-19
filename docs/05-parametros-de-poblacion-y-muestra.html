@@ -217,9 +217,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución ji-cuadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -369,7 +394,7 @@ z = {\bar{x}\over{SE}}
 <p>Del <a href="#exm-small-sample">ejemplo&nbsp;<span>5.2</span></a> vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.</p>
 <section id="dónde-obtenemos-los-valores-críticos-de-t" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="dónde-obtenemos-los-valores-críticos-de-t">¿Dónde obtenemos los valores críticos de t?</h3>
-<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <a href="11-apendices.html">apendix&nbsp;<span>1</span></a> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
+<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <a href="A-valores-criticos-t.html">apendix&nbsp;<span>A</span></a> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
 <div id="exm-extraer-el-valor-critico" class="theorem example">
 <div class="cell">
 <span class="theorem-title"><strong>Ejemplo 5.3 (Ejemplo en R: Extraer el valor crítico de t) </strong></span>

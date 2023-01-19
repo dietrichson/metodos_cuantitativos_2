@@ -119,7 +119,7 @@ $$
 t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 $$
 
-Si buscamos este valor en el [Apendix A](#distribucion-t) para 29 grados de libertad (N-1), vemos que debemos rechazar $H_0$ y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.
+Si buscamos este valor en el [Apendix A](@distribucion-t-table) para 29 grados de libertad (N-1), vemos que debemos rechazar $H_0$ y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.
 :::
 
 ::: {#exm-t-test-in-r}
@@ -127,7 +127,7 @@ Si buscamos este valor en el [Apendix A](#distribucion-t) para 29 grados de libe
 
 \
 
-Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función \``t.test`. Toma como parámetros las dos muestras que queremos comparar.
+Si no queremos hacer todos estos cálculos a mano podemos hacerlos en R usando la función `t.test`. Toma como parámetros las dos muestras que queremos comparar.
 
 ```{r}
 Grupo.A = c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14)
@@ -158,7 +158,7 @@ $H_1: X \nsim \mathcal{N}(\mu,\sigma^2)$.
 
 Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función `shapiro.test` en R:
 
-::: {exm-shapiro-test-in-r}
+::: {#exm-shapiro-test-in-r}
 ## Test de Shapiro Wilks en R
 
 \
@@ -191,7 +191,8 @@ $H_1: \sigma^2_1 \neq \sigma^2_2$
 
 Sin entrar en mucho detalle teórico, en R hay una función `var.test` para este propósito. La función toma dos argumentos: los dos conjuntos de datos que queremos comparar.
 
-::: {exm-fisher-test}
+::: {#exm-fisher-test}
+
 ## Realizar la prueba de Fisher en R
 
 \
@@ -205,11 +206,11 @@ Vemos que el valor de probabilidad $p$ es mayor a nuestro nivel de significanza 
 
 ## Prueba t para muestras pareadas
 
-En los ejemplos \@ref(exm:manual-t-test) y \@ref(exm:t-test-in-r) teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones *pareadas* o datos *interdependientes*. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después[^07-tests-parametricos-3] de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.
+En los ejemplos [-@exm-manual-t-test] y [-@exm-t-test-in-r] teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones *pareadas* o datos *interdependientes*. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después[^07-tests-parametricos-3] de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.
 
 [^07-tests-parametricos-3]: también se conoce como «medidas repetidas»
 
-En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la definición \@ref(def:dependent-t-test).
+En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la [definición @def-dependent-t-test].
 
 ::: {#def-dependent-t-test}
 ## Prueba t para muestras dependientes
@@ -231,8 +232,8 @@ $H_0: \bar{X}_D = 0$,
 
 $H_1: \bar{X}_D \neq 0$.
 
-:::{exm-dependent-t-test-example} \## Prueba t dependiente\
-En este ejemplo [@Shier2004] vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la [tabla @tab-diff-table].
+:::{#exm-dependent-t-test-example} \## Prueba t dependiente\
+En este ejemplo [@Shier2004] vamos a suponer que tenemos un grupo de veinte estudiantes y queremos investigar el efecto del uso de algún recurso didáctico, por ejemplo un video en YouTube, en su destreza para resolver cierto tipo de problemas matemáticos. Les tomamos un test inicial, pedimos que miren el video y cuando terminen tomamos otro test. Ahora tenemos dos observaciones de cada estudiante. Calculamos la diferencia entre ellos. El resultado de todo esto está resumido en la [tabla @tbl-diff-table].
 
 ```{r}
 #| include: false
@@ -274,7 +275,7 @@ pre_post_data <- pre_post_data %>%
 ```
 
 ```{r}
-#| label: tab-diff-table
+#| label: tbl-diff-table
 #| echo: false
 pre_post_data %>% 
   select(nombre, pre,post,Diferencia) %>% 
@@ -293,7 +294,8 @@ $$
 
 Buscando este valor en la tabla de valores críticos con 19 (N-1) grados de libertad vemos que sí podemos rechazar la hipótesis nula y concluir que hay una diferencia estadísticamente significativa entre los resultados de los dos tests.
 
-::: {#exm-t-test-example-in-r
+::: {#exm-t-test-example-in-r}
+
 ## Ejemplo en R
 
 \
@@ -332,9 +334,12 @@ Existe también una prueba, llamada *de z*, que se puede usar para muestras más
 
 ## Resumen de procedimiento
 
-La figura \@ref(fig:flow-chart-test-selection) despliega un diagrama de flujo para eligir un test estadístico inferencial.
+La [figura @fig-flow-chart-test-selection] despliega un diagrama de flujo para eligir un test estadístico inferencial.
 
-```{r flow-chart-test-selection, echo=FALSE, fig.cap="Diagrama de flujo para selección de estadística inferencial"}
+```{r}
+#| label: fig-flow-chart-test-selection
+#| echo: false
+#| fig-cap: "Diagrama de flujo para selección de estadística inferencial"
 # Build with ggplot
 myData <- tribble(
   ~x,~y,~Type,~text,

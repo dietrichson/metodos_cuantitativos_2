@@ -236,9 +236,34 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-apendices.html" class="sidebar-item-text sidebar-link">Apendices</a>
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución ji-cuadrado</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -419,8 +444,9 @@ div.csl-indent {
 <p>Observamos que las probabilidades suman 1, lo cual es matemáticamente inevitable.</p>
 <p>Está claro que una muestra de tan solo tres personas nunca puede ser representativa de la población, sin embargo vemos que la medida en que son poco representativas varía. Cualquiera de las muestras de 2+1 sería <em>más representativa</em> que las de un solo sexo, y vemos que también son probables.</p>
 <p>Este ejemplo es extensible a muestras más grandes con cálculos similares. Se desarrollará en más detalle en capítulos posteriores, pero para tener un ejemplo un tanto más real imaginemos que hemos decidido realizar una muestra de diez personas de la misma población (que tiene un 50 y 50 de hombres y mujeres).</p>
+<div id="tbl-probabilidades-combinaciones-posibles-diez" class="anchored">
 <table class="table">
-<caption>(#tab-probabilidades-combinaciones-posibles-diez) Probabilidades de las combinaciones de una muestra de diez.</caption>
+<caption>Tabla&nbsp;1.1: Probabilidades de las combinaciones de una muestra de diez.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Hombres</th>
@@ -486,7 +512,8 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>Obtendríamos los resultados de la tabla <span class="citation" data-cites="tab-probabilidades-combinaciones-posibles-diez">(<a href="#ref-tab-probabilidades-combinaciones-posibles-diez" role="doc-biblioref"><strong>tab-probabilidades-combinaciones-posibles-diez?</strong></a>)</span>) y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+</div>
+<p>Obtendríamos los resultados de la tabla <a href="#tbl-probabilidades-combinaciones-posibles-diez">Tabla&nbsp;<span>1.1</span></a>) y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 </section>
 <section id="sec-estadisticas-descriptivas-e-inferenciales" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="sec-estadisticas-descriptivas-e-inferenciales"><span class="header-section-number">1.3</span> Estadísticas descriptivas e inferenciales</h2>
@@ -555,7 +582,7 @@ div.csl-indent {
 <h2 data-number="1.5" class="anchored" data-anchor-id="glosario"><span class="header-section-number">1.5</span> Glosario</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-butler1985statistics" class="csl-entry" role="doc-biblioentry">
 Butler, Christopher. 1985. <em>Statistics in linguistics</em>. Basil Blackwell.
 </div>
@@ -568,7 +595,7 @@ Butler, Christopher. 1985. <em>Statistics in linguistics</em>. Basil Blackwell.
 <li id="fn2"><p>En este ejemplo hemos usado <em>sexo</em> como la variable biológica es decir ausencia o presencia de un cronozoma Y. Si queremos en cambio usar <em>género</em> obviamente también podemos incluir más categorías que las clásicas masculino y femenino si lo consideramos conveniente.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>En estadísticas las probabilidades suelen expresarse por decimales, es decir: 0,5; en lugar de porcentajes: 50%<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Si se lleva este argumento al extremo: si el tamaño de la muestra fuera igual al tamaño de la población, la muestra sería perfectamente representativa.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Adaptado de <span class="citation" data-cites="butler1985statistics">Butler (<a href="#ref-butler1985statistics" role="doc-biblioref">1985</a>)</span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Adaptado de <span class="citation" data-cites="butler1985statistics">Butler (<a href="11-referencias.html#ref-butler1985statistics" role="doc-biblioref">1985</a>)</span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>También se conocen como <em>predictores</em> o <em>variables experimentales</em><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>

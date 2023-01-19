@@ -113,10 +113,10 @@ $H_0: \mu_M=\mu_F$
 $H_1: \mu_M > \mu_F$.
 :::
 
-La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional --y está justificado su uso, claro-- disminuye el riesgo de cometer un error de tipo II. Está ilustrado en las figuras [-@fig-non-directional-and-directional-normal-curves-i] y [-@fig-non-directional-and-directional-normal-curves-ii]: para un test no-direcional necesitamos un 2,5% *en cada extremo* de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.
+La diferencia entre usar un test direccional o no direccional influye en los valores críticos de los diferentes tests. Si usamos un test direccional --y está justificado su uso, claro-- disminuye el riesgo de cometer un error de tipo II. Está ilustrado en las [figura @fig-non-directional-and-directional-normal-curves]: para un test no-direcional necesitamos un 2,5% *en cada extremo* de la curva para que sume 5%, en el test direccional «gastamos» todo el lado positivo.
 
 ```{r}
-#| label: fig-non-directional-and-directional-normal-curves-i
+#| label: fig-non-directional-and-directional-normal-curves
 #| echo: false 
 #| warning: false 
 #| message: false
@@ -165,17 +165,7 @@ p2 <- tmp %>%
   # ylab("")+
   # scale_y_continuous(labels = NULL)+
   # scale_x_continuous(labels = NULL)
-
-p1
-```
-
-```{r}
-#| label: fig-non-directional-and-directional-normal-curves-ii
-#| echo: false 
-#| warning: false 
-#| message: false
-#| fig-cap: "Test no direccionales y test direccionales" 
-p2
+multiplot(p1,p2,ncol=1) %>% capture.output()->p
 ```
 
 ::: {#exm-cara-o-cruz}

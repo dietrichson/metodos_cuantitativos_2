@@ -208,7 +208,7 @@ Del [ejemplo @exm-small-sample] vemos que si bien logramos estimar la media de l
 
 ### ¿Dónde obtenemos los valores críticos de t? {.unnumbered}
 
-Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [apendix @sec-distribucion-t-table] o en linea. También se puede sacar con una función en R llamada `qt`.
+Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del [apendix @sec-distribución-t-appendix] o en linea. También se puede sacar con una función en R llamada `qt`.
 
 ::: {#exm-extraer-el-valor-critico}
 ## Ejemplo en R: Extraer el valor crítico de t
