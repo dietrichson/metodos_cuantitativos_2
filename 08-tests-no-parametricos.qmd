@@ -64,6 +64,7 @@ library(tidyverse)
 
 ```{r}
 #| label: tbl-drug-comparative-table
+#| tbl-cap: "Eficiencia de dos medicamentos, reportada por los pacientes."
 #| echo: false
 datos = data.frame(
   Paciente = c( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12),
@@ -72,7 +73,6 @@ datos = data.frame(
 )
 datos %>% 
   knitr::kable(
-    caption = "Eficiencia de dos medicamentos reportada por los pacientes.",
     format.args = list(decimal.mark = ","),
                        booktabs=TRUE
   )

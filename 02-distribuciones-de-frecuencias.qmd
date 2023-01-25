@@ -27,14 +27,15 @@ A simple vista no es tan fácil darse cuenta «qué pasa» con estos datos. Pode
 Para darnos cuenta mejor de las estructuras que estamos analizando podemos construir una *tabla de frecuencias*, que en este caso es un resumen de cuántos alumnos sacaron cuál nota de las posibles (sobre veinte).
 
 ```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-tabla-de-frecuencias
+#| tbl-cap: "Frecuencia de notas por grupo"
 options(knitr.kable.NA = '')
 data.frame(table(myData$classA)) %>% 
   full_join(data.frame(table(myData$classB)), by =
               c('Var1')) %>% 
   mutate(Var1 = as.numeric(Var1)) %>%
   arrange(Var1) %>%
-  knitr::kable(caption = "Frecuencia de notas por grupo",
-               col.names = c('Nota', 'Grupo A', 'Grupo B'))
+  knitr::kable( col.names = c('Nota', 'Grupo A', 'Grupo B'))
 
 ```
 

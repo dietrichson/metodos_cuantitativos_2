@@ -246,10 +246,10 @@ En este ejemplo, adaptado de [@butler1985statistics], vamos a suponer que hemos 
 
 ```{r}
 #| label: tbl-resultados-dos-examenes
+#| tbl-cap: "Resultados de un examen de tradución (x) y de comprensión (y) de ingles."
 #| echo: false
 datos %>% 
   knitr::kable(
-    caption = "Resultados de un examen de tradución (x) y de comprensión (y) de ingles.",
     format.args = list(decimal.mark = ","),
                        booktabs=TRUE
   )
@@ -259,12 +259,12 @@ Para poder aplicar la fórmula vamos a precisar los valores llevados al cuadrado
 
 ```{r}
 #| label: tbl-resultados-dos-examenes-ii
+#| tbl-cap: "Resultados de un examen de tradución (x) y de comprensión (y) de ingles."
 #| echo: false
 datos <- datos %>% 
   mutate(x2=x^2,y2=y^2,xy = x*y) 
 datos %>% 
   knitr::kable(
-    caption = "Resultados de un examen de tradución (x) y de comprensión (y) de ingles.",
     format.args = list(decimal.mark = ","),
                        booktabs=TRUE
   )
@@ -286,7 +286,6 @@ Sabemos que N=12, pero vamos a precisar las sumas de algunas columnas:
 
 Aplicamos la fórmula:
 
-
 $$
 \begin{split}
 &r= {N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\times\{N\Sigma{y^2}-(\Sigma{y})^2\} }}} \\
@@ -304,7 +303,6 @@ $$
 &r= 0,5031
 \end{split}
 $$
-
 :::
 
 ::: {#exm-pearson-coefficient-calculation-in-r}
@@ -330,7 +328,6 @@ cor(datos$x, datos$y)
 Si una o ambas variables que estamos comparando son de escala ordinal, el coeficiente apropiado es el de Spearman. Para calcularlo ordenamos las observaciones de la primer variable de manera ascendiente y les damos el valor de su orden. Si dos observaciones de la misma variable tienen el mismo valor, si hay empates, se saca el promedio cual si el empate no hubiera existido. Hacemos lo mismo para la segunda variable. Calculamos la diferencia entre los rangos para cada par de observaciones. La correlación Spearman o $\rho$ de la letra griega *r* se calcula según la [definición @def-definition-spearman-correlation].
 
 ::: {#def-definition-spearman-correlation}
-
 ## Coeficiente de correlación de Spearman
 
 $$
@@ -395,11 +392,9 @@ $$
 $$
 :::
 
-Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la [definición @def-chi-squared]. De hecho se relacionan matemáticamente: 
-$$
+Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la [definición @def-chi-squared]. De hecho se relacionan matemáticamente: $$
 \phi = \sqrt{\chi^2/N} \Leftrightarrow \chi^2 = N\times\phi^2.
-$$ 
-Por tanto la significanza de $\phi$ se puede obtener por medio de la conversión a $\chi^2$.
+$$ Por tanto la significanza de $\phi$ se puede obtener por medio de la conversión a $\chi^2$.
 
 ```{r, include=FALSE}
 # Agregar ejemplo en R?

@@ -278,10 +278,10 @@ pre_post_data <- pre_post_data %>%
 ```{r}
 #| label: tbl-diff-table
 #| echo: false
+#| tbl-cap: "Resultados de dos tests de matemáticas"
 pre_post_data %>% 
   select(nombre, pre,post,Diferencia) %>% 
   knitr::kable( 
-    caption="Resultados de dos tests de matemáticas",
     col.names = c("Nombre","Antes","Después","Diferencia"),
     booktabs=TRUE)
 

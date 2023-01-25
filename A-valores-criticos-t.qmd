@@ -10,6 +10,7 @@ library(tidyverse)
 ```{r}
 #| label: tbl-significance-table-t-distribution
 #| echo: false
+#| tbl-cap: "Valores críticos de t por nivel de significanza y grados de libertad."
 
 #Create table of significant values
 sig.levels <- c(.2, .1, .05, .025, .02, .01)
@@ -26,7 +27,6 @@ knitr::kable(myData,
                                    "p < 0,10","p < 0,05","p < 0,02","p < 0,01"),
              digits=3,
              format.args = list(decimal.mark = ","),
-             caption = "Valores críticos de t por nivel de significanza y grados de libertad.",
              booktabs = TRUE
              )
 ```

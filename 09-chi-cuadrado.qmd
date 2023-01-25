@@ -79,13 +79,14 @@ La hipótesis nula es que no hay asociación entre las dos variables, es decir q
 ```{r}
 #| label: tbl-opiniones-aborto-ii
 #| echo: false
+#| tbl-cap: "Opiniones sobre la ley del aborto."
 
 M2 <- cbind(M,rowSums(M))
 M2 <- rbind(M2,colSums(M2))
 M2 <- as.data.frame(M2) %>% 
   rename(total=V3)
 row.names(M2) <- c("Mujeres","Hombres","total")
-M2 %>% knitr::kable(caption="Opiniones sobre la ley del aborto.")
+M2 %>% knitr::kable()
 ```
 
 El valor esperado es la cantidad de las observaciones que caen en cada celda si las distribuimos proporcionalmente. Esto se calcula multiplicando las sumas de la fila y columna de la celda respectiva y dividir por el total de las observaciones. Por ejemplo, el valor esperado de mujeres a favor sería:
@@ -97,8 +98,8 @@ $$
 Si calculamos esto para todas las celdas obtenemos:
 
 ```{r}
-
 #| label: tbl-opiniones-aborto-iii
+#| tbl-cap: "Valores esperados: opiniones sobre la ley del aborto."
 #| echo: false
 myTest <- chisq.test(M)
 M3 <- myTest$expected 
@@ -109,18 +110,19 @@ M3 <- as.data.frame(M3) %>%
 row.names(M3) <- c("Mujeres","Hombres","total")
 M3%>% 
   knitr::kable( format.args = list(decimal.mark=','), digits=2,
-                caption="Valores esperados: opiniones sobre la ley del aborto.")
+               )
 ```
 
 y con esto podemos calcular las diferencias.
 
 ```{r}
 #| label: tbl-opiniones-aborto-iiii
+#| tbl-cap: "Diferencias entre valores observados y esperados."
 #| echo: false
 M4 <- myTest$observed - myTest$expected
 
 
-M4 %>% knitr::kable(caption='Diferencias entre valores observados y esperados.', digits = 2, format.args = list(decimal.mark=","))
+M4 %>% knitr::kable( digits = 2, format.args = list(decimal.mark=","))
 ```
 
 y podemos aplicar la fórmula en la [definición @def-chi-squared]:
@@ -138,6 +140,7 @@ A lo largo de este texto se ha mencionado en algunas ocasiones el término *grad
 ```{r}
 #| label: tbl-degrees-of-freedom
 #| echo: false
+#| tbl-cap: "Tabla de contingencia con un solo valor."
 options(knitr.kable.NA='-')
 M5 <- M2
 M5[2,1] <-NA
@@ -145,7 +148,7 @@ M5[2,2] <-NA
 M5[1,2] <-NA
 
 M5 %>% 
-  knitr::kable(caption='Tabla de contingencia con un solo valor.')
+  knitr::kable()
 ```
 
 Con este único valor podemos rellenar las demás celdas, ya que su contenido está dato por la diferencia entre ese valor y los totales marginales. Esto quiere decir que en esta tabla hay un solo valor que se pueda asignar arbitrariamente, el resto está dado por este valor. Por ello decimos que tenemos un solo grado de libertad.
