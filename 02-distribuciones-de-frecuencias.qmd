@@ -4,7 +4,8 @@ En este capítulo desarrollaremos el concepto de distribución estadística. Seg
 
 ## Explorando los datos
 
-```{r, include=FALSE}
+```{r}
+#| include: false
 library(tidyverse)
 source("_common.R")
 myData <- readRDS(here::here("data","comparative_two_courses.RDS"))
@@ -26,7 +27,9 @@ A simple vista no es tan fácil darse cuenta «qué pasa» con estos datos. Pode
 
 Para darnos cuenta mejor de las estructuras que estamos analizando podemos construir una *tabla de frecuencias*, que en este caso es un resumen de cuántos alumnos sacaron cuál nota de las posibles (sobre veinte).
 
-```{r, echo=FALSE, warning=FALSE}
+```{r}
+#| echo: false
+#| warning: false
 #| label: tbl-tabla-de-frecuencias
 #| tbl-cap: "Frecuencia de notas por grupo"
 options(knitr.kable.NA = '')
@@ -41,7 +44,9 @@ data.frame(table(myData$classA)) %>%
 
 Ahora podemos hacer algunas observaciones adicionales. Se nota que el *rango* (distancia entre el menor y el mayor valor del conjunto) es más amplio en el grupo B que en el grupo A. Posiblemente también nos damos cuenta que el valor más frecuente del grupo A (15) es superior al más frecuente del grupo B (12).
 
-### Ejemplo en R {.unnumbered}
+:::{exm-ejemplo-en-r-tabla-de-frecuencias}
+
+## Tabla de frecuencias en R
 
 Si bien es posible hacer una tabla de frecuencias a mano, simplemente contando las observaciones en cada categoría y anotando el resultado en orden, también tenemos funciones en R para el propósito.
 
@@ -51,7 +56,7 @@ table(
 )
 ```
 
-En este ejemplo estamos usando dos funciones, una dentro de otra. La función `c`, le pide a R que arme un **c**conjunto de datos, y los datos que queremos usar van entre paréntesis y separados por coma. Esto, a su vez, lo estamos haciendo dentro de la función `table` que genera una tabla de frecuencias.
+En este ejemplo estamos usando dos funciones, una dentro de otra. La función `c`, le pide a R que arme un conjunto de datos, y los datos que queremos usar van entre paréntesis y separados por coma. Esto, a su vez, lo estamos haciendo dentro de la función `table` que genera una tabla de frecuencias.
 
 También es posible darle un nombre a los datos a usar o «asignarlos a una variable», lo cual puede ser útil cuando se quiere reutilizar. Esto se hace de la siguiente manera:
 
@@ -66,6 +71,8 @@ table(x)
 ```
 
 nos da el mismo resultado.
+
+:::
 
 Por lo general se recomienda usar nombres de variables que tengan algún sentido, en lugar de usar genéricos como x, y, z o a, b, c. En R las variables pueden tener múltiples caracteres (pero no espacios), por lo que podríamos ingresar:
 
@@ -98,7 +105,9 @@ hist(grupo.B, xlab = "Nota", ylab="Frecuencia", main  ="Distribución de notas d
 
 Comparando estos dos diagramas nos damos cuenta de que la estructura de los datos son disimilares. En el grupo A las notas se centran alrededor de quince, en cambio para el grupo B la concentración está en el rango diez-catorce, con un pico menor alrededor de siete.
 
-#### Ejemplo en R: Histograma
+::: {#exm-ejemplo-en-r-histograma}
+
+## Histograma en R
 
 Hacer un histograma con R es bastante sencillo. Usamos la función `hist`, de histograma y los datos que queremos visualizar. Si lo asignamos a una variable, como lo vimos en la parte de las tablas (con `table`).
 
@@ -107,9 +116,13 @@ grupo.A <- c(15, 12, 11, 18, 15, 15, 9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16, 
 hist(grupo.A)
 ```
 
+:::
+
 La función `hist` tiene muchas opciones adicionales. Para conocerlas se puede ingresar `?hist` (signo de interrogación y «hist») en la consola de R y aparecerá la descripción completa de ellas. Lo mismo es cierto para cualquier función de R. El mismo resultado se obtiene usando la función `help(hist)`.
 
-#### Ejemplo en R: Histograma en ggplot
+:::{#exm-ejemplo-en-r-histograma-en-ggplot}
+
+## Histograma en ggplot
 
 Usando los paquetes de tidyverse podemos generar un histograma con el packete ggplot2. Se carga por default junto con muchos otros paquetes. A diferencia del ejemplo anterior la función espera un `data.frame` como argumento. Para generar un histograma con los mismos datos debemos entonces proceder con crear una estructura de `data.frame` primero y luego proceder.
 
@@ -119,15 +132,19 @@ my_data <- data.frame(
 )
 ```
 
+
+:::
+
 Nótese que usamos el operador `=` dentro de la definición del data.frame. Luego cargamos las funciones de tidyverse y procedemos a construir nuestro gráfico.
 
-```{r, message=FALSE}
+```{r}
+#| message: false
 library(tidyverse) # Carga todos los paquetes, incluso ggplot2
 ggplot(my_data, aes(x=grupo.A)) + 
   geom_histogram()
 ```
 
-vemos que si bien los datos son los mismos las columnas parecen separados. Esto se debe a que por defecto el `geom_histogram` distribuye los datos en 30 columnas, lo cual es demasiado para el caso que tenemos. Podemos arreglar esto agragando otro parametro a la función asi:
+vemos que si bien los datos son los mismos las columnas parecen separados. Esto se debe a que por defecto el `geom_histogram` distribuye los datos en 30 columnas, lo cual es demasiado para el caso que tenemos. Podemos arreglar esto agregando otro parámetro a la función así:
 
 ```{r}
 ggplot(my_data, aes(x=grupo.A)) + 
@@ -138,16 +155,18 @@ en este caso hemos especificado que el ancho de cada columna sea de 1, con lo cu
 
 ##### Agregando un poco de color
 
-Podemos también manipular los colores de las columnas con algunos parametros más:
+Podemos también manipular los colores de las columnas con algunos parámetros más:
 
 ```{r}
 ggplot(my_data, aes(x=grupo.A)) + 
   geom_histogram(binwidth = 1, fill="white", color='red')
 ```
 
-> #### El operador «pipe»
+> #### El operador «pipe» {.unnumbered}
 >
 > El uso de `%>%` es muy frecuente cuando uno trabaja con el tidyverse.
+> 
+> Desde R 4.0 existe también el «pipe nativo» `|>` que generalmente cumple la misma función. 
 
 ## Polígono de frecuencias
 
@@ -176,8 +195,9 @@ freqPoly1
 ```
 
 Apreciamos con más precisión los valores más típicos y diferencias entre los dos grupos. También podemos ver que la parte inferior de la escala de notas está sin uso, característica que comparten ambos grupos.
+:::{exm-otro-ejemplo}
 
-#### Otro ejemplo {.unnumbered}
+## Otro ejemplo
 
 En este ejemplo vamos a considerar un libro de la literatura romántica: «Persuasion» escrito por Jane Austen [@austen1817persuasion][^02-distribuciones-de-frecuencias-1]. Vamos a visualizar *el número de caracteres por palabra* en el texto. Obtenemos:
 
@@ -208,7 +228,9 @@ persuasionData %>%
   freqPoly2
 ```
 
-A differencia de la distribución de notas, vemos acá que encontramos observaciones a lo largo del rango de uno a deciseis, con la concentración de valores alrededor de tres. Esto tiene su interpretación bastante intuitiva ya que el uso de palabras *cortas*, como son artículos, preposiciones y conjunciones abundan en cuanquier texto y las palabras muy largas son de uso menos frecuente. Resulta lógico suponer que encontraríamos un perfil similar en cualquier texto de cierta longitud.
+A diferencia de la distribución de notas, vemos acá que encontramos observaciones a lo largo del rango de uno a dieciséis, con la concentración de valores alrededor de tres. Esto tiene su interpretación bastante intuitiva ya que el uso de palabras *cortas*, como son artículos, preposiciones y conjunciones abundan en cualquier texto y las palabras muy largas son de uso menos frecuente. Resulta lógico suponer que encontraríamos un perfil similar en cualquier texto de cierta longitud.
+
+:::
 
 ## Perfil de la distribución {#sec-perfil-de-la-distribucion}
 
@@ -234,7 +256,12 @@ Vamos a desarrollar el tema de la distribución normal con más detalle en el [c
 
 Cuando una distribución se inclina en una dirección u otra decimos, es decir que no es simétrica, se dice que tiene un *sesgo* o que es *asimétrica*. Se habla de *sesgo negativo* y *sesgo positivo* (también: *asimetría positiva/negativa* y *a la izquierda/derecha* todos equivalentes). Es positivo o negativo según en qué dirección tiene su *cola larga*.
 
-```{r,echo=FALSE, warning=FALSE,message=FALSE, fig.cap="Distribuciónes normal y sesgadas"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig.cap: "Distribuciones normal y sesgadas"
+
 set.seed(1)
 library(sn)
 N <- 1000; adjust <- 3
@@ -258,7 +285,7 @@ tmp %>%  ggplot(aes(x,y,color=Tipo))+geom_line()+
                               'Sesgo Positivo'='#00BFC4','Normal'='darkgray'))
 ```
 
-Vemos que nuestras distribuciones de *notas* corresponden a una distribución de *sesgo negativo*, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de *número de characteres* en el texto de Austen tiene *sesgo positivo*.
+Vemos que nuestras distribuciones de *notas* corresponden a una distribución de *sesgo negativo*, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de *número de caracteres* en el texto de Austen tiene *sesgo positivo*.
 
 ```{r}
 #| echo: false

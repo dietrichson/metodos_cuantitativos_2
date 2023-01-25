@@ -1,18 +1,19 @@
 # Conceptos fundamentales
 
 ```{r}
+#| include: false
 source("_common.R")
 ```
 
-En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción a la teoría de la probabilidad. Diferenciamos entre los algunos usos importantes de la estadística: descriptiva e inferencial. Finalmente consideramos algunas maneras de clasificar variables.
+En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción a la teoría de la probabilidad. Diferenciamos entre algunos de los usos importantes de la estadística: descriptiva e inferencial. Finalmente consideramos algunas maneras de clasificar variables.
 
 ## Poblaciones y muestras
 
-En su uso diario usamos *población* para designar un grupo de personas, por ejemplo la población del Gran Buenos Aires; o por lo menos de seres vivos como por ejemplo *la población de ratas* de la CABA. En estadísticas, en cambio, se usa el término de manera más general para significar cualquier recolección de un conjunto, elementos, artículos o sujetos que gozan de características comunes con el fin de estudiarlos y de esta forma se sacar conclusiones específicas para determinar sus resultados. Así podemos hablar de la población de sustantivos en las obras de Jorge Luis Borges o de la población de notas asignadas en los cursos a nivel universitario.
+En su uso diario usamos *población* para designar un grupo de personas, por ejemplo *la población del Gran Buenos Aires*; o por lo menos de seres vivos como por ejemplo *la población de ratas* de la CABA. En estadísticas, en cambio, se usa el término de manera más general para significar cualquier recolección o conjunto de elementos, artículos o sujetos que gozan de características comunes con el fin de estudiarlos y de esta forma se sacar conclusiones específicas para determinar sus resultados. Así podemos hablar de la población de sustantivos en las obras de Jorge Luis Borges o de la población de notas asignadas en los cursos a nivel universitario.
 
-Podemos distinguir entre poblaciones finitas e *infinitas*. La población de motocicletas vendidas en Buenos Aires en septiembre es finita. En cambio la población de temperaturas medidas en el Campus de San Martín es *infinita*, ya que, por lo menos teóricamente, podemos seguir midiendo para siempre.
+Podemos distinguir entre poblaciones *finitas* e *infinitas*. La población de motocicletas vendidas en Buenos Aires en septiembre es finita. En cambio la población de temperaturas medidas en el Campus de San Martín es *infinita*, ya que, por lo menos teóricamente, podemos seguir midiendo para siempre.
 
-Cuando una población finita no es demasiado grande podemos investigar la totalidad de la población. Pero, si la población es muy grande o potencialmente infinita tenemos que estar contentos con *muestras* extraídas de esta población. Por ejemplo: si queremos saber quién va a ganar las próximas elecciones podríamos preguntar a todo aquel que tiene derecho a votar cómo piensa votar para sacar el resultado. En la práctica esta metodología resultaría demasiado costosa, por lo que hacemos una muestra representativa de votantes, les preguntamos y generalizamos.
+Cuando una población finita no es demasiado grande podemos investigar la totalidad de ella. Pero, si la población es muy grande o potencialmente infinita tenemos que estar contentos con *muestras* extraídas de esta población. Por ejemplo: si queremos saber quién va a ganar las próximas elecciones podríamos preguntar a todo aquel que tiene derecho al voto cómo piensa votar para sacar el resultado. En la práctica esta metodología resultaría demasiado costosa, por lo que hacemos una muestra representativa de votantes, les preguntamos y generalizamos.
 
 Resulta evidente que hay que tener cuidado al seleccionar una muestra para análisis. Los métodos estadísticos, los que nos permiten generalizar e inferir, suponen que las muestras están tomadas de manera *aleatoria* o al azar. Esto no significa que la muestra sea arbitraria, sino que cualquier unidad de la población que estamos estudiando tiene la misma probabilidad de ser seleccionada para hacer parte de la muestra.
 
@@ -42,7 +43,10 @@ Para tener una muestra verdaderamente aleatoria de una población deberíamos as
 
 Ahora, ¿dónde encontramos números aleatorios? Hay secuencias en libros de estadísticas, usados principalmente antes de la existencia de computadoras. También se pueden generar esas secuencias en linea. Finalmente, R tienen un generador de números aleatorios que nos permite generar los de números de nuestra muestra con un solo comando usando la función de R *sample*.
 
-#### Ejemplo en R: Generar muestra {.unnumbered}
+
+::: {#exm-generar-muestra}
+
+## Generar muestra en R
 
 ```{r, eval=FALSE}
 sample(x = 1:200, size = 20)
@@ -50,11 +54,14 @@ sample(x = 1:200, size = 20)
 ## [1] 166  46  42 179 188 143 126 135 102  93  72 193  13 107 198 100  88  67  33  99
 ```
 
+:::
 Acá le estamos pidiendo a R que nos de una muestra aleatoria (`sample` ) de números entre uno y doscientos (`x = 1:200`), y que la muestra sea de veinte `size = 20` ). Con estos números podemos ir al estante y sacar los libros que queremos estudiar.
 
 Si corren este comando desde su consola de R los números deben salir diferentes, se hace una muestra aleatoria cada vez.
 
-#### Ejemplo en R: Ordenar los datos {.unnumbered}
+:::{#exm-ordenar-los-datos}
+
+## Ordenar los datos
 
 También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función *sort*.
 
@@ -65,11 +72,15 @@ sort(
 ## [1]  29  35  38  41  54  74  75  79  85  92 103 112 114 120 127 153 173 185 187 188
 ```
 
+:::
+
 ### Muestra cuasi-aleatoria
 
 Otra estrategia que podría emplearse para sacar veinte libros al azar del estante que describimos en la sección anterior sería decidir que vamos a sacar cada diez libros ya que ${200\over20} = 10$. Este tipo de muestra lleva el epíteto cuasi-aleatoria, y funciona bien si el orden original de la población es aleatorio. Sin embargo, hay que tener en cuenta que esta estrategia puede generar una muestra no representativa si existe una estructura en ese orden. Típicamente puede resultar problemática si existe *periodicidad* en la población que estamos analizando. Si, por ejemplo, queremos tener una muestra de cuantos ómnibus pasan delante de mi casa por día sería mala idea decir que vamos a contarlos cada siete días. Si el día que empezamos es un domingo obtendremos seguramente una muestra con cantidades inferiores a la población real (en este caso definida como todos los ómnibus que pasan por mi casa en un día); y si empezamos a contar un lunes las cantidades serían superiores.
 
-#### Ejemplo en R: Generar una secuencia
+:::{exm-generar-una-secuencia}
+
+## Ejemplo en R: Generar una secuencia
 
 Si bien sacar la secuencia para sacar cada diez libros resulta trivial, existe la manera que hacerlo también con una función de R.
 
@@ -78,11 +89,14 @@ seq( from = 10, to = 200 , by=10 )
 ## [1]  10  20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 200
 ```
 
+:::
+
 La función `seq` (de secuencia), toma tres parámetros, desde dónde empezamos (`from=10`), hasta dónde queremos llegar (`to=200`), y con qué distancia (`by=10`).
 
 Por lo pronto se vuelve más útil si estamos trabajando con números menos redondos. Digamos que queremos sacar cada siete libros de un estante que contiene cien empezando por el número seis.
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 seq( from = 6, to = 100 , by = 7 )
 ## [1]  6 13 20 27 34 41 48 55 62 69 76 83 90 97
 
@@ -175,8 +189,10 @@ Y para el Curso B (teórico):
 
 El examen fue idéntico para ambos grupos y se podía obtener un máximo de veinte.
 
-```{r, include=FALSE}
-## 
+```{r}
+
+#| include: false
+
 myData <- data.frame(
   classA = c(15, 12, 11, 18, 15, 15,9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16,17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16, 14),
   classB = c(11, 16, 14, 18,6,8,9, 14, 12, 12, 10, 15, 12,9, 13, 16, 17, 12,8,7, 15,5, 14, 13, 13, 12, 11, 13, 11, 7)
@@ -247,6 +263,6 @@ La mayoría de variables de interés en las ciencias duras se miden por escala d
 ## Glosario
 
 ```{r, echo=FALSE, results='asis'}
-#.format_dataframe_as_def_list(chapter=1)
+.format_dataframe_as_def_list(chapter=1)
 
 ```

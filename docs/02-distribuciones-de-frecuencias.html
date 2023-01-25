@@ -274,17 +274,16 @@ div.csl-indent {
    
   <ul>
   <li><a href="#explorando-los-datos" id="toc-explorando-los-datos" class="nav-link active" data-scroll-target="#explorando-los-datos"><span class="toc-section-number">2.1</span>  Explorando los datos</a></li>
-  <li><a href="#tablas-de-frecuencias" id="toc-tablas-de-frecuencias" class="nav-link" data-scroll-target="#tablas-de-frecuencias"><span class="toc-section-number">2.2</span>  Tablas de frecuencias</a>
+  <li><a href="#tablas-de-frecuencias" id="toc-tablas-de-frecuencias" class="nav-link" data-scroll-target="#tablas-de-frecuencias"><span class="toc-section-number">2.2</span>  Tablas de frecuencias</a></li>
+  <li><a href="#tabla-de-frecuencias-en-r" id="toc-tabla-de-frecuencias-en-r" class="nav-link" data-scroll-target="#tabla-de-frecuencias-en-r"><span class="toc-section-number">2.3</span>  Tabla de frecuencias en R</a></li>
+  <li><a href="#sec-histogramas" id="toc-sec-histogramas" class="nav-link" data-scroll-target="#sec-histogramas"><span class="toc-section-number">2.4</span>  Histogramas</a></li>
+  <li><a href="#polígono-de-frecuencias" id="toc-polígono-de-frecuencias" class="nav-link" data-scroll-target="#polígono-de-frecuencias"><span class="toc-section-number">2.5</span>  Polígono de frecuencias</a></li>
+  <li><a href="#otro-ejemplo" id="toc-otro-ejemplo" class="nav-link" data-scroll-target="#otro-ejemplo"><span class="toc-section-number">2.6</span>  Otro ejemplo</a></li>
+  <li><a href="#sec-perfil-de-la-distribucion" id="toc-sec-perfil-de-la-distribucion" class="nav-link" data-scroll-target="#sec-perfil-de-la-distribucion"><span class="toc-section-number">2.7</span>  Perfil de la distribución</a>
   <ul class="collapse">
-  <li><a href="#ejemplo-en-r" id="toc-ejemplo-en-r" class="nav-link" data-scroll-target="#ejemplo-en-r">Ejemplo en R</a></li>
+  <li><a href="#asimetría-o-sesgo" id="toc-asimetría-o-sesgo" class="nav-link" data-scroll-target="#asimetría-o-sesgo"><span class="toc-section-number">2.7.1</span>  Asimetría o Sesgo</a></li>
   </ul></li>
-  <li><a href="#sec-histogramas" id="toc-sec-histogramas" class="nav-link" data-scroll-target="#sec-histogramas"><span class="toc-section-number">2.3</span>  Histogramas</a></li>
-  <li><a href="#polígono-de-frecuencias" id="toc-polígono-de-frecuencias" class="nav-link" data-scroll-target="#polígono-de-frecuencias"><span class="toc-section-number">2.4</span>  Polígono de frecuencias</a></li>
-  <li><a href="#sec-perfil-de-la-distribucion" id="toc-sec-perfil-de-la-distribucion" class="nav-link" data-scroll-target="#sec-perfil-de-la-distribucion"><span class="toc-section-number">2.5</span>  Perfil de la distribución</a>
-  <ul class="collapse">
-  <li><a href="#asimetría-o-sesgo" id="toc-asimetría-o-sesgo" class="nav-link" data-scroll-target="#asimetría-o-sesgo"><span class="toc-section-number">2.5.1</span>  Asimetría o Sesgo</a></li>
-  </ul></li>
-  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">2.6</span>  Glosario</a></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">2.8</span>  Glosario</a></li>
   </ul>
 </nav>
     </div>
@@ -418,8 +417,9 @@ div.csl-indent {
 </div>
 </div>
 <p>Ahora podemos hacer algunas observaciones adicionales. Se nota que el <em>rango</em> (distancia entre el menor y el mayor valor del conjunto) es más amplio en el grupo B que en el grupo A. Posiblemente también nos damos cuenta que el valor más frecuente del grupo A (15) es superior al más frecuente del grupo B (12).</p>
-<section id="ejemplo-en-r" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="ejemplo-en-r">Ejemplo en R</h3>
+</section>
+<section id="tabla-de-frecuencias-en-r" class="level2 {exm-ejemplo-en-r-tabla-de-frecuencias}" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="tabla-de-frecuencias-en-r"><span class="header-section-number">2.3</span> Tabla de frecuencias en R</h2>
 <p>Si bien es posible hacer una tabla de frecuencias a mano, simplemente contando las observaciones en cada categoría y anotando el resultado en orden, también tenemos funciones en R para el propósito.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(</span>
@@ -431,7 +431,7 @@ div.csl-indent {
 #&gt;  1  2  2  3  4  6  3  4  3  2</code></pre>
 </div>
 </div>
-<p>En este ejemplo estamos usando dos funciones, una dentro de otra. La función <code>c</code>, le pide a R que arme un <strong>c</strong>conjunto de datos, y los datos que queremos usar van entre paréntesis y separados por coma. Esto, a su vez, lo estamos haciendo dentro de la función <code>table</code> que genera una tabla de frecuencias.</p>
+<p>En este ejemplo estamos usando dos funciones, una dentro de otra. La función <code>c</code>, le pide a R que arme un conjunto de datos, y los datos que queremos usar van entre paréntesis y separados por coma. Esto, a su vez, lo estamos haciendo dentro de la función <code>table</code> que genera una tabla de frecuencias.</p>
 <p>También es posible darle un nombre a los datos a usar o «asignarlos a una variable», lo cual puede ser útil cuando se quiere reutilizar. Esto se hace de la siguiente manera:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -446,6 +446,7 @@ div.csl-indent {
 </div>
 </div>
 <p>nos da el mismo resultado.</p>
+</section>
 <p>Por lo general se recomienda usar nombres de variables que tengan algún sentido, en lugar de usar genéricos como x, y, z o a, b, c.&nbsp;En R las variables pueden tener múltiples caracteres (pero no espacios), por lo que podríamos ingresar:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>grupo.A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -459,10 +460,8 @@ div.csl-indent {
 #&gt;  1  2  2  3  4  6  3  4  3  2</code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="sec-histogramas" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="sec-histogramas"><span class="header-section-number">2.3</span> Histogramas</h2>
+<section id="sec-histogramas" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-histogramas"><span class="header-section-number">2.4</span> Histogramas</h2>
 <p>Para seguir explorando las tablas que hemos creado en la sección anterior se pueden visualizar con un <em>histograma</em>. El histograma resume los datos dentro de algunos rangos, por ejemplo 8-9, 10-11, 12-13 etcétera, y se cuenta el número de observaciones dentro de cada rango.</p>
 <p>Para nuestros datos obtenemos:</p>
 <div class="cell">
@@ -477,9 +476,8 @@ div.csl-indent {
 </div>
 </div>
 <p>Comparando estos dos diagramas nos damos cuenta de que la estructura de los datos son disimilares. En el grupo A las notas se centran alrededor de quince, en cambio para el grupo B la concentración está en el rango diez-catorce, con un pico menor alrededor de siete.</p>
-<section id="ejemplo-en-r-histograma" class="level4" data-number="2.3.0.1">
-<h4 data-number="2.3.0.1" class="anchored" data-anchor-id="ejemplo-en-r-histograma"><span class="header-section-number">2.3.0.1</span> Ejemplo en R: Histograma</h4>
-<p>Hacer un histograma con R es bastante sencillo. Usamos la función <code>hist</code>, de histograma y los datos que queremos visualizar. Si lo asignamos a una variable, como lo vimos en la parte de las tablas (con <code>table</code>).</p>
+<div id="exm-ejemplo-en-r-histograma" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 2.1 (Histograma en R) </strong></span>Hacer un histograma con R es bastante sencillo. Usamos la función <code>hist</code>, de histograma y los datos que queremos visualizar. Si lo asignamos a una variable, como lo vimos en la parte de las tablas (con <code>table</code>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>grupo.A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(grupo.A)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -487,15 +485,15 @@ div.csl-indent {
 <p><img src="02-distribuciones-de-frecuencias_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</div>
 <p>La función <code>hist</code> tiene muchas opciones adicionales. Para conocerlas se puede ingresar <code>?hist</code> (signo de interrogación y «hist») en la consola de R y aparecerá la descripción completa de ellas. Lo mismo es cierto para cualquier función de R. El mismo resultado se obtiene usando la función <code>help(hist)</code>.</p>
-</section>
-<section id="ejemplo-en-r-histograma-en-ggplot" class="level4" data-number="2.3.0.2">
-<h4 data-number="2.3.0.2" class="anchored" data-anchor-id="ejemplo-en-r-histograma-en-ggplot"><span class="header-section-number">2.3.0.2</span> Ejemplo en R: Histograma en ggplot</h4>
-<p>Usando los paquetes de tidyverse podemos generar un histograma con el packete ggplot2. Se carga por default junto con muchos otros paquetes. A diferencia del ejemplo anterior la función espera un <code>data.frame</code> como argumento. Para generar un histograma con los mismos datos debemos entonces proceder con crear una estructura de <code>data.frame</code> primero y luego proceder.</p>
+<div id="exm-ejemplo-en-r-histograma-en-ggplot" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 2.2 (Histograma en ggplot) </strong></span>Usando los paquetes de tidyverse podemos generar un histograma con el packete ggplot2. Se carga por default junto con muchos otros paquetes. A diferencia del ejemplo anterior la función espera un <code>data.frame</code> como argumento. Para generar un histograma con los mismos datos debemos entonces proceder con crear una estructura de <code>data.frame</code> primero y luego proceder.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">grupo.A =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>Nótese que usamos el operador <code>=</code> dentro de la definición del data.frame. Luego cargamos las funciones de tidyverse y procedemos a construir nuestro gráfico.</p>
 <div class="cell">
@@ -506,7 +504,7 @@ div.csl-indent {
 <p><img src="02-distribuciones-de-frecuencias_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>vemos que si bien los datos son los mismos las columnas parecen separados. Esto se debe a que por defecto el <code>geom_histogram</code> distribuye los datos en 30 columnas, lo cual es demasiado para el caso que tenemos. Podemos arreglar esto agragando otro parametro a la función asi:</p>
+<p>vemos que si bien los datos son los mismos las columnas parecen separados. Esto se debe a que por defecto el <code>geom_histogram</code> distribuye los datos en 30 columnas, lo cual es demasiado para el caso que tenemos. Podemos arreglar esto agregando otro parámetro a la función así:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(my_data, <span class="fu">aes</span>(<span class="at">x=</span>grupo.A)) <span class="sc">+</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -515,9 +513,9 @@ div.csl-indent {
 </div>
 </div>
 <p>en este caso hemos especificado que el ancho de cada columna sea de 1, con lo cual se visualizan mejor estos datos.</p>
-<section id="agregando-un-poco-de-color" class="level5" data-number="2.3.0.2.1">
-<h5 data-number="2.3.0.2.1" class="anchored"><span class="header-section-number">2.3.0.2.1</span> Agregando un poco de color</h5>
-<p>Podemos también manipular los colores de las columnas con algunos parametros más:</p>
+<section id="agregando-un-poco-de-color" class="level5" data-number="2.4.0.0.1">
+<h5 data-number="2.4.0.0.1" class="anchored"><span class="header-section-number">2.4.0.0.1</span> Agregando un poco de color</h5>
+<p>Podemos también manipular los colores de las columnas con algunos parámetros más:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(my_data, <span class="fu">aes</span>(<span class="at">x=</span>grupo.A)) <span class="sc">+</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill=</span><span class="st">"white"</span>, <span class="at">color=</span><span class="st">'red'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -526,14 +524,14 @@ div.csl-indent {
 </div>
 </div>
 <blockquote class="blockquote">
-<h4 id="el-operador-pipe" data-number="2.3.0.3" class="anchored" data-anchor-id="agregando-un-poco-de-color"><span class="header-section-number">2.3.0.3</span> El operador «pipe»</h4>
+<h4 id="el-operador-pipe" class="unnumbered anchored" data-anchor-id="agregando-un-poco-de-color">El operador «pipe»</h4>
 <p>El uso de <code>%&gt;%</code> es muy frecuente cuando uno trabaja con el tidyverse.</p>
+<p>Desde R 4.0 existe también el «pipe nativo» <code>|&gt;</code> que generalmente cumple la misma función.</p>
 </blockquote>
 </section>
 </section>
-</section>
-<section id="polígono-de-frecuencias" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="polígono-de-frecuencias"><span class="header-section-number">2.4</span> Polígono de frecuencias</h2>
+<section id="polígono-de-frecuencias" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="polígono-de-frecuencias"><span class="header-section-number">2.5</span> Polígono de frecuencias</h2>
 <p>Los datos también de pueden visualizar con un polígono de frecuencias. En este tipo de visualización ponemos un punto en la intersección de la nota (eje horizontal) y la frecuencia (eje vertical) y trazamos una linea entre los puntos. Una de las ventajas de este tipo de visualización es que facilita la comparación entre varias distribuciones ya que los podemos desplegar en un mismo diagrama.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -545,9 +543,10 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Apreciamos con más precisión los valores más típicos y diferencias entre los dos grupos. También podemos ver que la parte inferior de la escala de notas está sin uso, característica que comparten ambos grupos.</p>
-<section id="otro-ejemplo" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="otro-ejemplo">Otro ejemplo</h4>
+<p>Apreciamos con más precisión los valores más típicos y diferencias entre los dos grupos. También podemos ver que la parte inferior de la escala de notas está sin uso, característica que comparten ambos grupos. :::{exm-otro-ejemplo}</p>
+</section>
+<section id="otro-ejemplo" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="otro-ejemplo"><span class="header-section-number">2.6</span> Otro ejemplo</h2>
 <p>En este ejemplo vamos a considerar un libro de la literatura romántica: «Persuasion» escrito por Jane Austen [<span class="citation" data-cites="austen1817persuasion">Austen (<a href="11-referencias.html#ref-austen1817persuasion" role="doc-biblioref">1817</a>)</span>]<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Vamos a visualizar <em>el número de caracteres por palabra</em> en el texto. Obtenemos:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -559,11 +558,11 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>A differencia de la distribución de notas, vemos acá que encontramos observaciones a lo largo del rango de uno a deciseis, con la concentración de valores alrededor de tres. Esto tiene su interpretación bastante intuitiva ya que el uso de palabras <em>cortas</em>, como son artículos, preposiciones y conjunciones abundan en cuanquier texto y las palabras muy largas son de uso menos frecuente. Resulta lógico suponer que encontraríamos un perfil similar en cualquier texto de cierta longitud.</p>
+<p>A diferencia de la distribución de notas, vemos acá que encontramos observaciones a lo largo del rango de uno a dieciséis, con la concentración de valores alrededor de tres. Esto tiene su interpretación bastante intuitiva ya que el uso de palabras <em>cortas</em>, como son artículos, preposiciones y conjunciones abundan en cualquier texto y las palabras muy largas son de uso menos frecuente. Resulta lógico suponer que encontraríamos un perfil similar en cualquier texto de cierta longitud.</p>
+<p>:::</p>
 </section>
-</section>
-<section id="sec-perfil-de-la-distribucion" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="sec-perfil-de-la-distribucion"><span class="header-section-number">2.5</span> Perfil de la distribución</h2>
+<section id="sec-perfil-de-la-distribucion" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="sec-perfil-de-la-distribucion"><span class="header-section-number">2.7</span> Perfil de la distribución</h2>
 <p>Las distribuciones de notas que vimos en las secciones anteriores tienen relativamente pocos datos, por lo que siempre van a parecer algo irregulares. Si tenemos muchos datos, sobre todo si con se escala de medición continua, podemos imaginarnos que en lugar de trazar una linea llegamos a trazar más bien una curva entre los puntos. Esto nos permite hacer una abstracción de las distribuciones y hablar de distribuciones teóricas. La más conocida de ellas sin duda es la <em>distribución normal</em>, también llamada de Gauss o gaussiana.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -576,20 +575,20 @@ div.csl-indent {
 </div>
 </div>
 <p>Vamos a desarrollar el tema de la distribución normal con más detalle en el <a href="04-la-distribucion-normal.html">capítulo&nbsp;<span>4</span></a>. Por ahora simplemente vamos a considerar si los datos de nuestras muestras se asemejan a ésta o si tiene otro perfil.</p>
-<section id="asimetría-o-sesgo" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="asimetría-o-sesgo"><span class="header-section-number">2.5.1</span> Asimetría o Sesgo</h3>
+<section id="asimetría-o-sesgo" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="asimetría-o-sesgo"><span class="header-section-number">2.7.1</span> Asimetría o Sesgo</h3>
 <p>Cuando una distribución se inclina en una dirección u otra decimos, es decir que no es simétrica, se dice que tiene un <em>sesgo</em> o que es <em>asimétrica</em>. Se habla de <em>sesgo negativo</em> y <em>sesgo positivo</em> (también: <em>asimetría positiva/negativa</em> y <em>a la izquierda/derecha</em> todos equivalentes). Es positivo o negativo según en qué dirección tiene su <em>cola larga</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="02-distribuciones-de-frecuencias_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Distribuciónes normal y sesgadas</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Distribuciones normal y sesgadas</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Vemos que nuestras distribuciones de <em>notas</em> corresponden a una distribución de <em>sesgo negativo</em>, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de <em>número de characteres</em> en el texto de Austen tiene <em>sesgo positivo</em>.</p>
+<p>Vemos que nuestras distribuciones de <em>notas</em> corresponden a una distribución de <em>sesgo negativo</em>, ya que hay menos notas en la parte inferior de la escala que en la parte superior. En cambio, la distribución de <em>número de caracteres</em> en el texto de Austen tiene <em>sesgo positivo</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-poligonos-de-frecuencias" class="quarto-figure quarto-figure-center anchored">
@@ -603,8 +602,8 @@ div.csl-indent {
 <p>Nótese también que la si bien la escala vertical de los dos gráficos son de muy diferente magnitud, la máxima frecuencia es veinte mil (20.000) y seis (6) respectivamente, podemos comparar las dos distribuciones.</p>
 </section>
 </section>
-<section id="glosario" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="glosario"><span class="header-section-number">2.6</span> Glosario</h2>
+<section id="glosario" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="glosario"><span class="header-section-number">2.8</span> Glosario</h2>
 <dl>
 <dt>Asimetría</dt>
 <dd>
