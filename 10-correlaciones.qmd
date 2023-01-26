@@ -31,7 +31,7 @@ La correlación es el área de las estadísticas que estudia la relación sistem
 
 ## Visualización
 
-El primer paso para estudiar posibles relaciones entre variables es visualizarlos. Si tenemos dos variables medidas por cada miembro de la población o muestra que estamos investigando podemos generar un *diagrama de disperción* también conocido como *scatterplot*. En este tipo de visualización cada miembro de la muestra/población está representado por un punto, y las coordinadas del punto corresponde a las dos variables que hemos medido, en el eje horizontal y vertical respectivamente.
+El primer paso para estudiar posibles relaciones entre variables es visualizarlos. Si tenemos dos variables medidas por cada miembro de la población o muestra que estamos investigando podemos generar un *diagrama de dispersión* también conocido como *scatterplot*. En este tipo de visualización cada miembro de la muestra/población está representado por un punto, y las coordinadas del punto corresponde a las dos variables que hemos medido, en el eje horizontal y vertical respectivamente.
 
 El la [figura @fig-strong-positive-correlation], vemos que la concentración de puntos suben de la izquierda a la derecha. Es decir cuando avanzamos en el eje horizontal avanzamos en el eje vertical también. Es un ejemplo de una *correlación positiva*, como podría ser edad y estatura.
 
@@ -55,7 +55,7 @@ theme_set(theme_minimal()+
 
 ```
 
-En la [figura @fig-strong-negative-correlation] vemos lo contrario, mientras avanzamos en el eje vertical retrocedemos (o bajamos) en el eje horizontal. Esto se conoce como *correlacion negativa*.
+En la [figura @fig-strong-negative-correlation] vemos lo contrario, mientras avanzamos en el eje vertical retrocedemos (o bajamos) en el eje horizontal. Esto se conoce como correlación *negativa*.
 
 ```{r}
 #| label: fig-strong-negative-correlation
@@ -159,7 +159,7 @@ Por defecto R viene con algunos data.frames ya cargados, uno de ellos es «trees
 head(trees)
 ```
 
-Vemos que tiene tres columnas «Girth», «Height» y «Volume» (circumferencia, alto y volumen), los que, por lógica, deben tener alta correlación. Graficamos dos de ellos.
+Vemos que tiene tres columnas «Girth», «Height» y «Volume» (circunferencia, alto y volumen), los que, por lógica, deben tener alta correlación. Graficamos dos de ellos.
 
 ```{r}
 plot(trees$Girth, trees$Volume)
@@ -194,7 +194,7 @@ De la misma manera *y* tiene su desviación estándar: $$
 s_y = {\sqrt{(\sum(y-\bar{y})^2\over{N-1}}}.
 $$
 
-Ahora podemos normalizar las variables según la [definición @def-definition-z-score] asi:
+Ahora podemos normalizar las variables según la [definición @def-definition-z-score] así:
 
 $$
 z_x = {x-\bar{x}\over{s_x}},
@@ -306,6 +306,7 @@ $$
 :::
 
 ::: {#exm-pearson-coefficient-calculation-in-r}
+
 ## Cálculo del Coeficiente de correlación de Pearson en R
 
 Si no queremos hacer todos los cálculos del [ejemplo @exm-pearson-coefficient-calculation] a mano podemos recurrir a R que con la función `cor` lo calcula.
@@ -385,14 +386,16 @@ g
 En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1^o^ pero no el 2^o^. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la [definición @def-phi-correlation].
 
 ::: {#def-phi-correlation}
-## Coefficiente de $\phi$
+## Coeficiente de $\phi$
 
 $$
 \phi = {{BC-AD}\over{\sqrt{(A+B)\times(C+D)\times(A+C)\times(B+D)}}}
 $$
 :::
 
-Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la [definición @def-chi-squared]. De hecho se relacionan matemáticamente: $$
+Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la [definición @def-chi-squared]. De hecho se relacionan matemáticamente: 
+
+$$
 \phi = \sqrt{\chi^2/N} \Leftrightarrow \chi^2 = N\times\phi^2.
 $$ Por tanto la significanza de $\phi$ se puede obtener por medio de la conversión a $\chi^2$.
 
@@ -400,7 +403,7 @@ $$ Por tanto la significanza de $\phi$ se puede obtener por medio de la conversi
 # Agregar ejemplo en R?
 ```
 
-## Interpretación de correlacciones
+## Interpretación de correlaciones
 
 Es muy importante entender que una correlación, incluso alta, entre dos variables no quiere decir que la relación entre ellas es de causa y efecto. Si hacemos una muestra en la escuela secundaria y medimos estatura, por un lado, y nivel de inglés por otra, es bastante probable que encontremos una correlación muy fuerte entre las dos variables. Pero debería estar claro que ni la estatura causa conocimientos de inglés ni tampoco lo contrario. Lo que claramente pasa es que mas *edad* los estudiantes tienen más estatura y han cursado más niveles de inglés.
 
@@ -408,6 +411,10 @@ Saltar a conclusiones sobre causalidad basadas en correlaciones es tal vez el er
 
 ## Glosario
 
-```{r, echo=FALSE, results='asis'}
+```{r}
+#| echo: false
+#| results: asis
+
 .format_dataframe_as_def_list(chapter = 10)
+
 ```

@@ -5,19 +5,18 @@
 source("_common.R")
 ```
 
-En los capítulos @sec-pruebas-parametricas y @sec-pruebas-no-parametricas vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en escala de razón, intervalo u ordinal. En este capítulo vamos a explorar algunas técnicas que nos permiten trabajar con variables que no se pueden medir en términos numéricos, sino que son de tipo «sí-o-no»; es decir que son de escala nominal.
+En los capítulos [-@sec-pruebas-parametricas] y [-@sec-pruebas-no-parametricas] vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en escala de razón, intervalo u ordinal. En este capítulo vamos a explorar algunas técnicas que nos permiten trabajar con variables que no se pueden medir en términos numéricos, sino que son de tipo «sí-o-no»; es decir que son de escala nominal.
 
-En particular vamos a explorar la distribuciónd de $\chi^2$ de Pearson. $\chi$ es una letra griega que suele pronunciarse «ji» (/xi/) y «chi» (/tʃiː)/[^09-chi-cuadrado-1].
+En particular vamos a explorar la distribución de $\chi^2$ de Pearson. $\chi$ es una letra griega que suele pronunciarse «ji» (/xi/) y «chi» (/tʃiː)/[^09-chi-cuadrado-1].
 
 [^09-chi-cuadrado-1]: del inglés donde se escribe «chi» y se pronuncia /kaɪ/
 
 ```{r}
-
 #| label: fig-chi-square-plot
 #| message: false
 #| warning: false
 #| echo: false
-#| fig-cap: "'Distribución «ji cuadrado» con diferentes grados de libertad."
+#| fig-cap: "Distribución «ji cuadrado» con diferentes grados de libertad."
 
 library(bayestestR)
 library(tidyverse)
@@ -56,7 +55,7 @@ $$ donde:
 
 Es importante tener en cuenta que $\chi^2$ se calcula usando las *frecuencias* y no las proporciones.
 
-La hipótesis nula es que no existe diferencia entre los valores observamos y los valores esperados. La alternativa es que hay tal diferencia. La forma de la distribución $\chi^2$, al igual que la de t, depende de los [grados de liberdad](#degrees-of-freedom) que desarrollaremos más adelante.
+La hipótesis nula es que no existe diferencia entre los valores observamos y los valores esperados. La alternativa es que hay tal diferencia. La forma de la distribución $\chi^2$, al igual que la de t, depende de los [grados de liberdad](@sec-grados-de-libertad) que desarrollaremos más adelante.
 
 ## Prueba de independencia o asociación
 
@@ -131,9 +130,9 @@ $$
 \chi^2 = \sum{(O-E)^2\over{E}} = {62,52^2\over699,49} +{-62,52^2\over530,51} +{62,52^2\over546,51}+{-62,52^2\over414,49} = 29,53.
 $$
 
-Podemos comparar este valor con los de la tabla en el [apendice C](#chi-square-disrtibution) para un grado de libertad. Vemos que rechazamos $H_0$ y concluimos que el género sí influye en la opinión sobre este tema.
+Podemos comparar este valor con los de la tabla en el @sec-distribucion-chi2 para un grado de libertad. Vemos que rechazamos $H_0$ y concluimos que el género sí influye en la opinión sobre este tema.
 
-### Grados de libertad {#degrees-of-freedom}
+### Grados de libertad {#sec-grados-de-libertad}
 
 A lo largo de este texto se ha mencionado en algunas ocasiones el término *grados de libertad* y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la [tabla @tbl-opiniones-aborto-ii] en la que tenemos una tabla de contingencia $2\times2$. Calculamos en ese caso las frecuencias marginales que están el la columna *suma*. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la [tabla @tbl-degrees-of-freedom].
 

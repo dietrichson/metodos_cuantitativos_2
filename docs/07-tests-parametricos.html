@@ -211,7 +211,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -311,7 +311,7 @@ div.csl-indent {
 <p>Las pruebas estadísticas son las que nos permiten, a algún nivel de significanza, rechazar o aceptar la hipótesis nula (<span class="math inline">\(H_0\)</span>), por lo que son de bastante utilidad en investigaciones cuantitativas.</p>
 <section id="sec-prueba-t-de-student-para-muestras-independientes" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="sec-prueba-t-de-student-para-muestras-independientes"><span class="header-section-number">7.1</span> Prueba t de Student para muestras independientes</h2>
-<p>Supongamos que tenemos dos muestras aleatorias e independientes con medias de <span class="math inline">\(\bar{x_1}\)</span> y <span class="math inline">\(\bar{x_2}\)</span> y que queremos saber si estas dos medias son signifacativamente distintas a un nivel de <span class="math inline">\(p\leqslant0,05\)</span>. Esto es lo mismo que decir que si afirmamos que hay una diferencia entre las muestras tenemos un 95% de probabilidad de tener razón. Lo que tenemos que calcular, entonces, es la probabilidad de que las dos muestras pueder provenir de la misma distribución y que la diferencia que vemos es por varianza en esa población. En otras palabras: queremos saber si dos muestras con la diferencia observada (<span class="math inline">\(\bar{x_1}-\bar{x_2}\)</span>) podrían tener provenir de la misma población.</p>
+<p>Supongamos que tenemos dos muestras aleatorias e independientes con medias de <span class="math inline">\(\bar{x_1}\)</span> y <span class="math inline">\(\bar{x_2}\)</span> y que queremos saber si estas dos medias son significativamente distintas a un nivel de <span class="math inline">\(p\leqslant0,05\)</span>. Esto es lo mismo que decir que si afirmamos que hay una diferencia entre las muestras tenemos un 95% de probabilidad de tener razón. Lo que tenemos que calcular, entonces, es la probabilidad de que las dos muestras pueden provenir de la misma distribución y que la diferencia que vemos es por varianza en esa población. En otras palabras: queremos saber si dos muestras con la diferencia observada (<span class="math inline">\(\bar{x_1}-\bar{x_2}\)</span>) podrían tener provenir de la misma población.</p>
 <p>Si sacamos un número significativo de muestras de una misma población la media de estas muestra va a tener una diferencia con la media de la población, en algunos casos más altos y en otros más bajos. Usamos este conocimiento para calcular el error estándar:</p>
 <p><span id="eq-error-estandard"><span class="math display">\[
 SE = {\sigma\over{\sqrt{N}}}.
@@ -344,11 +344,11 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2}
 t = {{(\bar{x_1}-\bar{x_2})}\over{SED}}.
 \]</span></p>
 </div>
-<p>Si aplicamos la fórmula de la <a href="#def-t-test">definición&nbsp;<span>7.3</span></a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="@sec-distribucion-t-table">apendice A</a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
+<p>Si aplicamos la fórmula de la <a href="#def-t-test">definición&nbsp;<span>7.3</span></a> nos sale un valor que podemos comparar con los valores críticos de la tabla del <a href="A-valores-criticos-t.html">apéndice&nbsp;<span>A</span></a> para determinar si rechazamos <span class="math inline">\(H_0\)</span> o no.</p>
 <div id="exm-manual-t-test" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.1 (Prueba t) </strong></span><br>
 </p>
-<p>Volvemos ahora a nuestros datos de notas de dos grupos de estudiantes con diferentes metodologías pedagígicos. Queremos saber con un nivel de significanza de 0,05 si existe diferencia entre la media de los dos grupos. Nuestras hipótesis nula y alternativa son entonces:</p>
+<p>Volvemos ahora a nuestros datos de notas de dos grupos de estudiantes con diferentes metodologías pedagógicos. Queremos saber con un nivel de significanza de 0,05 si existe diferencia entre la media de los dos grupos. Nuestras hipótesis nula y alternativa son entonces:</p>
 <p><span class="math inline">\(H_0:\mu_A=\mu_B\)</span>,</p>
 <p><span class="math inline">\(H_1: \mu_A\neq\mu_B\)</span>.</p>
 <p>Los datos son:</p>
@@ -371,7 +371,7 @@ SED = \sqrt{s^2_1/N_1 + s^2_1/N_2} = \sqrt{2,490^2/30 + 3,308^2/N_2} = 0,756
 <p><span class="math display">\[
 t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 \]</span></p>
-<p>Si buscamos este valor en el <a href="@distribucion-t-table">Apendix A</a> para 29 grados de libertad (N-1), vemos que debemos rechazar <span class="math inline">\(H_0\)</span> y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.</p>
+<p>Si buscamos este valor en el [apéndice sec-distribucion-t-appendix] para 29 grados de libertad (N-1), vemos que debemos rechazar <span class="math inline">\(H_0\)</span> y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.</p>
 </div>
 <div id="exm-t-test-in-r" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.2 (Prueba t en R) </strong></span><br>
@@ -401,14 +401,14 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 <section id="sec-test-de-normalidad" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="sec-test-de-normalidad"><span class="header-section-number">7.2</span> Prueba de Shapiro-Wilks</h2>
 <p>En la <a href="04-la-distribucion-normal.html#sec-evaluar-la-normalidad">sección&nbsp;<span>4.3</span></a> mencionamos que existen algunas maneras de estimar si una variable tiene una distribución normal o no. Nos basamos sobre todo en la forma de los polígonos de frecuencias (<a href="02-distribuciones-de-frecuencias.html#fig-poligono-de-frecuencias-notas-comparativo">figura&nbsp;<span>2.1</span></a>). Ahora vamos a introducir un test más formal de normalidad.</p>
-<p>El test de <em>Shapiro-Wilks</em> plantea la hipótesis nula que una muestra proviene de una distribución normal. Eligimos un nivel de significanza, por ejemplo 0,05, y tenemos una hipótesis alternativa que sostiene que la distribución no es normal.</p>
+<p>El test de <em>Shapiro-Wilks</em> plantea la hipótesis nula que una muestra proviene de una distribución normal. Elegimos un nivel de significanza, por ejemplo 0,05, y tenemos una hipótesis alternativa que sostiene que la distribución no es normal.</p>
 <p>Tenemos:</p>
 <p><span class="math inline">\(H_0\)</span>: La distribución es normal</p>
 <p><span class="math inline">\(H_1\)</span>: La distribución no es normal,</p>
 <p>o más formalmente aún:</p>
 <p><span class="math inline">\(H_0: X \sim \mathcal{N}(\mu,\sigma^2)\)</span></p>
 <p><span class="math inline">\(H_1: X \nsim \mathcal{N}(\mu,\sigma^2)\)</span>.</p>
-<p>Ahora el test Shapiro-Wilks intenta rechazar la hipotesis nula a nuestro nivel de significanza. Para realizar el test usamos la función <code>shapiro.test</code> en R:</p>
+<p>Ahora el test Shapiro-Wilks intenta rechazar la hipótesis nula a nuestro nivel de significanza. Para realizar el test usamos la función <code>shapiro.test</code> en R:</p>
 <div id="exm-shapiro-test-in-r" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.3 (Test de Shapiro Wilks en R) </strong></span><br>
 </p>
@@ -436,7 +436,7 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 </div>
 </div>
 </div>
-<p>Vemos que en ambos casos el valor de probabilidad (<em>p</em>) es muy superios a nuestro nivel elegido (0,05), por lo que <em>no rechazamos la hipótesis nula</em>.</p>
+<p>Vemos que en ambos casos el valor de probabilidad (<em>p</em>) es muy superior a nuestro nivel elegido (0,05), por lo que <em>no rechazamos la hipótesis nula</em>.</p>
 <p>En el caso de los ejemplos <a href="#exm-manual-t-test"><span>7.1</span></a> y <a href="#exm-t-test-in-r"><span>7.2</span></a> ya obramos bajo la premisa de que las variables tenían una distribución normal, pero generalmente conviene realizar el test Shapiro-Willks <em>antes</em> de decidir qué prueba estadística vamos a usar. Si rechazamos <span class="math inline">\(H_0\)</span>, es decir si no concluimos que la distribución sea normal, no deberíamos usar un test paramétrico.</p>
 </section>
 <section id="prueba-de-fisher" class="level2" data-number="7.3">
@@ -470,7 +470,7 @@ t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 </section>
 <section id="sec-prueba-t-para-muestras-pareadas" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="sec-prueba-t-para-muestras-pareadas"><span class="header-section-number">7.4</span> Prueba t para muestras pareadas</h2>
-<p>En los ejemplos <a href="#exm-manual-t-test"><span>7.1</span></a> y <a href="#exm-t-test-in-r"><span>7.2</span></a> teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones <em>pareadas</em> o datos <em>interdependientes</em>. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguineo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.</p>
+<p>En los ejemplos <a href="#exm-manual-t-test"><span>7.1</span></a> y <a href="#exm-t-test-in-r"><span>7.2</span></a> teníamos dos grupos de estudiantes de dos cursos distintos, pero en muchos tenemos observaciones <em>pareadas</em> o datos <em>interdependientes</em>. Esto es muy típico de investigaciones experimentales en los que medimos la variable dependiente antes y después<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> de cambiar la variable independiente. Si, por ejemplo, queremos investigar el efecto de la cafeína sobre el pulso sanguíneo podríamos obtener una muestra de personas y tomarles el pulso antes y después de hacerles tomar una taza de café.</p>
 <p>En este sacamos las diferencias entre las dos medidas y comparamos estas diferencias con la distribución teórica. La fórmula está en la <a href="#def-dependent-t-test">definición&nbsp;<span>7.4</span></a>.</p>
 <div id="def-dependent-t-test" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 7.4 (Prueba t para muestras dependientes) </strong></span><span class="math display">\[
@@ -635,7 +635,7 @@ t = {{\bar{X}_D}\over{s_D\over{\sqrt{n}}}} =  {{2,05}\over{2,837\over{\sqrt{20}}
 </div>
 <div id="exm-t-test-example-in-r" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 7.6 (Ejemplo en R) </strong></span><br>
-Para reproducir en R lo que hicimos en el <a href="#exm-dependent-t-test-example">ejemplo&nbsp;<span>7.5</span></a> tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un paramertro adiciónal <code>paired=TRUE</code> para avisar que son datos pareados.</p>
+Para reproducir en R lo que hicimos en el <a href="#exm-dependent-t-test-example">ejemplo&nbsp;<span>7.5</span></a> tenemos que tener sumo cuidado con el ingreso de los datos. Ya que hay dos observaciones por estudiante lo más conveniente es ponerlos en un <code>data.frame</code>. Vamos a incluir los nombres de los estudiantes, si bien no son necesarios para el cálculo sirve mantener la referencia para poder verificar el correcto ingreso de los datos con los tests. Vamos a ingresar los datos <em>a mano</em> aunque en la práctica seguramente se leyera de un archivo externo de R. Usamos la función <code>t.test</code> con un parámetro adicional <code>paired=TRUE</code> para avisar que son datos pareados.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ingresamos los datos</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> datos.pre.post <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
@@ -862,7 +862,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -211,7 +211,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -282,7 +282,7 @@ div.csl-indent {
   <li><a href="#coeficiente-de-correlación-pearson" id="toc-coeficiente-de-correlación-pearson" class="nav-link" data-scroll-target="#coeficiente-de-correlación-pearson"><span class="toc-section-number">10.4</span>  Coeficiente de correlación Pearson</a></li>
   <li><a href="#coeficiente-spearman" id="toc-coeficiente-spearman" class="nav-link" data-scroll-target="#coeficiente-spearman"><span class="toc-section-number">10.4.1</span>  Coeficiente Spearman</a></li>
   <li><a href="#coeficiente-phi" id="toc-coeficiente-phi" class="nav-link" data-scroll-target="#coeficiente-phi"><span class="toc-section-number">10.4.2</span>  Coeficiente <span class="math inline">\(\phi\)</span></a></li>
-  <li><a href="#interpretación-de-correlacciones" id="toc-interpretación-de-correlacciones" class="nav-link" data-scroll-target="#interpretación-de-correlacciones"><span class="toc-section-number">10.5</span>  Interpretación de correlacciones</a></li>
+  <li><a href="#interpretación-de-correlaciones" id="toc-interpretación-de-correlaciones" class="nav-link" data-scroll-target="#interpretación-de-correlaciones"><span class="toc-section-number">10.5</span>  Interpretación de correlaciones</a></li>
   <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">10.6</span>  Glosario</a></li>
   </ul>
 </nav>
@@ -309,7 +309,7 @@ div.csl-indent {
 <p>La correlación es el área de las estadísticas que estudia la relación sistemática entre dos o más variables e intenta contestar a preguntas como: ¿Si sube A va a subir B también? En este capítulo desarrollaremos algunas técnicas para contestar este tipo de pregunta.</p>
 <section id="visualización" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="visualización"><span class="header-section-number">10.1</span> Visualización</h2>
-<p>El primer paso para estudiar posibles relaciones entre variables es visualizarlos. Si tenemos dos variables medidas por cada miembro de la población o muestra que estamos investigando podemos generar un <em>diagrama de disperción</em> también conocido como <em>scatterplot</em>. En este tipo de visualización cada miembro de la muestra/población está representado por un punto, y las coordinadas del punto corresponde a las dos variables que hemos medido, en el eje horizontal y vertical respectivamente.</p>
+<p>El primer paso para estudiar posibles relaciones entre variables es visualizarlos. Si tenemos dos variables medidas por cada miembro de la población o muestra que estamos investigando podemos generar un <em>diagrama de dispersión</em> también conocido como <em>scatterplot</em>. En este tipo de visualización cada miembro de la muestra/población está representado por un punto, y las coordinadas del punto corresponde a las dos variables que hemos medido, en el eje horizontal y vertical respectivamente.</p>
 <p>El la <a href="#fig-strong-positive-correlation">figura&nbsp;<span>10.1</span></a>, vemos que la concentración de puntos suben de la izquierda a la derecha. Es decir cuando avanzamos en el eje horizontal avanzamos en el eje vertical también. Es un ejemplo de una <em>correlación positiva</em>, como podría ser edad y estatura.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -321,7 +321,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>En la <a href="#fig-strong-negative-correlation">figura&nbsp;<span>10.2</span></a> vemos lo contrario, mientras avanzamos en el eje vertical retrocedemos (o bajamos) en el eje horizontal. Esto se conoce como <em>correlacion negativa</em>.</p>
+<p>En la <a href="#fig-strong-negative-correlation">figura&nbsp;<span>10.2</span></a> vemos lo contrario, mientras avanzamos en el eje vertical retrocedemos (o bajamos) en el eje horizontal. Esto se conoce como correlación <em>negativa</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-strong-negative-correlation" class="quarto-figure quarto-figure-center anchored">
@@ -414,7 +414,7 @@ Por defecto R viene con algunos data.frames ya cargados, uno de ellos es «trees
 #&gt; 6  10.8     83   19.7</code></pre>
 </div>
 </div>
-<p>Vemos que tiene tres columnas «Girth», «Height» y «Volume» (circumferencia, alto y volumen), los que, por lógica, deben tener alta correlación. Graficamos dos de ellos.</p>
+<p>Vemos que tiene tres columnas «Girth», «Height» y «Volume» (circunferencia, alto y volumen), los que, por lógica, deben tener alta correlación. Graficamos dos de ellos.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(trees<span class="sc">$</span>Girth, trees<span class="sc">$</span>Volume)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -444,7 +444,7 @@ s_x = {\sqrt{(\sum(x-\bar{x})^2\over{N-1}}}.
 <p>De la misma manera <em>y</em> tiene su desviación estándar: <span class="math display">\[
 s_y = {\sqrt{(\sum(y-\bar{y})^2\over{N-1}}}.
 \]</span></p>
-<p>Ahora podemos normalizar las variables según la <a href="04-la-distribucion-normal.html#def-definition-z-score">definición&nbsp;<span>4.1</span></a> asi:</p>
+<p>Ahora podemos normalizar las variables según la <a href="04-la-distribucion-normal.html#def-definition-z-score">definición&nbsp;<span>4.1</span></a> así:</p>
 <p><span class="math display">\[
 z_x = {x-\bar{x}\over{s_x}},
 \]</span></p>
@@ -752,16 +752,17 @@ r={N\Sigma{xy}-\Sigma{x}\Sigma{y}\over{\sqrt{\{N\Sigma{x^2}-(\Sigma{x})^2\}\time
 </div>
 <p>En esta tabla las celdas A, B, C y D son las frecuencias de las observaciones. Por ejemplo A sería el número de estudiantes que acertaron el 1<sup>o</sup> pero no el 2<sup>o</sup>. B la frecuencia de estudiantes que pasaron ambos ítems y así sucesivamente. La correlación entre las dos variables se puede medir aplicando la formula de la <a href="#def-phi-correlation">definición&nbsp;<span>10.3</span></a>.</p>
 <div id="def-phi-correlation" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 10.3 (Coefficiente de <span class="math inline">\(\phi\)</span>) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 10.3 (Coeficiente de <span class="math inline">\(\phi\)</span>) </strong></span><span class="math display">\[
 \phi = {{BC-AD}\over{\sqrt{(A+B)\times(C+D)\times(A+C)\times(B+D)}}}
 \]</span></p>
 </div>
-<p>Debería quedar claro que el coeficiente <span class="math inline">\(\phi\)</span> está estrechamente relacionado con la prueba de <span class="math inline">\(\chi^2\)</span> que vimos en la <a href="09-chi-cuadrado.html#def-chi-squared">definición&nbsp;<span>9.1</span></a>. De hecho se relacionan matemáticamente: <span class="math display">\[
+<p>Debería quedar claro que el coeficiente <span class="math inline">\(\phi\)</span> está estrechamente relacionado con la prueba de <span class="math inline">\(\chi^2\)</span> que vimos en la <a href="09-chi-cuadrado.html#def-chi-squared">definición&nbsp;<span>9.1</span></a>. De hecho se relacionan matemáticamente:</p>
+<p><span class="math display">\[
 \phi = \sqrt{\chi^2/N} \Leftrightarrow \chi^2 = N\times\phi^2.
 \]</span> Por tanto la significanza de <span class="math inline">\(\phi\)</span> se puede obtener por medio de la conversión a <span class="math inline">\(\chi^2\)</span>.</p>
 </section>
-<section id="interpretación-de-correlacciones" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="interpretación-de-correlacciones"><span class="header-section-number">10.5</span> Interpretación de correlacciones</h2>
+<section id="interpretación-de-correlaciones" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="interpretación-de-correlaciones"><span class="header-section-number">10.5</span> Interpretación de correlaciones</h2>
 <p>Es muy importante entender que una correlación, incluso alta, entre dos variables no quiere decir que la relación entre ellas es de causa y efecto. Si hacemos una muestra en la escuela secundaria y medimos estatura, por un lado, y nivel de inglés por otra, es bastante probable que encontremos una correlación muy fuerte entre las dos variables. Pero debería estar claro que ni la estatura causa conocimientos de inglés ni tampoco lo contrario. Lo que claramente pasa es que mas <em>edad</em> los estudiantes tienen más estatura y han cursado más niveles de inglés.</p>
 <p>Saltar a conclusiones sobre causalidad basadas en correlaciones es tal vez el error estadístico más frecuente en la literatura tanto académica como periodística. Nunca hay que olvidar que una correlación significativa solo nos dice que existe una relación <em>matemática</em> entre dos variables. No nos indica cómo interpretarla ni mucho menos sobre sus causas y efectos.</p>
 </section>

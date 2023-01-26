@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#características" id="toc-características" class="nav-link active" data-scroll-target="#características"><span class="toc-section-number">9.1</span>  Características</a></li>
   <li><a href="#prueba-de-independencia-o-asociación" id="toc-prueba-de-independencia-o-asociación" class="nav-link" data-scroll-target="#prueba-de-independencia-o-asociación"><span class="toc-section-number">9.2</span>  Prueba de independencia o asociación</a>
   <ul class="collapse">
-  <li><a href="#degrees-of-freedom" id="toc-degrees-of-freedom" class="nav-link" data-scroll-target="#degrees-of-freedom"><span class="toc-section-number">9.2.1</span>  Grados de libertad</a></li>
+  <li><a href="#sec-grados-de-libertad" id="toc-sec-grados-de-libertad" class="nav-link" data-scroll-target="#sec-grados-de-libertad"><span class="toc-section-number">9.2.1</span>  Grados de libertad</a></li>
   </ul></li>
   <li><a href="#prueba-de-chi2-en-r" id="toc-prueba-de-chi2-en-r" class="nav-link" data-scroll-target="#prueba-de-chi2-en-r"><span class="toc-section-number">9.3</span>  Prueba de <span class="math inline">\(\chi^2\)</span> en R</a></li>
   <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">9.4</span>  Glosario</a></li>
@@ -283,35 +283,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>En los capítulos <a href="07-tests-parametricos.html"><span>Capítulo&nbsp;7</span></a> y <a href="08-tests-no-parametricos.html"><span>Capítulo&nbsp;8</span></a> vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en escala de razón, intervalo u ordinal. En este capítulo vamos a explorar algunas técnicas que nos permiten trabajar con variables que no se pueden medir en términos numéricos, sino que son de tipo «sí-o-no»; es decir que son de escala nominal.</p>
-<p>En particular vamos a explorar la distribuciónd de <span class="math inline">\(\chi^2\)</span> de Pearson. <span class="math inline">\(\chi\)</span> es una letra griega que suele pronunciarse «ji» (/xi/) y «chi» (/tʃiː)/<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>En los capítulos <a href="07-tests-parametricos.html"><span>7</span></a> y <a href="08-tests-no-parametricos.html"><span>8</span></a> vimos varios tests estadísticos que nos permiten apreciar la significanza de diferencias entre dos conjuntos de medidas cuantitativas. Las variables que vimos se medían en escala de razón, intervalo u ordinal. En este capítulo vamos a explorar algunas técnicas que nos permiten trabajar con variables que no se pueden medir en términos numéricos, sino que son de tipo «sí-o-no»; es decir que son de escala nominal.</p>
+<p>En particular vamos a explorar la distribución de <span class="math inline">\(\chi^2\)</span> de Pearson. <span class="math inline">\(\chi\)</span> es una letra griega que suele pronunciarse «ji» (/xi/) y «chi» (/tʃiː)/<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-chi-square-plot</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "'Distribución «ji cuadrado» con diferentes grados de libertad."</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayestestR)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  mySeq <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from=</span>.<span class="dv">5</span>, <span class="at">to=</span><span class="dv">20</span>,<span class="at">by=</span>.<span class="dv">01</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  chi <span class="ot">&lt;-</span> <span class="fu">distribution_chisquared</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">df =</span>  i)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  chi <span class="sc">%&gt;%</span> </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">density</span>(<span class="at">adjust=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span>  <span class="co"># Compute density function</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.data.frame</span>() <span class="ot">-&gt;</span>tmp2</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  tmp2<span class="sc">$</span>GL <span class="ot">&lt;-</span> i</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> tmp <span class="sc">%&gt;%</span> </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bind_rows</span>(tmp2)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>tmp<span class="sc">$</span>GL <span class="ot">&lt;-</span> <span class="fu">factor</span>(tmp<span class="sc">$</span>GL)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>tmp <span class="sc">%&gt;%</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>GL)) <span class="sc">+</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span><span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"bottom"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="09-chi-cuadrado_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<div id="fig-chi-square-plot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="09-chi-cuadrado_files/figure-html/fig-chi-square-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;9.1: Distribución «ji cuadrado» con diferentes grados de libertad.</figcaption><p></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="características" class="level2" data-number="9.1">
@@ -327,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <p>Es importante tener en cuenta que <span class="math inline">\(\chi^2\)</span> se calcula usando las <em>frecuencias</em> y no las proporciones.</p>
-<p>La hipótesis nula es que no existe diferencia entre los valores observamos y los valores esperados. La alternativa es que hay tal diferencia. La forma de la distribución <span class="math inline">\(\chi^2\)</span>, al igual que la de t, depende de los <a href="#degrees-of-freedom">grados de liberdad</a> que desarrollaremos más adelante.</p>
+<p>La hipótesis nula es que no existe diferencia entre los valores observamos y los valores esperados. La alternativa es que hay tal diferencia. La forma de la distribución <span class="math inline">\(\chi^2\)</span>, al igual que la de t, depende de los <a href="@sec-grados-de-libertad">grados de liberdad</a> que desarrollaremos más adelante.</p>
 </section>
 <section id="prueba-de-independencia-o-asociación" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="prueba-de-independencia-o-asociación"><span class="header-section-number">9.2</span> Prueba de independencia o asociación</h2>
@@ -476,9 +457,9 @@ E = {{1230\times1246}\over2191} = 699,48
 <p><span class="math display">\[
 \chi^2 = \sum{(O-E)^2\over{E}} = {62,52^2\over699,49} +{-62,52^2\over530,51} +{62,52^2\over546,51}+{-62,52^2\over414,49} = 29,53.
 \]</span></p>
-<p>Podemos comparar este valor con los de la tabla en el <a href="#chi-square-disrtibution">apendice C</a> para un grado de libertad. Vemos que rechazamos <span class="math inline">\(H_0\)</span> y concluimos que el género sí influye en la opinión sobre este tema.</p>
-<section id="degrees-of-freedom" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="degrees-of-freedom"><span class="header-section-number">9.2.1</span> Grados de libertad</h3>
+<p>Podemos comparar este valor con los de la tabla en el <a href="C-valores-criticos-ji-cuadrado.html"><span>Apéndice&nbsp;C</span></a> para un grado de libertad. Vemos que rechazamos <span class="math inline">\(H_0\)</span> y concluimos que el género sí influye en la opinión sobre este tema.</p>
+<section id="sec-grados-de-libertad" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="sec-grados-de-libertad"><span class="header-section-number">9.2.1</span> Grados de libertad</h3>
 <p>A lo largo de este texto se ha mencionado en algunas ocasiones el término <em>grados de libertad</em> y hasta ahora no ha sido demasiado complejo calcularlo restando uno del número de observaciones. El concepto de grado de libertad se puede entender si consideramos la <a href="#tbl-opiniones-aborto-ii">tabla&nbsp;<span>9.1</span></a> en la que tenemos una tabla de contingencia <span class="math inline">\(2\times2\)</span>. Calculamos en ese caso las frecuencias marginales que están el la columna <em>suma</em>. Imaginemos que tenemos la misma tabla con las frecuencias marginales pero con una sola de las frecuencias observadas. Así lo hemos hecho en la <a href="#tbl-degrees-of-freedom">tabla&nbsp;<span>9.4</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -527,16 +508,16 @@ E = {{1230\times1246}\over2191} = 699,48
 <p><br>
 En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(\chi^2\)</span> que fuimos desarrollando en las secciones anteriores. Podemos usar la función de R <code>chisq.test</code> para realizarla. Toma como argumento una <em>matriz</em> de datos de las frecuencias.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">as.table</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">762</span>, <span class="dv">468</span>), </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="dv">484</span>, <span class="dv">477</span>))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Damos nombre a las columnas y las filas </span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A favor"</span>,<span class="st">"En contra"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificamos el ingreso de datos</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>M</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fu">as.table</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">762</span>, <span class="dv">468</span>), </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(<span class="dv">484</span>, <span class="dv">477</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Damos nombre a las columnas y las filas </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A favor"</span>,<span class="st">"En contra"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mujeres"</span>,<span class="st">"Hombres"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificamos el ingreso de datos</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>M</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;         A favor En contra
 #&gt; Mujeres     762       468
@@ -545,8 +526,8 @@ En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(
 </div>
 <p>Como se puede observar, la sintaxis de R no es del todo intuitiva, por lo que siempre conviene verificar que tenemos los números y nombres correctos antes de proceder con el test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizamos test de ji-cuadrado</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizamos test de ji-cuadrado</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt;  Pearson's Chi-squared test with Yates' continuity
@@ -559,7 +540,7 @@ En este ejemplo vamos a realizar la misma prueba de <span class="math inline">\(
 <p>El valor de <em>p</em> es tan bajo que R lo devuelve en <em>notación científica</em>. La parte <em>e-08</em> quiere decir que el número es: 0,000000007019, es decir que hay <em>ocho</em> ceros antes de los dígitos significativos.</p>
 <p>También vemos que el valor de <span class="math inline">\(\chi^2\)</span> que calculó R es distinto al que calculamos a mano, aunque sea por unas décimas. Esto se debe a que por defecto R hace una <em>corrección de Yates</em>. Yates descubrió que para una tabla de contingencia <span class="math inline">\(2\times2\)</span> hay un sesgo positivo y propuso una técnica para contrarrestar el sesgo. Si queremos usar la formula original, y la que usamos para nuestro cálculo a mano podemos agregar el parámetro <code>correct = FALSE</code> a la función así:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(M, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt;  Pearson's Chi-squared test

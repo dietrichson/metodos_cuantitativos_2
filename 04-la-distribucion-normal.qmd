@@ -1,6 +1,6 @@
 # La distribución normal {#sec-la-distribucion-normal}
 
-En el @sec-distribuciones-de-frecuencias tocamos brevemente la llamada *distribución normal*. En este capítulo vamos a desarrollar con más detalle esta distribución, fundamental para muchas técnicas estadísticas y cuantitativas.
+En el [capítulo @sec-distribuciones-de-frecuencias] tocamos brevemente la llamada *distribución normal*. En este capítulo vamos a desarrollar con más detalle esta distribución, fundamental para muchas técnicas estadísticas y cuantitativas.
 
 ```{r}
 #| echo: false
@@ -32,7 +32,7 @@ Como vimos en la [sección @sec-perfil-de-la-distribucion], si tenemos muchos da
 
 ## Propiedades de la curva normal
 
-Como ya vimos, la curva normal tiene forma de campana y es simétrica. Por ende, las tres medidas de centralización la media, la mediana y la moda coinciden en el punto superior de la curva, como lo podemos apreciar en la @fig-curva-normal-IV.
+Como ya vimos, la curva normal tiene forma de campana y es simétrica. Por ende, las tres medidas de centralización la media, la mediana y la moda coinciden en el punto superior de la curva, como lo podemos apreciar en la [figura @fig-curva-normal-IV].
 
 ```{r}
 #| echo: false
@@ -70,7 +70,7 @@ d$y <- d$y*multiplier[1]
 lines(d, col = "blue", lwd = 2)
 ```
 
-Ahora, bien, si en lugar de agrupar las notas en grupos de diez[^04-la-distribucion-normal-1] los podemos también agregar en grupos de cinco. Entonces obtenemos un histograma como el de la figura @fig-histograma-ejemplo-ii .
+Ahora, bien, si en lugar de agrupar las notas en grupos de diez[^04-la-distribucion-normal-1] los podemos también agregar en grupos de cinco. Entonces obtenemos un histograma como el de la [figura @fig-histograma-ejemplo-ii].
 
 [^04-la-distribucion-normal-1]: también llamado deciles
 
@@ -89,7 +89,7 @@ lines(d, col = "blue", lwd = 2)
 
 ```
 
-Podemos seguir achicando el ancho de las barras, y vemos que si bien el histograma es puntudo mientras menos anchas son las barras más se aproxima a la curva. En la @fig-histograma-ejemplo-iii hemos achicado las barras para que cada una represente tan solo un valor entero, es decir tan solo una de las cien notas posibles. Se entiende que es posible seguir con más precisión si, por ejemplo, el examen fue calificado con la posibilidad de asignar notas con decimales.
+Podemos seguir achicando el ancho de las barras, y vemos que si bien el histograma es puntudo mientras menos anchas son las barras más se aproxima a la curva. En la [figura @fig-histograma-ejemplo-iii] hemos achicado las barras para que cada una represente tan solo un valor entero, es decir tan solo una de las cien notas posibles. Se entiende que es posible seguir con más precisión si, por ejemplo, el examen fue calificado con la posibilidad de asignar notas con decimales.
 
 ```{r}
 #| label: fig-histograma-ejemplo-iii
@@ -110,7 +110,7 @@ La curva normal de define por dos propiedades: La media y la desviación estánd
 
 [^04-la-distribucion-normal-2]: ${1\over{\sqrt{2\pi\sigma^2}}}e^{-{(x-\mu)^2}\over{2\sigma^2}}$
 
-De más importancia son algunas propiedades que tiene la curva. Si graficamos la curva normal y expresamos los valores en el eje horizontal en *desviaciones estándares* (también se dice «sigmas» por su letra griega $\sigma$), el área que está de cada lado de la linea es constante y conocido. Si trazamos una linea justo en el medio ($\sigma=0$), sabemos que un 50% de las observaciones están a la derecha y la izquierda de esa linea. Lo mismo aplica a una distribución expresado en un histograma. En la fig-normal-curve-with-cuts vemos cuales son los cortes para desviaciones estándares de menos 3 a 3.
+De más importancia son algunas propiedades que tiene la curva. Si graficamos la curva normal y expresamos los valores en el eje horizontal en *desviaciones estándares* (también se dice «sigmas» por su letra griega $\sigma$), el área que está de cada lado de la linea es constante y conocido. Si trazamos una linea justo en el medio ($\sigma=0$), sabemos que un 50% de las observaciones están a la derecha y la izquierda de esa linea. Lo mismo aplica a una distribución expresado en un histograma. En la [figura @fig-normal-curve-with-cuts] vemos cuales son los cortes para desviaciones estándares de menos 3 a 3.
 
 ```{r}
 #| label: fig-normal-curve-with-cuts
@@ -156,11 +156,11 @@ tmp %>%
 
 ```
 
-Esta propiedad es de bastante utilidad y se puede aprovechar de varias maneras. Si tenemos una muestra de datos cuya distribución presumimos normal (en el @sec-test-de-normalidad vamos a desarrollar cómo lo podemos determinar) ya sabemos que más o menos el 68% de las observaciones va estar dentro de ± una desviación estándar de la media y más del 95% se encontrará dentro de dos desviaciones. Por último el 99% de las observaciones de encuentran dentro de tres desviaciones estándares de la media. A veces se refiere a esta propiedad como la *regla empírica* o la regla de de *68-95-99,7*.
+Esta propiedad es de bastante utilidad y se puede aprovechar de varias maneras. Si tenemos una muestra de datos cuya distribución presumimos normal (en el [capítulo @sec-test-de-normalidad] vamos a desarrollar cómo lo podemos determinar) ya sabemos que más o menos el 68% de las observaciones va estar dentro de ± una desviación estándar de la media y más del 95% se encontrará dentro de dos desviaciones. Por último el 99% de las observaciones de encuentran dentro de tres desviaciones estándares de la media. A veces se refiere a esta propiedad como la *regla empírica* o la regla de de *68-95-99,7*.
 
 ### Variables normalizadas {.unnumbered}
 
-En textos de estadística frecuentemente se habla de *variable normalizada*, también se conoce como *unidad tipificada*, *variable centrada reducida* o *variable estandarizada*. Normalizar una variable es simplemente expresar su magnitud en unidades de desviación estándar. Para lograr ello tomamos la variable, restamos la media y dividimos por la desviación estándar. En literatura en inglés es de uso frecuente el término «z-score», por lo que su definición formal (véase \@def-definition-z-score)) lleva esta letra.
+En textos de estadística frecuentemente se habla de *variable normalizada*, también se conoce como *unidad tipificada*, *variable centrada reducida* o *variable estandarizada*. Normalizar una variable es simplemente expresar su magnitud en unidades de desviación estándar. Para lograr ello tomamos la variable, restamos la media y dividimos por la desviación estándar. En literatura en inglés es de uso frecuente el término «z-score», por lo que su definición formal (véase [la definición @def-definition-z-score]) lleva esta letra.
 
 ::: {#def-definition-z-score}
 ## Variable normalizada
@@ -179,7 +179,7 @@ donde:
 -   $\sigma$ o s: la desviación estándar de la población o muestra respectivamente.
 :::
 
-Es importante entender que normalizar una variable no cambia su valor, solo su unidad de cuenta: El lo mismo comprar medio kilo de queso que comprar quinientos gramos.
+Es importante entender que normalizar una variable no cambia su valor, solo su unidad de cuenta: Es lo mismo comprar medio kilo de queso que comprar quinientos gramos.
 
 Normalizar las variables nos permite comparar su distribución independientemente de su unidad de cuenta y amplitud, también nos permite sacar conclusiones sobre probabilidades y proporciones. Vamos a desarrollar esta idea por medio de un ejemplo.
 
@@ -211,10 +211,9 @@ $$
 z = {175 - 161,01\over{6.99}} = {13,99\over{6.99}} = 2,001
 $$
 
-Con este número podemos volver a la \@fig-normal-curve-with-cuts y fijarnos que con por arriba de 2 desviaciones estándar (o 2$\sigma$) está el 2,2% de la población. Es el área indicado en rojo en la figura \@fig-curva-con-segmento.
+Con este número podemos volver a la [figura @fig-normal-curve-with-cuts] y fijarnos que con por arriba de 2 desviaciones estándar (o 2$\sigma$) está el 2,2% de la población. Es el área indicado en rojo en la [figura @fig-curva-con-segmento].
 
 ```{r}
-
 #| label: fig-curva-con-segmento
 #| echo: false
 #| fig-cap: "Proporción de argentinas que miden más de 175 centímetros"
@@ -226,7 +225,7 @@ plot_estatura+
 ```
 :::
 
-En este caso tuvimos un poco se suerte ya que la variable normalizada resultó un número redondo que era fácil encontrar en la figura @fig-normal-curve-with-cuts. Ahora digamos que queremos conocer la proporción de la población que mide menos de 150 centímetros, ¿cómo hacemos? Primero normalizamos:
+En este caso tuvimos un poco se suerte ya que la variable normalizada resultó un número redondo que era fácil encontrar en la [figura @fig-normal-curve-with-cuts]. Ahora digamos que queremos conocer la proporción de la población que mide menos de 150 centímetros, ¿cómo hacemos? Primero normalizamos:
 
 $$
 z = {150 - 161,01\over{6.99}} = {11,01\over{6.99}} = -1,575
@@ -246,7 +245,7 @@ También podemos expresar esto en términos de probabilidades: Si medimos una mu
 
 Hemos visto que el hecho de que una variable tenga una distribución normal nos resulta muy útil para extraer información sobre sus propiedades. También nos permite realizar algunos tests estadísticos que veremos en capítulos posteriores.
 
-En la \[sección \@sec-cual-usar\] decidimos usar *la media* como medida de centralización porque las tres medidas disponibles --media, mediana y moda-- se aproximaban unas a otras. Si queremos saber si una variable se aproxima a la curva normal podemos generar un histograma y sobreponer una curva normal. Así podemos sacar alguna conclusión inspeccionando el gráfico.
+En la [sección @sec-cual-usar] decidimos usar *la media* como medida de centralización porque las tres medidas disponibles --media, mediana y moda-- se aproximaban unas a otras. Si queremos saber si una variable se aproxima a la curva normal podemos generar un histograma y sobreponer una curva normal. Así podemos sacar alguna conclusión inspeccionando el gráfico.
 
 También podemos valernos del conocimiento de la proporción de observaciones que deben estar dentro de la primera y segunda desviación estándar y verificar si nuestros datos se conforman con estas predicciones.
 
@@ -275,7 +274,7 @@ Observamos que nuestras notas carecen en cierta medida de valores extremos, sin 
 :::
 
 ::: {#exm-notas-ii}
-## Ejemplo en R
+## Hacerlo en R
 
 \
 Si no queremos hacer estos cálculos a mano los podemos hacer también en R, así:
@@ -304,8 +303,10 @@ Existen también tests más formales de normalidad que desarrollaremos en capít
 
 ## Glosario
 
-```{r, echo=FALSE, results='asis'}
-.format_dataframe_as_def_list(chapter = 4)
+```{r}
+#| echo: false
+#| results: asis
 
+.format_dataframe_as_def_list(chapter = 4)
 
 ```

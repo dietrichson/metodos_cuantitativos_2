@@ -1,8 +1,9 @@
-# Distribución $\chi^2$ {#chi-square-distribution}
+# Distribución $\chi^2$ {#sec-distribucion-chi2}
 
 La tabla que sigue despliega los valores críticos de la distribución $\chi^2$ para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional.
 
-```{r, include=FALSE}
+```{r}
+#| include: false
 library(tidyverse)
 ```
 

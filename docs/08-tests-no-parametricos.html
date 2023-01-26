@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -257,10 +257,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#sec-prueba-u-de-mann-whitney" id="toc-sec-prueba-u-de-mann-whitney" class="nav-link active" data-scroll-target="#sec-prueba-u-de-mann-whitney"><span class="toc-section-number">8.1</span>  Prueba U de Mann-Whitney</a></li>
   <li><a href="#sec-prueba-de-los-rangos-con-signo-de-wilcoxon" id="toc-sec-prueba-de-los-rangos-con-signo-de-wilcoxon" class="nav-link" data-scroll-target="#sec-prueba-de-los-rangos-con-signo-de-wilcoxon"><span class="toc-section-number">8.2</span>  Prueba de los rangos con signo de Wilcoxon</a>
   <ul class="collapse">
-  <li><a href="#y-si-usabamos-la-prueba-t-igual" id="toc-y-si-usabamos-la-prueba-t-igual" class="nav-link" data-scroll-target="#y-si-usabamos-la-prueba-t-igual">¿Y si usabamos la prueba t igual?</a></li>
+  <li><a href="#y-si-usábamos-la-prueba-t-igual" id="toc-y-si-usábamos-la-prueba-t-igual" class="nav-link" data-scroll-target="#y-si-usábamos-la-prueba-t-igual">¿Y si usábamos la prueba t igual?</a></li>
   </ul></li>
   <li><a href="#sec-prueba-de-signos" id="toc-sec-prueba-de-signos" class="nav-link" data-scroll-target="#sec-prueba-de-signos"><span class="toc-section-number">8.3</span>  Prueba de signos</a></li>
-  <li><a href="#realizar-prueba-de-sign-para-n25" id="toc-realizar-prueba-de-sign-para-n25" class="nav-link" data-scroll-target="#realizar-prueba-de-sign-para-n25"><span class="toc-section-number">8.4</span>  Realizar prueba de sign para N&gt;25</a></li>
+  <li><a href="#realizar-prueba-de-signos-para-n25" id="toc-realizar-prueba-de-signos-para-n25" class="nav-link" data-scroll-target="#realizar-prueba-de-signos-para-n25"><span class="toc-section-number">8.4</span>  Realizar prueba de signos para N&gt;25</a></li>
   <li><a href="#cuál-usar" id="toc-cuál-usar" class="nav-link" data-scroll-target="#cuál-usar"><span class="toc-section-number">8.5</span>  ¿Cuál usar?</a></li>
   <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">8.6</span>  Glosario</a></li>
   </ul>
@@ -290,7 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="sec-prueba-u-de-mann-whitney" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-prueba-u-de-mann-whitney"><span class="header-section-number">8.1</span> Prueba U de Mann-Whitney</h2>
 <p>La prueba U de Mann-Whitney resulta útil si tenemos dos muestras independientes y queremos si hay una diferencia en la magnitud de la variable que estamos estudiando, pero no podemos usar la prueba de t independiente o la prueba de z porque los datos no cumplen con alguno de los requisitos. Para realizar la prueba U de Mann-Whitney ponemos las observaciones de las dos muestras en orden ascendiente y asignamos un rango ordinal de manera que 1 corresponde a la observación de menor magnitud, 2 a la segunda etcétera. Luego nos fijamos en las diferencias entre las observaciones.</p>
-<p>La prueba se basa en una comparación de cada observación de una muestra <span class="math inline">\(x_i\)</span> con cada observación en la segunda muestra <span class="math inline">\(y_j\)</span>. Si las muestras tienen la misma <em>mediana</em>, entones cada observación tiene un 0,5 (50%) de chance de ser mayor o menor que la observación correspondiente de la otra muestra. Por tanto plantea las hipotesis:</p>
+<p>La prueba se basa en una comparación de cada observación de una muestra <span class="math inline">\(x_i\)</span> con cada observación en la segunda muestra <span class="math inline">\(y_j\)</span>. Si las muestras tienen la misma <em>mediana</em>, entones cada observación tiene un 0,5 (50%) de chance de ser mayor o menor que la observación correspondiente de la otra muestra. Por tanto plantea las hipótesis:</p>
 <p><span class="math inline">\(H_0: P(x_i&gt;y_j)={1\over2}\)</span></p>
 <p><span class="math inline">\(H_1: P(x_i&gt;y_j)\neq{1\over2}\)</span></p>
 <p>La prueba U de Mann-Whitney también se conoce con otros nombres: <em>Mann–Whitney–Wilcoxon</em>, <em>Wilcoxon rank-sum test</em> y <em>Wilcoxon–Mann–Whitney</em>. Por ello está disponible en R por medio de la función <code>wilcox.test</code>.</p>
@@ -319,8 +319,8 @@ Mujeres: {20, 11, 17, 12}.<br>
 </section>
 <section id="sec-prueba-de-los-rangos-con-signo-de-wilcoxon" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-prueba-de-los-rangos-con-signo-de-wilcoxon"><span class="header-section-number">8.2</span> Prueba de los rangos con signo de Wilcoxon</h2>
-<p>Vimos en la <a href="#sec-prueba-u-de-mann-whitney">sección&nbsp;<span>8.1</span></a> que la prueba U de Mann-Whitney puede ser una alternativa a la prueba de t de Student para muestras intependiente (véase la <a href="07-tests-parametricos.html#sec-prueba-t-de-student-para-muestras-independientes">sección&nbsp;<span>7.1</span></a>) cuando los requisitos para un test paramétrico no se cumplen. Si los datos son pareados tenemos la <em>prueba de los rangos con signo de Wilcoxon</em> como alternativa a prueba t para muestras pareadas que vimos en la <a href="07-tests-parametricos.html#sec-prueba-t-para-muestras-pareadas">sección&nbsp;<span>7.4</span></a>.</p>
-<p>La lógica de la prueba de los rangos con signo de Wilcoxon es similar a la de la prueba de t pareada. Si no hay diferencia en el antes y despues, por ejemplo, las diferencias entre las observaciones deberían tender a cero.</p>
+<p>Vimos en la <a href="#sec-prueba-u-de-mann-whitney">sección&nbsp;<span>8.1</span></a> que la prueba U de Mann-Whitney puede ser una alternativa a la prueba de t de Student para muestras independientes (véase la <a href="07-tests-parametricos.html#sec-prueba-t-de-student-para-muestras-independientes">sección&nbsp;<span>7.1</span></a>) cuando los requisitos para un test paramétrico no se cumplen. Si los datos son pareados tenemos la <em>prueba de los rangos con signo de Wilcoxon</em> como alternativa a prueba t para muestras pareadas que vimos en la <a href="07-tests-parametricos.html#sec-prueba-t-para-muestras-pareadas">sección&nbsp;<span>7.4</span></a>.</p>
+<p>La lógica de la prueba de los rangos con signo de Wilcoxon es similar a la de la prueba de t pareada. Si no hay diferencia en el antes y después, por ejemplo, las diferencias entre las observaciones deberían tender a cero.</p>
 <div id="exm-wilcoxon-sign-test-in-r" class="theorem example">
 <p><span class="theorem-title"><strong>Ejemplo 8.2 (Prueba de los rangos con signo de Wilcoxon en R) </strong></span><br>
 </p>
@@ -450,7 +450,7 @@ Mujeres: {20, 11, 17, 12}.<br>
 </div>
 </div>
 <p>¡Ups!, las variables no tienen distribución normal. Entonces no podemos usar la prueba t pareada, tenemos que probar con <em>Wilcoxon</em>.</p>
-<p>Usamos la función <code>wilcox.test</code> con el parametro extra de <code>paired = TRUE</code>.</p>
+<p>Usamos la función <code>wilcox.test</code> con el parámetro extra de <code>paired = TRUE</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(datos<span class="sc">$</span>Droga.A, datos<span class="sc">$</span>Droga.B, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -462,11 +462,11 @@ Mujeres: {20, 11, 17, 12}.<br>
 #&gt; alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
 </div>
-<p>Vemos que el valor <em>p</em> se encuentra debajo de nuestro nivel de significanza (<span class="math inline">\(\alpha=0,05\)</span>), con lo cual rechazamos <span class="math inline">\(H_0\)</span> y concluimos que hay una diferencia estadísticamente significativa entre las dos mediamentos.</p>
+<p>Vemos que el valor <em>p</em> se encuentra debajo de nuestro nivel de significanza (<span class="math inline">\(\alpha=0,05\)</span>), con lo cual rechazamos <span class="math inline">\(H_0\)</span> y concluimos que hay una diferencia estadísticamente significativa entre las dos medicamentos.</p>
 </div>
-<section id="y-si-usabamos-la-prueba-t-igual" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="y-si-usabamos-la-prueba-t-igual">¿Y si usabamos la prueba t igual?</h3>
-<p>Si nos hubéramos olvidado de verificar la conformidad de los requisitos podríamos haber caído en la prueba t paramétrica, ¿qué hubiera pasado?</p>
+<section id="y-si-usábamos-la-prueba-t-igual" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="y-si-usábamos-la-prueba-t-igual">¿Y si usábamos la prueba t igual?</h3>
+<p>Si nos hubiéramos olvidado de verificar la conformidad de los requisitos podríamos haber caído en la prueba t paramétrica, ¿qué hubiera pasado?</p>
 <p>Veamos:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(datos<span class="sc">$</span>Droga.A, datos<span class="sc">$</span>Droga.B, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -490,16 +490,16 @@ Mujeres: {20, 11, 17, 12}.<br>
 <section id="sec-prueba-de-signos" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="sec-prueba-de-signos"><span class="header-section-number">8.3</span> Prueba de signos</h2>
 <p>La prueba de Wilcoxon que vimos en la <a href="#sec-prueba-de-los-rangos-con-signo-de-wilcoxon">sección&nbsp;<span>8.2</span></a> requiere que los datos tengan una escala de medición (véase la <a href="01-conceptos-fundamentales.html#sec-variables-y-su-clasificacion">sección&nbsp;<span>1.5</span></a>) de intervalo. Pero a veces tenemos datos que solo se pueden medir a escala ordinal como por ejemplo la preferencia por alguna bebida de 1 a 5. En este caso no es razonable afirmar que la diferencia entre uno y dos es la misma que entre dos y tres, entonces no podemos tomar en cuenta la magnitud de esas diferencias.</p>
-<p>La prueba de signos resuelve este problema convirtiendo la diferencia en una variable trinaria: puede ser cero, positiva o negativa. La lógica del test es similar a la de Wilcoxon, si no hay un patrón en las observaciones estas diferencias deberían tender a cero. Para realizar un test de signo debemos primero anotar el signo (positivo, negativo o cero) de todas los pares de observaciones que tenemos. Cuando la diferencia es cero se excluye el par del análisis y reducimos <em>N</em> acorde a eso. Luego sumamos los positivos por un lado y los negativos por otro y tomamos el <em>menor</em> le los dos. Este número, a menudo significado por una <em>W</em>, de puede compara con la tabla de valores críticos para el N que quedó, que se puede consultar en el <a href="#valores-criticos-del-test-de-signo">apendice B</a> para N entre 5 y 25.</p>
-<p>Cuando N es superior a 25, es decir cuando tenemos venticinco o más observaciones que no sean cero, se puede transformar W en una variable normalizada. Usando la fórmula en la <a href="#def-sign-test-large-n">definición&nbsp;<span>8.1</span></a>.</p>
+<p>La prueba de signos resuelve este problema convirtiendo la diferencia en una variable trinaria: puede ser cero, positiva o negativa. La lógica del test es similar a la de Wilcoxon, si no hay un patrón en las observaciones estas diferencias deberían tender a cero. Para realizar un test de signo debemos primero anotar el signo (positivo, negativo o cero) de todas los pares de observaciones que tenemos. Cuando la diferencia es cero se excluye el par del análisis y reducimos <em>N</em> acorde a eso. Luego sumamos los positivos por un lado y los negativos por otro y tomamos el <em>menor</em> le los dos. Este número, a menudo significado por una <em>W</em>, de puede compara con la tabla de valores críticos para el N que quedó, que se puede consultar en el apéndice<a href="#valores-criticos-del-test-de-signo">B</a> para N entre 5 y 25.</p>
+<p>Cuando N es superior a 25, es decir cuando tenemos veinticinco o más observaciones que no sean cero, se puede transformar W en una variable normalizada. Usando la fórmula en la <a href="#def-sign-test-large-n">definición&nbsp;<span>8.1</span></a>.</p>
 <div id="def-sign-test-large-n" class="theorem definition">
 <p><span class="theorem-title"><strong>Definición 8.1 (Normalizar W del test de signos) </strong></span><span class="math display">\[
 z={{N-2\times{W}-1}\over\sqrt{N}}
 \]</span></p>
 </div>
 </section>
-<section id="realizar-prueba-de-sign-para-n25" class="level2 {exm-realizar-prueba-de-sign}" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="realizar-prueba-de-sign-para-n25"><span class="header-section-number">8.4</span> Realizar prueba de sign para N&gt;25</h2>
+<section id="realizar-prueba-de-signos-para-n25" class="level2 {exm-realizar-prueba-de-sign}" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="realizar-prueba-de-signos-para-n25"><span class="header-section-number">8.4</span> Realizar prueba de signos para N&gt;25</h2>
 <p><br>
 </p>
 <p>En este ejemplo vamos a suponer que hemos preguntado a 150 personas su opinión sobre el café de dos cafeterías: A y B, de la Ciudad de Buenos Aires. Les pedimos que indiquen en una escala de 1 a 5 cuánto les gusta cada producto. De ellos cincuenta dan el mismo ranking a ambos productos, con lo sus opiniones se eliminan del cálculo. De los restantes cien tenemos 39 que prefieren B y 61 que prefieren A. Tomamos el menor valor (39) y aplicamos la fórmula:</p>

@@ -12,11 +12,11 @@ En el [capítulo @sec-distribuciones-de-frecuencias] vimos que resumir los datos
 
 La *centralización* o *tendencia central* de un conjunto de datos es uno o un número reducido de valores que representan todo el conjunto.
 
-Existen tres medidas de *centralicación*: *la media*, *la mediana* y *la moda*. A continuación las vamos a definir y ver cómo se calculan y luego vamos a considerar cuándo se debe usar cada una de ellas.
+Existen tres medidas de centralización: *la media*, *la mediana* y *la moda*. A continuación las vamos a definir y ver cómo se calculan y luego vamos a considerar cuándo se debe usar cada una de ellas.
 
 ### La media
 
-La media es seguramente la medida de centralización de uso más frecuente [^03-tendencia-central-y-variabilidad-1]. Se conoce también como *el promedio* y, más técnicamente, *la media arithmetica*. La media se obtiene por la suma de las observaciones dividido por el número de observaciones. Por ejemplo si queremos sacar el promedio de seis observaciones de una variable: 15, 12, 11, 18, 15 y 15; tenemos:
+La media es seguramente la medida de centralización de uso más frecuente [^03-tendencia-central-y-variabilidad-1]. Se conoce también como *el promedio* y, más técnicamente, *la media aritmética*. La media se obtiene por la suma de las observaciones dividido por el número de observaciones. Por ejemplo si queremos sacar el promedio de seis observaciones de una variable: 15, 12, 11, 18, 15 y 15; tenemos:
 
 [^03-tendencia-central-y-variabilidad-1]: y por ende de más uso incorrecto
 
@@ -86,7 +86,7 @@ que se podría leer: «la media de equis es igual a la suma de las observaciones
 
 ### La mediana
 
-Otra medida de centralización es la mediana (también: valor mediano). Para obtenerla ponemos nuestros datos en orden ascendiente y sacamos el valor que está justo en la mitad. Por ejemplo: si queremos sacar la mediana de {15, 12, 11, 18, 15, 15, 9}, primero los ordenamos: {9, 11, 12, 15, 15 ,15, 18}. Vemos que hay siete observaciones con lo cual la mediana es la observación que está en cuarta posición, es decir que la mediana de estos datos es 15. Si el conjunto de datos tiene un número par de observaciones, no va a haber una observación justo en el medio. En ese caso se toman los *dos* valores del medio, se los suma y se divide por dos. Por ejemplo: {8, 8, 9, 11, 12, 15, 15 ,15}. Acá tenemos ocho observaciones (ya ordenados) tomamos los dos valores de la posición cuarta y quinta, los sumamos y dividimos por dos: ${11+12\over2}=11,5$.
+Otra medida de *centralización* es la mediana (también: valor mediano). Para obtenerla ponemos nuestros datos en orden ascendiente y sacamos el valor que está justo en la mitad. Por ejemplo: si queremos sacar la mediana de {15, 12, 11, 18, 15, 15, 9}, primero los ordenamos: {9, 11, 12, 15, 15 ,15, 18}. Vemos que hay siete observaciones con lo cual la mediana es la observación que está en cuarta posición, es decir que la mediana de estos datos es 15. Si el conjunto de datos tiene un número par de observaciones, no va a haber una observación justo en el medio. En ese caso se toman los *dos* valores del medio, se los suma y se divide por dos. Por ejemplo: {8, 8, 9, 11, 12, 15, 15 ,15}. Acá tenemos ocho observaciones (ya ordenados) tomamos los dos valores de la posición cuarta y quinta, los sumamos y dividimos por dos: ${11+12\over2}=11,5$.
 
 #### Notación matemática {.unnumbered}
 
@@ -177,7 +177,7 @@ rsn(n = N,xi =  -myXi, omega = skOmega, alpha = myAlpha) %>% density(adjust=adju
    #              aes(x,y))
 ```
 
-Para darnos cuenta de cuál de las medidas puede ser la más adecuada si tenemos datos por lo menos numéricos podemos sacar las tres medidas y ver qué tanto de asemejan unas a otras. Hay que tener en mente que *cualiér distribución de datos reales va a tener un sesgo*, la distribución perfectamente normal solo existe en teoría. Entonces debemos fijarnos si el sesgo que tenemos justifica el uso de una medida en espeficia. Por ejemplo, para nuestros datos de notas de dos grupos tenemos:
+Para darnos cuenta de cuál de las medidas puede ser la más adecuada si tenemos datos por lo menos numéricos podemos sacar las tres medidas y ver qué tanto de asemejan unas a otras. Hay que tener en mente que *cualquier distribución de datos reales va a tener un sesgo*, la distribución perfectamente normal solo existe en teoría. Entonces debemos fijarnos si el sesgo que tenemos justifica el uso de una medida en específica. Por ejemplo, para nuestros datos de notas de dos grupos tenemos:
 
 -   Grupo A
     -   Media: 14,93
@@ -261,7 +261,7 @@ quantile(x)
 ```
 :::
 
-Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitúd de 8 ya que $15 - 7 = 8$.
+Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitud de 8 ya que $15 - 7 = 8$.
 
 ### La varianza y desviación estándar
 
@@ -344,9 +344,14 @@ library(ggthemes)
  
 ```
 
-En este tipo de visualización la mediana está representada por la linea horizontal más gruesa, la caja corresponde al rango intercuartíl y los extremos de la linea horizontal representan el rango de los datos. Lo podemos apreciar en la figura \@(ref:box-plot-with-explanation)
+En este tipo de visualización la mediana está representada por la linea horizontal más gruesa, la caja corresponde al rango intercuartíl y los extremos de la linea horizontal representan el rango de los datos. Lo podemos apreciar en la [figura @fig-box-plot-with-explanation]
 
-```{r box-plot-with-explanation,echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Ejemplo de box-plot con explicaciones"}
+```{r}
+#| label: fig-box-plot-with-explanation
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-cap: "Ejemplo de box-plot con explicaciones"
 p+
   xlim(0,3)+
   annotate("text",1.2,max(notas),label="Máximo")+
@@ -385,6 +390,8 @@ boxplot(notas)
 
 ## Glosario
 
-```{r, echo=FALSE, results='asis'}
+```{r}
+#| echo: false
+#| result: asis
 .format_dataframe_as_def_list(chapter=3)
 ```

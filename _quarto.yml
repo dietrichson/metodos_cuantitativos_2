@@ -6,7 +6,7 @@ book:
   title: "Métodos Cuantitativos"
   subtitle: "Materiales de cátedra y de consulta" 
   author: "Aleksander Dietrichson, PhD"
-  date: "01/15/2023"
+  date: "1/15/2023"
   downloads: pdf
   chapters:
     - index.qmd

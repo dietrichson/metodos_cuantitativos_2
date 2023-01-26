@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,7 +272,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></h1>
+<h1 class="title"><span id="sec-estimacion-de-parametros" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></span></h1>
 </div>
 
 
@@ -293,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Si suponemos que la estatura promedio de las argentinas entre 19 y 49 años es de 161 centímetros con una desviación estándar de 6,99, estos serían los <em>parámetros</em> de la población. Si sacamos cinco muestras aleatorias de veinte observaciones de esta población van a arrojar resultados distintos a estos valores. Algunas muestras van a tener una media por arriba de la media real y otras van a tener una media por debajo.</p>
 <div id="exm-distribucion-de-muestras" class="theorem example">
 <div class="cell">
-<span class="theorem-title"><strong>Ejemplo 5.1 (Distribucion de muestras) </strong></span>
+<span class="theorem-title"><strong>Ejemplo 5.1 (Distribución de muestras) </strong></span>
 <div class="cell-output-display">
 <div id="fig-muestras-de-estaturas" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -304,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<p>Como lo podemos observar en la figura <a href="#fig-muestras-de-estaturas">Figura&nbsp;<span>5.1</span></a> la distribución de las muestras es simétrica y normal. La media de nuestras muestras es 161,42; ligeramente por arriba de la media real, y la desviación estándar es de 6,17; más de medio centímetro por debajo de la desviación estándar de la población. La distribución muestral tiene algunas propiedades que son útiles para nuestro trabajo estadístico:</p>
+<p>Como lo podemos observar en la <a href="#fig-muestras-de-estaturas">figura&nbsp;<span>5.1</span></a> la distribución de las muestras es simétrica y normal. La media de nuestras muestras es 161,42; ligeramente por arriba de la media real, y la desviación estándar es de 6,17; más de medio centímetro por debajo de la desviación estándar de la población. La distribución muestral tiene algunas propiedades que son útiles para nuestro trabajo estadístico:</p>
 <ol type="1">
 <li>Se aproxima a una distribución normal. Esto se conoce como el <em>teorema del límite central</em>.</li>
 <li>La media de la distribución es igual (o casi igual) a la media de la población.</li>
@@ -326,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="5.2" class="anchored" data-anchor-id="sec-el-error-estandar-y-su-interpretacion"><span class="header-section-number">5.2</span> El error estándar y su interpretación</h2>
 <p>La variabilidad de las medias muestrales se puede medir por su desviación estándar. Esta medida se conoce como el <em>error estándar</em> y tiende a disminuir cuando aumenta el tamaño de la(s) muestra(s).</p>
 <div id="def-error-estandar" class="theorem definition">
-<p><span class="theorem-title"><strong>Definición 5.1 (Error estandar) </strong></span><span class="math display">\[
+<p><span class="theorem-title"><strong>Definición 5.1 (Error estándar) </strong></span><span class="math display">\[
 SE = {\sigma\over{\sqrt{N}}}
 \]</span></p>
 <p>si conocemos la desviación estándar de la población, y</p>
@@ -336,7 +336,7 @@ SE = {s\over{\sqrt{N}}}
 <p>si usamos la desviación estándar de la muestra.</p>
 <p>donde:</p>
 <ul>
-<li>SE: el error estándar (por sus siglas en inglés «Standard Error»)</li>
+<li>SE: el error estándar (por sus siglas en inglés «<strong>S</strong>tandard <strong>E</strong>rror»)</li>
 <li><span class="math inline">\(\sigma\)</span>: la desviación estándar de la población</li>
 <li>s: desviación estándar de la muestra</li>
 <li>N: número de observaciones de la muestra</li>
@@ -382,7 +382,7 @@ z = {\bar{x}\over{SE}}
 <p>tiene una distribución normal cuando la muestra tiene un tamaño grande. Cuando la muestra es relativamente pequeña, sin embargo, tiende a otra distribución llamada <em>la distribución t</em> y a veces <em>distribución t de Student</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>El valor de <em>t</em> se calcula de la misma manera que el error estándar, pero debido a las características de la distribución los valores críticos son distintos dependiendo de los <em>grados de libertad</em> (que el la mayoría de los casos es igual a N-1.)</p>
 <div id="exm-small-sample" class="theorem example">
-<p><span class="theorem-title"><strong>Ejemplo 5.2 (Muestra pequeña) </strong></span>Hacemos una muestra aleatorea de 15 argentinas y medimos su estatura, esta vez con precisión milimetrica y obtenemos:</p>
+<p><span class="theorem-title"><strong>Ejemplo 5.2 (Muestra pequeña) </strong></span>Hacemos una muestra aleatoria de 15 argentinas y medimos su estatura, esta vez con precisión milimétrica y obtenemos:</p>
 <p>X = {153,26; 158,81; 165,73; 159,85; 160,56; 166,69; 159,85; 148,07; 160,3; 173,02; 154,55; 145,52; 159,98; 158,22; 166,12 }</p>
 <p>La media es de 159,36 y la desviación estándar de 7,125. Por tanto: <span class="math display">\[
   SE = {s\over{\sqrt{N}}} = {7,125\over{\sqrt{15}}} = 1,338
@@ -396,7 +396,7 @@ z = {\bar{x}\over{SE}}
 <p>Del <a href="#exm-small-sample">ejemplo&nbsp;<span>5.2</span></a> vemos que si bien logramos estimar la media de la población, el margen de error es más amplio que con una muestra más grande.</p>
 <section id="dónde-obtenemos-los-valores-críticos-de-t" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="dónde-obtenemos-los-valores-críticos-de-t">¿Dónde obtenemos los valores críticos de t?</h3>
-<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <a href="A-valores-criticos-t.html">apendix&nbsp;<span>A</span></a> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
+<p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <a href="A-valores-criticos-t.html">apendice&nbsp;<span>A</span></a> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
 <div id="exm-extraer-el-valor-critico" class="theorem example">
 <div class="cell">
 <span class="theorem-title"><strong>Ejemplo 5.3 (Ejemplo en R: Extraer el valor crítico de t) </strong></span>
@@ -411,24 +411,27 @@ z = {\bar{x}\over{SE}}
 </section>
 <section id="glosario" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="glosario"><span class="header-section-number">5.4</span> Glosario</h2>
-<dl>
-<dt>Distribución muestral</dt>
-<dd>
-El resultado de todas las muestras posibles que pueden ser tomadas de una población Equivalente en inglés: «Sample distribution».
-</dd>
-<dt>Distribución t</dt>
-<dd>
-Distribución de probabilidad de una muestra pequeña de una distribución normal. Función relevante en R: <code>qt</code>. Equivalente en inglés: «T distribution».
-</dd>
-<dt>Error estándar</dt>
-<dd>
-La desviación estándar de la distribución muestral. Fórmula: <span class="math inline">\(SE = {\sigma\over{\sqrt{N}}}\)</span> o <span class="math inline">\(SE = {s\over{\sqrt{N}}}\)</span> Equivalente en inglés: «Standard error».
-</dd>
-<dt>Intervalo de confianza</dt>
-<dd>
-Intervalo dentro del cual estimamos que se encuentre un valor buscado, con cierto porcentaje de confianza. Equivalente en inglés: «Confidence Interval».
-</dd>
-</dl>
+<div class="cell" data-result="asis">
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; Distribución muestral 
+#&gt; :    El resultado de todas las muestras posibles que pueden ser tomadas de una población 
+#&gt;     Equivalente en inglés: «Sample distribution». 
+#&gt; 
+#&gt; Distribución t 
+#&gt; :    Distribución de probabilidad de una muestra pequeña de una distribución normal. 
+#&gt;     Función relevante en R: ```qt```. 
+#&gt;     Equivalente en inglés: «T distribution». 
+#&gt; 
+#&gt; Error estándar 
+#&gt; :    La desviación estándar de la distribución muestral. 
+#&gt;     Fórmula: $SE = {\sigma\over{\sqrt{N}}}$ o $SE = {s\over{\sqrt{N}}}$ 
+#&gt;     Equivalente en inglés: «Standard error». 
+#&gt; 
+#&gt; Intervalo de confianza 
+#&gt; :    Intervalo dentro del cual estimamos que se encuentre un valor buscado, con cierto porcentaje de confianza. 
+#&gt;     Equivalente en inglés: «Confidence Interval».</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -546,7 +549,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

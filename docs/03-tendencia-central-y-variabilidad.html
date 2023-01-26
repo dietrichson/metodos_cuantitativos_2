@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipotesis</span></a>
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -295,10 +295,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="centralización" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="centralización"><span class="header-section-number">3.1</span> Centralización</h2>
 <p>La <em>centralización</em> o <em>tendencia central</em> de un conjunto de datos es uno o un número reducido de valores que representan todo el conjunto.</p>
-<p>Existen tres medidas de <em>centralicación</em>: <em>la media</em>, <em>la mediana</em> y <em>la moda</em>. A continuación las vamos a definir y ver cómo se calculan y luego vamos a considerar cuándo se debe usar cada una de ellas.</p>
+<p>Existen tres medidas de centralización: <em>la media</em>, <em>la mediana</em> y <em>la moda</em>. A continuación las vamos a definir y ver cómo se calculan y luego vamos a considerar cuándo se debe usar cada una de ellas.</p>
 <section id="la-media" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="la-media"><span class="header-section-number">3.1.1</span> La media</h3>
-<p>La media es seguramente la medida de centralización de uso más frecuente <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Se conoce también como <em>el promedio</em> y, más técnicamente, <em>la media arithmetica</em>. La media se obtiene por la suma de las observaciones dividido por el número de observaciones. Por ejemplo si queremos sacar el promedio de seis observaciones de una variable: 15, 12, 11, 18, 15 y 15; tenemos:</p>
+<p>La media es seguramente la medida de centralización de uso más frecuente <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Se conoce también como <em>el promedio</em> y, más técnicamente, <em>la media aritmética</em>. La media se obtiene por la suma de las observaciones dividido por el número de observaciones. Por ejemplo si queremos sacar el promedio de seis observaciones de una variable: 15, 12, 11, 18, 15 y 15; tenemos:</p>
 <p><span id="eq-media-de-seis-observaciones"><span class="math display">\[
 {{15 + 12 + 11 + 18 + 15 + 15}\over{6}}={86\over6}=14,33
 \tag{3.1}\]</span></span></p>
@@ -352,7 +352,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="la-mediana" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="la-mediana"><span class="header-section-number">3.1.2</span> La mediana</h3>
-<p>Otra medida de centralización es la mediana (también: valor mediano). Para obtenerla ponemos nuestros datos en orden ascendiente y sacamos el valor que está justo en la mitad. Por ejemplo: si queremos sacar la mediana de {15, 12, 11, 18, 15, 15, 9}, primero los ordenamos: {9, 11, 12, 15, 15 ,15, 18}. Vemos que hay siete observaciones con lo cual la mediana es la observación que está en cuarta posición, es decir que la mediana de estos datos es 15. Si el conjunto de datos tiene un número par de observaciones, no va a haber una observación justo en el medio. En ese caso se toman los <em>dos</em> valores del medio, se los suma y se divide por dos. Por ejemplo: {8, 8, 9, 11, 12, 15, 15 ,15}. Acá tenemos ocho observaciones (ya ordenados) tomamos los dos valores de la posición cuarta y quinta, los sumamos y dividimos por dos: <span class="math inline">\({11+12\over2}=11,5\)</span>.</p>
+<p>Otra medida de <em>centralización</em> es la mediana (también: valor mediano). Para obtenerla ponemos nuestros datos en orden ascendiente y sacamos el valor que está justo en la mitad. Por ejemplo: si queremos sacar la mediana de {15, 12, 11, 18, 15, 15, 9}, primero los ordenamos: {9, 11, 12, 15, 15 ,15, 18}. Vemos que hay siete observaciones con lo cual la mediana es la observación que está en cuarta posición, es decir que la mediana de estos datos es 15. Si el conjunto de datos tiene un número par de observaciones, no va a haber una observación justo en el medio. En ese caso se toman los <em>dos</em> valores del medio, se los suma y se divide por dos. Por ejemplo: {8, 8, 9, 11, 12, 15, 15 ,15}. Acá tenemos ocho observaciones (ya ordenados) tomamos los dos valores de la posición cuarta y quinta, los sumamos y dividimos por dos: <span class="math inline">\({11+12\over2}=11,5\)</span>.</p>
 <section id="notación-matemática-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="notación-matemática-1">Notación matemática</h4>
 <p>El valor mediano, o la mediana, se denota en notación matemática con una tilde como la que se usa en la letra ñ en español. Al igual que la barra para la media, se coloca por encima de la variable, así: <span class="math display">\[\huge{\tilde{x}}\]</span>.</p>
@@ -418,7 +418,7 @@ Podemos sacar la mediana de forma sencilla con R con la función <code>median</c
 </div>
 </div>
 </div>
-<p>Para darnos cuenta de cuál de las medidas puede ser la más adecuada si tenemos datos por lo menos numéricos podemos sacar las tres medidas y ver qué tanto de asemejan unas a otras. Hay que tener en mente que <em>cualiér distribución de datos reales va a tener un sesgo</em>, la distribución perfectamente normal solo existe en teoría. Entonces debemos fijarnos si el sesgo que tenemos justifica el uso de una medida en espeficia. Por ejemplo, para nuestros datos de notas de dos grupos tenemos:</p>
+<p>Para darnos cuenta de cuál de las medidas puede ser la más adecuada si tenemos datos por lo menos numéricos podemos sacar las tres medidas y ver qué tanto de asemejan unas a otras. Hay que tener en mente que <em>cualquier distribución de datos reales va a tener un sesgo</em>, la distribución perfectamente normal solo existe en teoría. Entonces debemos fijarnos si el sesgo que tenemos justifica el uso de una medida en específica. Por ejemplo, para nuestros datos de notas de dos grupos tenemos:</p>
 <ul>
 <li>Grupo A
 <ul>
@@ -482,7 +482,7 @@ Podemos sacar la mediana de forma sencilla con R con la función <code>median</c
 </div>
 </div>
 </div>
-<p>Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitúd de 8 ya que <span class="math inline">\(15 - 7 = 8\)</span>.</p>
+<p>Vemos que en este caso el rango intercuartíl es 7 y 15, que da una amplitud de 8 ya que <span class="math inline">\(15 - 7 = 8\)</span>.</p>
 </section>
 <section id="la-varianza-y-desviación-estándar" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="la-varianza-y-desviación-estándar"><span class="header-section-number">3.2.3</span> La varianza y desviación estándar</h3>
@@ -537,13 +537,13 @@ s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 </div>
 </div>
 </div>
-<p>En este tipo de visualización la mediana está representada por la linea horizontal más gruesa, la caja corresponde al rango intercuartíl y los extremos de la linea horizontal representan el rango de los datos. Lo podemos apreciar en la figura @(ref:box-plot-with-explanation)</p>
+<p>En este tipo de visualización la mediana está representada por la linea horizontal más gruesa, la caja corresponde al rango intercuartíl y los extremos de la linea horizontal representan el rango de los datos. Lo podemos apreciar en la <a href="#fig-box-plot-with-explanation">figura&nbsp;<span>3.2</span></a></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-box-plot-with-explanation" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/box-plot-with-explanation-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Ejemplo de box-plot con explicaciones</figcaption><p></p>
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/fig-box-plot-with-explanation-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figura&nbsp;3.2: Ejemplo de box-plot con explicaciones</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -556,7 +556,7 @@ s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>           <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>)</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(notas)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
@@ -564,52 +564,65 @@ s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 </section>
 <section id="glosario" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="glosario"><span class="header-section-number">3.3</span> Glosario</h2>
-<dl>
-<dt>Amplitud</dt>
-<dd>
-La diferencia entre la mínima y la máxima de una variable. También se llama <em>rango</em> Función relevante en R: <code>range</code>. Equivalente en inglés: «Range».
-</dd>
-<dt>Centralización</dt>
-<dd>
-El hecho de que una variable puede describirse por uno o más valores. También se llama <em>tendiencia central</em>. Equivalente en inglés: «Central tendency».
-</dd>
-<dt>Desviación estándar (de la muestra).</dt>
-<dd>
-Media de la diferencia entre la media y todas las observaciones de la muestra. Fórmula: <span class="math inline">\(s = {{\sqrt{ \Sigma (x - \bar{x})^2}\over{N}} }\)</span> Función relevante en R: <code>sd</code>. Equivalente en inglés: «Standard deviation».
-</dd>
-<dt>Desviación estándar (de la población).</dt>
-<dd>
-Media de la diferencia entre la media y todas las observaciones de la población. Fórmula: <span class="math inline">\(\sigma = {{\sqrt{ \Sigma (x - \bar{x})^2}\over{N}} }\)</span> Función relevante en R: <code>sd</code>. Equivalente en inglés: «Standard deviation (of the population)».
-</dd>
-<dt>Desviación típica</dt>
-<dd>
-Ver <em>desviación estándar</em>. Equivalente en inglés: «Standard deviation».
-</dd>
-<dt>Media</dt>
-<dd>
-La suma de las observaciónes de una variable dividido por el número de las observaciones. También se conoce como <em>la media aritmética</em>. Fórmula: <span class="math inline">\(\bar{x} = {\Sigma{x}\over{N}}\)</span> Función relevante en R: <code>mean</code>. Equivalente en inglés: «Mean».
-</dd>
-<dt>Mediana</dt>
-<dd>
-El la observación de una variable que está justo en el medio cuando los valores están ordenados. Función relevante en R: <code>median</code>. Equivalente en inglés: «Median».
-</dd>
-<dt>Moda</dt>
-<dd>
-El valor más frecuente de la observaciones de una variable. Equivalente en inglés: «Mode».
-</dd>
-<dt>Rango</dt>
-<dd>
-La diferencia entre la mínima y la máxima de una variable. También se llama <em>amplitud</em> Función relevante en R: <code>range</code>. Equivalente en inglés: «Range».
-</dd>
-<dt>Rango intercuartílico</dt>
-<dd>
-Rango dentro del cual se encuentras en 50% más centralizado de las variables. Función relevante en R: <code>quantile</code>. Equivalente en inglés: «Interquartile range (IQR)».
-</dd>
-<dt>Varianza</dt>
-<dd>
-Media de la diferencia cuadrada entre la media y todas las observaciones. Fórmula: <span class="math inline">\(\sigma^2 = {{\Sigma (x - \bar{x})^2}\over{N}}\)</span> Función relevante en R: <code>var</code>. Equivalente en inglés: «Variance».
-</dd>
-</dl>
+<div class="cell" data-result="asis">
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; Amplitud 
+#&gt; :    La diferencia entre la mínima y la máxima de una variable. También se llama _rango_ 
+#&gt;     Función relevante en R: ```range```. 
+#&gt;     Equivalente en inglés: «Range». 
+#&gt; 
+#&gt; Centralización 
+#&gt; :    El hecho de que una variable puede describirse por uno o más valores. También se llama _tendiencia central_. 
+#&gt;     Equivalente en inglés: «Central tendency». 
+#&gt; 
+#&gt; Desviación estándar (de la muestra). 
+#&gt; :    Media de la diferencia entre la media y todas las observaciones de la muestra. 
+#&gt;     Fórmula: $s = {{\sqrt{   \Sigma (x - \bar{x})^2}\over{N}} }$ 
+#&gt;     Función relevante en R: ```sd```. 
+#&gt;     Equivalente en inglés: «Standard deviation». 
+#&gt; 
+#&gt; Desviación estándar (de la población). 
+#&gt; :    Media de la diferencia entre la media y todas las observaciones de la población. 
+#&gt;     Fórmula: $\sigma = {{\sqrt{   \Sigma (x - \bar{x})^2}\over{N}} }$ 
+#&gt;     Función relevante en R: ```sd```. 
+#&gt;     Equivalente en inglés: «Standard deviation (of the population)». 
+#&gt; 
+#&gt; Desviación típica 
+#&gt; :    Ver *desviación estándar*. 
+#&gt;     Equivalente en inglés: «Standard deviation». 
+#&gt; 
+#&gt; Media 
+#&gt; :    La suma de las observaciónes de una variable dividido por el número de las observaciones. También se conoce como _la media aritmética_. 
+#&gt;     Fórmula: $\bar{x} = {\Sigma{x}\over{N}}$ 
+#&gt;     Función relevante en R: ```mean```. 
+#&gt;     Equivalente en inglés: «Mean». 
+#&gt; 
+#&gt; Mediana 
+#&gt; :    El la observación de una variable que está justo en el medio cuando los valores están ordenados. 
+#&gt;     Función relevante en R: ```median```. 
+#&gt;     Equivalente en inglés: «Median». 
+#&gt; 
+#&gt; Moda 
+#&gt; :    El valor más frecuente de la observaciones de una variable. 
+#&gt;     Equivalente en inglés: «Mode». 
+#&gt; 
+#&gt; Rango 
+#&gt; :    La diferencia entre la mínima y la máxima de una variable. También se llama _amplitud_ 
+#&gt;     Función relevante en R: ```range```. 
+#&gt;     Equivalente en inglés: «Range». 
+#&gt; 
+#&gt; Rango intercuartílico 
+#&gt; :    Rango dentro del cual se encuentras en 50% más centralizado de las variables. 
+#&gt;     Función relevante en R: ```quantile```. 
+#&gt;     Equivalente en inglés: «Interquartile range (IQR)». 
+#&gt; 
+#&gt; Varianza 
+#&gt; :    Media de la diferencia cuadrada entre la media y todas las observaciones. 
+#&gt;     Fórmula: $\sigma^2 = {{\Sigma (x - \bar{x})^2}\over{N}}$ 
+#&gt;     Función relevante en R: ```var```. 
+#&gt;     Equivalente en inglés: «Variance».</code></pre>
+</div>
+</div>
 
 
 </section>

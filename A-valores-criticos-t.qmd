@@ -1,4 +1,4 @@
-# Distribución t {#sec-distribución-t-appendix}
+# Distribución t {#sec-distribucion-t-appendix}
 
 La tabla que sigue despliega los valores críticos de la distribución t para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional. Para una prueba unidireccional se usará el nivel inmediatamente superior.
 
