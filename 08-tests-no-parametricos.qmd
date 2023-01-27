@@ -128,7 +128,7 @@ Podemos observar que la prueba de t es sensible a la falta de normalidad en nues
 
 La prueba de Wilcoxon que vimos en la [sección @sec-prueba-de-los-rangos-con-signo-de-wilcoxon] requiere que los datos tengan una escala de medición (véase la [sección @sec-variables-y-su-clasificacion]) de intervalo. Pero a veces tenemos datos que solo se pueden medir a escala ordinal como por ejemplo la preferencia por alguna bebida de 1 a 5. En este caso no es razonable afirmar que la diferencia entre uno y dos es la misma que entre dos y tres, entonces no podemos tomar en cuenta la magnitud de esas diferencias.
 
-La prueba de signos resuelve este problema convirtiendo la diferencia en una variable trinaria: puede ser cero, positiva o negativa. La lógica del test es similar a la de Wilcoxon, si no hay un patrón en las observaciones estas diferencias deberían tender a cero. Para realizar un test de signo debemos primero anotar el signo (positivo, negativo o cero) de todas los pares de observaciones que tenemos. Cuando la diferencia es cero se excluye el par del análisis y reducimos *N* acorde a eso. Luego sumamos los positivos por un lado y los negativos por otro y tomamos el *menor* le los dos. Este número, a menudo significado por una *W*, de puede compara con la tabla de valores críticos para el N que quedó, que se puede consultar en el apéndice[ B](#valores-criticos-del-test-de-signo) para N entre 5 y 25.
+La prueba de signos resuelve este problema convirtiendo la diferencia en una variable trinaria: puede ser cero, positiva o negativa. La lógica del test es similar a la de Wilcoxon, si no hay un patrón en las observaciones estas diferencias deberían tender a cero. Para realizar un test de signo debemos primero anotar el signo (positivo, negativo o cero) de todas los pares de observaciones que tenemos. Cuando la diferencia es cero se excluye el par del análisis y reducimos *N* acorde a eso. Luego sumamos los positivos por un lado y los negativos por otro y tomamos el *menor* le los dos. Este número, a menudo significado por una *W*, de puede compara con la tabla de valores críticos para el N que quedó, que se puede consultar en el apéndice[B](#valores-criticos-del-test-de-signo) para N entre 5 y 25.
 
 Cuando N es superior a 25, es decir cuando tenemos veinticinco o más observaciones que no sean cero, se puede transformar W en una variable normalizada. Usando la fórmula en la [definición @def-sign-test-large-n].
 
@@ -158,48 +158,49 @@ Recordamos que el *valor mágico* de la distribución normal --la regla empíric
 
 En la [figura @fig-selection-non-parametric] podemos ver un diagrama de flujo para eligir un test no paramétrico.
 
+
+
+```{r}
+#| include: false
+# This is not actually used as code, since it is not rendered correctly as PDF. 
+# It has been rendered online at https://dreampuf.github.io/GraphvizOnline/
+# saved as a svg and re-rendered.
+library(DiagrammeR)
+cual_usar <- '
+digraph boxes_and_circles {
+
+# several node statements
+node [shape = box]
+A[label="Inicio"]
+node [shape = oval]
+B[label="Mann-Whitney U"];C[label="Wilcoxon"] D[ label="Signo"];
+
+node [shape = diamond] // sets as circles
+1[label="Muestras independientes"]; 2[label="Datos de intervalo o razón"];
+
+# several edge statements
+A->1;1->B[label="Sí"];1->2[label="No"]
+2->C[label="Sí"];2->D[label="No"]
+
+{rank=same; 1; B}
+{rank=same; 2; C}
+
+# a graph statement
+
+graph [fontsize = 10]
+}
+'
+```
+
+
 ```{r}
 #| label: fig-selection-non-parametric
-#| echo: false
-#| fig-cap: "Diagrama de flujo para selección de pruebas estadísticas no paramétricas."
-
-# Build with ggplot
-myData <- tribble(
-  ~x,~y,~Type,~text,
-  1,  10,"rounded","Inicio",
-  1,  9, "arrow","",
-  1,  8, "decision","¿Muestras \nindependientes?",
-  1,  7, "arrow", "No",
-  1,  6, "decision","¿Datos intervalo \n o razón?",
-  1,  5, "arrow", "No",
-  1,  4, "decision","Usar test\nde signo",
-  
-  3, 8 , "rounded", "Usar prueba U \n Mann-Whitney",
-  3, 6 , "rounded", "Usar prueba\nWilcoxon",
-  
-  
-  # Flechas si
-  2,  8, "arrow", "Sí",
-  2,  6, "arrow", "Sí"
-  
-)
-myData %>% 
-  ggplot(aes(x,y,label=text))+
-  geom_label(data=myData %>% filter(Type!="arrow"))+
-  geom_text(data=myData %>% filter(Type=="arrow"),nudge_x=.1, nudge_y=.2)+
-  geom_segment(aes(x=x,xend=x,y=y+.5,yend=y-.4), 
-               arrow=arrow(length = unit(0.05, "inches")),
-               myData %>% filter(Type=="arrow", text=="No") )+
-  geom_segment(aes(x=x,xend=x,y=y+.5,yend=y-.4), 
-               arrow=arrow(length = unit(0.05, "inches")),
-               myData %>% filter(Type=="arrow", text=="") )+
-  geom_segment(aes(x=x-.5,xend=x+.5,y=y,yend=y), 
-               arrow=arrow(length = unit(0.05, "inches")),
-               myData %>% filter(Type=="arrow", text=="Sí") )+
-  xlim(0,4)+
-  ylim(3,10)+
-  theme_void()
+#| fig-cap: "Diagrama de flujo"
+#| fig-width: 5
+#| fig-height: 8
+knitr::include_graphics("images/flowchart-non-parametric.png")
 ```
+
 
 ## Glosario
 

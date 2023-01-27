@@ -340,7 +340,7 @@
     "href": "08-tests-no-parametricos.html#cuál-usar",
     "title": "8  Pruebas no paramétricas",
     "section": "8.5 ¿Cuál usar?",
-    "text": "8.5 ¿Cuál usar?\nEn la figura 8.1 podemos ver un diagrama de flujo para eligir un test no paramétrico.\n\n\n\n\n\nFigura 8.1: Diagrama de flujo para selección de pruebas estadísticas no paramétricas."
+    "text": "8.5 ¿Cuál usar?\nEn la figura 8.1 podemos ver un diagrama de flujo para eligir un test no paramétrico.\n\nknitr::include_graphics(\"images/flowchart-non-parametric.png\")\n\n\n\n\nFigura 8.1: Diagrama de flujo"
   },
   {
     "objectID": "08-tests-no-parametricos.html#glosario",
