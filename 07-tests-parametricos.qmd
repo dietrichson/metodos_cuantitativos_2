@@ -119,7 +119,7 @@ $$
 t = {{\bar{x_1}-\bar{x_2}}\over{SED}} = {{14.933-11,766}\over{0,756}}=4,188.
 $$
 
-Si buscamos este valor en el [apéndice sec-distribucion-t-appendix] para 29 grados de libertad (N-1), vemos que debemos rechazar $H_0$ y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.
+Si buscamos este valor en el \[apéndice sec-distribucion-t-appendix\] para 29 grados de libertad (N-1), vemos que debemos rechazar $H_0$ y concluir que existe una diferencia estadísticamente significativa entre las dos muestras. Tenemos razón de creer que el método pedagógico influye en los resultados finales de los estudiantes.
 :::
 
 ::: {#exm-t-test-in-r}
@@ -337,59 +337,60 @@ Existe también una prueba, llamada *de z*, que se puede usar para muestras más
 
 La [figura @fig-flow-chart-test-selection] despliega un diagrama de flujo para eligir un test estadístico inferencial.
 
+
+```{r}
+#| include: false
+library(DiagrammeR)
+cual_usar <- '
+digraph flowchart {
+graph [layout = neato]
+
+# several node statements
+node [shape = box]
+A[label="Inicio", pos = "0,10!"]
+node [shape = oval]
+B[pos = "4,8!", label="Test No\nParamétrico"];
+C[pos = "3,6!", label="Test de T\nDependiente"]; 
+D[pos = "4,2!",  label="Test de T\nIndependiente"];
+E[pos = "0,2!", label="Test de Z"]
+node [shape = diamond]
+1[pos = "0,8!",label="Datos \nde intervalo o\n razón"];
+2[pos = "0,6!",label="Muestras\nindependientes"]; 
+3[pos = "0,4!",label="Muestras\nGrandes (N>30)"]; 
+4[pos = "4,4!"label="Varianza similar y\nVariables normalidad"]; 
+
+# several edge statements
+A->1;1->2[label="Sí"];1->B[label="No"]
+2->3[label="Sí"];2->C[label="No"]
+3->E[label="Sí"];3->4[label="No"]
+4->D[label="Sí"];4->B[label="No"]
+
+graph [fontsize = 10]
+}
+'
+```
+
+
 ```{r}
 #| label: fig-flow-chart-test-selection
 #| echo: false
 #| fig-cap: "Diagrama de flujo para selección de estadística inferencial"
-# Build with ggplot
-myData <- tribble(
-  ~x,~y,~Type,~text,
-  1,  10,"rounded","Inicio",
-  1,  9, "arrow","",
-  1,  8, "decision","¿Datos de \nintervalo o razón?",
-  1,  7, "arrow", "Sí",
-  1,  6, "decision","¿Muestras \nindependientes?",
-  1,  5, "arrow", "Sí",
-  1,  4, "decision","¿Muestras Grandes\n (n>30)?",
-  1,  3, "arrow", "Sí",
-  1,  2, "rounded","Usar\nprueba de z",
-  
-  3, 8 , "rounded", "Usar prueba\nno paramétrica",
-  3, 6 , "rounded", "Usar prueba\nt dependiente",
-  3, 4 , "decision", "¿Varianza similar y\nvariables normales?",
-  3, 2 , "decision", "Usar prueba de t\nindependiente",
-  
-  # Flechas no
-  2,  8, "arrow", "No",
-  2,  6, "arrow", "No",
-  2,  4, "arrow", "No"
-  
-)
-myData %>% 
-  ggplot(aes(x,y,label=text))+
-  geom_label(data=myData %>% filter(Type!="arrow"))+
-  geom_text(data=myData %>% filter(Type=="arrow"),nudge_x=.1, nudge_y=.2)+
-  geom_segment(aes(x=x,xend=x,y=y+.5,yend=y-.4), 
-               arrow=arrow(length = unit(0.05, "inches")),
-               myData %>% filter(Type=="arrow", text=="Sí") )+
-  geom_segment(aes(x=x,xend=x,y=y+.5,yend=y-.4), 
-               arrow=arrow(length = unit(0.05, "inches")),
-               myData %>% filter(Type=="arrow", text=="") )+
-  geom_segment(aes(x=x-.5,xend=x+.5,y=y,yend=y), 
-               arrow=arrow(length = unit(0.05, "inches")),
-               myData %>% filter(Type=="arrow", text=="No") )+
-  #Agregar flecha si el el lado derecho
-  annotate("segment",x=3,xend=3,y=3.5,yend=2.6, arrow=arrow(length = unit(0.05, "inches")))+
-  annotate("text",x=3.1,y=3,label="Sí")+
-  annotate("segment",x=3.5,xend = 3.8,y=4,yend=4)+
-  annotate("segment",x=3.8,xend = 3.4,y=8,yend=8,
-           arrow=arrow(length = unit(0.05, "inches")))+
-  annotate("segment",x=3.8,xend = 3.8,y=4,yend=8)+
-  annotate("text",x=3.6,y=4.2,label="No")+
-  xlim(0,4)+
-  ylim(1,10)+
-  theme_void()
+if (knitr::is_latex_output()){
+  filename <- here::here("images","flowchart-parametric.pdf")
+  if(!file.exists(filename)){
+    DiagrammeR::grViz(cual_usar) |> 
+      DiagrammeRsvg::export_svg() |> 
+      charToRaw()  |>  
+      rsvg::rsvg_pdf(file = filename)
+    
+  }
+  knitr::include_graphics(filename)
+} else {
+  DiagrammeR::grViz(cual_usar)
+}
 ```
+
+
 
 ## Glosario
 

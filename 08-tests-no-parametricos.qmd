@@ -162,9 +162,6 @@ En la [figura @fig-selection-non-parametric] podemos ver un diagrama de flujo pa
 
 ```{r}
 #| include: false
-# This is not actually used as code, since it is not rendered correctly as PDF. 
-# It has been rendered online at https://dreampuf.github.io/GraphvizOnline/
-# saved as a svg and re-rendered.
 library(DiagrammeR)
 cual_usar <- '
 digraph boxes_and_circles {
@@ -176,7 +173,7 @@ node [shape = oval]
 B[label="Mann-Whitney U"];C[label="Wilcoxon"] D[ label="Signo"];
 
 node [shape = diamond] // sets as circles
-1[label="Muestras independientes"]; 2[label="Datos de intervalo o razón"];
+1[label="Muestras\nindependientes"]; 2[label="Datos \nde intervalo o\n razón"];
 
 # several edge statements
 A->1;1->B[label="Sí"];1->2[label="No"]
@@ -196,9 +193,20 @@ graph [fontsize = 10]
 ```{r}
 #| label: fig-selection-non-parametric
 #| fig-cap: "Diagrama de flujo"
-#| fig-width: 5
-#| fig-height: 8
-knitr::include_graphics("images/flowchart-non-parametric.png")
+#| echo: false
+if (knitr::is_latex_output()){
+  filename <- here::here("images","flowchart-non-parametric.pdf")
+  if(!file.exists(filename)){
+    DiagrammeR::grViz(cual_usar) |> 
+      DiagrammeRsvg::export_svg() |> 
+      charToRaw()  |>  
+      rsvg::rsvg_pdf(file = filename)
+    
+  }
+  knitr::include_graphics(filename)
+} else {
+  DiagrammeR::grViz(cual_usar)
+}
 ```
 
 
