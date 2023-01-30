@@ -1,0 +1,32 @@
+# Distribución t {#sec-distribucion-t-appendix}
+
+La tabla que sigue despliega los valores críticos de la distribución t para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional. Para una prueba unidireccional se usará el nivel inmediatamente superior.
+
+```{r}
+#| include: false
+library(tidyverse)
+```
+
+```{r}
+#| label: tbl-significance-table-t-distribution
+#| echo: false
+#| tbl-cap: "Valores críticos de t por nivel de significanza y grados de libertad."
+
+#Create table of significant values
+sig.levels <- c(.2, .1, .05, .025, .02, .01)
+myData <- data.frame(
+  df = as.character(1:30),
+  twenty = qt(1-.1,df=1:30),
+  ten = qt(1-.05,df=1:30),
+  five = qt(1-.025, df=1:30),
+  two = qt(1-.01, df=1:30),
+  one = qt(1-.005, df=1:30)
+)
+knitr::kable(myData, 
+             col.names = c("Grados","p < 0,20",
+                                   "p < 0,10","p < 0,05","p < 0,02","p < 0,01"),
+             digits=3,
+             format.args = list(decimal.mark = ","),
+             booktabs = TRUE
+             )
+```

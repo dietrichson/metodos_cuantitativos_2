@@ -1,0 +1,34 @@
+# Distribución $\chi^2$ {#sec-distribucion-chi2}
+
+La tabla que sigue despliega los valores críticos de la distribución $\chi^2$ para diferentes niveles de significanza y grados de libertad (GL). Los niveles de significanza indican un test no direccional.
+
+```{r}
+#| include: false
+library(tidyverse)
+```
+
+```{r}
+#| label: tbl-significance-table-chi-squared-distribution
+#| echo: false
+#| tbl-cap: "Valores críticos de χ2 por nivel de significanza y grados de libertad."
+# Create table of significant values
+sig.levels <- c(.2, .1, .05, .025, .02, .01)
+
+myData <- data.frame(
+  df = as.character(1:30),
+  twenty = qchisq(1-.2,df=1:30),
+  ten = qchisq(1-.1,df=1:30),
+  five = qchisq(1-.05, df=1:30),
+  two_five = qchisq(1-.025, df=1:30),
+  one = qchisq(1-.01, df=1:30),
+  zero_one = qchisq(1-.001, df=1:30)
+)
+
+knitr::kable(myData, 
+             col.names = c("GL","p < 0,20",
+                                   "p < 0,10","p < 0,05","p < 0,02","p < 0,01","p < 0,001"),
+             digits=3,
+             format.args = list(decimal.mark = ","),
+             booktabs = TRUE
+             )
+```

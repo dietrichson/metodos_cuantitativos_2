@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Métodos Cuantitativos - 1&nbsp; Conceptos fundamentales</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02-distribuciones-de-frecuencias.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Métodos Cuantitativos</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Métodos-Cuantitativos.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-conceptos-fundamentales.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-distribuciones-de-frecuencias.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-tendencia-central-y-variabilidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Centralización y dispersión</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-la-distribucion-normal.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La distribución normal</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-parametros-de-poblacion-y-muestra.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estimación de parámetros</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-diseno-de-proyecto-y-test-de-hipotesis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Diseño de proyectos y test de hipótesis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-tests-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pruebas paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-tests-no-parametricos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pruebas no paramétricas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-chi-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Prueba de <span class="math inline">\(\chi^2\)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-correlaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Correlación</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-referencias.html" class="sidebar-item-text sidebar-link">Referencias</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Apéndices</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./A-valores-criticos-t.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Distribución t</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./B-valores-criticos-test-de-signo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Valores críticos del test de signo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./C-valores-criticos-ji-cuadrado.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Distribución <span class="math inline">\(\chi^2\)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#poblaciones-y-muestras" id="toc-poblaciones-y-muestras" class="nav-link active" data-scroll-target="#poblaciones-y-muestras"><span class="toc-section-number">1.1</span>  Poblaciones y muestras</a>
+  <ul class="collapse">
+  <li><a href="#muestra-aleatoria" id="toc-muestra-aleatoria" class="nav-link" data-scroll-target="#muestra-aleatoria"><span class="toc-section-number">1.1.1</span>  Muestra aleatoria</a></li>
+  <li><a href="#muestra-cuasi-aleatoria" id="toc-muestra-cuasi-aleatoria" class="nav-link" data-scroll-target="#muestra-cuasi-aleatoria"><span class="toc-section-number">1.1.2</span>  Muestra cuasi-aleatoria</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-en-r-generar-una-secuencia" id="toc-ejemplo-en-r-generar-una-secuencia" class="nav-link" data-scroll-target="#ejemplo-en-r-generar-una-secuencia"><span class="toc-section-number">1.2</span>  Ejemplo en R: Generar una secuencia</a></li>
+  <li><a href="#muestra-estratificada" id="toc-muestra-estratificada" class="nav-link" data-scroll-target="#muestra-estratificada"><span class="toc-section-number">1.2.1</span>  Muestra estratificada</a></li>
+  <li><a href="#representatividad" id="toc-representatividad" class="nav-link" data-scroll-target="#representatividad"><span class="toc-section-number">1.3</span>  Representatividad</a></li>
+  <li><a href="#sec-estadisticas-descriptivas-e-inferenciales" id="toc-sec-estadisticas-descriptivas-e-inferenciales" class="nav-link" data-scroll-target="#sec-estadisticas-descriptivas-e-inferenciales"><span class="toc-section-number">1.4</span>  Estadísticas descriptivas e inferenciales</a></li>
+  <li><a href="#sec-variables-y-su-clasificacion" id="toc-sec-variables-y-su-clasificacion" class="nav-link" data-scroll-target="#sec-variables-y-su-clasificacion"><span class="toc-section-number">1.5</span>  Variables y su clasificación</a>
+  <ul class="collapse">
+  <li><a href="#por-su-relación-con-otras-variables" id="toc-por-su-relación-con-otras-variables" class="nav-link" data-scroll-target="#por-su-relación-con-otras-variables">Por su relación con otras variables</a></li>
+  <li><a href="#por-su-nivel-de-medición" id="toc-por-su-nivel-de-medición" class="nav-link" data-scroll-target="#por-su-nivel-de-medición">Por su nivel de medición</a></li>
+  <li><a href="#por-su-precisión" id="toc-por-su-precisión" class="nav-link" data-scroll-target="#por-su-precisión">Por su precisión</a></li>
+  </ul></li>
+  <li><a href="#glosario" id="toc-glosario" class="nav-link" data-scroll-target="#glosario"><span class="toc-section-number">1.6</span>  Glosario</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Conceptos fundamentales</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>En este capítulo introducimos algunos conceptos fundamentales del análisis cuantitativo y de las estadísticas. Consideramos los conceptos de población y muestra. Hacemos una brevísima introducción a la teoría de la probabilidad. Diferenciamos entre algunos de los usos importantes de la estadística: descriptiva e inferencial. Finalmente consideramos algunas maneras de clasificar variables.</p>
+<section id="poblaciones-y-muestras" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="poblaciones-y-muestras"><span class="header-section-number">1.1</span> Poblaciones y muestras</h2>
+<p>En su uso diario usamos <em>población</em> para designar un grupo de personas, por ejemplo <em>la población del Gran Buenos Aires</em>; o por lo menos de seres vivos como por ejemplo <em>la población de ratas</em> de la CABA. En estadísticas, en cambio, se usa el término de manera más general para significar cualquier recolección o conjunto de elementos, artículos o sujetos que gozan de características comunes con el fin de estudiarlos y de esta forma se sacar conclusiones específicas para determinar sus resultados. Así podemos hablar de la población de sustantivos en las obras de Jorge Luis Borges o de la población de notas asignadas en los cursos a nivel universitario.</p>
+<p>Podemos distinguir entre poblaciones <em>finitas</em> e <em>infinitas</em>. La población de motocicletas vendidas en Buenos Aires en septiembre es finita. En cambio la población de temperaturas medidas en el Campus de San Martín es <em>infinita</em>, ya que, por lo menos teóricamente, podemos seguir midiendo para siempre.</p>
+<p>Cuando una población finita no es demasiado grande podemos investigar la totalidad de ella. Pero, si la población es muy grande o potencialmente infinita tenemos que estar contentos con <em>muestras</em> extraídas de esta población. Por ejemplo: si queremos saber quién va a ganar las próximas elecciones podríamos preguntar a todo aquel que tiene derecho al voto cómo piensa votar para sacar el resultado. En la práctica esta metodología resultaría demasiado costosa, por lo que hacemos una muestra representativa de votantes, les preguntamos y generalizamos.</p>
+<p>Resulta evidente que hay que tener cuidado al seleccionar una muestra para análisis. Los métodos estadísticos, los que nos permiten generalizar e inferir, suponen que las muestras están tomadas de manera <em>aleatoria</em> o al azar. Esto no significa que la muestra sea arbitraria, sino que cualquier unidad de la población que estamos estudiando tiene la misma probabilidad de ser seleccionada para hacer parte de la muestra.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-conceptos-fundamentales_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Población y muestra.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="muestra-aleatoria" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="muestra-aleatoria"><span class="header-section-number">1.1.1</span> Muestra aleatoria</h3>
+<p>Para tener una muestra verdaderamente aleatoria de una población deberíamos asignar un número u otro identificador único a cada una de las unidades de la población –a cada persona si se trata de una población humana– escribir cada número en un papel y echarlos en una tómbola. Luego de virarla por algún tiempo y mesclar bien los papeles, podríamos de allí sacar la cantidad de papeles que corresponda al tamaño de nuestra muestra. Obviamente esto no resulta muy práctico por lo que se suele empezar con una secuencia de números aleatorios del tamaño de la muestra y extraer unidades de la población basado en ello. Por ejemplo, si quisiéramos sacar veinte libros al azar de un estante de la biblioteca que contiene doscientos libros, necesitamos veinte números aleatorios entre uno y doscientos, y sacamos los libros que desde algún punto de referencia (primer libro del primer nivel) está a esa distancia.</p>
+<p>Ahora, ¿dónde encontramos números aleatorios? Hay secuencias en libros de estadísticas, usados principalmente antes de la existencia de computadoras. También se pueden generar esas secuencias en linea. Finalmente, R tienen un generador de números aleatorios que nos permite generar los de números de nuestra muestra con un solo comando usando la función de R <em>sample</em>.</p>
+<div id="exm-generar-muestra" class="theorem example">
+<div class="cell">
+<span class="theorem-title"><strong>Ejemplo 1.1 (Generar muestra en R) </strong></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>, <span class="at">size =</span> <span class="dv">20</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 166  46  42 179 188 143 126 135 102  93  72 193  13 107 198 100  88  67  33  99</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Acá le estamos pidiendo a R que nos de una muestra aleatoria (<code>sample</code> ) de números entre uno y doscientos (<code>x = 1:200</code>), y que la muestra sea de veinte <code>size = 20</code> ). Con estos números podemos ir al estante y sacar los libros que queremos estudiar.</p>
+<p>Si corren este comando desde su consola de R los números deben salir diferentes, se hace una muestra aleatoria cada vez.</p>
+<div id="exm-ordenar-los-datos" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 1.2 (Ordenar los datos) </strong></span>También es posible ordenar los números, lo cual nos ahorra un poco de tiempo al retirar los libros. Se logra con la función <em>sort</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>, <span class="at">size =</span> <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  29  35  38  41  54  74  75  79  85  92 103 112 114 120 127 153 173 185 187 188</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="muestra-cuasi-aleatoria" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="muestra-cuasi-aleatoria"><span class="header-section-number">1.1.2</span> Muestra cuasi-aleatoria</h3>
+<p>Otra estrategia que podría emplearse para sacar veinte libros al azar del estante que describimos en la sección anterior sería decidir que vamos a sacar cada diez libros ya que <span class="math inline">\({200\over20} = 10\)</span>. Este tipo de muestra lleva el epíteto cuasi-aleatoria, y funciona bien si el orden original de la población es aleatorio. Sin embargo, hay que tener en cuenta que esta estrategia puede generar una muestra no representativa si existe una estructura en ese orden. Típicamente puede resultar problemática si existe <em>periodicidad</em> en la población que estamos analizando. Si, por ejemplo, queremos tener una muestra de cuantos ómnibus pasan delante de mi casa por día sería mala idea decir que vamos a contarlos cada siete días. Si el día que empezamos es un domingo obtendremos seguramente una muestra con cantidades inferiores a la población real (en este caso definida como todos los ómnibus que pasan por mi casa en un día); y si empezamos a contar un lunes las cantidades serían superiores.</p>
+</section>
+</section>
+<section id="ejemplo-en-r-generar-una-secuencia" class="level2 {exm-generar-una-secuencia}" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="ejemplo-en-r-generar-una-secuencia"><span class="header-section-number">1.2</span> Ejemplo en R: Generar una secuencia</h2>
+<p>Si bien sacar la secuencia para sacar cada diez libros resulta trivial, existe la manera que hacerlo también con una función de R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>( <span class="at">from =</span> <span class="dv">10</span>, <span class="at">to =</span> <span class="dv">200</span> , <span class="at">by=</span><span class="dv">10</span> )</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  10  20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 200</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<p>La función <code>seq</code> (de secuencia), toma tres parámetros, desde dónde empezamos (<code>from=10</code>), hasta dónde queremos llegar (<code>to=200</code>), y con qué distancia (<code>by=10</code>).</p>
+<p>Por lo pronto se vuelve más útil si estamos trabajando con números menos redondos. Digamos que queremos sacar cada siete libros de un estante que contiene cien empezando por el número seis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>( <span class="at">from =</span> <span class="dv">6</span>, <span class="at">to =</span> <span class="dv">100</span> , <span class="at">by =</span> <span class="dv">7</span> )</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  6 13 20 27 34 41 48 55 62 69 76 83 90 97</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="muestra-estratificada" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="muestra-estratificada"><span class="header-section-number">1.2.1</span> Muestra estratificada</h3>
+<p>Cuando conocemos algunos parámetros de la población que queremos estudiar también nos podemos asegurar que nuestra muestra tenga parámetros similares. Esta estrategia puede resultar particularmente útil si suponemos que este parámetro puede tener alguna influencia en otra variable cuya distribución queremos conocer. Si por ejemplo suponemos que el <em>sexo</em> puede influir en la opinión de una persona sobre la ley del aborto podemos asegurarnos de que nuestra muestra tiene una distribución similar a la de la población en general. Se sabe que hay más o menos mitad y mitad<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> en la población general por lo que convendría que nuestra muestra tenga la misma distribución. Así podemos sacar, para una muestra de veinte, diez hombres y diez mujeres al azar<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Lo mismo se puede aplicar a otras variables, por ejemplo, clase social, país de origen etcétera.</p>
+</section>
+<section id="representatividad" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="representatividad"><span class="header-section-number">1.3</span> Representatividad</h2>
+<p>Es importante entender que ninguna de las estrategias descritas en la sección anterior nos garantiza que la muestra que sacamos sea representativa de la población, con lo cual no está garantizado que una generalización basada en esa muestra sea válida. Lo que sí se puede calcular es la <em>probabilidad</em> de que la muestra sea representativa. Es decir, podemos tener una estimación de <em>en qué medida</em> la muestra representa la población.</p>
+<p>Para profundizar un poco este concepto vamos a hacer un breve desvío y desarrollar un poco de teoría de la probabilidad por medio de un ejemplo sumamente sencillo. Digamos que queremos hacer una muestra aleatoria de la población en Argentina. Vamos a seleccionar al azar a tan solo tres personas para nuestra muestra. Ya que sabemos que hay la misma cantidad de hombres y mujeres la probabilidad de que el/la primero/a que elijamos sea hombre es 0,5<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, lo cual también es la probabilidad de que sea mujer. Ahora, cuando seleccionamos el/la segundo/a y tercero/a las probabilidad son las mismas en todos los casos. Las leyes de probabilidad indican que la probabilidad de que dos o más eventos independientes sucedan es el producto de sus probabilidades individuales. Entonces, cuál es la probabilidad de que los tres miembros de la muestra sean mujeres?</p>
+<p><span class="math display">\[0,5\times0,5\times0,5=0,125\]</span> Resulta evidente que lo mismo sucede si queremos calcular la probabilidad de que todos sean hombres.</p>
+<p>Ahora, bien ¿cuál sería la probabilidad de que sean dos mujeres y un hombre?</p>
+<p>Hay tres maneras que esto pueda suceder:</p>
+<table class="table">
+<caption>Combinaciones posibles.{#tbl-compinaciones-posibles}</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Primero/a</th>
+<th style="text-align: center;">Segundo/a</th>
+<th style="text-align: center;">Tercero/a</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Masculino</td>
+<td style="text-align: center;">Femenino</td>
+<td style="text-align: center;">Femenino</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Femenino</td>
+<td style="text-align: center;">Masculino</td>
+<td style="text-align: center;">Femenino</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Femenino</td>
+<td style="text-align: center;">Femenino</td>
+<td style="text-align: center;">Masculino</td>
+</tr>
+</tbody>
+</table>
+<p>Cada una de estas posibilidades tienen la misma probabilidad y como el orden en el que fueron elegidos no es relevante para la muestra, podemos sumar las probabilidades para obtener la probabilidad total: <span class="math display">\[(0,5\times0,5\times0,5)+(0,5\times0,5\times0,5)+(0,5\times0,5\times0,5) = 0,375 \]</span></p>
+<p>Lógicamente lo mismo ocurre con el caso de dos hombres y una mujer. Entonces tenemos cuatro posibilidades con distintas probabilidades:</p>
+<div id="tbl-probabilidades-combinaciones-posibles" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;1.1: Probabilidades de las combinaciones.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Muestra</th>
+<th style="text-align: center;">Probabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Tres mujeres</td>
+<td style="text-align: center;">0,125</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dos mujeres + un hombre</td>
+<td style="text-align: center;">0,375</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dos hombres + una mujer</td>
+<td style="text-align: center;">0,375</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tres hombres</td>
+<td style="text-align: center;">0,125</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Observamos que las probabilidades suman 1, lo cual es matemáticamente inevitable.</p>
+<p>Está claro que una muestra de tan solo tres personas nunca puede ser representativa de la población, sin embargo vemos que la medida en que son poco representativas varía. Cualquiera de las muestras de 2+1 sería <em>más representativa</em> que las de un solo sexo, y vemos que también son probables.</p>
+<p>Este ejemplo es extensible a muestras más grandes con cálculos similares. Se desarrollará en más detalle en capítulos posteriores, pero para tener un ejemplo un tanto más real imaginemos que hemos decidido realizar una muestra de diez personas de la misma población (que tiene un 50 y 50 de hombres y mujeres).</p>
+<div id="tbl-probabilidades-combinaciones-posibles-diez" class="anchored">
+<table class="table">
+<caption>Tabla&nbsp;1.2: Probabilidades de las combinaciones de una muestra de diez.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Hombres</th>
+<th style="text-align: center;">Mujeres</th>
+<th style="text-align: right;">Probabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: right;">0,001</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: right;">0,010</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: right;">0,044</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: right;">0,117</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">0,205</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">0,246</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">0,205</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">0,117</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">0,044</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">0,010</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0,001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Obtendríamos los resultados de la tabla <a href="#tbl-probabilidades-combinaciones-posibles-diez">Tabla&nbsp;<span>1.2</span></a>) y observamos que hay aproximadamente un 0,9 de probabilidad (90%) de obtener una muestra no peor que 7-3. También no es de sorprenderse que mientras más grande sea la muestra más probable es que sea representativa<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+</section>
+<section id="sec-estadisticas-descriptivas-e-inferenciales" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-estadisticas-descriptivas-e-inferenciales"><span class="header-section-number">1.4</span> Estadísticas descriptivas e inferenciales</h2>
+<p>Entre los varios usos de las estadísticas este texto tratará de dos de los más importantes. Uno es el descriptivo que consiste en describir cuantitativamente un conjunto de datos y eventualmente generalizar este análisis a una población. Otro es el de inferir propiedades y diferencias entre variables.</p>
+<p>Vamos a desarrollar estas distinciones por medio de un ejemplo<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Supongamos que hemos hecho dos muestras aleatorias de las notas del examen final de dos cursos de la materia <em>Métodos cuantitativos</em>, uno dictado exclusivamente como curso teórico y el otro como curso teórico-práctico.</p>
+<p>Las notas son: Curso A (teórico-práctico):</p>
+<blockquote class="blockquote">
+<p>15, 12, 11, 18, 15, 15,9, 19, 14, 13, 11, 12, 18, 15, 16, 14, 16,17, 15, 17, 13, 14, 13, 15, 17, 19, 17, 18, 16 y 14.</p>
+</blockquote>
+<p>Y para el Curso B (teórico):</p>
+<blockquote class="blockquote">
+<p>11, 16, 14, 18,6,8,9, 14, 12, 12, 10, 15, 12,9, 13, 16, 17, 12,8,7, 15,5, 14, 13, 13, 12, 11, 13, 11 y 7</p>
+</blockquote>
+<p>El examen fue idéntico para ambos grupos y se podía obtener un máximo de veinte.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>myData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">classA =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">15</span>,<span class="dv">9</span>, <span class="dv">19</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">18</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">16</span>,<span class="dv">17</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">17</span>, <span class="dv">18</span>, <span class="dv">16</span>, <span class="dv">14</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">classB =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">16</span>, <span class="dv">14</span>, <span class="dv">18</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>, <span class="dv">14</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">12</span>,<span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">16</span>, <span class="dv">17</span>, <span class="dv">12</span>,<span class="dv">8</span>,<span class="dv">7</span>, <span class="dv">15</span>,<span class="dv">5</span>, <span class="dv">14</span>, <span class="dv">13</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">11</span>, <span class="dv">7</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(myData,<span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>,<span class="st">"comparative_two_courses.RDS"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Antes de sacar conclusiones sobre estos datos deberíamos resumirlos. Podemos construir, por ejemplo, una tabla que muestra la frecuencia de cada nota en cada curso. Esto se llama tabla de frecuencias. También nos gustaría saber cuál es la nota más típica, la nota <em>promedio</em> y cuánto varían las notas respecto a éste. Estas son estadísticas descriptivas, y los desarrollaremos en los capítulos dos y tres de este texto.</p>
+<p>Pero seguramente también quisiéramos saber con qué nivel de confianza podemos generalizar estos datos a similares grupos de datos usando métodos similares a los mencionados. Nos gustaría saber en qué medida las dos muestras que tenemos son representativas de sus respectivas poblaciones de estudiantes tomando cursos similares. Este tipo de estimaciones se verá en detalle en el capítulo cinco.</p>
+<p>Además quisiéramos saber si podemos afirmar que alguno de los dos grupos estuvo mejor que el otro en el examen final. Podríamos postular, por ejemplo, que el grupo que recibió el curso teórico-práctico debería sacar mejores notas en promedio que el otro. Para ello hay que construir un test de la hipótesis y someter nuestros datos a este test.</p>
+<p>Tanto la tarea de estimación como el test de hipótesis comprenden la inferencia de relaciones a partir de medidas descriptivas y juntos constituyen el área de <em>estadísticas inferenciales</em>.</p>
+<p>Finalmente, podríamos juntar más datos para determinar si existe en cualquiera de los dos cursos algún sub-grupo cuyas características se relacionan con un resultado específico. Con esta información estaríamos en condiciones de predecir las notas de los estudiantes en futuras cursadas de los cursos en cuestión.</p>
+</section>
+<section id="sec-variables-y-su-clasificacion" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="sec-variables-y-su-clasificacion"><span class="header-section-number">1.5</span> Variables y su clasificación</h2>
+<p>En estadísticas trabajamos esencialmente con cantidades <em>variables</em>. En estadística definimos <em>variable</em> como: Una característica medida u observada al hacer un experimento u observación. Si, por ejemplo, estamos investigando el clima en Buenos Aires, podemos hacer medidas de temperatura, humedad, dirección e intensidad del viento etcétera.</p>
+<p>Las variables pueden ser clasificadas de diferentes maneras:</p>
+<section id="por-su-relación-con-otras-variables" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="por-su-relación-con-otras-variables">Por su relación con otras variables</h3>
+<p>En la mayoría de investigaciones cuantitativas <em>variamos</em> una o más conjuntos de condiciones y medimos los efectos sobre una o más propiedades que son de nuestro interés. Las condiciones que cambiamos nosotros se denominan <em>variables independientes</em><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> y los cuya respuesta a las condiciones cambiantes medimos se llaman <em>variables dependientes</em>.</p>
+</section>
+<section id="por-su-nivel-de-medición" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="por-su-nivel-de-medición">Por su nivel de medición</h3>
+<p>Cuando hacemos una medición o observación o «recogemos un dato» debemos fijarnos en su <em>nivel de medición</em>, también llamado <em>escala</em> de medición. Distinguimos cuatro niveles o escalas:</p>
+<section id="nivel-nominal" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="nivel-nominal">Nivel nominal</h4>
+<p>Cuando un dato identifica una etiqueta (o el nombre de un atributo) de un elemento, se considera que la escala de medición es una escala nominal. En esta carecen de sentido el orden de las etiquetas, así como la comparación y las operaciones aritméticas. La única finalidad de este tipo de datos es clasificar a las observaciones. Ejemplo:</p>
+<blockquote class="blockquote">
+<p>Una variable que indica si el visitante de este post es «hombre» o «mujer».</p>
+</blockquote>
+<p>En esta variable se tienen dos etiquetas para clasificar a los visitantes. El orden carece de sentido, así como la comparación u operaciones aritméticas.</p>
+</section>
+<section id="nivel-ordinal" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="nivel-ordinal">Nivel ordinal</h4>
+<p>Cuando los datos muestran las propiedades de los datos nominales, pero además tiene sentido el orden (o jerarquía) de estos, se dice que se mide en escala ordinal. Ejemplo:</p>
+<blockquote class="blockquote">
+<p>Una variable que mide la calidad del café en la cafetería de la universidad. Le podemos asignar de uno a cinco estrellas.</p>
+</blockquote>
+<p>En esta variable sigue sin tener sentido las operaciones aritméticas, pero ahora sí tiene sentido el orden. Cuatro estrellas es mejor que dos.</p>
+</section>
+<section id="nivel-de-intervalo" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="nivel-de-intervalo">Nivel de intervalo</h4>
+<p>En una escala de intervalo, los datos tienen las propiedades de los datos ordinales, pero a su vez la separación entre las variables tiene sentido. Este tipo de datos siempre es numérico, y el valor cero no indica la ausencia de la propiedad. Por ejemplo: La temperatura (en grados centígrados) medida de una ciudad, puede ser cero sin que tenga sentido decir que «no hay temperatura».</p>
+<p>En este nivel de medición, los número mayores corresponden a temperaturas mayores. Es decir, el orden importa, pero a la vez la diferencias entre las temperaturas importa. La diferencia entre 10 grados y veinte grados es igual que la diferencia entre 20 y 30. El nivel de medida de intervalo también se conoce como el nivel <em>intervalar</em>.</p>
+</section>
+<section id="nivel-de-razón" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="nivel-de-razón">Nivel de razón</h4>
+<p>En una escala de razón –también llamado <em>de ratio</em> o <em>racional</em>, los datos tienen todas las propiedades de los datos de intervalo, y la proporción entre ellos tiene sentido. Para esto se requiere que el valor cero de la escala indique la ausencia de la propiedad a medir. Ejemplos de este tipo de variables son el peso de una persona a el tiempo utilizado para una tarea y el salario de una persona. Si una persona gana 100, y otra 10, la primera gana más que la segunda (comparación). También tiene sentido decir que la primera gana 90 más que la segunda (diferencia), o que gana 10 veces más (proporción).</p>
+</section>
+</section>
+<section id="por-su-precisión" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="por-su-precisión">Por su precisión</h3>
+<p>Cuando hablamos de <em>precisión</em> en matemáticas y estadísticas nos referimos al <em>numero de decimales</em> que tiene una variable. Esto es distinto de <em>exactitud</em> que significaría la medida en que la medición, o predicción corresponde a la realidad. 1,000 (uno coma cero cero cero), tiene más precisión que 1 (uno) si bien miden la misma cantidad. Esto lleva a la distinción que hacemos entre variables <em>discretas</em> y <em>continuas</em>. Las discretas por su naturaleza tienen precisión cero (no lleva decimales) y las continuas pueden tener la cantidad de decimales que queramos. Para ilustrar la diferencia consideramos dos variables: <em>edad</em> y <em>numero de hijos</em>. En cuanto a la edad se puede tener diez años, diez años y medio o si queremos agregar más precisión: 20,45 años. En cambio <em>numero de hijos</em> es una variable discreta. Se puede tener cero, uno o más, pero no se puede tener 1,45 hijo.</p>
+<p>Por su naturaleza vemos que las variables de escala nominal y ordinal son siempre discretas. Las de escala de intervalo y de escala de razón, en cambio pueden ser tanto discretas como continuas.</p>
+<p>La mayoría de variables de interés en las ciencias duras se miden por escala de razón o de intervalo, mientras las escalas ordinal y nominal son más importantes en ciencias humanas. El nivel de medición de una variable es de suma importancia cuando decidimos qué medidas de tendencia central, variabilidad y dispersión elegimos para nuestro análisis, y qué test de hipótesis son adecuados. Es un error muy común entre investigadores, particularmente en las ciencias sociales, asumir una escala superior a lo teóricamente sostenible.</p>
+</section>
+</section>
+<section id="glosario" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="glosario"><span class="header-section-number">1.6</span> Glosario</h2>
+<dl>
+<dt>Aleatorio/a</dt>
+<dd>
+Al azar. También son de uso frecuente los anglicismos «random» y «randómica». Función relevante en R: <code>rdunif</code>. Equivalente en inglés: «Random».
+</dd>
+<dt>Histograma</dt>
+<dd>
+Visualización de frecuencia de observaciones de una variable. Función relevante en R: <code>hist</code>. Equivalente en inglés: «Histogram».
+</dd>
+<dt>Muestra aleatoria</dt>
+<dd>
+Muestra en la que todos los elementos de la población tienen igual probabilidad de ser eligidos. Función relevante en R: <code>sample</code>. Equivalente en inglés: « Random sampling».
+</dd>
+<dt>Muestra cuasialeatoria</dt>
+<dd>
+Muestra en la que cada <em>n</em> número de los los elementos de la población van a ser eligidos. Equivalente en inglés: «Cuasi-Random sampling».
+</dd>
+<dt>Muestra estadística</dt>
+<dd>
+Subconjunto de una población estadística Función relevante en R: <code>sample</code>. Equivalente en inglés: «Sample».
+</dd>
+<dt>Muestra estratificada</dt>
+<dd>
+Muestra que conserva las proporciones conocidas de la población estadística Equivalente en inglés: «Stratified sample».
+</dd>
+<dt>Muestreo estadístíco</dt>
+<dd>
+El hecho de generar una muestra. Función relevante en R: <code>sample</code>. Equivalente en inglés: «Sampling».
+</dd>
+<dt>Nivel de Medida</dt>
+<dd>
+Uno de los cuatro niveles jerárquicamente definidos: Nominal, ordinal, intervalar y racional Equivalente en inglés: «Level of measurement».
+</dd>
+<dt>Parámetro estadístico</dt>
+<dd>
+Numero que resume una characteristica de la población estadística. Equivalente en inglés: «Parameter».
+</dd>
+<dt>Población estadística</dt>
+<dd>
+El conjunto de individuos, objetos o fenómenos de los cuales se desea estudiar una o varias características. Equivalente en inglés: «Population».
+</dd>
+<dt>Variable</dt>
+<dd>
+Characteristica que puede tener diferentes valores. Equivalente en inglés: «Variable».
+</dd>
+</dl>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-butler1985statistics" class="csl-entry" role="doc-biblioentry">
+Butler, Christopher. 1985. <em>Statistics in linguistics</em>. Basil Blackwell.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>En realidad 51 y 49%<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>En este ejemplo hemos usado <em>sexo</em> como la variable biológica es decir ausencia o presencia de un cronozoma Y. Si queremos en cambio usar <em>género</em> obviamente también podemos incluir más categorías que las clásicas masculino y femenino si lo consideramos conveniente.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>En estadísticas las probabilidades suelen expresarse por decimales, es decir: 0,5; en lugar de porcentajes: 50%<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Si se lleva este argumento al extremo: si el tamaño de la muestra fuera igual al tamaño de la población, la muestra sería perfectamente representativa.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Adaptado de <span class="citation" data-cites="butler1985statistics">Butler (<a href="11-referencias.html#ref-butler1985statistics" role="doc-biblioref">1985</a>)</span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>También se conocen como <em>predictores</em> o <em>variables experimentales</em><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prefacio</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02-distribuciones-de-frecuencias.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,49 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Métodos Cuantitativos"
+  subtitle: "Materiales de cátedra y de consulta" 
+  author: "Aleksander Dietrichson, PhD"
+  date: "1/15/2023"
+  downloads: pdf
+  chapters:
+    - index.qmd
+    - 01-conceptos-fundamentales.qmd
+    - 02-distribuciones-de-frecuencias.qmd
+    - 03-tendencia-central-y-variabilidad.qmd
+    - 04-la-distribucion-normal.qmd
+    - 05-parametros-de-poblacion-y-muestra.qmd
+    - 06-diseno-de-proyecto-y-test-de-hipotesis.qmd
+    - 07-tests-parametricos.qmd
+    - 08-tests-no-parametricos.qmd
+    - 09-chi-cuadrado.qmd
+    - 10-correlaciones.qmd
+    - 11-referencias.qmd
+  appendices: 
+    - A-valores-criticos-t.qmd
+    - B-valores-criticos-test-de-signo.qmd
+    - C-valores-criticos-ji-cuadrado.qmd
+    
+lang: es
+
+bibliography: [book.bib, packages.bib]
+
+crossref:
+  chapters: true
+  
+format:
+  html:
+    theme: cosmo
+    number-sections: true
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    # number-sections: false
+    colorlinks: true
+    include-in-header: 
+      text: |
+        \usepackage{mdframed}
+
+editor: visual
