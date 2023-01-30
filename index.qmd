@@ -4,7 +4,11 @@ Este texto ha sido editado en respuesta a la aparente falta de un libro de texto
 
 ## Segunda edición {.unnumbered}
 
-En la segunda edición se corrigió algunos errores ortográficos y de estilo. Optamos por actualizar los ejemplos para incorporar los paquetes del «tidyverse» ya que hemos observado que su uso y adaptación atenúa la curva de aprendizaje para quienes usan R por primera vez o con escasos conocimientos previos.
+En la segunda edición (2021) se corrigió algunos errores ortográficos y de estilo. Optamos por actualizar los ejemplos para incorporar los paquetes del «tidyverse» ya que hemos observado que su uso y adaptación atenúa la curva de aprendizaje para quienes usan R por primera vez o con escasos conocimientos previos.
+
+## Tercera edición {.unnumbered}
+
+En la tercera edición (2023) se optó por actualizar el código fuente con el formato de *Quarto* [@quarto]. Asímismo se actualizó algunos de los códigos de ejemplo para reflejar usos más acordes con la actualización de R a la version 4.1 y superiores. 
 
 ## Estructura del libro {.unnumbered}
 
@@ -36,7 +40,11 @@ Por convención no se incluye el promt (p.e. "\>") de la consola de R, y los val
 
 ## Edición {.unnumbered}
 
-Este texto fue editado con *bookdown* [@R-bookdown], un paquete de R [@R-bookdown] que extiende las capacidades de *knitr*[@xie2015] y R-markdown [@R-rmarkdown] para publicaciones más voluminosas. También hace uso de los paquetes *tidyverse* [@tidyverse] y *bayestestR*[@bayestestR].
+Las primeras dos ediciones de este texto fueron editados con {bookdown} [@R-bookdown], un paquete de R [@R-base] que extiende las capacidades de {knitr} [@xie2015] y R-markdown [@R-rmarkdown] para publicaciones más voluminosas. También hace uso de los paquetes {tidyverse} [@tidyverse] y {bayestestR} [@bayestestR]. Para la tercera edición se optó por actualizarlo con {quarto} [@quarto].
+
+## Licencia
+
+El código fuente está disponible en [github](https://github.com/dietrichson/metodos_cuantitativos_2) y está publicado bajo la licencia de «creative commons».
 
 ## Agradecimientos {.unnumbered}
 
