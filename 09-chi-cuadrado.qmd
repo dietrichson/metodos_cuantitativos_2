@@ -199,6 +199,8 @@ y vemos que R coincide con nuestros cálculos.
 
 ## Glosario
 
-```{r, echo=FALSE, results='asis'}
+```{r}
+#| echo: false
+#| results: asis
 .format_dataframe_as_def_list(chapter = 9)
 ```

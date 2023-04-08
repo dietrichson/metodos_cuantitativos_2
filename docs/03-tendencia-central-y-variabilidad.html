@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -112,15 +112,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "Sín resultados",
+    "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la busqueda",
-    "search-hide-matches-text": "Esconder resultados adicionales",
-    "search-more-match-text": "hay más resultados en este documento",
-    "search-more-matches-text": "más resultados en este documento",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Eviar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 
@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Indice de contenidos</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
   <li><a href="#centralización" id="toc-centralización" class="nav-link active" data-scroll-target="#centralización"><span class="toc-section-number">3.1</span>  Centralización</a>
@@ -285,6 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -401,7 +402,7 @@ Podemos sacar la mediana de forma sencilla con R con la función <code>median</c
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/religion-en-alemania-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Religión en Alemania</figcaption><p></p>
 </figure>
 </div>
@@ -412,7 +413,7 @@ Podemos sacar la mediana de forma sencilla con R con la función <code>median</c
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/medidas-de-centralicacion-en-una-distribution-con-sesgo-positivo-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Medidas de centralización en una distribución con sesgo positivo</figcaption><p></p>
 </figure>
 </div>
@@ -464,7 +465,7 @@ Podemos sacar la mediana de forma sencilla con R con la función <code>median</c
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="03-tendencia-central-y-variabilidad_files/figure-html/cuartiles-y-rangos-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Cuartiles y rangos</figcaption><p></p>
 </figure>
 </div>
@@ -564,65 +565,52 @@ s = {\sqrt{{\Sigma (x - \bar{x})^2}\over{N-1}}}
 </section>
 <section id="glosario" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="glosario"><span class="header-section-number">3.3</span> Glosario</h2>
-<div class="cell" data-result="asis">
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; Amplitud 
-#&gt; :    La diferencia entre la mínima y la máxima de una variable. También se llama _rango_ 
-#&gt;     Función relevante en R: ```range```. 
-#&gt;     Equivalente en inglés: «Range». 
-#&gt; 
-#&gt; Centralización 
-#&gt; :    El hecho de que una variable puede describirse por uno o más valores. También se llama _tendiencia central_. 
-#&gt;     Equivalente en inglés: «Central tendency». 
-#&gt; 
-#&gt; Desviación estándar (de la muestra). 
-#&gt; :    Media de la diferencia entre la media y todas las observaciones de la muestra. 
-#&gt;     Fórmula: $s = {{\sqrt{   \Sigma (x - \bar{x})^2}\over{N}} }$ 
-#&gt;     Función relevante en R: ```sd```. 
-#&gt;     Equivalente en inglés: «Standard deviation». 
-#&gt; 
-#&gt; Desviación estándar (de la población). 
-#&gt; :    Media de la diferencia entre la media y todas las observaciones de la población. 
-#&gt;     Fórmula: $\sigma = {{\sqrt{   \Sigma (x - \bar{x})^2}\over{N}} }$ 
-#&gt;     Función relevante en R: ```sd```. 
-#&gt;     Equivalente en inglés: «Standard deviation (of the population)». 
-#&gt; 
-#&gt; Desviación típica 
-#&gt; :    Ver *desviación estándar*. 
-#&gt;     Equivalente en inglés: «Standard deviation». 
-#&gt; 
-#&gt; Media 
-#&gt; :    La suma de las observaciónes de una variable dividido por el número de las observaciones. También se conoce como _la media aritmética_. 
-#&gt;     Fórmula: $\bar{x} = {\Sigma{x}\over{N}}$ 
-#&gt;     Función relevante en R: ```mean```. 
-#&gt;     Equivalente en inglés: «Mean». 
-#&gt; 
-#&gt; Mediana 
-#&gt; :    El la observación de una variable que está justo en el medio cuando los valores están ordenados. 
-#&gt;     Función relevante en R: ```median```. 
-#&gt;     Equivalente en inglés: «Median». 
-#&gt; 
-#&gt; Moda 
-#&gt; :    El valor más frecuente de la observaciones de una variable. 
-#&gt;     Equivalente en inglés: «Mode». 
-#&gt; 
-#&gt; Rango 
-#&gt; :    La diferencia entre la mínima y la máxima de una variable. También se llama _amplitud_ 
-#&gt;     Función relevante en R: ```range```. 
-#&gt;     Equivalente en inglés: «Range». 
-#&gt; 
-#&gt; Rango intercuartílico 
-#&gt; :    Rango dentro del cual se encuentras en 50% más centralizado de las variables. 
-#&gt;     Función relevante en R: ```quantile```. 
-#&gt;     Equivalente en inglés: «Interquartile range (IQR)». 
-#&gt; 
-#&gt; Varianza 
-#&gt; :    Media de la diferencia cuadrada entre la media y todas las observaciones. 
-#&gt;     Fórmula: $\sigma^2 = {{\Sigma (x - \bar{x})^2}\over{N}}$ 
-#&gt;     Función relevante en R: ```var```. 
-#&gt;     Equivalente en inglés: «Variance».</code></pre>
-</div>
-</div>
+<dl>
+<dt>Amplitud</dt>
+<dd>
+La diferencia entre la mínima y la máxima de una variable. También se llama <em>rango</em> Función relevante en R: <code>range</code>. Equivalente en inglés: «Range».
+</dd>
+<dt>Centralización</dt>
+<dd>
+El hecho de que una variable puede describirse por uno o más valores. También se llama <em>tendiencia central</em>. Equivalente en inglés: «Central tendency».
+</dd>
+<dt>Desviación estándar (de la muestra).</dt>
+<dd>
+Media de la diferencia entre la media y todas las observaciones de la muestra. Fórmula: <span class="math inline">\(s = {{\sqrt{ \Sigma (x - \bar{x})^2}\over{N}} }\)</span> Función relevante en R: <code>sd</code>. Equivalente en inglés: «Standard deviation».
+</dd>
+<dt>Desviación estándar (de la población).</dt>
+<dd>
+Media de la diferencia entre la media y todas las observaciones de la población. Fórmula: <span class="math inline">\(\sigma = {{\sqrt{ \Sigma (x - \bar{x})^2}\over{N}} }\)</span> Función relevante en R: <code>sd</code>. Equivalente en inglés: «Standard deviation (of the population)».
+</dd>
+<dt>Desviación típica</dt>
+<dd>
+Ver <em>desviación estándar</em>. Equivalente en inglés: «Standard deviation».
+</dd>
+<dt>Media</dt>
+<dd>
+La suma de las observaciónes de una variable dividido por el número de las observaciones. También se conoce como <em>la media aritmética</em>. Fórmula: <span class="math inline">\(\bar{x} = {\Sigma{x}\over{N}}\)</span> Función relevante en R: <code>mean</code>. Equivalente en inglés: «Mean».
+</dd>
+<dt>Mediana</dt>
+<dd>
+El la observación de una variable que está justo en el medio cuando los valores están ordenados. Función relevante en R: <code>median</code>. Equivalente en inglés: «Median».
+</dd>
+<dt>Moda</dt>
+<dd>
+El valor más frecuente de la observaciones de una variable. Equivalente en inglés: «Mode».
+</dd>
+<dt>Rango</dt>
+<dd>
+La diferencia entre la mínima y la máxima de una variable. También se llama <em>amplitud</em> Función relevante en R: <code>range</code>. Equivalente en inglés: «Range».
+</dd>
+<dt>Rango intercuartílico</dt>
+<dd>
+Rango dentro del cual se encuentras en 50% más centralizado de las variables. Función relevante en R: <code>quantile</code>. Equivalente en inglés: «Interquartile range (IQR)».
+</dd>
+<dt>Varianza</dt>
+<dd>
+Media de la diferencia cuadrada entre la media y todas las observaciones. Fórmula: <span class="math inline">\(\sigma^2 = {{\Sigma (x - \bar{x})^2}\over{N}}\)</span> Función relevante en R: <code>var</code>. Equivalente en inglés: «Variance».
+</dd>
+</dl>
 
 
 </section>
@@ -677,8 +665,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiada");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -714,24 +719,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

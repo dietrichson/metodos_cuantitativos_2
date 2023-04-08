@@ -337,7 +337,6 @@ Existe también una prueba, llamada *de z*, que se puede usar para muestras más
 
 La [figura @fig-flow-chart-test-selection] despliega un diagrama de flujo para eligir un test estadístico inferencial.
 
-
 ```{r}
 #| include: false
 library(DiagrammeR)
@@ -370,7 +369,6 @@ graph [fontsize = 10]
 '
 ```
 
-
 ```{r}
 #| label: fig-flow-chart-test-selection
 #| echo: false
@@ -390,10 +388,12 @@ if (knitr::is_latex_output()){
 }
 ```
 
-
-
 ## Glosario
 
-```{r, echo=FALSE, results='asis'}
+```{r}
+#| echo: false
+#| results: asis
+
+
 .format_dataframe_as_def_list(chapter = 7)
 ```

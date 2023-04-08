@@ -228,7 +228,7 @@ La función toma dos argumentos `p` de qué proporción de la curva en cada lado
 
 ```{r}
 #| echo: false
-#| result: asis
+#| results: asis
 
 .format_dataframe_as_def_list(chapter = 5)
 ```

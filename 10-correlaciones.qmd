@@ -306,7 +306,6 @@ $$
 :::
 
 ::: {#exm-pearson-coefficient-calculation-in-r}
-
 ## Cálculo del Coeficiente de correlación de Pearson en R
 
 Si no queremos hacer todos los cálculos del [ejemplo @exm-pearson-coefficient-calculation] a mano podemos recurrir a R que con la función `cor` lo calcula.
@@ -393,7 +392,7 @@ $$
 $$
 :::
 
-Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la [definición @def-chi-squared]. De hecho se relacionan matemáticamente: 
+Debería quedar claro que el coeficiente $\phi$ está estrechamente relacionado con la prueba de $\chi^2$ que vimos en la [definición @def-chi-squared]. De hecho se relacionan matemáticamente:
 
 $$
 \phi = \sqrt{\chi^2/N} \Leftrightarrow \chi^2 = N\times\phi^2.

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -112,15 +112,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "Sín resultados",
+    "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la busqueda",
-    "search-hide-matches-text": "Esconder resultados adicionales",
-    "search-more-match-text": "hay más resultados en este documento",
-    "search-more-matches-text": "más resultados en este documento",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Eviar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 
@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Indice de contenidos</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
   <li><a href="#distribución-muestral" id="toc-distribución-muestral" class="nav-link active" data-scroll-target="#distribución-muestral"><span class="toc-section-number">5.1</span>  Distribución muestral</a></li>
@@ -280,6 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -292,8 +293,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="5.1" class="anchored" data-anchor-id="distribución-muestral"><span class="header-section-number">5.1</span> Distribución muestral</h2>
 <p>Si suponemos que la estatura promedio de las argentinas entre 19 y 49 años es de 161 centímetros con una desviación estándar de 6,99, estos serían los <em>parámetros</em> de la población. Si sacamos cinco muestras aleatorias de veinte observaciones de esta población van a arrojar resultados distintos a estos valores. Algunas muestras van a tener una media por arriba de la media real y otras van a tener una media por debajo.</p>
 <div id="exm-distribucion-de-muestras" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 5.1 (Distribución de muestras) </strong></span>&nbsp;</p>
 <div class="cell">
-<span class="theorem-title"><strong>Ejemplo 5.1 (Distribución de muestras) </strong></span>
 <div class="cell-output-display">
 <div id="fig-muestras-de-estaturas" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -398,8 +399,8 @@ z = {\bar{x}\over{SE}}
 <h3 class="unnumbered anchored" data-anchor-id="dónde-obtenemos-los-valores-críticos-de-t">¿Dónde obtenemos los valores críticos de t?</h3>
 <p>Se pueden consultar los valores críticos de la distribución t para distintos grados de libertad en tablas estadísticas, como el del <a href="A-valores-criticos-t.html">apendice&nbsp;<span>A</span></a> o en linea. También se puede sacar con una función en R llamada <code>qt</code>.</p>
 <div id="exm-extraer-el-valor-critico" class="theorem example">
+<p><span class="theorem-title"><strong>Ejemplo 5.3 (Ejemplo en R: Extraer el valor crítico de t) </strong></span>&nbsp;</p>
 <div class="cell">
-<span class="theorem-title"><strong>Ejemplo 5.3 (Ejemplo en R: Extraer el valor crítico de t) </strong></span>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="at">p =</span> <span class="fl">0.025</span>, <span class="at">df =</span> <span class="dv">14</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [1] -2.144787</code></pre>
@@ -411,27 +412,24 @@ z = {\bar{x}\over{SE}}
 </section>
 <section id="glosario" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="glosario"><span class="header-section-number">5.4</span> Glosario</h2>
-<div class="cell" data-result="asis">
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; Distribución muestral 
-#&gt; :    El resultado de todas las muestras posibles que pueden ser tomadas de una población 
-#&gt;     Equivalente en inglés: «Sample distribution». 
-#&gt; 
-#&gt; Distribución t 
-#&gt; :    Distribución de probabilidad de una muestra pequeña de una distribución normal. 
-#&gt;     Función relevante en R: ```qt```. 
-#&gt;     Equivalente en inglés: «T distribution». 
-#&gt; 
-#&gt; Error estándar 
-#&gt; :    La desviación estándar de la distribución muestral. 
-#&gt;     Fórmula: $SE = {\sigma\over{\sqrt{N}}}$ o $SE = {s\over{\sqrt{N}}}$ 
-#&gt;     Equivalente en inglés: «Standard error». 
-#&gt; 
-#&gt; Intervalo de confianza 
-#&gt; :    Intervalo dentro del cual estimamos que se encuentre un valor buscado, con cierto porcentaje de confianza. 
-#&gt;     Equivalente en inglés: «Confidence Interval».</code></pre>
-</div>
-</div>
+<dl>
+<dt>Distribución muestral</dt>
+<dd>
+El resultado de todas las muestras posibles que pueden ser tomadas de una población Equivalente en inglés: «Sample distribution».
+</dd>
+<dt>Distribución t</dt>
+<dd>
+Distribución de probabilidad de una muestra pequeña de una distribución normal. Función relevante en R: <code>qt</code>. Equivalente en inglés: «T distribution».
+</dd>
+<dt>Error estándar</dt>
+<dd>
+La desviación estándar de la distribución muestral. Fórmula: <span class="math inline">\(SE = {\sigma\over{\sqrt{N}}}\)</span> o <span class="math inline">\(SE = {s\over{\sqrt{N}}}\)</span> Equivalente en inglés: «Standard error».
+</dd>
+<dt>Intervalo de confianza</dt>
+<dd>
+Intervalo dentro del cual estimamos que se encuentre un valor buscado, con cierto porcentaje de confianza. Equivalente en inglés: «Confidence Interval».
+</dd>
+</dl>
 
 
 </section>
@@ -483,8 +481,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiada");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -520,24 +535,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

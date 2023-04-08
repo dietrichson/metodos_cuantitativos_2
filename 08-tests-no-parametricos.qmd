@@ -158,8 +158,6 @@ Recordamos que el *valor mágico* de la distribución normal --la regla empíric
 
 En la [figura @fig-selection-non-parametric] podemos ver un diagrama de flujo para eligir un test no paramétrico.
 
-
-
 ```{r}
 #| include: false
 library(DiagrammeR)
@@ -189,7 +187,6 @@ graph [fontsize = 10]
 '
 ```
 
-
 ```{r}
 #| label: fig-selection-non-parametric
 #| fig-cap: "Diagrama de flujo"
@@ -208,7 +205,6 @@ if (knitr::is_latex_output()){
   DiagrammeR::grViz(cual_usar)
 }
 ```
-
 
 ## Glosario
 
