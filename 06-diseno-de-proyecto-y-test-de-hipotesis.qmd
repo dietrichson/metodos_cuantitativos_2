@@ -218,7 +218,7 @@ El diseño de una investigación cuantitativa se puede resumir en estos cuatro p
 
 ```{r}
 #| echo: false
-#| result: asis
+#| results: asis
 
 .format_dataframe_as_def_list(chapter=6)
 ```
