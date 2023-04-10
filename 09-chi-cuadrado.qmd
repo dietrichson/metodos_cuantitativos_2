@@ -55,7 +55,7 @@ $$ donde:
 
 Es importante tener en cuenta que $\chi^2$ se calcula usando las *frecuencias* y no las proporciones.
 
-La hipótesis nula es que no existe diferencia entre los valores observamos y los valores esperados. La alternativa es que hay tal diferencia. La forma de la distribución $\chi^2$, al igual que la de t, depende de los [grados de liberdad](@sec-grados-de-libertad) que desarrollaremos más adelante.
+La hipótesis nula es que no existe diferencia entre los valores observamos y los valores esperados. La alternativa es que hay tal diferencia. La forma de la distribución $\chi^2$, al igual que la de t, depende de los [grados de libertad](@sec-grados-de-libertad) que desarrollaremos más adelante.
 
 ## Prueba de independencia o asociación
 
